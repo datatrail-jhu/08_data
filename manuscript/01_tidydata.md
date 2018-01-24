@@ -1,6 +1,6 @@
 # Tidy Data
 
-The idea of tidy data was formalized in 2014 in a [paper](file:///Users/shannonellis/Downloads/v59i10%20(2).pdf) written by a leader in the data science field, [Hadley Wickham](http://hadley.nz/). The principles of tidy data, which are discussed below, provide a standard way of formatting a data set. A tidy dataset follows a number of rules relating to how rows, columns, and spreadsheets are matched up with observations, variables and types.
+The idea of tidy data was formalized in 2014 in a [paper](http://vita.had.co.nz/papers/tidy-data.pdf) written by a leader in the data science field, [Hadley Wickham](http://hadley.nz/). The principles of tidy data, which are discussed below, provide a standard way of formatting a data set. A tidy dataset follows a number of rules relating to how rows, columns, and spreadsheets are matched up with observations, variables and types.
 
 ### Why Tidy Data?
 
@@ -115,6 +115,12 @@ Most importantly, however, remember that tidy data are rectangular data. The dat
 
 ![Tidy Data = rectangular data](images/01_tidydata/01_data_tidydata-17.png)
 
+Additional resources:
+[Hadley Wickham's paper on Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf)
+[Data Organization in Spreadsheets](https://peerj.com/preprints/3183/)
+[How to Share Data for Collaboration](https://doi.org/10.7287/peerj.preprints.3139v5)
+[Data Carpentry's Data Organization in Spreadsheets](http://www.datacarpentry.org/spreadsheet-ecology-lesson/02-common-mistakes/)
+[Karl Broman's Data Organization blog post](http://kbroman.org/dataorg/)
 
 ### Slides and Video
 
