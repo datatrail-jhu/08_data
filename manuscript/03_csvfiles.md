@@ -23,6 +23,9 @@ Remember the basic idea behind comma-separated documents is that fields (columns
 
 Another caveats of CSV files is that thee are best used for data records that have identical list of fields. An example would be to have more fileds such as eye color and weight for the second row but not for the other rows. We will learn about hierarchical data later that are impossible to represent in CSV format. CSV is therefore is not really appropriate for documents such as those created with HTML, XML, or other markup or word-processing technologies.
 
+## Text files
+
+
 
 <!---
 Try to think about a way to 
