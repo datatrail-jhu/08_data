@@ -9,3 +9,9 @@ Before discussing where to find data, we need to know what privately-accessed an
 ## Sources of data
 
 Data can be found from differernt sources. As you choose an occupation in data science, a lot of your job is to work with corportae data. 
+
+
+
+## Importing CSV files from the web
+
+Sometimes the data you need to work with is online. While we will later learn that you can import them directly into R, it's good to know that you can also import CSV files hosted on the web directly into Google Sheets. For instance, the dataset [here](https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv) is a CSV file containing countries GDPs (national incomes). In order to import the file directly to Google Sheets, open a blank Google Sheets document as we learned before. In the first cell (top left corner) type in `=importData("https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv")`. Make sure to include the equal sign (=) in the beginning. This will import all the data to your Google Sheets document. 
