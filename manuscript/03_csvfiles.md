@@ -17,6 +17,11 @@ Name three columns as A, B, C and under each column enter random numbers up to t
 Now we'll try to download the file as a CSV file. In the menu bar on top, click on File and click on Download as and then click on Comma-separated values (.csv, current sheet). By doing this, the table that you created will be saved as a CSV file in your download folder.
 
 
+## Importing CSV files from the web
+
+Sometimes the data you need to work with is online. While we will later learn that you can import them directly into R, it's good to know that you can also import CSV files hosted on the web directly into Google Sheets. For instance, the dataset [here](https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv) is a CSV file containing countries GDPs (national incomes). In order to import the file directly to Google Sheets, open a blank Google Sheets document as we learned before. In the first cell (top left corner) type in `=importData("https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv")`. Make sure to include the equal sign (=) in the beginning. This will import all the data to your Google Sheets document. 
+
+
 ## Disadvantages of CSV files
 
 Remember the basic idea behind comma-separated documents is that fields (columns) values for each row are separated by commas. But what if the value has commas in it? Or what if the value itself includes a line break? A simple CSV standard may not be able to handle such values. In such cases other CSV formats are used. For instance the value might be sorrounded by quotations. In some other cases, quotations may not be the answer either and we could use escape characters, semicolons, or TABS. This is why CSV does not follow a single standard and CSV formats can vary in the choice of separator character.
