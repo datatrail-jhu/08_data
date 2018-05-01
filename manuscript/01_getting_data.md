@@ -1,3 +1,11 @@
+{
+course-completeness: 90
+course-attempts: 2
+default-quiz-attempts: 2
+authors: Jeffrey Leek
+contributors: Aboozar Hadavand
+}
+
 # Getting Data into R
 
 The first step in working with data is to *import* them into your software environment or in other words *load* them into R. Importing data into R is straightforward but each data type requires a different way of importing. Data that you would like to import has to be in an R compatible format and has exist somewhere, i.e. it can be saved on your Chromebook or can be on the web. Since your intention is to learn data science on a Chromebook and the fact that Chromebooks don't have much space, your data is mostly stored on the cloud. 
