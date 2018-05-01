@@ -11,6 +11,8 @@ Your friends will one by one complete the survey but the nice thing is that you 
 
 ![Survey Data](images/04_googlesheets/04_data_googlesheets_02.png)
 
+### The `googlesheets` package
+
 
 But how is this possible? We can do this using `googlesheets` package in R. `googlesheets` is a Google Sheets R API and is the best way to analyze and edit Google Sheets data in R. In addition to the ability of pulling data, you can also edit a google Sheet or create new sheets. Like any other package, we first need to install and attach the package. 
 
@@ -31,6 +33,8 @@ survey_data_df <- as.data.frame(survey_data)
 
 The following attributes can be used when using the `gs_read` command. The `range` attribute gives the range of cells that we like to import. For instance `range = "A1:G5"` means that we like to import cells A1 to G5. `n_max` can be used to limit the number of rows that we want to import. `col_names` dictates whether we want the first row as column names. If we use `col_names = FALSE` no column names will be imported.
 
+
+### Adding rows and editing cells
 
 What else is cool about `googlesheets`? You can modify your Google sheet throught R. You can edit a cell or add a row to your sheet. Let's say you like to add your own respond to the survey. For this you can use the command `gs_add_row`. If everything goes well, you will get a message saying *Row successfully appended*. 
 
