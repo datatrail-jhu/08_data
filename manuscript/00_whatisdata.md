@@ -2,8 +2,7 @@
 course-completeness: 90
 course-attempts: 2
 default-quiz-attempts: 2
-authors: Jeffrey Leek
-contributors: Shannon Ellis and Aboozar Hadavand
+default-random-choice-order: true
 }
 
 # What is data?
