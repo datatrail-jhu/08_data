@@ -1,81 +1,112 @@
-# csv and txt files
+# csv, Excel, and txt Files
 
 Before anything let's see what a csv file is. A csv file or a comma-separated values file allows us to have tabular data in plain text format. Think about storing a set of data that includes information about heights blood types of three individuals. You could make a table that has three columns (names, heights, and blood types) and three rows (one for each person). However, there is also another way of storing this data in plain text without needing to put them in table format. In a csv format, the values of each column for each person in the data are separated by commas and each row (each person in our case) is separated by new lines. So you could have your data in the following text file:
 
-![sample csv](images/02_csvfiles/00_sample_csv.png)
+![sample csv](images/02_csvfiles/02_data_csvfiles_01.png)
 
-A csv file has a .csv extention at the end. One of the advantages of csv files is their simplicity which is also why they are used as one of the most common forms of data. One of the challenges of data science is that each software rely on specific formats that are incompatible for other sofwatre. However, a csv file can be read by most programs. 
+A csv file has a .csv extention at the end. One of the advantages of csv files is their simplicity which is also why they are used as one of the most common forms of data. One of the challenges of data science is that each software rely on specific formats that are incompatible for other sofwatre. However, a csv file can be read by most programs. One caveats of csv files is that thee are best used for data records that have identical list of fields. An example would be to have more fileds such as eye color and weight for the second row but not for the other rows. We will learn about hierarchical data later that are impossible to represent in csv format. csv is therefore is not really appropriate for documents such as those created with HTML, XML, or other markup or word-processing technologies.
+ 
+
+![Download as csv file](images/02_csvfiles/02_data_csvfiles_02.png)
+
 
 As we saw in previous lesson, csv files can be created and opened in Google Sheets or software such as Microsoft Excel. Since we have already entered the data, we just need to download it as a csv file. Go to the Google Sheets you created and click on File and then Dowonload as and choose Comma-separated values. The data set that you created will be downloaded as a csv file on your Chromebook. Make sure you know the location of your file.
 
-### Importing csv files into R
+### Importing csv files into RStudio Cloud
+
+Log in to your RStudio account. Create a new project. On the RStudio workspace that you see, click on *Upload* under *Files* on the bottom right corner of the screen. On the window that pops up click on *Choose File*.
+
+![Upload a file on RStudio Cloud](images/02_csvfiles/02_data_csvfiles_03.png)
+
+Now, find where you saved the file (for instance Downloads) and click on *OPEN*. After this, the window closes automatically and you'll be back in your workspace on RStudio Cloud. You will see that your csv file now appears among other files.
+
+![Find local file](images/02_csvfiles/02_data_csvfiles_04.png)
+
+Now that your file is not yet imported to your environment. The most intuitive way to import csv files into R is to use the command `read.csv()`. Inside the paranthesis, write the name of the file and the file extension (.csv). Make sure you type the exact name. Save the imported data in a data frame called `my_csv_data`. Your data will not be imported into R environment. If you use the command `head(my_csv_data)` you will see the first several rows of your imported data frame. It's important to know that `read.csv()` is a general form of the function `read.delim()`. We'll learn about `read.delim()` at the end of this lesson.
+ 
+```r
+my_csv_data <- read.csv("sample_data.csv")
+head(my_csv_data)
+```
+
+This is the most simple way to import a csv file. You can use the following attributes to the function depending on the situation.
+
+- `header = TRUE` for when you want the first row to be imported as column names
+- `sep = ","` you use this in most cases since csv files are comma separated
+- `skip = 2` will skip the first 2 rows. You can set the number to any number you want.
+
+Note that when you import the csv file the blank cell in the csv file is imported as a blank cell in the data frame. In most cases, we would like the blank cell to be imported as missing value and therefore we want them to be replaced by `"NA"`. 
+
+A faster way to import csv files especially large files is the function `read_csv()` from the `readr` package. The function essentially works the same way so you can easly use it the same way. Install the package and try this code to import your csv file.
+
+```r
+my_csv_data <- read.csv("sample_data.csv")
+head(my_csv_data)
+```
+
+Note that when you use this function instead, the blank cells are automatically imported as NAs. A general form of the function is `read_delim()` that can be used for importing different file types. We'll learn about this function at the end of this lesson.
+
+### Excel files
+
+While csv files hold plain text as a series of values separated by commas, an Excel (or .xls or .xlsx) file holds information in a workbook that comprises both values and formatting (colors, conditonal formatting, font size, etc.). In other words, an Excel file is a fancier csv file. While csv files can be read by many software, Excel files can only be viewed in very few software. Let's go back to the Google Sheet that we created and instead of downloading the file locally as csv, download it as *Microsoft Excel (.xlsx)*. 
+
+![Download as Excel file](images/02_csvfiles/02_data_csvfiles_08.png)
+
+Save the file where you can find. Similar to the csv file, upload the file into your RStudio Cloud workspace. Importing Excel files into R is simple and can be done through various packages. The most popular package for importing Excel files is the `readxl` package. Install the package first. The function `read_excel()` from the package imports the Excel file into your environment. By default readxl converts blank cells to missing data. `read_excel()` has similar attributes to `read.csv()` and `read_csv()`.
 
 
-
-### Disadvantages of csv files
-
-Remember the basic idea behind comma-separated documents is that fields (columns) values for each row are separated by commas. But what if the value has commas in it? Or what if the value itself includes a line break? A simple csv standard may not be able to handle such values. In such cases other csv formats are used. For instance the value might be sorrounded by quotations. In some other cases, quotations may not be the answer either and we could use escape characters, semicolons, or TABS. This is why csv does not follow a single standard and csv formats can vary in the choice of separator character.
-
-Another caveats of csv files is that thee are best used for data records that have identical list of fields. An example would be to have more fileds such as eye color and weight for the second row but not for the other rows. We will learn about hierarchical data later that are impossible to represent in csv format. csv is therefore is not really appropriate for documents such as those created with HTML, XML, or other markup or word-processing technologies.
+```r
+my_excel_data <- read_excel("sample_data.xlsx")
+head(my_excel_data)
+```
 
 ### Text files
 
+Another common form of data is text files that usually come in the form of txt or tsv file formats. Text files are in essence very similar to csv files in that they don't have formatting and are very simple. In addition because of their simplicity most text editors can open such files and this cross-platform compliance makes them good candidates for storing data. One of the main advantages of txt and tsv files is that even if the file is corrupted, it is often easy to recover and continue processing the remaining content that is uncorrupted. Moreover, you can look at your data using the most basic text editors without the need for more advanced software. Remember that you can also open csv files with text editors but not Excel files.
+
+We briefly mentioned `read.delim()` function from base R and `read_delim()` function from the package `readr`. These two functions can be used to import txt and tsv files into R. Before doing this, we first need a txt or tsv file. Go back to your Google Sheet and try to download the file as Tab-Separated Values or .tsv (Google Sheets does not have an option for downloading the file as .txt but these two file types are essentially the same.)
+
+![Download as tsv file](images/02_csvfiles/02_data_csvfiles_10.png)
+
+Upload the file to RStudio Cloud. Since the two functions mentioned above are similar (however, `read_delim()` is faster) we will use this code in order to import the data. The `delim = "\t"` attribute dictates that the values are separated by tabs and the `col_names = TRUE` dictates that the first row is column names. 
 
 
-# Text Data Files
+```r
+my_text_data <- read_delim("sample_data.tsv", delim = "\t", col_names = TRUE)
+head(my_excel_data)
+```
 
-
-
-
-
-
-
-Because of their simplicity, text files are commonly used for storage of information. They avoid some of the problems encountered with other file formats, such as endianness, padding bytes, or differences in the number of bytes in a machine word. Further, when data corruption occurs in a text file, it is often easier to recover and continue processing the remaining contents. A disadvantage of text files is that they usually have a low entropy, meaning that the information occupies more storage than is strictly necessary.
-
-
-
-
-Text data files, it must be admitted, are not always as compact or as efficient to read and write as binary files. It can be a bit more work to set up the code which reads and writes them. But they have some powerful advantages: any time you need to, you can look at them using ordinary text editors and other tools. If program A is writing a data file which program B is supposed to be able to read but cannot, you can immediately look at the file to see if it's in the correct format and so determine whether it's program A's or B's fault. If program A has not been written yet, you can easily create a data file by hand to test program B with. Text files are automatically portable between machines, even those where integers and other data types are of different sizes or are laid out differently in memory. Because they're not expected to have the rigid formats of binary files, it tends to be more natural to arrange text files so that as the data file format changes slightly, newer (or older) versions of the software can read older (or newer) versions of the data file. Text data files are the focus of this chapter; they're what I use all the time, and they're what I recommend you use unless you have compelling reasons not to.
-
-When we're using text data files, we acknowledge that the internal and external representations of our data are quite different. For example, a value of type int will usually be represented internally as a 2- or 4-byte (16- or 32-bit) piece of memory. Externally, though, that integer will be represented as a string of characters representing its decimal or hexadecimal value. Converting back and forth between the internal and external representations is easy enough. To go from the internal representation to the external, we'll almost always use printf or fprintf; for example, to convert an int we might use %d or %x format. To convert from the external representation back to the internal, we could use scanf or fscanf, or read the characters in some other way and then use functions like atoi, strtol, or sscanf.
-
-We have a great many options when it comes to performing this mapping, that is, when converting between the internal and external representations. Our choice may be determined by the layout we want the data file to have, or by what's easiest to implement, or by some combination of these factors. Some of the choices are pretty arbitrary; but in any case, what matters most is obviously that the reading and writing code ``match'', that is, that the data file writing code write the data in the right format such that the data file reading code can accurately read it. For the rest of this section, we'll explore several ways of writing and reading data to and from text data files, using various combinations of the stdio functions (and perhaps one or two of our own).
-
-
-
-
-
-
-
-
-
-<!---
-Try to think about a way to 
-Fields with embedded commas or double-quote characters must be quoted.
-1997,Ford,E350,"Super, luxurious truck"
-
-Each of the embedded double-quote characters must be represented by a pair of double-quote characters.
-1997,Ford,E350,"Super, ""luxurious"" truck"
-
-Fields with embedded line breaks must be quoted (however, many csv implementations do not support embedded line breaks).
-1997,Ford,E350,"Go get one now
-they are going fast"
---->
 
 
 ### Slides and Video
 
-![What is data](UPDATE LINK)
+![csv, Excel, and txt Files](UPDATE LINK)
 
 * [Slides](https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/edit?usp=sharing)
 
 
 {quiz, id: quiz_01_csvfiles}
 
-### csv and TXT files quiz
+### csv, Excel, and txt Files quiz
 
+? What is a csv file?
 
+a) A file that can contian various forms of data such as audio and video.
+b) An Excel file first created by Microsoft Corporation.
+c) A text data file in which values are separated by tabs.
+D) A text data file in which values are separated by commas.
 
+? Which of the following is NOT true about the `read.csv()` command?
+a) By setting the `header` attribute to `TRUE` the first row will be imported as column names.
+b) `sep = ","` dicates that the values are separated by comma.
+C) It is a function from the package `readr`.
+d) By using the `skip` attribute equal to 3 the first three rows will be skipped.
+
+? Which of the following is TRUE about the differnece between csv and Excel files? 
+A) An Excel file is formatted but an csv file is not.
+b) Both can be opened by basic text editors.
+c) An Excel file is unformatted but a csv file is formatted.
+d) Both can be imported using the `dplyr` package.
 
 {/quiz}
 
