@@ -76,6 +76,15 @@ my_text_data <- read_delim("sample_data.tsv", delim = "\t", col_names = TRUE)
 head(my_excel_data)
 ```
 
+### Exporting Data in R to csv or txt
+
+The last topic of this lesson is about how to export data from R. So far we learned about importing data into R. However, sometimes you would like to share *your* data with others and need to export your data from R to some format that your collaborators can see. As we saw, csv format is a good candidate because of its simplicity and compatibility. Let's say you have a data frame in the R environment that you would like to export as csv. You have two ways similar to reading csv files. You can either use the `write.csv()` command from the base R or you can use `write_csv()` command from the `readr` package. Since both methods are fairly similar, let's look at the one from `readr` package. Since we've already created a data frame named `my_csv_data`, we can export it to a csv file using this. After typing this command, a new csv file called `my_csv_file.csv` will appear in the Files section.
+
+```r
+write_csv(my_csv_data, "my_csv_file.csv")
+```
+
+You can also save your data as a tsv file using the function `write_tsv()` function.
 
 
 ### Slides and Video

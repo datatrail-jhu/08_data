@@ -1,4 +1,10 @@
-# 
+# Saving and Exporting data from R
+
+A lot of the time you need to do the opposite of what we've been learning in the past few lessons. That is we need to export data from R rather than importing data into R. This is useful in many situations. Especially if you want to perserve the data sctructures such as column data types (numeric, character, or factor). Although  
+
+Writing data, in txt, csv or Excel file formats, is the best solution if you want to open these files with other analysis software, such as Excel. However this solution doesn’t preserve data structures, such as column data types (numeric, character or factor). In order to do that, the data should be written out in R data format.
+
+
 
 
 
