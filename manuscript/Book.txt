@@ -1,0 +1,8 @@
+02_csvfiles.md
+04_googlesheets.md
+05_exporting.md
+06_unconventional.md
+07_findingdata.md
+08_safety.md
+09_privacy.md
+10_ethics.md
