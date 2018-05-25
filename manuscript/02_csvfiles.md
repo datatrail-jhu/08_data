@@ -4,13 +4,13 @@ Before anything let's see what a csv file is. A csv file or a comma-separated va
 
 ![sample csv](images/02_csvfiles/02_data_csvfiles_01.png)
 
-A csv file has a .csv extention at the end. One of the advantages of csv files is their simplicity which is also why they are used as one of the most common forms of data. One of the challenges of data science is that each software rely on specific formats that are incompatible for other sofwatre. However, a csv file can be read by most programs. One caveats of csv files is that thee are best used for data records that have identical list of fields. An example would be to have more fileds such as eye color and weight for the second row but not for the other rows. We will learn about hierarchical data later that are impossible to represent in csv format. csv is therefore is not really appropriate for documents such as those created with HTML, XML, or other markup or word-processing technologies.
+A csv file has a .csv extension at the end. One of the advantages of csv files is their simplicity which is also why they are used as one of the most common forms of data. One of the challenges of data science is that each software rely on specific formats that are incompatible for other software. However, a csv file can be read by most programs. One caveats of csv files is that thee are best used for data records that have identical list of fields. An example would be to have more files such as eye color and weight for the second row but not for the other rows. We will learn about hierarchical data later that are impossible to represent in csv format. csv is therefore is not really appropriate for documents such as those created with HTML, XML, or other markup or word-processing technologies.
  
 
 ![Download as csv file](images/02_csvfiles/02_data_csvfiles_02.png)
 
 
-As we saw in previous lesson, csv files can be created and opened in Google Sheets or software such as Microsoft Excel. Since we have already entered the data, we just need to download it as a csv file. Go to the Google Sheets you created and click on File and then Dowonload as and choose Comma-separated values. The data set that you created will be downloaded as a csv file on your Chromebook. Make sure you know the location of your file.
+As we saw in previous lesson, csv files can be created and opened in Google Sheets or software such as Microsoft Excel. Since we have already entered the data, we just need to download it as a csv file. Go to the Google Sheets you created and click on File and then Download as and choose Comma-separated values. The data set that you created will be downloaded as a csv file on your Chromebook. Make sure you know the location of your file.
 
 ### Importing csv files into RStudio Cloud
 
@@ -22,7 +22,7 @@ Now, find where you saved the file (for instance Downloads) and click on *OPEN*.
 
 ![Find local file](images/02_csvfiles/02_data_csvfiles_04.png)
 
-Now that your file is not yet imported to your environment. The most intuitive way to import csv files into R is to use the command `read.csv()`. Inside the paranthesis, write the name of the file and the file extension (.csv). Make sure you type the exact name. Save the imported data in a data frame called `my_csv_data`. Your data will not be imported into R environment. If you use the command `head(my_csv_data)` you will see the first several rows of your imported data frame. It's important to know that `read.csv()` is a general form of the function `read.delim()`. We'll learn about `read.delim()` at the end of this lesson.
+Now that your file is not yet imported to your environment. The most intuitive way to import csv files into R is to use the command `read.csv()`. Inside the parenthesis, write the name of the file and the file extension (.csv). Make sure you type the exact name. Save the imported data in a data frame called `my_csv_data`. Your data will not be imported into R environment. If you use the command `head(my_csv_data)` you will see the first several rows of your imported data frame. It's important to know that `read.csv()` is a general form of the function `read.delim()`. We'll learn about `read.delim()` at the end of this lesson.
  
 ```r
 my_csv_data <- read.csv("sample_data.csv")
@@ -37,7 +37,7 @@ This is the most simple way to import a csv file. You can use the following attr
 
 Note that when you import the csv file the blank cell in the csv file is imported as a blank cell in the data frame. In most cases, we would like the blank cell to be imported as missing value and therefore we want them to be replaced by `"NA"`. 
 
-A faster way to import csv files especially large files is the function `read_csv()` from the `readr` package. The function essentially works the same way so you can easly use it the same way. Install the package and try this code to import your csv file.
+A faster way to import csv files especially large files is the function `read_csv()` from the `readr` package. The function essentially works the same way so you can easily use it the same way. Install the package and try this code to import your csv file.
 
 ```r
 my_csv_data <- read.csv("sample_data.csv")
@@ -48,7 +48,7 @@ Note that when you use this function instead, the blank cells are automatically 
 
 ### Excel files
 
-While csv files hold plain text as a series of values separated by commas, an Excel (or .xls or .xlsx) file holds information in a workbook that comprises both values and formatting (colors, conditonal formatting, font size, etc.). In other words, an Excel file is a fancier csv file. While csv files can be read by many software, Excel files can only be viewed in very few software. Let's go back to the Google Sheet that we created and instead of downloading the file locally as csv, download it as *Microsoft Excel (.xlsx)*. 
+While csv files hold plain text as a series of values separated by commas, an Excel (or .xls or .xlsx) file holds information in a workbook that comprises both values and formatting (colors, conditional formatting, font size, etc.). In other words, an Excel file is a fancier csv file. While csv files can be read by many software, Excel files can only be viewed in very few software. Let's go back to the Google Sheet that we created and instead of downloading the file locally as csv, download it as *Microsoft Excel (.xlsx)*. 
 
 ![Download as Excel file](images/02_csvfiles/02_data_csvfiles_08.png)
 
@@ -100,18 +100,18 @@ You can also save your data as a tsv file using the function `write_tsv()` funct
 
 ? What is a csv file?
 
-a) A file that can contian various forms of data such as audio and video.
+a) A file that can contain various forms of data such as audio and video.
 b) An Excel file first created by Microsoft Corporation.
 c) A text data file in which values are separated by tabs.
 D) A text data file in which values are separated by commas.
 
 ? Which of the following is NOT true about the `read.csv()` command?
 a) By setting the `header` attribute to `TRUE` the first row will be imported as column names.
-b) `sep = ","` dicates that the values are separated by comma.
+b) `sep = ","` dictates that the values are separated by comma.
 C) It is a function from the package `readr`.
 d) By using the `skip` attribute equal to 3 the first three rows will be skipped.
 
-? Which of the following is TRUE about the differnece between csv and Excel files? 
+? Which of the following is TRUE about the difference between csv and Excel files? 
 A) An Excel file is formatted but an csv file is not.
 b) Both can be opened by basic text editors.
 c) An Excel file is unformatted but a csv file is formatted.

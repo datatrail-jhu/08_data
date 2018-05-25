@@ -2,12 +2,12 @@
 
 One of the advantages of R is its ability to read real-time data hosted on Google Sheets. Why is this an advantage? Well, imagine you are sending out a survey to your friends asking about how they spend their day. You already know about Google Sheets so one easy way is to create a Google Sheet and share the link with your friends. Again, you should know by now how to share a Google Sheets.
 
-Let's say you're mostly interested in knowing the hours spend on work, leisure, sleep, eating, socilizing, and other activities. So in your Google Sheet you add these six items as columns and one column asking for your friends names. Something like this. Make sure you name your sheet with something, for instance *survey*.
+Let's say you're mostly interested in knowing the hours spend on work, leisure, sleep, eating, socializing, and other activities. So in your Google Sheet you add these six items as columns and one column asking for your friends names. Something like this. Make sure you name your sheet with something, for instance *survey*.
 
 ![Survey Google Sheets](images/04_googlesheets/04_data_googlesheets_01.png)
 
 
-Your friends will one by one complete the survey but the nice thing is that you can pull the data and import it to R for analysis in real-time and directly from Google Sheets without downloding it. In other words, everytime you import the data from the Google Sheets link, the most updated data will be imported. Let's say, after waiting for a week, your friends' data look like this.
+Your friends will one by one complete the survey but the nice thing is that you can pull the data and import it to R for analysis in real-time and directly from Google Sheets without downloading it. In other words, every time you import the data from the Google Sheets link, the most updated data will be imported. Let's say, after waiting for a week, your friends' data look like this.
 
 ![Survey Data](images/04_googlesheets/04_data_googlesheets_02.png)
 

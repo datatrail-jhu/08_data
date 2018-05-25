@@ -45,7 +45,7 @@ An additional reminder: websites that have https:// (rather than just http://) a
 Data Science projects should NOT: 
 * increase risk or harm 
 * pose threats to individuals
-* make individuals' PII publicly-available or succeptible to theft
+* make individuals' PII publicly-available or susceptible to theft
 * break any laws
 * share data with other groups/companies without the consent of the individuals
 * saved data insecurely
