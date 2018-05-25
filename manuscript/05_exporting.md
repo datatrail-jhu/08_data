@@ -2,7 +2,7 @@
 
 We learned about exporting data in R environment to a csv file in previous lessons. 
 
-You can export data from R to file formats readable by various statistical software such as SPSS, Stata, etc. You can also export your data as an Excel file. This feature is helpful, however, sometimes you like to perserve the data structures such as column data types (numeric, character, or factor). 
+You can export data from R to file formats readable by various statistical software such as SPSS, Stata, etc. You can also export your data as an Excel file. This feature is helpful, however, sometimes you like to preserve the data structures such as column data types (numeric, character, or factor). 
 
 ![Exporting R Data to Various Formats](images/05_exporting/05_data_exporting_01.png)
 
@@ -12,7 +12,7 @@ For this purpose, it's better if you save your data in R data format. More speci
 ![Difference between RData and rds files](images/05_exporting/05_data_exporting_02.png)
 
 
-We'll learn how to save a single R object, save multiple R objects or save your entire workspace in a specified file. To save a single object to a file, we will use the functino `saveRDS()`. By running this function the object will be saved as an `rds` file. Once you save the object into a file, the file can be called (or restored as some people put it) using the `readRDS()` function. Here is how. As a practice, let's create one data frame called `df1` and one list called `list1`. The data frame has three columns and three rows and the list has three elements with different lengths. 
+We'll learn how to save a single R object, save multiple R objects or save your entire workspace in a specified file. To save a single object to a file, we will use the function `saveRDS()`. By running this function the object will be saved as an `rds` file. Once you save the object into a file, the file can be called (or restored as some people put it) using the `readRDS()` function. Here is how. As a practice, let's create one data frame called `df1` and one list called `list1`. The data frame has three columns and three rows and the list has three elements with different lengths. 
 
 ```r
 df1 <- data.frame("id" = 1:3, "Age" = c(23, 25, 19), "Name" = c("John","Dora","Natasha"))
