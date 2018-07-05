@@ -20,7 +20,7 @@ You can do awesome things with your data science skills: cure diseases, analyze 
 
 * [Slides](https://docs.google.com/presentation/d/16uo-gTCdjtWjdGOxejVTIz9JdZi-Gu7lgSsNx2SdPhU/edit?usp=sharing)
 
-{quiz, id: quiz_08_ethics}
+{quiz, id: quiz_10_ethics}
 
 ### Ethics of Data Science quiz
 
