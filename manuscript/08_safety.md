@@ -103,16 +103,20 @@ Because Chromebooks do not run a typically operating system, they are much more 
 
 * [Slides](https://docs.google.com/presentation/d/15GTb5tE_GQuCBJMtLYRtaEF8t5ms_iBRruNqZO1LbtY/edit?usp=sharing)
 
-{quiz, id: quiz_06_safety}
+{quiz, id: quiz_08_safety}
 
 ### Internet Safety quiz
 
+{choose-answers:4}
 ? Which of these passwords is BEST?
 
-a) Pass123word
-B) Ujzk7!wkcC!S81?
-c) Mohamm820!ed
-d) Mo8haM1!meD
+C) Ujzk7!wkcC!S81?
+C) TjZk7!wadC!S9?
+o) Pass123word
+o) Mohamm820!ed
+o) Mo8haM1!meD
+o) Password1234
+o) secret123
 
 ? To share personal information over the internet, what should you avoid?
 
@@ -128,11 +132,14 @@ b) Completely open WiFi
 c) Semi-open WiFi
 D) password-protected personal WiFi
 
+{choose-answers:4}
 ? How often should you change you password to your home WiFi network?
 
-a) Never - it's totally secure
-B) At least every six months
-c) Annually
-d) Every other year
+C) At least every six months
+o) Never - it's totally secure
+o) Annually
+o) Every other year
+o) Every hour
+o) Every 5 years
 
 {/quiz}
