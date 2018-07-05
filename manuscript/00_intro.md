@@ -8,7 +8,7 @@ We hope that having all this information in one place will help you not only und
 
 ### Basic Data files 
 
-Data Scientists are often working with data stored in spreadsheets. This probably doesn't come as a surprise, as most of the example data you've worked on throughout this Course Set so far has used data in this format. Often, these data are stored in **comma-separated value (CSV)** files. However, data of this format can also be stored in Google Sheets, Excel (.xlsx, .xls), and tab-delimited files (.txt), among others. We'll define the various file formats and discuss how to get these types of data into R in the following two lessons in this course.
+Data Scientists are often working with data stored in spreadsheets. This probably doesn't come as a surprise, as most of the example data you've worked on throughout this Course Set so far has used data in this format. Often, these data are stored in **comma-separated value (CSV)** files. However, data of this format can also be stored in Google Sheets, Excel (.xlsx, .xls), and tab-delimited files (.txt), among others. We'll define the various file formats and discuss how to get these types of data into R in the next few lessons in this course.
 
 ### Data from the Internet
  
