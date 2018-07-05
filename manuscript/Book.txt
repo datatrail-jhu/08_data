@@ -1,8 +1,11 @@
-02_csvfiles.md
-04_googlesheets.md
-05_exporting.md
-06_unconventional.md
-07_findingdata.md
-08_safety.md
-09_privacy.md
-10_ethics.md
+00_intro.md
+01_csvfiles.md
+02_googlesheets
+# 03_internet.md
+# 04_databases.md
+# 05_unconvnetional.md
+# 06_exporting.md
+# 07_findingdata.md
+# 08_safety.md
+# 09_privacy.md
+# 10_ethics.md
