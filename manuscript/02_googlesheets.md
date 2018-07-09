@@ -99,6 +99,16 @@ gs_edit_cells(survey_sheet, anchor = "D4", input = 2)
 
 If you were to return to your Google Sheets, you'd notice that cell D4 now has a 2, rather than a 0 in it!
 
+### Summary
+
+In this lesson, we've introduced the R package `googlesheets`. We've discussed the need for authentication and have demonstrated a number of its basic capabilities. We've walked through an example of how to read a Google Sheet into R and how to add and edit content directly to your Google Sheet from R. While we've covered the basics, there are certainly a number of additional capabilities of the package, so feel free to explore even more! 
+
+### Additional Resources
+
+* [`googlesheets` on GitHub](https://github.com/jennybc/googlesheets) - includes an incredibly helpful README from Jenny Bryan on the basic functions of the package as well as a table with brief descriptions of all the functions
+* [`googlesheets` vignette](https://cran.r-project.org/web/packages/googlesheets/vignettes/basic-usage.html) - a more in-depth tutorial at the packages' functionality from Jenny Bryan and Joanna Zhao
+
+ 
 ### Slides and Video
 
 ![Importing Data from Google Sheets](ADD VIDEO LINK)
