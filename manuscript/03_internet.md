@@ -349,7 +349,7 @@ o) to convert data from the JSON format to a data frame.
 o) to convert data from a data frame to the JSON format.
 o) to help look for bugs in an R function you just wrote.
 
-{choose-answers: 4}
+{choose-answers:4}
 ? When would you use the `content()` function from the `httr` package?
 
 C) after an API request to extract the content from your API request
@@ -359,7 +359,7 @@ o) after an API request to edit the content from your API request
 o) before an API request to extract the content from your API request
 o) before an API request to edit the content from your API request
 
-{choose-answers: 4}
+{choose-answers:4}
 ? To convert JSON data to a data frame, which function would you use?
 
 C) `fromJSON()`
@@ -369,7 +369,7 @@ o) `JSONlite()`
 o) `GET()`
 o) `POST()`
 
-{choose-answers: 4}
+{choose-answers:4}
 ? Why keep track of the date your data were downloaded?
 
 C) In case the data are changed or updated, you'll have a record of which version of the data you used
