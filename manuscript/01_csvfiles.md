@@ -160,15 +160,15 @@ o) A text data file in which values are separated by tabs.
 o) A file with multiple spreadsheets within a workbook
 o) A file readable exclusively by R.
 
-{choose-answers: 4}
+{choose-answers:4}
 ? Which of the following is NOT true about the `read_csv()` command?
 
 C) It is a default function within R.
-C) It assumes the file it is reading in is tab-separated
+C) It assumes the file it is reading in is tab-separated.
 o) By setting the `col_names` attribute to `TRUE` the first row will be imported as column names.
-o) It assumes the file it is reading in is comma-separated
-d) By using the `skip` attribute equal to 3 the first three rows will be skipped.
-o) It reads CSVs in more quickly than `read.csv()`
+o) It assumes the file it is reading in is comma-separated.
+o) By using the `skip` attribute equal to 3 the first three rows will be skipped.
+o) It reads CSVs in more quickly than `read.csv()`.
 
 {choose-answers: 4}
 ? Which of the following is TRUE about the difference between CSV and Excel files? 
@@ -177,7 +177,7 @@ C) Excel files allows for cell formatting; CSVs do not.
 C) CSVs are plain-text; Excel files are not.
 o) Both can be opened by basic text editors.
 o) CSVs allow for cell formatting; Excel files do not.
-o) CSVs can be read into R; Excel files canot
+o) CSVs can be read into R; Excel files cannot
 o) Excel files can be read into R; CSVs cannot
 
 

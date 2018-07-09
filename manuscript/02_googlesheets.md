@@ -119,7 +119,7 @@ In this lesson, we've introduced the R package `googlesheets`. We've discussed t
 
 ### Importing Data from Google Sheets quiz
 
-{choose-answers: 4}
+{choose-answers:4}
 ? Which of the following packages is used for importing data directly from Google Sheets?
 
 C) googlesheets
@@ -129,7 +129,7 @@ o) google
 o) googleAPI
 o) gs_read
 
-{choose-answers: 4, points: 2}
+{choose-answers:4, points:2}
 ? Which of the following is NOT something that can be accomplished from the functions in the package `googlesheets`? (Note you may have to Google to learn more about other functions in `googlesheets`.)
 
 C) Creating graphs directly from a Google sheet
@@ -140,7 +140,7 @@ o) Adding a new row in a Google sheet
 o) Importing data from a Google sheet into R
 o) Giving the Google Sheets API permission to access your Google Sheets
 
-{choose-answers: 4}
+{choose-answers:4}
 ? Which of the following arguments tells the `gs_edit_cells` function which cell to edit?
 
 C) `anchor`
