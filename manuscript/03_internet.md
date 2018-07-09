@@ -1,6 +1,6 @@
 # Getting Data From the Internet
 
-In the introductory lesson, we mentioned that there is a lot of data on the Internet, which probably comes at no surprise given the vast amount of information on the Internet. Sometimes these data are in a nice CSV format that we can quickly pull from the Internet. Sometimes, the data are spread across a web page, and it's our job to "scrape"" that information from the webpage and get it into a usable format. Knowing first that this is possible within R and second, having some idea of whwere to start is an important start to beginning to get data from the Internet.
+In the introductory lesson, we mentioned that there is a lot of data on the Internet, which probably comes at no surprise given the vast amount of information on the Internet. Sometimes these data are in a nice CSV format that we can quickly pull from the Internet. Sometimes, the data are spread across a web page, and it's our job to "scrape"" that information from the webpage and get it into a usable format. Knowing first that this is possible within R and second, having some idea of where to start is an important start to beginning to get data from the Internet.
 
 We'll walk through three R packages in this lesson to help get you started in getting data from the Internet. So, before we jump in, we'll have you install these packages:
 
@@ -13,9 +13,9 @@ install.packages(c("httr", "rvest", "jsonlite"))
 
 In the first lesson we mentioned that **Application Programming Interfaces (APIs)** are, in the most general sense, software that allow to different web-based applications to communicate with one another over the Internet. Modern APIs conform to a number of standards. This means that many different applications are using the same approach, so a single package in R is able to take advantage of this and communicate with many different applications, as long as the application's API adheres to this generally agreed upon set of "rules". 
 
-The R package that we'll be using to aquire data and take advantage of this is called `httr`. This package name suggests that this is an "R" package for "HTTP". So, we know what R is, but what about HTTP? 
+The R package that we'll be using to acquire data and take advantage of this is called `httr`. This package name suggests that this is an "R" package for "HTTP". So, we know what R is, but what about HTTP? 
 
-You've probably seeing HTTP before at the start of web addresses, (ie http://www.gmail.com), so you may have some intuition that HTTP has something to do with the Internet, which is absoutely correct! HTTP stands for Hypertest Transfer Protocol. In the broadest sense, HTTP transactions allow for messages to be sent between two points on the Internet. You, on your computer can request something from a web page, and the protocol (HTTP) allows you to connect with that webpage's server, do something, and then return you whatever it is you asked for. 
+You've probably seeing HTTP before at the start of web addresses, (ie http://www.gmail.com), so you may have some intuition that HTTP has something to do with the Internet, which is absolutely correct! HTTP stands for Hypertest Transfer Protocol. In the broadest sense, HTTP transactions allow for messages to be sent between two points on the Internet. You, on your computer can request something from a web page, and the protocol (HTTP) allows you to connect with that webpage's server, do something, and then return you whatever it is you asked for. 
 
 Working with a web API is similar to accessing a website in many ways. When you type a URL (ie www.google.com) into your browser, information is sent from your computer to your browser. Your browser then interprets what you're asking for and displays the website you've requested. Web APIs work similarly. You **request** some information from the API and the API sends back a **response**.
 
@@ -37,7 +37,7 @@ The example is based on a wonderful [blogpost](https://www.tylerclavelle.com/cod
 
 #### API Endpoint
 
-The URL you're requesting information from is known as the **API endpoint**. The documentation from GitHub's API explains what information can be obtained from their API endpoint: [https://api.github.com](https://api.github.com). That's the base endpoint, but if you wanted to access a particular indidividual's GitHub repositories, you would want to modify this base endpoint to: `https://api.github.com/users/username/repos`, where you would replace `username` with *your* GitHub username.   
+The URL you're requesting information from is known as the **API endpoint**. The documentation from GitHub's API explains what information can be obtained from their API endpoint: [https://api.github.com](https://api.github.com). That's the base endpoint, but if you wanted to access a particular individual's GitHub repositories, you would want to modify this base endpoint to: `https://api.github.com/users/username/repos`, where you would replace `username` with *your* GitHub username.   
 
 #### API request: `GET()`
 
@@ -49,7 +49,7 @@ The goal of this request is to obtain information about what repositories are av
 ## load package
 library(httr)
 library(dplyr)
-
+ 	
 ## Save GitHub username as variable
 username <- 'janeeverydaydoe'
 
@@ -93,7 +93,7 @@ To do so we'll take advantage of `httr`'s `content()` function, which as its nam
 repo_content <- content(api_response)
 ```
 
-![`httr` status code ande `content()`](images/03_internet_03_data_internet-9.png)
+![`httr` status code and `content()`](images/03_internet_03_data_internet-9.png)
 
 You can see here that the length of `repo_content` in our case is 6 by looking at the Environment tab. This is because the GitHub account `janeeverydaydoe` had six repositories at the time of this API call. We can get some information about each repo by running the function below:
 
@@ -135,13 +135,13 @@ Here, we again specify our url within `GET()` followed by use of the helpful `co
 
 ### API keys
 
-Not all API's are as "open" as GitHub's. For example, if you ran the code for the first example above exactly as it was written (and didn't change the GitHub username), you would have gotten information about the repos in janeeverydaydoe's GitHub account. Because it is a fully-open API, you're able to retreive information about not only your GitHub account, but also other users' public GitHub activity. This makes good sense because sharing code among public repositories is an important part of GitHub.
+Not all API's are as "open" as GitHub's. For example, if you ran the code for the first example above exactly as it was written (and didn't change the GitHub username), you would have gotten information about the repos in janeeverydaydoe's GitHub account. Because it is a fully-open API, you're able to retrieve information about not only your GitHub account, but also other users' public GitHub activity. This makes good sense because sharing code among public repositories is an important part of GitHub.
 
 Alternatively, while Google also has an API (or rather, *many* API's), they aren't quite as open. This makes good sense. There is no reason I should have access to the files on someone else's Google Drive account. Controlling whose files one can access through Google's API is an important privacy feature. 
 
-In these cases, what is known as a key is requuired to gain access to the API. **API keys** are obtained from the website's API site (ie, for Google's APIs, you would start [here](https://developers.google.com/apis-explorer/#p/). Once acquired, these keys should **never be shared on the Internet**. There is a reason they're required, after all. So, be sure to **never push a key to GitHub or share it publicly**. (If you do ever accidentally share a key on the Inernet, return to the API and disable the key immediately.)
+In these cases, what is known as a key is required to gain access to the API. **API keys** are obtained from the website's API site (ie, for Google's APIs, you would start [here](https://developers.google.com/apis-explorer/#p/). Once acquired, these keys should **never be shared on the Internet**. There is a reason they're required, after all. So, be sure to **never push a key to GitHub or share it publicly**. (If you do ever accidentally share a key on the Internet, return to the API and disable the key immediately.)
 
-For example, to access the Twitter API, you would obtain your key and necessary tokens from [Twitter's API](https://developer.twitter.com/en/docs/tweets/search/overview) and replace the text in the `key`, `secret`, `token` and `token_secret`arguments below. This would authenticate you to use Twitter's API to aquire infromation about your home timeline. 
+For example, to access the Twitter API, you would obtain your key and necessary tokens from [Twitter's API](https://developer.twitter.com/en/docs/tweets/search/overview) and replace the text in the `key`, `secret`, `token` and `token_secret` arguments below. This would authenticate you to use Twitter's API to acquire information about your home timeline. 
 
 ```r
 myapp = oauth_app("twitter",
@@ -165,14 +165,14 @@ This uses the helpful package `rvest`. It gets its name from the word "harvest."
 
 #### `rvest` basics
 
-When `rvest` is given a webpage (URL) as input, an `rvest` function reads in the HTML code from the webpage. HTML is the language websites use to display everything you see on the website. You've seen HTML documents before, as this is one of the formats that you can Knit to from an R Markdown (.Rmd) document! Generally, all HTML documents require each webpage to have a similar strucutre. This structure is specified by using different **tags**. For example, a header at the top of your webpage would use a specific tag. Website links would use a different tag. These different tags help to specify how the website should appear. `rvest` takes advantage of these tags to help you extract the parts of the webpage you're most interested in. So let's see exactly how to do that all of this with an example.
+When `rvest` is given a webpage (URL) as input, an `rvest` function reads in the HTML code from the webpage. HTML is the language websites use to display everything you see on the website. You've seen HTML documents before, as this is one of the formats that you can Knit to from an R Markdown (.Rmd) document! Generally, all HTML documents require each webpage to have a similar structure. This structure is specified by using different **tags**. For example, a header at the top of your webpage would use a specific tag. Website links would use a different tag. These different tags help to specify how the website should appear. `rvest` takes advantage of these tags to help you extract the parts of the webpage you're most interested in. So let's see exactly how to do that all of this with an example.
 
 ![Different tags are used to specify different parts of a website](images/03_internet_03_data_internet-17.png)
 
 
 #### SelectorGadget
 
-To use `rvest`, there is a tool that will make your life *a lot* easier. It's called SelectorGadget. It's a "javascript bookmarklet." What this means for us is that we'll be able to go to a webpage, turn on Selectorgadget, and help figure out how to appropriately specify what components from the webpage we want to extract using `rvest`. 
+To use `rvest`, there is a tool that will make your life *a lot* easier. It's called SelectorGadget. It's a "javascript bookmarklet." What this means for us is that we'll be able to go to a webpage, turn on SelectorGadget, and help figure out how to appropriately specify what components from the webpage we want to extract using `rvest`. 
 
 To get started using SelectorGadget, you'll have to enable the Chrome Extension. 
 
@@ -292,7 +292,7 @@ Here, we've just briefly touched on what JSON format is; however, in a future le
 
 ### Keeping Track of your Data
 
-So far, we've discussed how to work with data you've obtained from the Internet. However, things on the Internet can change. If you're not downloading the file to your system directly, you won't have a static copy saved on your system. This means that while you're saving space on your computer and not creating unecessary copies of an identical file, the next time you go to access the file, it may not be there *or* it may have been updated. For these reasons, it's incredibly importnt to record the date of when you acquired the data. This can be recorded in your R Markdown file where you're doing your analysis or your data science lab notebook (to be discussed in a later lesson). Regardless, however, a record of the date you acquired the data is incredibly important.
+So far, we've discussed how to work with data you've obtained from the Internet. However, things on the Internet can change. If you're not downloading the file to your system directly, you won't have a static copy saved on your system. This means that while you're saving space on your computer and not creating unnecessary copies of an identical file, the next time you go to access the file, it may not be there *or* it may have been updated. For these reasons, it's incredibly important to record the date of when you acquired the data. This can be recorded in your R Markdown file where you're doing your analysis or your data science lab notebook (to be discussed in a later lesson). Regardless, however, a record of the date you acquired the data is incredibly important.
 
 ### Summary
 
