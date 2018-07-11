@@ -2,12 +2,42 @@
 
 Data does not always come in a tidy clean format and it's not always intended. The somewhat lesser understood types of data are the ones that are usually generated as a by-product of some other process. These types of data are usually overlooked or even considered waste. But you will realize as a data scientists that you can find meaningful trends using these more *unconventional* types of data. 
 
-### Unstructured data
+### Structured Data
+
+So far, we have primarily focused on structured data. 
+
+### Unstructured Data
 
 One of the terms that you will hear a lot is unstructured data. Unstructured data are in general data that are not organized in a pre-defined manner. Unstructured data may contain text, dates, images, audio files, or even video files. Therefore, traditional methods for cleaning and analyzing these kind of data are not as helpful. On the other hand, spreadsheets are considered structured data since they can be quickly scanned for information.
 
 ![Unstructured data types](images/06_unconventional/06_data_unconventional_01.png)
 
+### Text Data
+
+As we discussed, another form of unstructured data are text data. In fact, most people think of unstructured data as text data. Like images, audio, and video, text data can tell us so many things. Text analytics or text mining is the process of examining large collections of text data to generate more analysis-friendly data. In other words, text mining is the process of converting textual data from unstructured form to structured form for analysis or visualization.
+
+An application of text mining is sentiment analysis. In sentiment is the process of categorizing and quantifying opinions expressed as text. For instance, in a lot of satisfaction surveys, as you may have taken, the company asks you to express your opinion about your experience or a specific product in a few sentences. Traditionally these kind of data would likely to be ignored in any analysis. At best, the text had to be read by human readers who would then subjectively assign a score to for instance how positive or negative the text was. However, using sentiment analysis we are now able to read vast amount of textual data and let an algorithm assign a value to the writer's attitude towards the service or the product. There are different dimensions of sentiment analysis. We can evaluate a paragraph of text to see how sad vs. happy, positive vs. negative, scientific vs. unscientific, etc. it is. For more on sentiment analysis read this [this article](https://www.crimsonhexagon.com/blog/what-is-sentiment-analysis/).
+
+![Sentiment analysis](images/06_unconventional/06_data_unconventional_04.png)
+
+
+Another application of text mining is processing messages, emails, etc. for finding spams. Textual data in this case is evaluated in various dimensions and a score is assigned to it. This score captures the probability that the text is spam given historical data. If the probability is high, the algorithm decides that the text is spam.
+
+
+#### Analyzing Text in R
+
+R and similar software that are open source are great tools for analyzing unstructured data since over time hundreds of packages have been developed for analyzing such data. We will learn more of these tools in the advanced data science track. However, it's good to know a few of the popular packages used in analysis of unstructured data. Among them `tidytext` and `tm` are great for text mining and the package `rvest` make web scraping for further text analysis easy. The package `languageR` provides statistical tools for analysis of textual data.  The following example is David Robinson's analysis of Trump tweets in R using `tidytext` and `twitteR`.
+
+
+![Analysis of tweets in R](images/06_unconventional/06_data_unconventional_06.png)
+
+### JSON & XML
+
+#### Analyzing JSON and XML in R
+
+`JSONlite` or `xml2`
+
+### Images
 
 Let's focus on images. Only a few decades ago analyzing text data at least in large scale and for an average data scientist was not feasible. Most people back then wouldn't even consider images as data. But there is so much we can get from analyzing image data. Although we will not study images processing techniques in this series, let's look at one example that helps us understand how image data can be used. 
 
@@ -20,26 +50,24 @@ Researchers from multiple universities used the piece of information (car models
 
 ![Google Maps street view in predicting demographics](images/06_unconventional/06_data_unconventional_03.png)
 
+#### Analyzing Images in R
+
+The `magick` package can be used for image processing. 
+
+### Audio Files
 
 
-### Textual data
+#### Analyzing Audio Files in R
 
-As we discussed, another form of unstructured data are text data. In fact, most people think of unstructured data as text data. Like images, audio, and video, text data can tell us so many things. Text analytics or text mining is the process of examining large collections of text data to generate more analysis-friendly data. In other words, text mining is the process of converting textual data from unstructured form to structured form for analysis or visualization.
-
-An application of text mining is sentiment analysis. In sentiment is the process of categorizing and quantifying opinions expressed as text. For instance, in a lot of satisfaction surveys, as you may have taken, the company asks you to express your opinion about your experience or a specific product in a few sentences. Traditionally these kind of data would likely to be ignored in any analysis. At best, the text had to be read by human readers who would then subjectively assign a score to for instance how positive or negative the text was. However, using sentiment analysis we are now able to read vast amount of textual data and let an algorithm assign a value to the writer's attitude towards the service or the product. There are different dimensions of sentiment analysis. We can evaluate a paragraph of text to see how sad vs. happy, positive vs. negative, scientific vs. unscientific, etc. it is. For more on sentiment analysis read this [this article](https://www.crimsonhexagon.com/blog/what-is-sentiment-analysis/).
-
-![Sentiment analysis](images/06_unconventional/06_data_unconventional_04.png)
+`tuneR` or `seewave` can be used for audio data analysis.
 
 
-Another application of text mining is processing messages, emails, etc. for finding spams. Textual data in this case is evaluated in various dimensions and a score is assigned to it. This score captures the probability that the text is spam given historical data. If the probability is high, the algorithm decides that the text is spam.
+### Video Files
+
+#### Analyzing Video Files in R
 
 
-### Unstructured data analysis in R
 
-R and similar software that are open source are great tools for analyzing unstructured data since over time hundreds of packages have been developed for analyzing such data. We will learn more of these tools in the advanced data science track. However, it's good to know a few of the popular packages used in analysis of unstructured data. Among them `tidytext` and `tm` are great for text mining and the package `rvest` make web scraping for further text analysis easy. The package `languageR` provides statistical tools for analysis of textual data. The `magick` package can be used for image processing. `seewave` can be used for audio data analysis. The following example is David Robinson's analysis of Trump tweets in R using `tidytext` and `twitteR`.
-
-
-![Analysis of tweets in R](images/06_unconventional/06_data_unconventional_06.png)
 
 
 ### Slides and Video
@@ -52,19 +80,24 @@ R and similar software that are open source are great tools for analyzing unstru
 
 ### Unconventional Sources of Data quiz
 
+{choose-answers: 4}
 ? Which one of the following is NOT an example of unstructured data?
-a) Lung x-ray images of smokers
-B) Recorded student grades in a school
-c) Tweets posted by politicians
-d) Traffic videos in Tokyo
+C) Names and student grades in an Excel Spreadsheet
+C) A Google Sheet containing data in atidy format
+o) Lung x-ray images of smokers
+o) Tweets posted by politicians
+o) Traffic videos in Tokyo
+o) Audio files of your favorite songs
+o) A compilation of YouTube cat videos
 
+{choose-answers: 4}
+? Which of the following packages is specifically designed for analysis of unstructured data?
 
-### Which of the following packages is specifically designed for analysis of unstructured data?
-
-A) `tm`
-b) `googlesheets`
-c) `car`
-d) `purrr`
-
+C) `tm`
+C) `tidytext`
+o) `googlesheets`
+o) `car`
+o) `purrr`
+o) `dplyr`
 
 {/quiz}
