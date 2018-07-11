@@ -294,6 +294,7 @@ o) Full Join
 o) Anti Join
 o) Semi Join
 
+{choose-answers:4}
 ? Which of these is NOT an advantage of storing relational data in a database?
 
 C) allows you to store all of your data in a single spreadsheet, making access to all the data at once simple
