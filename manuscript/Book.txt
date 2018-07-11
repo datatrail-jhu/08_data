@@ -6,6 +6,6 @@
 # 05_unconvnetional.md
 # 06_exporting.md
 # 07_findingdata.md
-# 08_safety.md
-# 09_privacy.md
+08_safety.md
+09_privacy.md
 # 10_ethics.md
