@@ -21,7 +21,7 @@ Working with a web API is similar to accessing a website in many ways. When you 
 
 The `httr` package will hep you carry out these types of requests within R. Let's stop talking about it, and see an actual example!
 
-![HTTP access via `httr`](images/03_internet_03_data_internet-3.png)
+![HTTP access via `httr`](images/03_internet/03_data_internet-3.png)
 
 ### Getting Data: `httr`
 
@@ -29,7 +29,7 @@ HTTP is based on a number of important verbs : `GET()`, `HEAD()`, `PATCH()`, `PU
 
 `GET()` will access the API, provide the API with the necessary information to request the data we want, and retrieve some output. 
 
-![API requests are made to an API endpoint to get an API response](images/03_internet_03_data_internet-5.png)
+![API requests are made to an API endpoint to get an API response](images/03_internet/03_data_internet-5.png)
 
 ### Example 1: GitHub's API
 
@@ -62,7 +62,7 @@ api_response <- GET(url = paste0(url_git, 'users/', username, '/repos'))
 
 Note: In the code above, you see the function `paste0()`. This function concatenates (links together) each the pieces within the parentheses, where each piece is separated by a comma. This provides `GET()` with the URL we want to use as our endpoints! 
 
-![`httr` code to access GitHub](images/03_internet_03_data_internet-7.png)
+![`httr` code to access GitHub](images/03_internet/03_data_internet-7.png)
 
 
 #### API response: `content()`
@@ -74,7 +74,7 @@ Let's first take a look at what other variables are available within the `api_re
 names(api_response)
 ```
 
-![`httr` response](images/03_internet_03_data_internet-8.png)
+![`httr` response](images/03_internet/03_data_internet-8.png)
 
 
 While we see ten different variables within `api_response`, we should probably first make sure that the request to GitHub's API was successful. We can do this by checking the status code of the request, where "200" means that everything worked properly:
@@ -93,7 +93,7 @@ To do so we'll take advantage of `httr`'s `content()` function, which as its nam
 repo_content <- content(api_response)
 ```
 
-![`httr` status code and `content()`](images/03_internet_03_data_internet-9.png)
+![`httr` status code and `content()`](images/03_internet/03_data_internet-9.png)
 
 You can see here that the length of `repo_content` in our case is 6 by looking at the Environment tab. This is because the GitHub account `janeeverydaydoe` had six repositories at the time of this API call. We can get some information about each repo by running the function below:
 
@@ -105,7 +105,7 @@ lapply(repo_content, function(x) {
   bind_rows()
 ```
 
-![output from API request](images/03_internet_03_data_internet-10.png)
+![output from API request](images/03_internet/03_data_internet-10.png)
 
 Here, we've pulled out the name and URL of each repository in Jane Doe's account; however, there is *a lot* more information in the `repo_content` object. To see how to extract more information, check out the rest of Tyler's wonderful post [here](https://tclavelle.github.io/blog/r_and_apis/).
 
@@ -116,7 +116,7 @@ In a previous course in this Course Set on Data Visualization, we assigned a pro
 
 So, the data are available for download from this link: [data.fivethirtyeight.com](data.fivethirtyeight.com), but are also hosted on GitHub [here](https://github.com/fivethirtyeight/data), and we will want to use the specific URL for this file: [https://raw.githubusercontent.com/fivethirtyeight/data/master/steak-survey/steak-risk-survey.csv](https://raw.githubusercontent.com/fivethirtyeight/data/master/steak-survey/steak-risk-survey.csv) in our `GET()` request.
 
-![steak-survey on GitHub](images/03_internet_03_data_internet-12.png)
+![steak-survey on GitHub](images/03_internet/03_data_internet-12.png)
 
 To do so, we would do the following:
 
@@ -128,7 +128,7 @@ api_response <- GET(url = "https://raw.githubusercontent.com/fivethirtyeight/dat
 df_steak <- content(api_response, type="text/csv")
 ```
 
-![`GET()` steak-survey CSV](images/03_internet_03_data_internet-13.png)
+![`GET()` steak-survey CSV](images/03_internet/03_data_internet-13.png)
 
 Here, we again specify our url within `GET()` followed by use of the helpful `content()` function from `httr` to obtain the CSV from the `api_response` object. `df_steak` includes the data from the CSV directly from the GitHub API, without having to download the data first!
 
@@ -167,7 +167,7 @@ This uses the helpful package `rvest`. It gets its name from the word "harvest."
 
 When `rvest` is given a webpage (URL) as input, an `rvest` function reads in the HTML code from the webpage. HTML is the language websites use to display everything you see on the website. You've seen HTML documents before, as this is one of the formats that you can Knit to from an R Markdown (.Rmd) document! Generally, all HTML documents require each webpage to have a similar structure. This structure is specified by using different **tags**. For example, a header at the top of your webpage would use a specific tag. Website links would use a different tag. These different tags help to specify how the website should appear. `rvest` takes advantage of these tags to help you extract the parts of the webpage you're most interested in. So let's see exactly how to do that all of this with an example.
 
-![Different tags are used to specify different parts of a website](images/03_internet_03_data_internet-17.png)
+![Different tags are used to specify different parts of a website](images/03_internet/03_data_internet-17.png)
 
 
 #### SelectorGadget
@@ -182,16 +182,16 @@ To enable SelectorGadget:
 
 2. Click "ADD TO CHROME"
 
-![ADD TO CHROME](images/03_internet_03_data_internet-18.png)
+![ADD TO CHROME](images/03_internet/03_data_internet-18.png)
 
 
 3. Click "Add extension" 
 
-![Add extension](images/03_internet_03_data_internet-19.png)
+![Add extension](images/03_internet/03_data_internet-19.png)
 
 4. SelectorGadget's icon will now be visible to the right of the web address bar within Google Chrome. You will click on this to use SelectorGadget in the example below.
 
-![SelectorGadget icon](images/03_internet_03_data_internet-20.png)
+![SelectorGadget icon](images/03_internet/03_data_internet-20.png)
 
 #### Chromebook Data Science Example
 
@@ -203,11 +203,11 @@ Alternatively, you could write and run a few lines of code and get all the infor
 
 To use SelectorGadget, navigate to the webpage we're interested in scraping: [http://jhudatascience.org/chromebookdatascience/curriculum.html](http://jhudatascience.org/chromebookdatascience/curriculum.html) and toggle SelectorGadget by clicking on the SelectorGadget icon. A menu at the bottom-right of your web page should appear.
 
-![SelectorGadget icon on webpage of interest](images/03_internet_03_data_internet-21.png)
+![SelectorGadget icon on webpage of interest](images/03_internet/03_data_internet-21.png)
 
 Now that SelectorGadget has been toggled, as you mouse over the page, colored boxes should appear. We'll click on the the name of the first course to start to tell SelectorGadget which component of the webpage we're interested in.
 
-![SelectorGadget selects `strong` on webpage of interest](images/03_internet_03_data_internet-22.png)
+![SelectorGadget selects `strong` on webpage of interest](images/03_internet/03_data_internet-22.png)
 
 A red box will appear around the component of the webpage you've clicked. Other components of the webpage that SelectorGadget has deemed similar to what you've clicked will be highlighted. And, text will show up in the menu at the bottom of the page letting you know what you should use in `rvest` to specify the part of the webpage you're most interested in extracting. 
 
@@ -233,11 +233,11 @@ courses %>%
   html_nodes("strong") %>%
   html_text() 
 ```
-![`rvest` code](images/03_internet_03_data_internet-23.png)
+![`rvest` code](images/03_internet/03_data_internet-23.png)
 
 With just a few lines of code we have the information we were looking for!
 
-![List of Courses](images/03_internet_03_data_internet-24.png)
+![List of Courses](images/03_internet/03_data_internet-24.png)
 
 #### A final note: SelectorGadget
 
@@ -274,7 +274,7 @@ mydf <- fromJSON(json)
 mydf
 ```
 
-![`fromJSON()`](images/03_internet_03_data_internet-28.png)
+![`fromJSON()`](images/03_internet/03_data_internet-28.png)
 
 
 Data frames can also be returned to their original JSON format using the function: `toJSON()`.
@@ -284,7 +284,7 @@ Data frames can also be returned to their original JSON format using the functio
 json <- toJSON(mydf)
 ```
 
-![`toJSON()`](images/03_internet_03_data_internet-29.png)
+![`toJSON()`](images/03_internet/03_data_internet-29.png)
 
 
 Here, we've just briefly touched on what JSON format is; however, in a future lesson we'll discuss this in greater detail. For now, however, it's important to know that the `jsonlite` package is there for you whenever you have JSON data. And, it has two very helpful functions (among other functions in the pacakge!): `toJSON()` and `fromJSON()` for such situations.
