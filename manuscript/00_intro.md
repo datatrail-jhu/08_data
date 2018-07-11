@@ -1,3 +1,10 @@
+{
+course-completeness: 100
+course-attempts: 2
+default-quiz-attempts: 2
+default-random-choice-order: true
+}
+
 # Where Does Data Come From?
 
 We've previously discussed that data are everywhere. Every time you buy something with a credit card or like a photo on Instagram, data is generated. Spreadsheets where you track your finances are data. The photos you upload to social media are data. The tweets people write are data. The information on your favorite website is data. Clearly, in today's world, data are everywhere. And, as a data scientist, your job is to work with the data at your disposal to answer questions. Therefore, you need to know how to work with the data generated. 
