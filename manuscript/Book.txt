@@ -1,8 +1,8 @@
 00_intro.md
 01_csvfiles.md
-02_googlesheets
+02_googlesheets.md
 03_internet.md
-# 04_databases.md
+04_databases.md
 # 05_unconvnetional.md
 # 06_exporting.md
 # 07_findingdata.md
