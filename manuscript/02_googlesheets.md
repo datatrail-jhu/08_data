@@ -99,9 +99,19 @@ gs_edit_cells(survey_sheet, anchor = "D4", input = 2)
 
 If you were to return to your Google Sheets, you'd notice that cell D4 now has a 2, rather than a 0 in it!
 
+### Importing CSV files from the web
+
+This lesson has focused on getting data from Google Sheets into RStudio Cloud; however, sometimes the data you need to work with is elsewhere online but you'd like to store it in a Google Sheet. While we will later learn that you can import them directly into R, it's good to know that you can also import CSV files hosted on the web directly into Google Sheets. For instance, the dataset [here](https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv) is a CSV file containing countries GDPs (national incomes). In order to import the file directly to Google Sheets, open a blank Google Sheets document as we learned before. In the first cell (top left corner) type in `=importData("https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv")`. Make sure to include the equal sign (=) in the beginning. 
+
+![importing data directly into Google Sheets](images/02_googlesheets/02_data_googlesheets-13.png)
+
+This will import all the data to your Google Sheets document. You can then use the steps discussed above any time you want to work with these data in RStudio Cloud.
+
+![data in Google Sheets](images/02_googlesheets/02_data_googlesheets-14.png)
+
 ### Summary
 
-In this lesson, we've introduced the R package `googlesheets`. We've discussed the need for authentication and have demonstrated a number of its basic capabilities. We've walked through an example of how to read a Google Sheet into R and how to add and edit content directly to your Google Sheet from R. While we've covered the basics, there are certainly a number of additional capabilities of the package, so feel free to explore even more! 
+In this lesson, we've introduced the R package `googlesheets`. We've discussed the need for authentication and have demonstrated a number of its basic capabilities. We've walked through an example of how to read a Google Sheet into R and how to add and edit content directly to your Google Sheet from R. We also briefly covered how to import CSV data into Google Sheets directly. While we've covered the basics, there are certainly a number of additional capabilities of the package, so feel free to explore even more! 
 
 ### Additional Resources
 

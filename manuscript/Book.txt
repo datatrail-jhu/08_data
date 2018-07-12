@@ -4,8 +4,7 @@
 03_internet.md
 04_databases.md
 05_unconventional.md
-# 06_exporting.md
-# 07_findingdata.md
+06_findingdata.md
 08_safety.md
 09_privacy.md
 # 10_ethics.md
