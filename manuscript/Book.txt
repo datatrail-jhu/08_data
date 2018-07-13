@@ -7,4 +7,4 @@
 06_findingdata.md
 08_safety.md
 09_privacy.md
-# 10_ethics.md
+10_ethics.md
