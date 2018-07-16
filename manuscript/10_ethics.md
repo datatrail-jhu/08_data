@@ -82,7 +82,7 @@ To summarize this lesson, be sure to answer all of these questions for every dat
 
 ### Slides and Video
 
-![Ethical Data Science](ADD VIDEO LINK)
+![Ethical Data Science](https://www.youtube.com/watch?v=Ol56GULf_qU)
 
 * [Slides](https://docs.google.com/presentation/d/16uo-gTCdjtWjdGOxejVTIz9JdZi-Gu7lgSsNx2SdPhU/edit?usp=sharing)
 

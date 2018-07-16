@@ -155,7 +155,7 @@ In this lesson, we've briefly reviewed a number of different unconventional sour
 
 ### Slides and Video
 
-![Unconventional Sources of Data](ADD VIDEO LINK)
+![Unconventional Sources of Data](https://www.youtube.com/watch?v=kFN0MqpGpG0)
 
 * [Slides](https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/edit?usp=sharing)
 
@@ -199,3 +199,4 @@ o) `googlesheets`
 o) `magick`
 
 {/quiz}
+
