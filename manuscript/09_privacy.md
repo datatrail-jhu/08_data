@@ -117,7 +117,7 @@ Hopefully we've explained a number of considerations to take into account when w
 
 ### Slides and Video
 
-![Data Privacy](ADD VIDEO LINK)
+![Data Privacy](https://www.youtube.com/watch?v=2G6if2nQFKY)
 
 * [Slides](https://docs.google.com/presentation/d/1kGRtBbbQ6rCkH6OAdPE5-GlQJN0rPwaiE8XQlx-k7uA/edit?usp=sharing)
 
