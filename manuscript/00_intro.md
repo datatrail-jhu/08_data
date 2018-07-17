@@ -60,7 +60,7 @@ We are constantly barraged with sound. We listen to music and podcasts through o
 
 ### Slides and Video
 
-![Where Does Data Come From?](https://www.youtube.com/watch?v=Vu7k6rj6yww)
+![Where Does Data Come From](https://www.youtube.com/watch?v=Vu7k6rj6yww)
 
 * [Slides](https://docs.google.com/presentation/d/1GYO96TWYSP-fgO_w3CpT8UxSxzALn2yu19TTXYF8x4U/edit?usp=sharing)
 
