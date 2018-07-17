@@ -141,7 +141,7 @@ We'll finally note that there are default R functions `write.csv()` and `write.t
 
 ### Slides and Video
 
-![CSV, Excel, and TSV Files](https://www.youtube.com/watch?v=TltBlhR9aSs)
+![CSV, Excel, and TSV Files](https://www.youtube.com/watch?v=pxSmw_izYnw)
 
 * [Slides](https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/edit?usp=sharing)
 
