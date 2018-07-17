@@ -320,7 +320,7 @@ In this lesson we've covered a lot! We've gone through the basics of accessing A
 
 ### Slides and Video
 
-![Getting Data From the Internet](https://www.youtube.com/watch?v=EBybXaRBLfI)
+![Getting Data From the Internet](https://www.youtube.com/watch?v=qU4Ik0esATA)
 
 * [Slides](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/edit?usp=sharing)
 

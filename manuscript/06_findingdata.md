@@ -72,7 +72,7 @@ In this lesson, our goal was to give you an idea of where to *find data* so that
 
 ### Slides and Video
 
-![Finding Data](https://www.youtube.com/watch?v=bAy6GY5pQqM)
+![Finding Data](https://www.youtube.com/watch?v=aEkCAoyGryE)
 
 * [Slides](https://docs.google.com/presentation/d/1G0lA8z561VirAggV4MxMXu2dwCudolXjeFZWO6P_3F8/edit?usp=sharing)
 
