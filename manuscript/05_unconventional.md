@@ -54,7 +54,7 @@ Using a snippet of JSON data here, we see a portion of JSON data from Yelp expla
 
 Above we discussed how to analyze pure text (meaning, text written by humans in their native written and spoken language). Here, we'll discuss how to briefly how others have wrangled text-based data from the Internet in the JSON format within R. This is possible because of the R package `jsonlite`, which was used in the following example:
 
-[Kan Nishida](https://blog.exploratory.io/@kanaugust), a data scientist, was interested in [understanding what restaurant types found most frequently in each state or province](https://blog.exploratory.io/working-with-json-data-in-very-simple-way-ad7ebcc0bb89). To do this, he used JSON data orginally released from Yelp. He wrangled the data from JSON format into a tabular format using `jsonlite` and other data wrangling packages, such as `dplyr`, to ultimately determine the types of restaurants found most frequently in a number of different states and provinces.
+[Kan Nishida](https://blog.exploratory.io/@kanaugust), a data scientist, was interested in [understanding what restaurant types found most frequently in each state or province](https://blog.exploratory.io/working-with-json-data-in-very-simple-way-ad7ebcc0bb89). To do this, he used JSON data originally released from Yelp. He wrangled the data from JSON format into a tabular format using `jsonlite` and other data wrangling packages, such as `dplyr`, to ultimately determine the types of restaurants found most frequently in a number of different states and provinces.
 
 ![Wrangling Yelp data from JSON into tidy tabular data](images/05_unconventional/05_data_unconventional-6.png)
 
@@ -98,7 +98,7 @@ Using these two datasets (the Google Street view car image data and the demograp
 Like with text, there are packages in R that will help you carry out analysis of images. In particular, `magick` is particularly helpful for advanced image processing within R, allowing you to process, edit, and manipulate images within R. Like JSON and XML, where there is more than one file format for a similar task, there are also a number of different image file formats. We touched on the pros and cons of a number of these in the Data Visualization course; however, of importance here is the fact that the `magick` package is capable of working with many different types of images, including PNG, JPEG, and TIFF. The `magick` package has a particularly helpful [vignette](https://cran.r-project.org/web/packages/magick/vignettes/intro.html#drawing_and_graphics) where you can learn the ins and outs of working with images using `magick`'s functionality. Their documentation will discuss how to read image data into R, how to edit images, and even how to add images to your R plots! 
 
 ![`magick` package's example of adding an image to a plot](![Google Maps street view](images/05_unconventional/05_data_unconventional-12.png)
-)
+
 
 
 ### Audio Files
@@ -155,7 +155,7 @@ In this lesson, we've briefly reviewed a number of different unconventional sour
 
 ### Slides and Video
 
-![Unconventional Sources of Data](https://www.youtube.com/watch?v=D01_kfi7XW0)
+![Unconventional Sources of Data](https://www.youtube.com/watch?v=_xCTvhpK8WA)
 
 * [Slides](https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/edit?usp=sharing)
 

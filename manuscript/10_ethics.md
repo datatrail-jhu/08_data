@@ -1,6 +1,6 @@
 # Ethical Data Science
 
-From the emails automatically marked as spam in your Inpox and facial recognition on Facebook to the targeted advertisements you see whenever you're online, data science has made its way into our everyday lives. Often, this is a positive because data scientists generally set out to improve the world (say, by analyzing crime data in hopes of reducing violent crime) or to make our lives easier (by preventing spams in our mailboxes, for example). However, data science projects are certainly not without negative consequences. We discussed some of the companies who have run up against issues properly securing user data in the last lesson; however, protecting the privacy of users' data is not the only time data scientists should consider the ethics of their work. In fact, **ethical considerations should be made from the start of a project and should never stop being made**. We'll discuss what we mean by that in this lesson.
+From the emails automatically marked as spam in your Inbox and facial recognition on Facebook to the targeted advertisements you see whenever you're online, data science has made its way into our everyday lives. Often, this is a positive because data scientists generally set out to improve the world (say, by analyzing crime data in hopes of reducing violent crime) or to make our lives easier (by preventing spams in our mailboxes, for example). However, data science projects are certainly not without negative consequences. We discussed some of the companies who have run up against issues properly securing user data in the last lesson; however, protecting the privacy of users' data is not the only time data scientists should consider the ethics of their work. In fact, **ethical considerations should be made from the start of a project and should never stop being made**. We'll discuss what we mean by that in this lesson.
 
 When we talk about the ethics of data science, we're talking about how to use data to improve the lives of individuals in our society in the world without causing harm to any groups with our work. We're talking about putting in the work ahead of time to avoid unintended negative consequences of our work. Rather than acting surprised when groups are inadvertently harmed or only dealing with unintended consequences after they occur and harm others, an ethical data scientist will consider whether they are doing any harm at each step along the way. 
 
@@ -82,7 +82,7 @@ To summarize this lesson, be sure to answer all of these questions for every dat
 
 ### Slides and Video
 
-![Ethical Data Science](https://www.youtube.com/watch?v=1uRM5-O9IrU)
+![Ethical Data Science](https://www.youtube.com/watch?v=yXrhCSsgtWE)
 
 * [Slides](https://docs.google.com/presentation/d/16uo-gTCdjtWjdGOxejVTIz9JdZi-Gu7lgSsNx2SdPhU/edit?usp=sharing)
 

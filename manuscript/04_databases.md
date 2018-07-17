@@ -255,7 +255,7 @@ In this lesson we discussed what relational data are and how to work with them i
 
 ### Slides and Video
 
-![Relational Databases](https://www.youtube.com/watch?v=BQVEV7I0zrg)
+![Relational Databases](https://www.youtube.com/watch?v=dw7SSytogAU)
 
 * [Slides](https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/edit?usp=sharing)
 
@@ -314,7 +314,7 @@ o) allows database managers to protect the privacy of the data
 ### DataCamp:  Importing Data in R (Part 2)
 
 {case-sensitive: false}
-? To get more practice with getting data from databases and the the web into R, go to the course [Importing Data in R (Part 1)](https://www.datacamp.com/courses/importing-data-in-r-part-1) on DataCamp. Login and complete the following three lessons in the course:
+? To get more practice with getting data from databases and the the web into R, go to the course [Importing Data in R (Part 2)](https://www.datacamp.com/courses/importing-data-in-r-part-2) on DataCamp. Login and complete the following three lessons in the course:
 
 - Importing data from databases (Part 1)
 - Importing data from the web (Part 1)
