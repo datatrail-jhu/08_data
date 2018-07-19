@@ -124,7 +124,8 @@ Admittedly, working with audio files in R is not as common as working with tabul
 
 ### Summary
 
-In this lesson, we've briefly reviewed a number of different unconventional sources of data. These are data sources that are unstructured and not tabular. We've provided examples for each type of unconventional data and links to where you may start if you wanted to work with each type of data in R. This lesson is an introduction into these types of data, but is by no means exhaustive.
+In this lesson, we've briefly reviewed a number of different unconventional sources of data. These are data sources that are unstructured and not tabular. We've provided examples for each type of unconventional data and links to where you may start if you wanted to work with each type of data in R. This lesson is an introduction into these types of data, but is by no means exhaustive. To get more practice, it's best to complete the exercise accompanying this lesson, where you'll get practice working with the `tidytext` package and sentiment analysis!
+
 
 ### Additional Resources
  
@@ -199,4 +200,23 @@ o) `googlesheets`
 o) `magick`
 
 {/quiz}
+
+{exercise, id: exercise_05_unconventional}
+
+### DataCamp:  Sentiment Analysis in R: The Tidy Way
+
+{case-sensitive: false}
+? To get more practice with working with text data and sentiment analysis, go to the course [Sentiment Analysis in R: The Tidy Way](https://www.datacamp.com/courses/sentiment-analysis-in-r-the-tidy-way) on DataCamp. Login and complete the entire course.
+
+Once you've completed this course, type "completed" in the box below.
+
+*Note*: This requires a DataCamp login, which costs money. As an exercise, this is not required to pass the course but it *will* help you get a better grasp on the concepts covered in these lessons.
+
+*Reminder*: Videos in DataCamp are essential to understanding the material. It's best not to skip over these videos!
+
+! completed
+
+{/exercise}
+
+
 
