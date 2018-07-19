@@ -385,7 +385,26 @@ o) In case someone else tries to say they generated the data, you have a record
 
 
 
+{exercise, id: exercise_03_internet}
 
+### DataCamp:  Working with Web Data in R
+
+{case-sensitive: false}
+? To get more practice with getting data from the Internet using APIs and working with JSON and XML, go to the course [Working with Web Data in R](https://www.datacamp.com/courses/working-with-web-data-in-r) on DataCamp. Login and complete the first three lessons in the course:
+
+- Downloading Files and Using API Clients
+- Using httr to interact with APIs directly
+- Handling JSON and XML
+
+Once you've completed those three lessons, type "completed" in the box below.
+
+*Note*: This requires a DataCamp login, which costs money. As an exercise, this is not required to pass the course but it *will* help you get a better grasp on the concepts covered in these lessons.
+
+*Reminder*: Videos in DataCamp are essential to understanding the material. It's best not to skip over these videos!
+
+! completed
+
+{/exercise}
 
 
 
