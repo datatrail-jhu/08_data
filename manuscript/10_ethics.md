@@ -74,15 +74,54 @@ To summarize this lesson, be sure to answer all of these questions for every dat
 7. Have we considered possible negative or unintended consequences of our analysis and its results?
 8. Do we have a way to **update** our analysis/algorithm going forward should biases in the results be found?
 
+### Ethics in Data Science
+
+Now that we've discussed the ethical considerations to be made before and throughout every data science project, we'll discuss a few data science projects that were recently covered the popular media due to the questionable ethics of the project. 
+
+We present these examples not only to highlight the ethics of the particular project, but also to state the importance of considering the implications of your work. It is **not** enough to argue that you just "did the analysis" but "didn't think of the implications" of the work. As a data scientist **it is your responsibility to both do the analysis and consider the implications of your work**.
+
+#### Data Science in Sentencing
+
+In April of 2017, Wired reported in an opinion piece that [courts were using artificial intelligence to sentence criminals](https://www.wired.com/2017/04/courts-using-ai-sentence-criminals-must-stop-now/) and made the claim that such practices must be put to an end. The piece explained that courts and corrections departments across the United States collect data on defendants that are then used in an algorithm to determine the "risk" that defendant poses. This aim of this algorithm is to determine how likely it is that the individual will commit another crime.
+
+These likelihoods of reoffending from the algorithm are then used to make decisions about what how to set bail, what the sentence should be, and the details of that individual's parole. These tools are often built by private companies. This means that exactly *how* they work and what data are used to assess risk are not disclosed. The article in Wired highlights the use of [Compas](http://www.equivant.com/challenges/supervision-and-compliance-monitoring), one of these risk-assessment tools developed by a private company and used by the Department of Corrections in Wisconsin, in a judge's decision to give a man a long sentence, in part because of his "high risk" score from the algorithm. In a courtroom, however, because the specifics of how this algorithm works are not disclosed, a judge and jury would *not* be able to determine whether or not the likelihood of reoffending was calculated accurately by the algorithm.
+
+Initially, arguments were made that removing human biases and judgment from bail, sentencing, and parole decisions would be for the benefit of society. This initial goal was a noble goal that would improve society. However, over time, biases in the data used to generate these algorithms that perpetuated into [biases in the algorithms' outcomes](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing), the lack of transparency in how they work, and failure to check for inequities and biases in the algorithms after they were put in place have led to unfair decisions being made. 
+
+While individuals *may* have been looking to improve society with their algorithm at the outset of this project (or at least that argument can be made), lack of considerations of the implications of their work and lack of transparency in the process of generating and using the algorithm have led to questionable ethics in the use of algorithms to make sentencing decisions.
+
+### Artificial Intelligence in the Military
+
+In March of 2018, Gizmodo reported that [Google was helping the US Department of Defense use artificial intelligence to analyze drone footage](https://gizmodo.com/google-is-helping-the-pentagon-build-ai-for-drones-1823464533), a project that started in April of 2017. The project between Google and the Defense department is called Project Maven, and the goal of this project was initially to take drone footage and accurately identify objects (such as vehicles) and to track individuals in the footage collected. 
+
+A number of Google employees were upset that Google would provide resources to the military that would be used for surveillance in drone operations. Due to the fact that in other non-military situations [the use of machine learning has led to biased outcomes](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing), other employees felt there needed to be further discussion about the ethics in developing and using machine learning technology before it was deployed by the military. In response to these concerns, a Google spokesperson stated that Google is working ["to develop policies and safeguards" ](https://gizmodo.com/google-is-helping-the-pentagon-build-ai-for-drones-1823464533), that the technology is being used for "non-offensive uses only."
+
+In this and many large data science projects where machine learning and artificial intelligence are being used in situations where lives could be negatively impacted, the project would benefit from taking ethical considerations into account and discussing these in a transparent way *before* deploying the technology. Developing policies and safeguards after the fact is not enough. 
+
+#### Facial Recognition in Law Enforcement
+
+In May of 2018, the [ACLU reported](https://www.aclunc.org/blog/amazon-teams-law-enforcement-deploy-dangerous-new-face-recognition-technology) that Amazon had teamed up with law enforcement agencies to use Amazon's face recognition technology, [Rekognition](https://aws.amazon.com/rekognition/). The ACLU called this new technology, which can quickly scan images to "identify, track, and analyze people in real time" both "powerful" and "dangerous." This story was picked up by many news sources, including [a piece](https://www.nytimes.com/2018/05/22/technology/amazon-facial-recognition.html) in the New York Times 
+
+Proponents of using facial recognition technology in law enforcement cite that such technology can help locate and identify criminals more quickly than we would have been able to in the past and that it will help ["keep residents and visitors...safe"](https://www.nytimes.com/2018/05/22/technology/amazon-facial-recognition.html). Proponents also argue that those who use the technology do so within the limits of the law. 
+
+Opponents, like the ACLU, however, cite the civil liberties and civil rights concerns that constant surveillance with using facial recognition technology pose. The ACLU argues that there is substantial "capacity for abuse" and due to this, that citizens should not be watched by the government any time they walk outside, that facial recognition systems threaten freedom, and that the deployment of these technologies post a greater threat to communities that are already unfairly targeted by the political climate. 
+
+Concerns with the technology cite that anyone can be identified, not just criminals, a problem for civil liberties. Opponents further question the accuracy of the technology. Inaccuracies, which would misidentify individuals and suggest they were guilty of a crime when they were in fact not is clearly a problem. Further, there are concerns that accuracy varies based on gender and race, which if true, poses a clear bias in the use of this technology for the identification of criminals as certain groups of individuals would be misidentified more frequently than others. 
+
 ### Additional Resources
 
 * [Ethical Checklist for Data Science](https://dssg.uchicago.edu/2015/09/18/an-ethical-checklist-for-data-science/), by Alan Fritzler
 * [*Weapons of Math Destruction*](https://www.amazon.com/Weapons-Math-Destruction-Increases-Inequality/dp/0553418815), by Cathy O'Neil
 * [*Automating Inequality*](https://www.amazon.com/Automating-Inequality-High-Tech-Profile-Police/dp/1250074312/ref=sr_1_1?s=books&ie=UTF8&qid=1531417315&sr=1-1&keywords=automating+inequality), by Virginia Eubanks
+* [Courts are Using AI to Sentence Criminals. That must Stop Now](https://www.wired.com/2017/04/courts-using-ai-sentence-criminals-must-stop-now/), by Jason Tashea in Wired
+* [Machine Bias](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing), by Julia Angwin, Jeff Larson, Surya Mattu and Lauren Kirchner at ProPublica
+* [Amazon Teams Up With Law Enforcement to Deploy Dangerous New Face Recognition Technology](https://www.aclunc.org/blog/amazon-teams-law-enforcement-deploy-dangerous-new-face-recognition-technology), by Matt Cagle and Nicole A. Ozer with the ACLU 
+* [Amazon Pushes Facial Recognition to Police. Critics See Surveillance Risk.](https://www.nytimes.com/2018/05/22/technology/amazon-facial-recognition.html), by Nick Wingfield at the New York Times
+* [Google Is Helping the Pentagon Build AI for Drones](https://gizmodo.com/google-is-helping-the-pentagon-build-ai-for-drones-1823464533), by Kate Conger and Dell Cameron at Gizmodo
 
 ### Slides and Video
 
-![Ethical Data Science](https://www.youtube.com/watch?v=yXrhCSsgtWE)
+![Ethical Data Science](https://www.youtube.com/watch?v=x5GvmwiJGaQ)
 
 * [Slides](https://docs.google.com/presentation/d/16uo-gTCdjtWjdGOxejVTIz9JdZi-Gu7lgSsNx2SdPhU/edit?usp=sharing)
 
