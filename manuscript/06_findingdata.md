@@ -66,13 +66,25 @@ We've mentioned APIs previously, but it's important to include them here as well
 
 Finally, we mentioned above that companies often keep their data private for a number of reasons, and that's ok! When companies do release their data, they will often be found on websites like [Kaggle](https://www.kaggle.com/) and [data.world](https://data.world/). If there is a company whose data you're interested in, you can search for the company's data on either of these two data repositories or on on the company's website directly to see if they provide the data there or if you can scrape their website to obtain the information you need! There may not always be a way to get the exact dataset you're looking for, but you can often find something that will work!  
 
+### Data You Already Have
+
+Sometimes, it's not about finding data someone else has already collected on a bunch of individuals in a population. Rather, getting data sometimes just involves taking a look at things you already have but just haven't yet *realized* are data you can analyze. 
+
+For example, MP4 files you've bought and have on your computer are data! They can be analyzed using `tuneR` and `seewave`. You could use this type of data to categorize the music in your library or to build a model that takes data on what songs were already big hits to determine what qualities of a song predict that it may be a big hit. 
+
+Alternatively, you could scrape the websites you frequently visit (using `rvest!`) to answer interesting questions. For example, if you were interested in writing a *really* great title for the newest video of your pet doing something super cute, you might scrape the web for titles of pet videos that have recently gone viral. You could then craft the perfect title to use when you upload your pet video. Granted, this may not be an example answering the most *important* type of data science question; however, writing up how you did this would make a really great blog post, which is something we'll discuss in a lesson in a few courses!
+
+Finally, social networking websites like Facebook and Twitter, collect a lot of data about you as an individual. You have access to this information through the websites APIs, but can also download data directly. After news of the [Facebook and Cambridge Analytica data breach](https://www.theguardian.com/news/2018/mar/17/cambridge-analytica-facebook-influence-us-election), many articles were published about [how to download your Facebook data](https://www.wired.com/story/download-facebook-data-how-to-read/). These data can be downloaded and then analyzed to look at trends in your data over time. How many pictures have you uploaded and been tagged in over time - has that changed? What topics do you most frequently discuss in Messenger? Or, maybe you're interested in mapping the places you've been based on where you've checked in. All of these data can be analyzed from data that are already there, just waiting for you to work with them! 
+
+In all, sometimes getting the data just means realizing the data you already have at your disposal, figuring how to get the data into a format you can use, and then working with the data using the tools you have!
+
 ### Summary
 
 In this lesson, our goal was to give you an idea of where to *find data* so that you can start working on interesting data science projects. Once you've located an interesting dataset, use the skills learned throughout this course to get the data into R. Then, get wrangling! Before you know it you'll be more than halfway through an interesting data science project. Often finding and wrangling the data take up the most time!
 
 ### Slides and Video
 
-![Finding Data](https://www.youtube.com/watch?v=aEkCAoyGryE)
+![Finding Data](https://www.youtube.com/watch?v=P2gfe6GNRmQ)
 
 * [Slides](https://docs.google.com/presentation/d/1G0lA8z561VirAggV4MxMXu2dwCudolXjeFZWO6P_3F8/edit?usp=sharing)
 

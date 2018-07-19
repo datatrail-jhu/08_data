@@ -62,7 +62,7 @@ Finally, after someone answers an awesome data science question with their reall
 
 #### Ethical Questions to Answer
 
-To summarize this lesson, be sure to answer all of these questions for every data science project you carry out:
+To summarize this lesson up to this point, be sure to answer all of these questions for every data science project you carry out:
 
 1. Does the **team** on this project include all the necessary individuals to avoid bias in our analysis?
 2. Does our data collection plan address ways to **avoid sampling bias**?
