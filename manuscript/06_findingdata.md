@@ -16,6 +16,7 @@ There are a number of companies dedicated to compiling datasets into a central l
 
 ![kaggle and data.world are *great* places to look for datasets](images/06_findingdata/06_data_findingdata-2.png)
 
+Publicly-available datasets are also curated at [Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets/blob/master/README.rst), so feel free to look around there as well!
 
 #### Government Data
 
