@@ -47,7 +47,7 @@ In addition to information stored in spreadsheets and relational databases or da
 
 #### Text
 
-Politicians give speeches. Authors write books. Everyone writes e-mails. All of these generate *a lot* of text. While not as straightforward as analyzing numbers, text too can be analyzed. From text, we can draw insights about what words have been used historically and how this has changed over time. We can use the words from a book to infer in what year that book was written, give then words used in the book. Or, we could analyze what words in an email elicit a response, and what words elicit that response most quickly. Thus, it's important to understand that it's possible to analyze text within RStudio Cloud.
+Politicians give speeches. Authors write books. Everyone writes e-mails. All of these generate *a lot* of text. While not as straightforward as analyzing numbers, text too can be analyzed. From text, we can draw insights about what words have been used historically and how this has changed over time. We can use the words from a book to infer in what year that book was written, given the words used in the book. Or, we could analyze what words in an email elicit a response, and what words elicit that response most quickly. Thus, it's important to understand that it's possible to analyze text within RStudio Cloud.
 
 #### Images 
 
