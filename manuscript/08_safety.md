@@ -112,25 +112,30 @@ Because Chromebooks do not run a typically operating system, they are much more 
 
 C) Ujzk7!wkcC!S81?
 C) TjZk7!wadC!S9?
+C) Cjk7!WadP?A5!
 o) Pass123word
 o) Mohamm820!ed
 o) Mo8haM1!meD
 o) Password1234
 o) secret123
 
-? To share personal information over the internet, what should you avoid?
+{choose-answers:4}
+? To share personal information over the Internet, what should you avoid?
 
-a) using encryption
-b) HTTPS
 C) HTTP
-d) secure networks
+o) using encryption
+o) HTTPS
+o) secure networks
+o) secure protocols
 
+{choose-answers:4}
 ? If all the following WiFi networks are available, which should you choose?
 
-a) Public WiFi
-b) Completely open WiFi
-c) Semi-open WiFi
-D) password-protected personal WiFi
+C) password-protected personal WiFi
+o) Public WiFi
+o) Completely open WiFi
+o) Semi-open WiFi
+o) open WiFi
 
 {choose-answers:4}
 ? How often should you change you password to your home WiFi network?

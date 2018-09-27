@@ -125,27 +125,33 @@ Hopefully we've explained a number of considerations to take into account when w
 
 ### Data Privacy quiz
 
+{choose-answers:4}
 ? When using RStudio Cloud, when are data most vulnerable?
 
-a) at rest on RStudio Cloud
-b) in transit on RStudio Cloud
 C) after they've been dowloaded to your computer directly
-d) all the time -- data are always incredibly vulnerable
+C) once they've been moved from RStudio Cloud and downloaded locally
+o) at rest on RStudio Cloud
+o) in transit on RStudio Cloud
+o) all the time -- data are always incredibly vulnerable
+o) when transferring between directories on RStudio Cloud
 
 ? A good data science project releases...
 
-a) all the data and code used for their project
-B) all the data and code used for their project, except for any PII
-c) none of the data or code used for their project
-d) none of the data but all of the code used for their project
-e) all of the data but none of the code used for their project
+C) all the data and code used for their project, except for any PII
+o) all the data and code used for their project
+o) none of the data or code used for their project
+o) none of the data but all of the code used for their project
+o) all of the data but none of the code used for their project
+o) none of the data, except for PII, but all of the code used for their project
+
 
 ? Making data publicly available is always great if...
 
-a) it's legal
-b) it contains PII
 C) it does not contain PII
-d) it makes you money
-e) it has negative unintended consequences
+o) it's legal
+o) it contains PII
+o) it makes you money
+o) it has negative unintended consequences
+o) someeone asks for it
 
 {/quiz}

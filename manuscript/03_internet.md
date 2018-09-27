@@ -343,6 +343,7 @@ o) POST
 ? Why would you use SelectorGadget?
 
 C) to determine how to specify what parts of a webpage you want to scrape.
+C) to determine how to specify what tags you'll need to use to scrape a webpage.
 o) to determine the URL required to enter into the function `read_html()`.
 o) to update the content on a webpage from R directly.
 o) to convert data from the JSON format to a data frame.
@@ -373,11 +374,24 @@ o) `POST()`
 ? Why keep track of the date your data were downloaded?
 
 C) In case the data are changed or updated, you'll have a record of which version of the data you used
+C) In case of future changes to the dataset
 o) To know that you did the analysis
 o) To make sure that others know you did the analysis
 o) To save a local copy on your machine
 o) To ensure that you're using the most recent version of the data released
 o) In case someone else tries to say they generated the data, you have a record
+
+{points:3}
+? Go to the [Chromebook Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Getting Data`. Type the number that corresponds to the lesson `L04 Getting Data from the Internet Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
+
+! /.*[lEUc||59bh||NB3N||maJy||JUk1||G5Ue||gpUv||asEY||fY53||Ykbx].*/i
+
+
+{points:3}
+? Within the same course on swirl: `CBDS Getting Data`, navigate to the lesson `L04 Getting Data from the Internet Q02 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
+
+! /.*[4OU8||pGl1||bqur||7j4r||t0ip||OWOi||5vFI||I6q4||juaP||69nN].*/i
+
 
 
 {/quiz}

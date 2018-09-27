@@ -157,12 +157,14 @@ o) It requires an individual be told about the possible risks of participation
 o) It requires an individual be told about the possible benefits of participation
 o) It requires an individual be told about how their data will be used
 
+{choose-answers:4}
 ? When should you consider the ethical implications of your data science project?
 
-a) before you start
-b) during data collection
-c) during the analysis
-d) after the analysis
-E) the entire time
+C) the entire time
+o) before you start
+o) during data collection
+o) during the analysis
+o) after the analysis
+o) occassionally
 
 {/quiz}

@@ -265,7 +265,7 @@ In this lesson we discussed what relational data are and how to work with them i
 ### Relational Data quiz
 
 {choose-answers:4}
-? Which below accurately describes the capabilities and advantages of the `RSQLite` package?
+?1 Which below accurately describes the capabilities and advantages of the `RSQLite` package?
 
 C) allows you to connect to remote databases, giving you access to large databases that you can query without having to read all the data into R.
 o) allows you to download very large databases into R quickly, but requires you to send all queries to the database itself as queries cannot be carried out in R directly.
@@ -274,7 +274,7 @@ o) allows you to read CSVs into R from Google Sheets, regardless of how many wor
 o) allows you to download R and RStudio Cloud on a Chromebook directly, removing the need for an Internet browser
 
 {choose-answers:4}
-? What would `anti_join(family, school)` accomplish?
+?2 What would `anti_join(family, school)` accomplish?
 
 C) keep all the observations in the `family` table NOT found in the `school` table
 C) remove all the observations in `family` found in the `school` table
@@ -285,17 +285,27 @@ o) keep only observations found in neither the `family` table nor the `school` t
 o) keep half of the observations in the `family` table and half of the observations in the `school` table
 
 {choose-answers:4}
-? To join the variables in two different tables, keeping only the observations found in *both* tables, which type of join would you use?
+?3 To join the variables in two different tables, keeping only the observations found in *both* tables, which type of join would you use?
 
 C) Inner Join
-o) Left Join
+m) Left Join
 o) Right Join
 o) Full Join
 o) Anti Join
 o) Semi Join
 
 {choose-answers:4}
-? Which of these is NOT an advantage of storing relational data in a database?
+?3 To join the variables in two different tables, keeping only the observations found in *the* first table specified, which type of join would you use?
+
+C) Left Join
+m) Inner Join
+o) Right Join
+o) Full Join
+o) Anti Join
+o) Semi Join
+
+{choose-answers:4}
+?4 Which of these is NOT an advantage of storing relational data in a database?
 
 C) allows you to store all of your data in a single spreadsheet, making access to all the data at once simple
 C) removes any need for a password, making the data open to anyone on the Internet

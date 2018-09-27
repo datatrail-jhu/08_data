@@ -133,6 +133,7 @@ In this lesson, we've introduced the R package `googlesheets`. We've discussed t
 ? Which of the following packages is used for importing data directly from Google Sheets?
 
 C) googlesheets
+o) googledrive
 o) dplyr
 o) readr
 o) google
@@ -142,7 +143,7 @@ o) gs_read
 {choose-answers:4, points:2}
 ? Which of the following is NOT something that can be accomplished from the functions in the package `googlesheets`? (Note you may have to Google to learn more about other functions in `googlesheets`.)
 
-C) Creating graphs directly from a Google sheet
+C) Creating graphs directly from a Google Sheet
 m) Downloading the Google Sheet as a CSV
 m) Moving a Google Sheet to the Trash on Google Drive
 o) Editing cells in a Google sheet
@@ -161,6 +162,13 @@ o) `by_row`
 o) `col_names`
 o) `trim`
 o) `verbose`
+
+{points:3}
+? Go to the [Chromebook Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Getting Data`. Type the number that corresponds to the lesson `L03 Importing Data from Google Sheets Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
+
+! /.*[l0AT||9Hqu||m0SH||jHEq||Iv85||u3pZ||MZ16||gLfh||aN7N||icAI].*/i
+
+
 
 
 {/quiz}

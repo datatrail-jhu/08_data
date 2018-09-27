@@ -84,11 +84,12 @@ o) CSV
 ? To store pieces of information that are related to one another, which should you consider using?
 
 C) a relational database
+C) a database
 o) an API
 o) web scraping
 o) a single text file
 o) a single CSV
-o) macOS
+o) the macOS
 
 {/quiz}
 
