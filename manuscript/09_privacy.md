@@ -135,6 +135,7 @@ o) in transit on RStudio Cloud
 o) all the time -- data are always incredibly vulnerable
 o) when transferring between directories on RStudio Cloud
 
+{choose-answers:4}
 ? A good data science project releases...
 
 C) all the data and code used for their project, except for any PII
@@ -144,7 +145,7 @@ o) none of the data but all of the code used for their project
 o) all of the data but none of the code used for their project
 o) none of the data, except for PII, but all of the code used for their project
 
-
+{choose-answers:4}
 ? Making data publicly available is always great if...
 
 C) it does not contain PII
