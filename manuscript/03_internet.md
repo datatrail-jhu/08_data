@@ -320,7 +320,7 @@ In this lesson we've covered a lot! We've gone through the basics of accessing A
 
 ### Slides and Video
 
-![Getting Data From the Internet](https://www.youtube.com/watch?v=iwBy6-GbMck)
+![Getting Data From the Internet](https://www.youtube.com/watch?v=itMW5ooWYF4)
 
 * [Slides](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/edit?usp=sharing)
 
@@ -384,13 +384,13 @@ o) In case someone else tries to say they generated the data, you have a record
 {points:3}
 ? Go to the [Chromebook Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC){target="_blank"} and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Getting Data`. Type the number that corresponds to the lesson `L04 Getting Data from the Internet Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
 
-! /.*[lEUc||59bh||NB3N||maJy||JUk1||G5Ue||gpUv||asEY||fY53||Ykbx].*/i
+! /.+[lEUc||59bh||NB3N||maJy||JUk1||G5Ue||gpUv||asEY||fY53||Ykbx].+/i
 
 
 {points:3}
 ? Within the same course on swirl: `CBDS Getting Data`, navigate to the lesson `L04 Getting Data from the Internet Q02 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.*[4OU8||pGl1||bqur||7j4r||t0ip||OWOi||5vFI||I6q4||juaP||69nN].*/i
+! /.+[4OU8||pGl1||bqur||7j4r||t0ip||OWOi||5vFI||I6q4||juaP||69nN].+/i
 
 
 

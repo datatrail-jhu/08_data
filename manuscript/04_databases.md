@@ -255,7 +255,7 @@ In this lesson we discussed what relational data are and how to work with them i
 
 ### Slides and Video
 
-![Relational Databases](https://www.youtube.com/watch?v=dw7SSytogAU)
+![Relational Databases](https://www.youtube.com/watch?v=0NsIr0oldHM)
 
 * [Slides](https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/edit?usp=sharing)
 

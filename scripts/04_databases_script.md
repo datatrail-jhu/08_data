@@ -34,13 +34,13 @@ Right Join is similar to what we just discussed; however, in the output from a r
 
 Again, in our toy example, we see that right join combines the information across tables; however, in this case, Artist I D 4 is included, but Name is an NA, as this information was not in the artists table for this artist.
 
-Now, to run this for our tables from the database, you would have to do something slightly different than what you saw above. Note in the code below that we have to change teh class of the tables from the database into tibbles before doing the join. This is because sequel does not currently support right or full joins, but d ply r does. Thus, we first have to be sure the data are a class that d ply r can work with using as underscore tibble. Other than that, the code below is similar to what you've seen already: While the output may look similar to the output from left underscore join, you'll note that there are a different number of rows due to how the join was done. The fact that 347 rows are present with the right join and 418 were present after the left join suggests that there are artists in the artists table without albums in the albums table.
+Now, to run this for our tables from the database, you would have to do something slightly different than what you saw above. Note in the code below that we have to change the class of the tables from the database into tibbles before doing the join. This is because sequel does not currently support right or full joins, but d ply r does. Thus, we first have to be sure the data are a class that d ply r can work with using as underscore tibble. Other than that, the code below is similar to what you've seen already: While the output may look similar to the output from left underscore join, you'll note that there are a different number of rows due to how the join was done. The fact that 347 rows are present with the right join and 418 were present after the left join suggests that there are artists in the artists table without albums in the albums table.
 
 Finally, a full join will take every observation from every table and include it in the output.
 
 Thus, in our toy example, this join produces five rows, including all the observations from either table. N As are filled in when data are missing for an observation.
 
-As you saw in the last example, to carry out a full join, we have to again specify that the objects are tibbles before being able to carry out the join
+As you saw in the last example, to carry out a full join, we have to again specify that the objects are tibbles before being able to carry out the join.
 
 Now that we've walked through a number of examples of mutating joins, cases where you're combining information across tables, we just want to take a second to summarize the four types of joins discussed using a visual frequently used to explain the most common mutating joins where each circle represents a different table and the gray shading on the venn diagrams indicates which observations will be included after the join.
 

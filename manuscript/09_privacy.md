@@ -28,7 +28,7 @@ When you sign up for an app on your computer or phone, you likely provide that c
 
 To review from the last lesson, when data are [encrypted](https://en.wikipedia.org/wiki/Encryption), all the information is jumbled into a code that can only be decoded by someone who has the key. This means that if data are intercepted while being transferred, the person who has intercepted the data will not be able to understand the data, as they won't have access to the key and will only have the completely jumbled information. It is a security measure to help keep data safe. 
 
-#### Working in rstudio.cloud
+#### Working in RStudio Cloud
 
 In earlier lessons, you've been working in RStudio Cloud and will continue to do so as your hone your data science skills. Data on RStudio Cloud are encrypted at rest (when they're sitting in your project) and in transit (when they're being uploaded or downloaded). This means that, if intercepted, the person who has intercepted the data will not be able to decipher the information contained, as they don't have the key.
 
@@ -117,7 +117,7 @@ Hopefully we've explained a number of considerations to take into account when w
 
 ### Slides and Video
 
-![Data Privacy](https://www.youtube.com/watch?v=-EKNb2776Yw)
+![Data Privacy](https://www.youtube.com/watch?v=PbnLPkpcJkM)
 
 * [Slides](https://docs.google.com/presentation/d/1kGRtBbbQ6rCkH6OAdPE5-GlQJN0rPwaiE8XQlx-k7uA/edit?usp=sharing)
 

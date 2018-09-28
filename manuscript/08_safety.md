@@ -99,7 +99,7 @@ Because Chromebooks do not run a typically operating system, they are much more 
 
 ### Slides and Video
 
-![Internet Safety](https://www.youtube.com/watch?v=t7EcencWDYI)
+![Internet Safety](https://www.youtube.com/watch?v=LdxnYPAbfFE)
 
 * [Slides](https://docs.google.com/presentation/d/15GTb5tE_GQuCBJMtLYRtaEF8t5ms_iBRruNqZO1LbtY/edit?usp=sharing)
 

@@ -119,8 +119,6 @@ Admittedly, working with audio files in R is not as common as working with tabul
 * [transcribing music in R using `tuneR`](http://www.vesnam.com/Rblog/transcribing-music-from-audio-files-2/), by [Vessy](http://www.vesnam.com/Rblog/aboutme/)
 * [clustering music in R using `tuneR` and `seewave`](http://www.vesnam.com/Rblog/sortmymusic/), by [Vessy](http://www.vesnam.com/Rblog/aboutme/)
 
-![clustering music in R](![Google Maps street view](images/05_unconventional/05_data_unconventional-14.png)
-)
 
 ### Summary
 
@@ -156,7 +154,7 @@ In this lesson, we've briefly reviewed a number of different unconventional sour
 
 ### Slides and Video
 
-![Unconventional Sources of Data](https://www.youtube.com/watch?v=_xCTvhpK8WA)
+![Unconventional Sources of Data](https://www.youtube.com/watch?v=MTnInCPxUjo)
 
 * [Slides](https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/edit?usp=sharing)
 
