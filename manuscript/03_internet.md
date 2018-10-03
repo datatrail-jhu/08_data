@@ -382,7 +382,7 @@ o) To ensure that you're using the most recent version of the data released
 o) In case someone else tries to say they generated the data, you have a record
 
 {points:3}
-? Go to the [Chromebook Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC){target="_blank"} and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Getting Data`. Type the number that corresponds to the lesson `L04 Getting Data from the Internet Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
+? Go to the [Chromebook Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Getting Data`. Type the number that corresponds to the lesson `L04 Getting Data from the Internet Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
 
 ! /.+[lEUc||59bh||NB3N||maJy||JUk1||G5Ue||gpUv||asEY||fY53||Ykbx].+/i
 
