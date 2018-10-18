@@ -106,7 +106,7 @@ Let's break down exactly what we mean by this using just a small toy example fro
 
 #### Inner Join
 
-When talking about inner joins, we are only going to keep an observation if it is found in all of the tables we're combining. Here, we're combining the tables based on the `ArtistId` column. In our dummy example, there are only two artists that are found in *both* tables. Thus, only these artists' data will be included after the inner join.
+When talking about inner joins, we are only going to keep an observation if it is found in all of the tables we're combining. Here, we're combining the tables based on the `ArtistId` column. In our dummy example, there are only two artists that are found in *both* tables. These are highlighted in green and will be the rows used to join the two tables. Then, once the inner join happens, only these artists' data will be included after the inner join.
 
 ![inner join output will include any observation found in both tables](images/04_databases/04_data_databases-10.png)
 
@@ -115,6 +115,8 @@ In our toy example, when doing an `inner_join()`, data from any observation foun
 And, since it's a mutating join, our new table will have information from both tables! We now have `ArtistId`, `Name`, `AlbumId`, *and* `Title` in a single table! We've joined the two tables, based on the column `ArtistId`!
 
 ![inner join includes observations found in both tables](images/04_databases/04_data_databases-11.png)
+
+Throughout this lesson we will use the coloring use see here to explain the joins, so we want to explain it explicitly here. Green cells are cells that will be used to make the merge happen and will be included in the resulting merged table. Blue cells are information that comes from the `artists` table that will be included after the merge. Red cells are pieces of information that come from the `albums` table that will be included after the merge. Finally, cells that are left white in the `artists` or `albums` table are cells that will not be included in the merge while cells that are white *after* the merge are NAs that have been added as a result of the merge.
 
 Now, to run this for our tables from the database, rather than just for a few rows in our toy example, you would do the following:
 
@@ -206,6 +208,8 @@ Now that we've walked through a number of examples of mutating joins, cases wher
 
 ![mutating joins summary](images/04_databases/04_data_databases-22.png)
 
+To see a visual representation of this, there is a great resource on GitHub, where these joins are illustrated, so feel free to check out [this link](https://github.com/gadenbuie/tidyexplain#readme) from [Garrick Aden-Buie](https://www.garrickadenbuie.com/) animating joins within relational data 
+
 ### Filtering Joins
 
 While we discussed mutating joins in detail, we're just going to mention the ability to carry out filtering joins. While mutating joins combined variables across tables, **filtering joins** affect the observations, not the variables. This *still* requires a unique identifier to match the observations between tables.
@@ -250,12 +254,13 @@ In this lesson we discussed what relational data are and how to work with them i
 ### Additional Resources
 
 * [Relational Data - Chapter 13](http://r4ds.had.co.nz/relational-data.html#introduction-7), by Hadley Wickham
+* [Tidy Animated Verbs](https://github.com/gadenbuie/tidyexplain#readme), by [Garrick Aden-Buie](https://www.garrickadenbuie.com/) to visualize joins in relational data
 * [SQL databases and R](https://datacarpentry.org/R-ecology-lesson/05-r-and-databases.html), from Data Carpentry
 * `RSQLite` tutorials [Part 1](https://taylorwhitten.github.io/blog/RSQLite1) [Part 2](https://taylorwhitten.github.io/blog/RSQLite2), by [Taylor W. Brown](http://www.taylorwhittenbrown.com/) and [Josh R. Bruce](https://joshuarbruce.com/)
 
 ### Slides and Video
 
-![Relational Databases](https://www.youtube.com/watch?v=0NsIr0oldHM)
+![Relational Databases](https://www.youtube.com/watch?v=BjFT_7MT62E)
 
 * [Slides](https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/edit?usp=sharing)
 
