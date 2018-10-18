@@ -114,7 +114,7 @@ Here, we've pulled out the name and URL of each repository in Jane Doe's account
 
 In a previous course in this Course Set on Data Visualization, we assigned a project where the data for the project had already been saved on RStudio Cloud for you in CSV format. *However*, these data are available on the Internet. Now that we know how to use `httr` and have an understanding about APIs, let's do that now!
 
-So, the data are available for download from this link: [data.fivethirtyeight.com](data.fivethirtyeight.com), but are also hosted on GitHub [here](https://github.com/fivethirtyeight/data), and we will want to use the specific URL for this file: [https://raw.githubusercontent.com/fivethirtyeight/data/master/steak-survey/steak-risk-survey.csv](https://raw.githubusercontent.com/fivethirtyeight/data/master/steak-survey/steak-risk-survey.csv) in our `GET()` request.
+So, the data are available for download from this link: [data.fivethirtyeight.com](https://data.fivethirtyeight.com/), but are also hosted on GitHub [here](https://github.com/fivethirtyeight/data), and we will want to use the specific URL for this file: [https://raw.githubusercontent.com/fivethirtyeight/data/master/steak-survey/steak-risk-survey.csv](https://raw.githubusercontent.com/fivethirtyeight/data/master/steak-survey/steak-risk-survey.csv) in our `GET()` request.
 
 ![steak-survey on GitHub](images/03_internet/03_data_internet-12.png)
 
