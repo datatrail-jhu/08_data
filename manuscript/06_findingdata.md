@@ -14,7 +14,7 @@ As a data scientist, there's a good chance you may work with private company dat
 
 There are a number of companies dedicated to compiling datasets into a central location and making these data easy to access. Two of the most popular are [Kaggle](https://www.kaggle.com/) and [data.world](https://data.world/). On each site, you'll have to register for a free account. After registering you'll have access to *many* different types of datasets! Explore what's available there and then start playing around with a dataset that interests you!
 
-![kaggle and data.world are *great* places to look for datasets](images/06_findingdata/06_data_findingdata-2.png)
+![kaggle and data.world are *great* places to look for datasets](https://docs.google.com/presentation/d/1G0lA8z561VirAggV4MxMXu2dwCudolXjeFZWO6P_3F8/export/png?id=1G0lA8z561VirAggV4MxMXu2dwCudolXjeFZWO6P_3F8&pageid=g3d79cb93b6_0_0)
 
 Publicly-available datasets are also curated at [Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets/blob/master/README.rst), so feel free to look around there as well!
 
@@ -28,13 +28,13 @@ Here we provide lists of governments' open data to just give you and *idea* of h
 
 If you're interested in working with government data from the United States, [data.gov](https://www.data.gov/) is place to get datasets that have been released by the the United States government. Here you can find hundreds of thousands of datasets. These data cover many topics, so if you're interested in working with government data, [data.gov datasets](https://www.data.gov/dataset) is a great place to start!
 
-![data.gov has hundreds of thousands of datasets](images/06_findingdata/06_data_findingdata-3.png)
+![data.gov has hundreds of thousands of datasets](https://docs.google.com/presentation/d/1G0lA8z561VirAggV4MxMXu2dwCudolXjeFZWO6P_3F8/export/png?id=1G0lA8z561VirAggV4MxMXu2dwCudolXjeFZWO6P_3F8&pageid=g3d79cb93b6_0_93)
 
 ##### Census Data
 
 The [US Census](https://www.census.gov/) is responsible for collecting data about the people within the United States and United States' economy every ten years. These [data](https://www.census.gov/data.html) are also accessible online *and* they can be worked with in R using the very helpful [`tidycensus`](https://walkerke.github.io/tidycensus/) package!
 
-![The US Census provides data about the US people and economy](images/06_findingdata/06_data_findingdata-4.png)
+![The US Census provides data about the US people and economy](https://docs.google.com/presentation/d/1G0lA8z561VirAggV4MxMXu2dwCudolXjeFZWO6P_3F8/export/png?id=1G0lA8z561VirAggV4MxMXu2dwCudolXjeFZWO6P_3F8&pageid=g3d79cb93b6_0_146)
 
 ##### Open City Data
 
@@ -49,7 +49,7 @@ The US's federal government is of course not the only place to obtain government
 
 Additionally, to see a summary of what datasets are available from cities across the USA, check out the [US Open City Data Census](http://us-cities.survey.okfn.org/) from the Sunlight Foundation.
 
-![US City Open Data Census](images/06_findingdata/06_data_findingdata-6.png)
+![US City Open Data Census](https://docs.google.com/presentation/d/1G0lA8z561VirAggV4MxMXu2dwCudolXjeFZWO6P_3F8/export/png?id=1G0lA8z561VirAggV4MxMXu2dwCudolXjeFZWO6P_3F8&pageid=g3d79cb93b6_0_109)
 
 ##### Global Data
 
@@ -57,7 +57,7 @@ In addition to the United States, there are many other countries providing acces
 
 Additionally, to see what datasets are available globally, the [Global Open Data Index](https://index.okfn.org/dataset/) is a great place to start!
 
-![Global Open Data Index](images/06_findingdata/06_data_findingdata-7.png)
+![Global Open Data Index](https://docs.google.com/presentation/d/1G0lA8z561VirAggV4MxMXu2dwCudolXjeFZWO6P_3F8/export/png?id=1G0lA8z561VirAggV4MxMXu2dwCudolXjeFZWO6P_3F8&pageid=g3d79cb93b6_0_116)
 
 #### APIs
 
