@@ -175,7 +175,7 @@ o) `trim`
 o) `verbose`
 
 {points:3}
-? Go to the [Chromebook Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Getting Data`. Type the number that corresponds to the lesson `L03 Importing Data from Google Sheets Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
+? Go to the [Cloud-based Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Getting Data`. Type the number that corresponds to the lesson `L03 Importing Data from Google Sheets Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
 
 ! /.+[l0AT||9Hqu||m0SH||jHEq||Iv85||u3pZ||MZ16||gLfh||aN7N||icAI].+/i
 

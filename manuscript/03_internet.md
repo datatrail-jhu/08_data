@@ -205,9 +205,9 @@ To enable SelectorGadget:
 {format: png}
 ![SelectorGadget icon](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_0)
 
-#### Chromebook Data Science Example
+#### Cloud-based Data Science Example
 
-Similar to the example above, what if you were interested in knowing all the courses in the Chromebook Data Science Course Set? Sure, you could go to our [website](http://jhudatascience.org/chromebookdatascience/curriculum.html) and copy and paste each one into a Google Sheet. But, that's not very fun!
+Similar to the example above, what if you were interested in knowing all the courses in the Cloud-based Data Science Course Set? Sure, you could go to our [website](http://jhudatascience.org/chromebookdatascience/curriculum.html) and copy and paste each one into a Google Sheet. But, that's not very fun!
 
 Alternatively, you could write and run a few lines of code and get all the information that way! We'll do that in the example below. 
 
@@ -400,7 +400,7 @@ o) To ensure that you're using the most recent version of the data released
 o) In case someone else tries to say they generated the data, you have a record
 
 {points:3}
-? Go to the [Chromebook Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Getting Data`. Type the number that corresponds to the lesson `L04 Getting Data from the Internet Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
+? Go to the [Cloud-based Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Getting Data`. Type the number that corresponds to the lesson `L04 Getting Data from the Internet Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
 
 ! /.+[lEUc||59bh||NB3N||maJy||JUk1||G5Ue||gpUv||asEY||fY53||Ykbx].+/i
 

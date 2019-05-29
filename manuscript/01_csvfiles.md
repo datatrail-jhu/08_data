@@ -20,7 +20,7 @@ As with any file type, CSVs do have their limitations. Specifically, CSV files a
 
 ### Downloading CSV files
 
-If you entered the same values used above into Google Slides first and wanted to download this file as a CSV to read into R, you would enter the values in Google slides, and then click on "File" and then "Download" as and choose "Comma-separated values (.csv, current sheet)". The dataset that you created will be downloaded as a CSV file on your Chromebook. Make sure you know the location of your file (if on a Chromebook, this will be in your "Downloads" folder).
+If you entered the same values used above into Google Slides first and wanted to download this file as a CSV to read into R, you would enter the values in Google slides, and then click on "File" and then "Download" as and choose "Comma-separated values (.csv, current sheet)". The dataset that you created will be downloaded as a CSV file on your computer. Make sure you know the location of your file (if on a Chromebook, this will be in your "Downloads" folder).
 
 {format: png}
 ![Download as CSV file](https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&pageid=g399e5a917a_0_56)
@@ -189,7 +189,7 @@ o) CSVs can be read into R; Excel files cannot
 o) Excel files can be read into R; CSVs cannot
 
 {points:3}
-? Go to the [Chromebook Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Getting Data`. Type the number that corresponds to the lesson `L02 CSV, Excel, and TSV Files Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
+? Go to the [Cloud-based Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Getting Data`. Type the number that corresponds to the lesson `L02 CSV, Excel, and TSV Files Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
 
 ! /.+[qws7||rqK4||myn5||AErO||x0IH||mLyC||tQ7b||RV3a||6b28||UXXQ].+/i
 
