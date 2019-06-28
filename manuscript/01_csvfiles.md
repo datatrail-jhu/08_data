@@ -202,26 +202,6 @@ o) Excel files can be read into R; CSVs cannot
 
 {/quiz}
 
-{exercise, id: exercise_01_csvfiles}
-
-### DataCamp:  Importing Data in R (Part 1)
-
-{case-sensitive: false}
-? To get more practice with getting data into R, go to the course [Importing Data in R (Part 1)](https://www.datacamp.com/courses/importing-data-in-r-part-1) on DataCamp. Login and complete the first three lessons in the course:
-
-- Importing data from flat files with utils
-- readr & data.table
-- Importing Excel data
-
-Once you've completed those three lessons, type "completed" in the box below.
-
-*Note*: This requires a DataCamp login, which costs money. As an exercise, this is not required to pass the course but it *will* help you get a better grasp on the concepts covered in these lessons.
-
-*Reminder*: Videos in DataCamp are essential to understanding the material. It's best not to skip over these videos!
-
-! completed
-
-{/exercise}
 
 
 

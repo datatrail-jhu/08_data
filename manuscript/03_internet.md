@@ -328,7 +328,7 @@ In this lesson we've covered a lot! We've gone through the basics of accessing A
 * [rvest tutorial](https://blog.rstudio.com/2014/11/24/rvest-easy-web-scraping-with-r/), from RStudio
 * [rvest documentation](https://github.com/hadley/rvest)
 * [SelectorGadget documentation + video](https://selectorgadget.com/)
-* [rvest tutorial](https://www.datacamp.com/community/tutorials/r-web-scraping-rvest), from DataCamp
+
 
 #### jsonlite
 * [jsonlite: Getting Started](https://cran.r-project.org/web/packages/jsonlite/vignettes/json-aaquickstart.html)
@@ -415,28 +415,6 @@ o) In case someone else tries to say they generated the data, you have a record
 {/quiz}
 
 
-
-
-{exercise, id: exercise_03_internet}
-
-### DataCamp:  Working with Web Data in R
-
-{case-sensitive: false}
-? To get more practice with getting data from the Internet using APIs and working with JSON and XML, go to the course [Working with Web Data in R](https://www.datacamp.com/courses/working-with-web-data-in-r) on DataCamp. Login and complete the first three lessons in the course:
-
-- Downloading Files and Using API Clients
-- Using httr to interact with APIs directly
-- Handling JSON and XML
-
-Once you've completed those three lessons, type "completed" in the box below.
-
-*Note*: This requires a DataCamp login, which costs money. As an exercise, this is not required to pass the course but it *will* help you get a better grasp on the concepts covered in these lessons.
-
-*Reminder*: Videos in DataCamp are essential to understanding the material. It's best not to skip over these videos!
-
-! completed
-
-{/exercise}
 
 
 
