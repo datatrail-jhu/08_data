@@ -191,13 +191,13 @@ o) Excel files can be read into R; CSVs cannot
 {points:3}
 ? Go to the [Cloud-based Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/20345/join?access_code=n4b8J1s0XmWctSy83%2BEXbGAwj7rKcuFMI7WJEJFD) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Getting Data`. Type the number that corresponds to the lesson `L02 CSV, Excel, and TSV Files Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
 
-! /.+[qws7||rqK4||myn5||AErO||x0IH||mLyC||tQ7b||RV3a||6b28||UXXQ].+/i
+! /.+(cwD5|Rc8l|Xb7f|ZtzZ|RfBM|AnvH|6ILs|kp9Z|YvWb|ynWN).+/i
 
 
 {points:3}
 ? Within the same course on swirl: `CBDS Getting Data`, navigate to the lesson `L02 CSV, Excel, and TSV Files Q02 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.+[B9bf||FT03||C62D||3cBC||4MUe||1Vrx||wiU6||CtLR||OaxP||kqoZ].+/i
+! /.+(B3cQ|Hmrr|O6ZA|4Qeb|yslR|5xHo|DEsX|3WoT|Ifb5|MGO2).+/i
 
 
 {/quiz}

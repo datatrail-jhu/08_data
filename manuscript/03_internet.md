@@ -402,13 +402,13 @@ o) In case someone else tries to say they generated the data, you have a record
 {points:3}
 ? Go to the [Cloud-based Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/20345/join?access_code=n4b8J1s0XmWctSy83%2BEXbGAwj7rKcuFMI7WJEJFD) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Getting Data`. Type the number that corresponds to the lesson `L04 Getting Data from the Internet Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
 
-! /.+[lEUc||59bh||NB3N||maJy||JUk1||G5Ue||gpUv||asEY||fY53||Ykbx].+/i
+! /.+(XW7b|kkZc|7yBJ|UptV|cqIP|vCVu|TTT6|y3E0|44nT|V9v7).+/i
 
 
 {points:3}
 ? Within the same course on swirl: `CBDS Getting Data`, navigate to the lesson `L04 Getting Data from the Internet Q02 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.+[4OU8||pGl1||bqur||7j4r||t0ip||OWOi||5vFI||I6q4||juaP||69nN].+/i
+! /.+(0eEu|c0kp|QjsW|NZD9|hRuI|FvBR|6SOl|vDGQ|4hGH|57rP).+/i
 
 
 
