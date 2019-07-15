@@ -277,7 +277,7 @@ In this lesson we discussed what relational data are and how to work with them i
 * [Relational Data - Chapter 13](http://r4ds.had.co.nz/relational-data.html#introduction-7), by Hadley Wickham
 * [Tidy Animated Verbs](https://github.com/gadenbuie/tidyexplain#readme), by [Garrick Aden-Buie](https://www.garrickadenbuie.com/) to visualize joins in relational data
 * [SQL databases and R](https://datacarpentry.org/R-ecology-lesson/05-r-and-databases.html), from Data Carpentry
-* `RSQLite` tutorials [Part 1](https://taylorwhitten.github.io/blog/RSQLite1) [Part 2](https://taylorwhitten.github.io/blog/RSQLite2), by [Taylor W. Brown](http://www.taylorwhittenbrown.com/) and [Josh R. Bruce](https://joshuarbruce.com/)
+
 
 ### Slides and Video
 
