@@ -205,27 +205,27 @@ To enable SelectorGadget:
 {format: png}
 ![SelectorGadget icon](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_0)
 
-#### Cloud-based Data Science Example
+#### Web Scraping Example
 
-Similar to the example above, what if you were interested in knowing all the courses in the Cloud-based Data Science Course Set? Sure, you could go to our [website](http://jhudatascience.org/chromebookdatascience/curriculum.html) and copy and paste each one into a Google Sheet. But, that's not very fun!
+Similar to the example above, what if you were interested in knowing a few recommended R packages for working with data. Sure, you could go to a whole bunch of websites and Google and copy and paste each one into a Google Sheet and have the information. But, that's not very fun!
 
 Alternatively, you could write and run a few lines of code and get all the information that way! We'll do that in the example below. 
 
 ##### Using SelectorGadget
 
-To use SelectorGadget, navigate to the webpage we're interested in scraping: [http://jhudatascience.org/chromebookdatascience/curriculum.html](http://jhudatascience.org/chromebookdatascience/curriculum.html) and toggle SelectorGadget by clicking on the SelectorGadget icon. A menu at the bottom-right of your web page should appear.
+To use SelectorGadget, navigate to the webpage we're interested in scraping: [http://jhudatascience.org/stable_website/webscrape.html](http://jhudatascience.org/stable_website/webscrape.html) and toggle SelectorGadget by clicking on the SelectorGadget icon. A menu at the bottom-right of your web page should appear.
 
 {format: png}
 ![SelectorGadget icon on webpage of interest](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_22)
 
-Now that SelectorGadget has been toggled, as you mouse over the page, colored boxes should appear. We'll click on the the name of the first course to start to tell SelectorGadget which component of the webpage we're interested in.
+Now that SelectorGadget has been toggled, as you mouse over the page, colored boxes should appear. We'll click on the the name of the first package to start to tell SelectorGadget which component of the webpage we're interested in.
 
 {format: png}
 ![SelectorGadget selects `strong` on webpage of interest](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_31)
 
-A red box will appear around the component of the webpage you've clicked. Other components of the webpage that SelectorGadget has deemed similar to what you've clicked will be highlighted. And, text will show up in the menu at the bottom of the page letting you know what you should use in `rvest` to specify the part of the webpage you're most interested in extracting. 
+An orange box will appear around the component of the webpage you've clicked. Other components of the webpage that SelectorGadget has deemed similar to what you've clicked will be highlighted. And, text will show up in the menu at the bottom of the page letting you know what you should use in `rvest` to specify the part of the webpage you're most interested in extracting. 
 
-Here, we see with that SelectorGadget has highlighted the course names and nothing else! Perfect. That's just what we wanted. Now we know how to specify this element in `rvest`!
+Here, we see with that SelectorGadget has highlighted the package names and nothing else! Perfect. That's just what we wanted. Now we know how to specify this element in `rvest`!
 
 ##### Using `rvest`
 
@@ -240,7 +240,7 @@ Finally `html_text` extracts the text from the tag we've specified, giving us th
 library(rvest)
 
 ## provide URL
-courses <- read_html("http://jhudatascience.org/chromebookdatascience/curriculum.html")
+courses <- read_html("http://jhudatascience.org/stable_website/webscrape.html")
 
 ## Get Courses
 courses %>% 
@@ -253,7 +253,7 @@ courses %>%
 With just a few lines of code we have the information we were looking for!
 
 {format: png}
-![List of Courses](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_36)
+![List of packages](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_36)
 
 #### A final note: SelectorGadget
 
