@@ -305,7 +305,7 @@ json <- toJSON(mydf)
 ![`toJSON()`](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_228)
 
 
-Here, we've just briefly touched on what JSON format is; however, in a future lesson we'll discuss this in greater detail. For now, however, it's important to know that the `jsonlite` package is there for you whenever you have JSON data. And, it has two very helpful functions (among other functions in the pacakge!): `toJSON()` and `fromJSON()` for such situations.
+Here, we've just briefly touched on what JSON format is; however, in a future lesson we'll discuss this in greater detail. For now, however, it's important to know that the `jsonlite` package is there for you whenever you have JSON data. And, it has two very helpful functions (among other functions in the package!): `toJSON()` and `fromJSON()` for such situations.
 
 
 ### Keeping Track of your Data

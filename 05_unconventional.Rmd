@@ -155,7 +155,7 @@ In this lesson, we've briefly reviewed a number of different unconventional sour
 #### Images
 
 * [`magick` package](https://cran.r-project.org/web/packages/magick/vignettes/intro.html)
-* ["Google Street View Can Reveal How Your Neighborhood Votes"](https://www.citylab.com/transportation/2017/12/google-street-view-data-demographics-cars-research/547436/); [Original Publicaton](http://www.pnas.org/content/pnas/early/2017/11/27/1700035114.full.pdf?sid=fb6ef880-a27f-4280-a693-5c2ab16fe65d)
+* ["Google Street View Can Reveal How Your Neighborhood Votes"](https://www.citylab.com/transportation/2017/12/google-street-view-data-demographics-cars-research/547436/); [Original Publication](http://www.pnas.org/content/pnas/early/2017/11/27/1700035114.full.pdf?sid=fb6ef880-a27f-4280-a693-5c2ab16fe65d)
 
 #### Audio
 
