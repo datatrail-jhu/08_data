@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Relational Data | Getting Data</title>
+  <meta name="description" content="Description about Course/Book." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Relational Data | Getting Data" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Description about Course/Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Relational Data | Getting Data" />
+  
+  <meta name="twitter:description" content="Description about Course/Book." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/DataTrail_favicon.ico" type="image/x-icon" />
+<link rel="prev" href="getting-data-from-the-internet.html"/>
+<link rel="next" href="unconventional-sources-of-data.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets/style_DataTrail.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style="padding-left: 0px; padding-top: 8px;"</a>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a></li>
+<li class="chapter" data-level="1" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html"><i class="fa fa-check"></i><b>1</b> Where Does Data Come From?</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#basic-data-files"><i class="fa fa-check"></i><b>1.0.1</b> Basic Data files</a></li>
+<li class="chapter" data-level="1.0.2" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#data-from-the-internet"><i class="fa fa-check"></i><b>1.0.2</b> Data from the Internet</a></li>
+<li class="chapter" data-level="1.0.3" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#relational-databases"><i class="fa fa-check"></i><b>1.0.3</b> Relational Databases</a></li>
+<li class="chapter" data-level="1.0.4" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#unconventional-data"><i class="fa fa-check"></i><b>1.0.4</b> Unconventional Data</a></li>
+<li class="chapter" data-level="1.0.5" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#slides-and-video"><i class="fa fa-check"></i><b>1.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html"><i class="fa fa-check"></i><b>2</b> CSV, Excel, and TSV Files</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#csv-files"><i class="fa fa-check"></i><b>2.0.1</b> CSV files</a></li>
+<li class="chapter" data-level="2.0.2" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#downloading-csv-files"><i class="fa fa-check"></i><b>2.0.2</b> Downloading CSV files</a></li>
+<li class="chapter" data-level="2.0.3" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-csv-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.3</b> Reading CSV files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.4" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#excel-files"><i class="fa fa-check"></i><b>2.0.4</b> Excel files</a></li>
+<li class="chapter" data-level="2.0.5" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-excel-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.5</b> Reading Excel files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.6" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#text-files"><i class="fa fa-check"></i><b>2.0.6</b> Text files</a></li>
+<li class="chapter" data-level="2.0.7" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-tsv-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.7</b> Reading TSV files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.8" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-txt-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.8</b> Reading TXT files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.9" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#exporting-data-in-r-to-csv"><i class="fa fa-check"></i><b>2.0.9</b> Exporting Data in R to CSV</a></li>
+<li class="chapter" data-level="2.0.10" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#slides-and-video-1"><i class="fa fa-check"></i><b>2.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html"><i class="fa fa-check"></i><b>3</b> Importing Data from Google Sheets</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#the-googlesheets-package"><i class="fa fa-check"></i><b>3.0.1</b> The <code>googlesheets</code> package</a></li>
+<li class="chapter" data-level="3.0.2" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#importing-csv-files-from-the-web"><i class="fa fa-check"></i><b>3.0.2</b> Importing CSV files from the web</a></li>
+<li class="chapter" data-level="3.0.3" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#summary"><i class="fa fa-check"></i><b>3.0.3</b> Summary</a></li>
+<li class="chapter" data-level="3.0.4" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#additional-resources"><i class="fa fa-check"></i><b>3.0.4</b> Additional Resources</a></li>
+<li class="chapter" data-level="3.0.5" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#slides-and-video-2"><i class="fa fa-check"></i><b>3.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html"><i class="fa fa-check"></i><b>4</b> Getting Data From the Internet</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#api-access"><i class="fa fa-check"></i><b>4.0.1</b> API access</a></li>
+<li class="chapter" data-level="4.0.2" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#getting-data-httr"><i class="fa fa-check"></i><b>4.0.2</b> Getting Data: <code>httr</code></a></li>
+<li class="chapter" data-level="4.0.3" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#example-1-githubs-api"><i class="fa fa-check"></i><b>4.0.3</b> Example 1: GitHub’s API</a></li>
+<li class="chapter" data-level="4.0.4" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#example-2-obtaining-a-csv"><i class="fa fa-check"></i><b>4.0.4</b> Example 2: Obtaining a CSV</a></li>
+<li class="chapter" data-level="4.0.5" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#api-keys"><i class="fa fa-check"></i><b>4.0.5</b> API keys</a></li>
+<li class="chapter" data-level="4.0.6" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#web-scraping-1"><i class="fa fa-check"></i><b>4.0.6</b> Web Scraping</a></li>
+<li class="chapter" data-level="4.0.7" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#json"><i class="fa fa-check"></i><b>4.0.7</b> JSON</a></li>
+<li class="chapter" data-level="4.0.8" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#keeping-track-of-your-data"><i class="fa fa-check"></i><b>4.0.8</b> Keeping Track of your Data</a></li>
+<li class="chapter" data-level="4.0.9" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#summary-1"><i class="fa fa-check"></i><b>4.0.9</b> Summary</a></li>
+<li class="chapter" data-level="4.0.10" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#additional-resources-1"><i class="fa fa-check"></i><b>4.0.10</b> Additional Resources</a></li>
+<li class="chapter" data-level="4.0.11" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#slides-and-video-3"><i class="fa fa-check"></i><b>4.0.11</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="relational-data.html"><a href="relational-data.html"><i class="fa fa-check"></i><b>5</b> Relational Data</a>
+<ul>
+<li class="chapter" data-level="5.0.1" data-path="relational-data.html"><a href="relational-data.html#relational-data-1"><i class="fa fa-check"></i><b>5.0.1</b> Relational Data</a></li>
+<li class="chapter" data-level="5.0.2" data-path="relational-data.html"><a href="relational-data.html#relational-databases-sql"><i class="fa fa-check"></i><b>5.0.2</b> Relational Databases: <code>SQL</code></a></li>
+<li class="chapter" data-level="5.0.3" data-path="relational-data.html"><a href="relational-data.html#connecting-to-databases-rsqlite"><i class="fa fa-check"></i><b>5.0.3</b> Connecting to Databases: <code>RSQLite</code></a></li>
+<li class="chapter" data-level="5.0.4" data-path="relational-data.html"><a href="relational-data.html#working-with-relational-data-dplyr-dbplyr"><i class="fa fa-check"></i><b>5.0.4</b> Working with Relational Data: <code>dplyr</code> &amp; <code>dbplyr</code></a></li>
+<li class="chapter" data-level="5.0.5" data-path="relational-data.html"><a href="relational-data.html#mutating-joins"><i class="fa fa-check"></i><b>5.0.5</b> Mutating Joins</a></li>
+<li class="chapter" data-level="5.0.6" data-path="relational-data.html"><a href="relational-data.html#filtering-joins"><i class="fa fa-check"></i><b>5.0.6</b> Filtering Joins</a></li>
+<li class="chapter" data-level="5.0.7" data-path="relational-data.html"><a href="relational-data.html#how-to-connect-to-a-database-online"><i class="fa fa-check"></i><b>5.0.7</b> How to Connect to a Database Online</a></li>
+<li class="chapter" data-level="5.0.8" data-path="relational-data.html"><a href="relational-data.html#summary-2"><i class="fa fa-check"></i><b>5.0.8</b> Summary</a></li>
+<li class="chapter" data-level="5.0.9" data-path="relational-data.html"><a href="relational-data.html#additional-resources-2"><i class="fa fa-check"></i><b>5.0.9</b> Additional Resources</a></li>
+<li class="chapter" data-level="5.0.10" data-path="relational-data.html"><a href="relational-data.html#slides-and-video-4"><i class="fa fa-check"></i><b>5.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html"><i class="fa fa-check"></i><b>6</b> Unconventional Sources of Data</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#structured-data"><i class="fa fa-check"></i><b>6.0.1</b> Structured Data</a></li>
+<li class="chapter" data-level="6.0.2" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#unstructured-data"><i class="fa fa-check"></i><b>6.0.2</b> Unstructured Data</a></li>
+<li class="chapter" data-level="6.0.3" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#text-data"><i class="fa fa-check"></i><b>6.0.3</b> Text Data</a></li>
+<li class="chapter" data-level="6.0.4" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#json-javascript-object-notation"><i class="fa fa-check"></i><b>6.0.4</b> JSON: JavaScript Object Notation</a></li>
+<li class="chapter" data-level="6.0.5" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#xml-extensible-markup-language"><i class="fa fa-check"></i><b>6.0.5</b> XML: Extensible Markup Language</a></li>
+<li class="chapter" data-level="6.0.6" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#images-1"><i class="fa fa-check"></i><b>6.0.6</b> Images</a></li>
+<li class="chapter" data-level="6.0.7" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#audio-files-1"><i class="fa fa-check"></i><b>6.0.7</b> Audio Files</a></li>
+<li class="chapter" data-level="6.0.8" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#summary-3"><i class="fa fa-check"></i><b>6.0.8</b> Summary</a></li>
+<li class="chapter" data-level="6.0.9" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#additional-resources-3"><i class="fa fa-check"></i><b>6.0.9</b> Additional Resources</a></li>
+<li class="chapter" data-level="6.0.10" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#slides-and-video-5"><i class="fa fa-check"></i><b>6.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="finding-data.html"><a href="finding-data.html"><i class="fa fa-check"></i><b>7</b> Finding Data</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="finding-data.html"><a href="finding-data.html#public-versus-private-data"><i class="fa fa-check"></i><b>7.0.1</b> Public versus Private Data</a></li>
+<li class="chapter" data-level="7.0.2" data-path="finding-data.html"><a href="finding-data.html#publicly-available-data"><i class="fa fa-check"></i><b>7.0.2</b> Publicly-available data</a></li>
+<li class="chapter" data-level="7.0.3" data-path="finding-data.html"><a href="finding-data.html#data-you-already-have"><i class="fa fa-check"></i><b>7.0.3</b> Data You Already Have</a></li>
+<li class="chapter" data-level="7.0.4" data-path="finding-data.html"><a href="finding-data.html#summary-4"><i class="fa fa-check"></i><b>7.0.4</b> Summary</a></li>
+<li class="chapter" data-level="7.0.5" data-path="finding-data.html"><a href="finding-data.html#slides-and-video-6"><i class="fa fa-check"></i><b>7.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="internet-safety.html"><a href="internet-safety.html"><i class="fa fa-check"></i><b>8</b> Internet Safety</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="internet-safety.html"><a href="internet-safety.html#wifi"><i class="fa fa-check"></i><b>8.0.1</b> WiFi</a></li>
+<li class="chapter" data-level="8.0.2" data-path="internet-safety.html"><a href="internet-safety.html#passwords"><i class="fa fa-check"></i><b>8.0.2</b> Passwords</a></li>
+<li class="chapter" data-level="8.0.3" data-path="internet-safety.html"><a href="internet-safety.html#good-internet-behavior"><i class="fa fa-check"></i><b>8.0.3</b> Good Internet behavior</a></li>
+<li class="chapter" data-level="8.0.4" data-path="internet-safety.html"><a href="internet-safety.html#online-scams"><i class="fa fa-check"></i><b>8.0.4</b> Online Scams</a></li>
+<li class="chapter" data-level="8.0.5" data-path="internet-safety.html"><a href="internet-safety.html#malware-spyware"><i class="fa fa-check"></i><b>8.0.5</b> Malware &amp; Spyware</a></li>
+<li class="chapter" data-level="8.0.6" data-path="internet-safety.html"><a href="internet-safety.html#security-on-a-chromebook"><i class="fa fa-check"></i><b>8.0.6</b> Security on a Chromebook</a></li>
+<li class="chapter" data-level="8.0.7" data-path="internet-safety.html"><a href="internet-safety.html#slides-and-video-7"><i class="fa fa-check"></i><b>8.0.7</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="data-privacy.html"><a href="data-privacy.html"><i class="fa fa-check"></i><b>9</b> Data Privacy</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="data-privacy.html"><a href="data-privacy.html#what-is-data-privacy"><i class="fa fa-check"></i><b>9.0.1</b> What is Data Privacy?</a></li>
+<li class="chapter" data-level="9.0.2" data-path="data-privacy.html"><a href="data-privacy.html#personally-identifiable-information"><i class="fa fa-check"></i><b>9.0.2</b> Personally Identifiable Information</a></li>
+<li class="chapter" data-level="9.0.3" data-path="data-privacy.html"><a href="data-privacy.html#what-is-encryption"><i class="fa fa-check"></i><b>9.0.3</b> What is encryption?</a></li>
+<li class="chapter" data-level="9.0.4" data-path="data-privacy.html"><a href="data-privacy.html#human-security"><i class="fa fa-check"></i><b>9.0.4</b> Human Security</a></li>
+<li class="chapter" data-level="9.0.5" data-path="data-privacy.html"><a href="data-privacy.html#computer-security"><i class="fa fa-check"></i><b>9.0.5</b> Computer Security</a></li>
+<li class="chapter" data-level="9.0.6" data-path="data-privacy.html"><a href="data-privacy.html#open-science"><i class="fa fa-check"></i><b>9.0.6</b> Open Science</a></li>
+<li class="chapter" data-level="9.0.7" data-path="data-privacy.html"><a href="data-privacy.html#data-breaches"><i class="fa fa-check"></i><b>9.0.7</b> Data Breaches</a></li>
+<li class="chapter" data-level="9.0.8" data-path="data-privacy.html"><a href="data-privacy.html#conclusions"><i class="fa fa-check"></i><b>9.0.8</b> Conclusions</a></li>
+<li class="chapter" data-level="9.0.9" data-path="data-privacy.html"><a href="data-privacy.html#slides-and-video-8"><i class="fa fa-check"></i><b>9.0.9</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ethical-data-science.html"><a href="ethical-data-science.html"><i class="fa fa-check"></i><b>10</b> Ethical Data Science</a>
+<ul>
+<li class="chapter" data-level="10.0.1" data-path="ethical-data-science.html"><a href="ethical-data-science.html#data-science-team"><i class="fa fa-check"></i><b>10.0.1</b> Data Science Team</a></li>
+<li class="chapter" data-level="10.0.2" data-path="ethical-data-science.html"><a href="ethical-data-science.html#the-data"><i class="fa fa-check"></i><b>10.0.2</b> The Data</a></li>
+<li class="chapter" data-level="10.0.3" data-path="ethical-data-science.html"><a href="ethical-data-science.html#the-analysis"><i class="fa fa-check"></i><b>10.0.3</b> The Analysis</a></li>
+<li class="chapter" data-level="10.0.4" data-path="ethical-data-science.html"><a href="ethical-data-science.html#after-the-algorithm"><i class="fa fa-check"></i><b>10.0.4</b> After the Algorithm</a></li>
+<li class="chapter" data-level="10.0.5" data-path="ethical-data-science.html"><a href="ethical-data-science.html#ethics-in-data-science"><i class="fa fa-check"></i><b>10.0.5</b> Ethics in Data Science</a></li>
+<li class="chapter" data-level="10.0.6" data-path="ethical-data-science.html"><a href="ethical-data-science.html#artificial-intelligence-in-the-military"><i class="fa fa-check"></i><b>10.0.6</b> Artificial Intelligence in the Military</a></li>
+<li class="chapter" data-level="10.0.7" data-path="ethical-data-science.html"><a href="ethical-data-science.html#additional-resources-4"><i class="fa fa-check"></i><b>10.0.7</b> Additional Resources</a></li>
+<li class="chapter" data-level="10.0.8" data-path="ethical-data-science.html"><a href="ethical-data-science.html#slides-and-video-9"><i class="fa fa-check"></i><b>10.0.8</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
+<li class="divider"></li>
+<p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by: </a> </p>
+<p style="text-align:center;"> <a href="https://www.datatrail.org/"> Data Trail </a></p>
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style=" width: 80%; filter: grayscale(100%); padding-left: 40px; padding-top: 8px; vertical-align: top "</a>
+<p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
+<p style="padding-left: 40px;"><div class="trapezoid" style = "padding-left: 40px;"><span>  <a href="https://forms.gle/VWaJYc3zATe3qxYC9"> Click here to provide feedback</a> <img src="assets/itcr_arrow.png" style=" width: 10%" ></span></div></p>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Getting Data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <!--script src="https://kit.fontawesome.com/6a26f47516.js"></script-->
+  <!--<script src="assets/hideOutput.js"></script>-->
+  <link href="assets/style_DataTrail.css" rel="stylesheet">
+</head>
+        
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="assets/DataTrail.jpg">
+</div>
+<div id="relational-data" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Relational Data</h1>
+<p>In lessons up to the point in the Course Set, the analyses you’ve done have either been carried out with a single dataset (i.e. data from a single Google Sheet) or the data have been compiled into a single data frame (i.e. data gathered from the Internet from an API request). However, there will be many cases as a data scientist where the data for your project will stored across a number of different spreadsheets that are all related to one another. In this lesson, we’ll discuss what relational data are, why you would want to store data in this way, and how to work with these types of data in RStudio Cloud.</p>
+<div id="relational-data-1" class="section level3" number="5.0.1">
+<h3><span class="header-section-number">5.0.1</span> Relational Data</h3>
+<p>Relational data can be thought of as information being stored across many tables, with each table being related to all the other tables. Each table is linked to every other table by a set of <strong>unique identifiers</strong>.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g392f0f9db9_1_9" alt="Relational data are related by unique identifiers" /></p>
+<p>To better understand this, let’s consider a toy example. We mentioned this example in the introductory lesson in this course, and we’ll return to it now. Consider a town where you have a number of different restaurants. In one table you have information about these restaurants including, where they are located and what type of food they serve. You then have a second table where information about health and safety inspections is stored. Each inspection is a different row and the date of the inspection, the inspector, and the safety rating are stored in this table. Finally, you have a third table. This third table contains information pulled from an API, regarding the number of stars given to each restaurant, as rated by people online. Each table contains different bits of information; however, there is a common column <code>id</code> in each of the tables. This allows the information to be linked between the tables. The restaurant with the <code>id</code> “JJ29JJ” in the restaurant table would refer to the same restaurant with the <code>id</code> “JJ29JJ” in the health inspections table, and so on. The values in this <code>id</code> column are known as <code>unique identifiers</code> because they uniquely identify each restaurant. No two restaurants will have the same <code>id</code>, and the same restaurant will always have the same <code>id</code>, no matter what table you’re looking at. The fact that these tables have unique identifiers connecting each table to all the other tables makes this example <strong>relational data</strong>.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_27" alt="Unique identifiers help link entries across tables" /></p>
+<div id="why-relational-data" class="section level4" number="5.0.1.1">
+<h4><span class="header-section-number">5.0.1.1</span> Why relational data?</h4>
+<p>Storing data in this way has a number of advantages; however, the three most important are:</p>
+<ol style="list-style-type: decimal">
+<li>Efficient Data Storage</li>
+<li>Avoids Ambiguity</li>
+<li>Privacy</li>
+</ol>
+<p><strong>Efficient Data Storage</strong> - By storing each bit of information in a separate table, you limit the need to repeat information. Taking our example above, imagine if we included everything in a single table. This means that for each inspection, we would copy and paste the restaurant’s address, type, and number of stars every time the facility is inspected. If a restaurant were inspected 15 times, this same information would be unnecessarily copy and pasted in each row! To avoid this, we simply separate out the information into different tables and relate them by their unique identifiers.</p>
+<p><strong>Avoids Ambiguity</strong> - Take a look at the first table: “restaurant” here. You may notice there are two different restaurants named “Taco Stand.” However, looking more closely, they have a different id <em>and</em> a different address. They’re even different types of restaurants. So, despite having the same name, they actually are two different restaurants. The unique identifier makes this immediately clear!</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_43" alt="Unique identifiers in relational data avoid ambiguity" /></p>
+<p><strong>Privacy</strong> - In using relational data, if there is ever information that is private and only some people should have access to, using this system simplifies that. You can restrict access to some of the data to ensure only those who should have access are able to access the data.</p>
+</div>
+</div>
+<div id="relational-databases-sql" class="section level3" number="5.0.2">
+<h3><span class="header-section-number">5.0.2</span> Relational Databases: <code>SQL</code></h3>
+<p>Now that we have an idea of what relational data are, let’s spend a second talking about how relational data are stored. Relational data are stored in databases. The most common database is <strong>SQLite</strong>. In order to work with data in databases, there has to be a way to <strong>query</strong> or search the database for the information you’re interested in. <strong>SQL</strong> queries search through SQLite databases and return the information you ask for in your query.</p>
+<p>For example, a query of the above example may look to obtain information about any restaurant that was inspected after July 1st of 2018. One would then use SQL commands to carry out this query and return the information requested.</p>
+<p>While we won’t be discussing how to write SQL commands in-depth here, we <em>will</em> be discussing how to use the R package <code>RSQLite</code> to connect to an SQLite database using <code>RSQLite</code> and how to work with relational data using <code>dplyr</code> and <code>dbplyr</code></p>
+</div>
+<div id="connecting-to-databases-rsqlite" class="section level3" number="5.0.3">
+<h3><span class="header-section-number">5.0.3</span> Connecting to Databases: <code>RSQLite</code></h3>
+<p>To better understand databases and how to work with relational data, let’s just start working with data from a database! The data we’ll be using are from a database frequently used to practice working with relational data: <code>chinook.db</code>. The database includes 11 tables with data that represents a digital media store. The data includes information generally related to related to media, artists, artists’ work, and those who purchase artists’ work (customers). More information about the details of how the tables are related to one another can be found <a href="http://www.sqlitetutorial.net/sqlite-sample-database/">here</a>. For our purposes though, we’re only going to only describe two of the tables we’ll be using in our example in this lesson. We’re going to be looking at data in the <code>artists</code> and <code>albums</code> tables. <code>artists</code> and <code>albums</code> are related by the column <code>ArtistId</code>.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_60" alt="relationship between two tables in the chinook database" /></p>
+<p>Without any more details, let’s get to it! Here you’ll see the code to install and load the <code>RSQLite</code> package. You’ll then download the <code>chinook</code> sample database, connect to the database, and first obtain a list the tables in the database:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="relational-data.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="do">## install and load packages</span></span>
+<span id="cb23-2"><a href="relational-data.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="do">## this may take a minute or two</span></span>
+<span id="cb23-3"><a href="relational-data.html#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;RSQLite&quot;</span>)</span>
+<span id="cb23-4"><a href="relational-data.html#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSQLite)</span>
+<span id="cb23-5"><a href="relational-data.html#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr)</span>
+<span id="cb23-6"><a href="relational-data.html#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="relational-data.html#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="do">## specify driver</span></span>
+<span id="cb23-8"><a href="relational-data.html#cb23-8" aria-hidden="true" tabindex="-1"></a>sqlite <span class="ot">&lt;-</span> <span class="fu">dbDriver</span>(<span class="st">&quot;SQLite&quot;</span>)</span>
+<span id="cb23-9"><a href="relational-data.html#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-10"><a href="relational-data.html#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="do">## download data</span></span>
+<span id="cb23-11"><a href="relational-data.html#cb23-11" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">&quot;http://www.sqlitetutorial.net/wp-content/uploads/2018/03/chinook.zip&quot;</span></span>
+<span id="cb23-12"><a href="relational-data.html#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="fu">GET</span>(url, <span class="fu">write_disk</span>(tf <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">&quot;.zip&quot;</span>)))</span>
+<span id="cb23-13"><a href="relational-data.html#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span>(tf)</span>
+<span id="cb23-14"><a href="relational-data.html#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-15"><a href="relational-data.html#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Connect to Database</span></span>
+<span id="cb23-16"><a href="relational-data.html#cb23-16" aria-hidden="true" tabindex="-1"></a>db <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(sqlite, <span class="st">&#39;chinook.db&#39;</span>)</span>
+<span id="cb23-17"><a href="relational-data.html#cb23-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-18"><a href="relational-data.html#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="do">## list tables in database</span></span>
+<span id="cb23-19"><a href="relational-data.html#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="fu">dbListTables</span>(db)</span></code></pre></div>
+<p>The output from <code>dbListTables()</code> will include 13 tables. Among them will be the two tables we’re going to work through in our example: <code>artists</code>, and <code>albums</code>.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_286" alt="output from dbListTables(db)" /></p>
+<p>In this example, we’re downloading a database and working with the data locally. However, more often, when working with SQLite databases, you’ll be connecting remotely. Using the <code>RSQLite</code> package is particularly helpful in this case because it allows you to connect to and query the database from R without reading all the data in. This is helpful in the case of very large databases, where you’ll want to avoid copying all the data and will instead want to only work with the parts of the database you need.</p>
+</div>
+<div id="working-with-relational-data-dplyr-dbplyr" class="section level3" number="5.0.4">
+<h3><span class="header-section-number">5.0.4</span> Working with Relational Data: <code>dplyr</code> &amp; <code>dbplyr</code></h3>
+<p>To access these tables within RStudio Cloud, we’ll have to install the packages <code>dbplyr</code>, which enables us to access the parts of the database we’re going to be working with. <code>dbplyr</code> allows you to use the same functions you learned when working with <code>dplyr</code>; however, it allows you to use these functions with a <em>database</em>. While <code>dbplyr</code> has to be loaded to work with databases, you likely won’t notice that you’re using it beyond that. Otherwise, you’ll just work with the files as if you were working with <code>dplyr</code> functions!</p>
+<p>After installing and loading <code>dbplyr</code>, we’ll be able to use the helpful <code>tbl()</code> function to extract the two tables we’re interested in working with!</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="relational-data.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="do">## install and load packages</span></span>
+<span id="cb24-2"><a href="relational-data.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;dbplyr&quot;</span>)</span>
+<span id="cb24-3"><a href="relational-data.html#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dbplyr)</span>
+<span id="cb24-4"><a href="relational-data.html#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb24-5"><a href="relational-data.html#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="relational-data.html#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="do">## get two tables</span></span>
+<span id="cb24-7"><a href="relational-data.html#cb24-7" aria-hidden="true" tabindex="-1"></a>albums <span class="ot">&lt;-</span> <span class="fu">tbl</span>(db, <span class="st">&quot;albums&quot;</span>)</span>
+<span id="cb24-8"><a href="relational-data.html#cb24-8" aria-hidden="true" tabindex="-1"></a>artists <span class="ot">&lt;-</span> <span class="fu">tbl</span>(db, <span class="st">&quot;artists&quot;</span>)</span></code></pre></div>
+</div>
+<div id="mutating-joins" class="section level3" number="5.0.5">
+<h3><span class="header-section-number">5.0.5</span> Mutating Joins</h3>
+<p>Mutating joins allow you to take two different tables and combine the variables from both tables. This requires that each table have a column relating the tables to one another (i.e. a unique identifier). This unique identifier is used to match observations between the tables.</p>
+<p>However, when combining tables, there are a number of different ways in which the tables can be joined. We touched on this in the Data Tidying course; however, there we only covered left joins. Now, in this lesson, we’ll cover the following types of joins:</p>
+<ul>
+<li>Inner Join - only keep observations found in <em>both</em> <code>x</code> <em>and</em> <code>y</code></li>
+<li>Left Join - keep all observations in <code>x</code></li>
+<li>Right Join - keep all observations in <code>y</code></li>
+<li>Full Join - keep <em>any</em> observations in <code>x</code> <em>or</em> <code>y</code></li>
+</ul>
+<p>Let’s break down exactly what we mean by this using just a small toy example from the <code>artists</code> and <code>albums</code> tables from the <code>chinook</code> database. Here you see three rows from the <code>artists</code> table and four rows from the <code>albums</code> table</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_88" alt="small parts of the albums and artist tables" /></p>
+<div id="inner-join" class="section level4" number="5.0.5.1">
+<h4><span class="header-section-number">5.0.5.1</span> Inner Join</h4>
+<p>When talking about inner joins, we are only going to keep an observation if it is found in all of the tables we’re combining. Here, we’re combining the tables based on the <code>ArtistId</code> column. In our dummy example, there are only two artists that are found in <em>both</em> tables. These are highlighted in green and will be the rows used to join the two tables. Then, once the inner join happens, only these artists’ data will be included after the inner join.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_97" alt="inner join output will include any observation found in both tables" /></p>
+<p>In our toy example, when doing an <code>inner_join()</code>, data from any observation found in all the tables being joined are included in the output. Here, <code>ArtistId</code>s “1” and “2” are in both the <code>artists</code> and <code>albums</code> tables. Thus, those will be the only <code>ArtistId</code>s in the output from the inner join.</p>
+<p>And, since it’s a mutating join, our new table will have information from both tables! We now have <code>ArtistId</code>, <code>Name</code>, <code>AlbumId</code>, <em>and</em> <code>Title</code> in a single table! We’ve joined the two tables, based on the column <code>ArtistId</code>!</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_108" alt="inner join includes observations found in both tables" /></p>
+<p>Throughout this lesson we will use the coloring use see here to explain the joins, so we want to explain it explicitly here. Green cells are cells that will be used to make the merge happen and will be included in the resulting merged table. Blue cells are information that comes from the <code>artists</code> table that will be included after the merge. Red cells are pieces of information that come from the <code>albums</code> table that will be included after the merge. Finally, cells that are left white in the <code>artists</code> or <code>albums</code> table are cells that will not be included in the merge while cells that are white <em>after</em> the merge are NAs that have been added as a result of the merge.</p>
+<p>Now, to run this for our tables from the database, rather than just for a few rows in our toy example, you would do the following:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="relational-data.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="do">## do inner join</span></span>
+<span id="cb25-2"><a href="relational-data.html#cb25-2" aria-hidden="true" tabindex="-1"></a>inner <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(artists, albums)</span>
+<span id="cb25-3"><a href="relational-data.html#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="relational-data.html#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="do">## look at output as a tibble</span></span>
+<span id="cb25-5"><a href="relational-data.html#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">as_tibble</span>(inner)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_231" alt="inner_join() output" /></p>
+</div>
+<div id="left-join" class="section level4" number="5.0.5.2">
+<h4><span class="header-section-number">5.0.5.2</span> Left Join</h4>
+<p>For a left join, all rows in the first table specified will be included in the output. Any row in the second table that is <em>not</em> in the first table will not be included.</p>
+<p>In our toy example this means that <code>ArtistID</code>s 1, 2, and 3 will be included in the output; however, <code>ArtistID</code> 4 will not.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_138" alt="left join will include all observations found in the first table specified" /></p>
+<p>Thus, our output will again include all the columns from both tables combined into a single table; however, for <code>ArtistId</code> 3, there will be NAs for <code>AlbumId</code> and <code>Title</code>. NAs will be filled in for any observations in the first table specified that are missing in the second table.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_123" alt="left join will fill in NAs" /></p>
+<p>Now, to run this for our tables from the database, rather than just for a few rows in our toy example, you would do the following:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="relational-data.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="do">## do left join</span></span>
+<span id="cb26-2"><a href="relational-data.html#cb26-2" aria-hidden="true" tabindex="-1"></a>left <span class="ot">&lt;-</span> <span class="fu">left_join</span>(artists, albums)</span>
+<span id="cb26-3"><a href="relational-data.html#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="relational-data.html#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="do">## look at output as a tibble</span></span>
+<span id="cb26-5"><a href="relational-data.html#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">as_tibble</span>(left)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_237" alt="left_join() output" /></p>
+</div>
+<div id="right-join" class="section level4" number="5.0.5.3">
+<h4><span class="header-section-number">5.0.5.3</span> Right Join</h4>
+<p>Right Join is similar to what we just discussed; however, in the output from a right join, all rows in the final table specified are included in the output. NAs will be included for any observations found in the last specified table but not in the other tables.</p>
+<p>In our toy example, that means, information about <code>ArtistID</code>s 1, 2, and 4 will be included.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_150" alt="right join will include all observations found in the last table specified" /></p>
+<p>Again, in our toy example, we see that <code>right_join()</code> combines the information across tables; however, in this case, <code>ArtistId</code> 4 is included, but <code>Name</code> is an NA, as this information was not in the <code>artists</code> table for this artist.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_160" alt="right join will fill in NAs" /></p>
+<p>Now, to run this for our tables from the database, you would have to do something <em>slightly</em> different than what you saw above. Note in the code below that we have to change the class of the tables from the database into tibbles before doing the join. This is because SQL does not currently support right or full joins, but <code>dplyr</code> does. Thus, we first have to be sure the data are a class that <code>dplyr</code> can work with using <code>as_tibble()</code>. Other than that, the code below is similar to what you’ve seen already:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="relational-data.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="do">## do right join</span></span>
+<span id="cb27-2"><a href="relational-data.html#cb27-2" aria-hidden="true" tabindex="-1"></a>right <span class="ot">&lt;-</span> <span class="fu">right_join</span>(<span class="fu">as_tibble</span>(artists), <span class="fu">as_tibble</span>(albums))</span>
+<span id="cb27-3"><a href="relational-data.html#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="relational-data.html#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="do">## look at output as a tibble</span></span>
+<span id="cb27-5"><a href="relational-data.html#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">as_tibble</span>(right)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_245" alt="right_join() output" /></p>
+<p>While the output may look similar to the output from <code>left_join()</code>, you’ll note that there are a different number of rows due to how the join was done. The fact that 347 rows are present with the right join and 418 were present after the left join suggests that there are artists in the artists table without albums in the albums table.</p>
+</div>
+<div id="full-join" class="section level4" number="5.0.5.4">
+<h4><span class="header-section-number">5.0.5.4</span> Full Join</h4>
+<p>Finally, a full join will take every observation from every table and include it in the output.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_175" alt="full join will include any observation found in either table" /></p>
+<p>Thus, in our toy example, this join produces five rows, including all the observations from either table. NAs are filled in when data are missing for an observation.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_185" alt="full join will fill in NAs" /></p>
+<p>As you saw in the last example, to carry out a full join, we have to again specify that the objects are tibbles before being able to carry out the join</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="relational-data.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="do">## do right join</span></span>
+<span id="cb28-2"><a href="relational-data.html#cb28-2" aria-hidden="true" tabindex="-1"></a>full <span class="ot">&lt;-</span> <span class="fu">full_join</span>(<span class="fu">as_tibble</span>(artists), <span class="fu">as_tibble</span>(albums))</span>
+<span id="cb28-3"><a href="relational-data.html#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="relational-data.html#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="do">## look at output as a tibble</span></span>
+<span id="cb28-5"><a href="relational-data.html#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">as_tibble</span>(full)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_250" alt="full_join() output" /></p>
+</div>
+<div id="mutating-joins-summary" class="section level4" number="5.0.5.5">
+<h4><span class="header-section-number">5.0.5.5</span> Mutating Joins Summary</h4>
+<p>Now that we’ve walked through a number of examples of mutating joins, cases where you’re combining information across tables, we just want to take a second to summarize the four types of joins discussed using a visual frequently used to explain the most common mutating joins where each circle represents a different table and the gray shading on the venn diagrams indicates which observations will be included after the join.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_78" alt="mutating joins summary" /></p>
+<p>To see a visual representation of this, there is a great resource on GitHub, where these joins are illustrated, so feel free to check out <a href="https://github.com/gadenbuie/tidyexplain#readme">this link</a> from <a href="https://www.garrickadenbuie.com/">Garrick Aden-Buie</a> animating joins within relational data</p>
+</div>
+</div>
+<div id="filtering-joins" class="section level3" number="5.0.6">
+<h3><span class="header-section-number">5.0.6</span> Filtering Joins</h3>
+<p>While we discussed mutating joins in detail, we’re just going to mention the ability to carry out filtering joins. While mutating joins combined variables across tables, <strong>filtering joins</strong> affect the observations, not the variables. This <em>still</em> requires a unique identifier to match the observations between tables.</p>
+<p>Filtering joins keep observations in one table based on the observations present in a second table. Specifically:</p>
+<ul>
+<li><code>semi_join(x, y)</code> : keeps all observations in <code>x</code> with a match in <code>y</code>.</li>
+<li><code>anti_join(x, y)</code> : keeps observations in <code>x</code> that do <em>NOT</em> have a match in <code>y</code>.</li>
+</ul>
+<p>In our toy example, if the join <code>semi_join(artists, albums)</code> were run, this would keep rows of <code>artists</code> where the <code>ArtistID</code> in <code>artist</code> was also in the <code>albums</code> table.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_255" alt="semi_join() output" /></p>
+<p>Alternatively, <code>anti_join(artists, albums)</code> would output the rows of <code>artists</code> whose <code>ArtistId</code> was <em>NOT</em> found in the <code>albums</code> table.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&amp;pageid=g3a5854d1ae_0_259" alt="anti_join() output" /></p>
+<p>Note that in the case of filtering joins, the number of variables in the table <em>after</em> the join does not change. While <strong>mutating joins</strong> merged the tables creating a resulting table with more columns, with <strong>filtering joins</strong> we’re simply filtering the observations in one table based on the values in a second table.</p>
+</div>
+<div id="how-to-connect-to-a-database-online" class="section level3" number="5.0.7">
+<h3><span class="header-section-number">5.0.7</span> How to Connect to a Database Online</h3>
+<p>As mentioned briefly above, most often when working with databases, you won’t be downloading the entire database. Instead, you’ll connect to a server somewhere else where the data live and query the data (search for the parts you need) from R.</p>
+<p>For example, in this lesson we downloaded the entire <code>chinook</code> database, but only ended up using <code>artists</code> and <code>albums</code>. In the future, instead of downloading <em>all</em> the data, you’ll just connect to the database and work with the parts you need.</p>
+<p>This will require connecting to the database with <code>host</code>, <code>user</code>, and <code>password</code>. This information will be provided by the database’s owners, but the syntax for entering this information into R to connect to the database would look something like what you see here:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="relational-data.html#cb29-1" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(RMySQL<span class="sc">::</span><span class="fu">MySQL</span>(),</span>
+<span id="cb29-2"><a href="relational-data.html#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">host =</span> <span class="st">&quot;database.host.com&quot;</span>,</span>
+<span id="cb29-3"><a href="relational-data.html#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user =</span> <span class="st">&quot;janeeverydaydoe&quot;</span>,</span>
+<span id="cb29-4"><a href="relational-data.html#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">password =</span> rstudioapi<span class="sc">::</span><span class="fu">askForPassword</span>(<span class="st">&quot;database_password&quot;</span>)</span>
+<span id="cb29-5"><a href="relational-data.html#cb29-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>While not being discussed in detail here, it’s important to know that connecting to remote databases from R is possible and that this allows you to query the database without reading <em>all</em> the data from the database into R.</p>
+</div>
+<div id="summary-2" class="section level3" number="5.0.8">
+<h3><span class="header-section-number">5.0.8</span> Summary</h3>
+<p>In this lesson we discussed what relational data are and how to work with them in R. This led to a discussion about the package <code>RSQLite</code>, which allows you to connect to and make queries from databases. With relational data in hand, we discussed both mutating joins and filtering joins. Finally, we touched <em>very</em> briefly on how to connect to a remote database from R.</p>
+</div>
+<div id="additional-resources-2" class="section level3" number="5.0.9">
+<h3><span class="header-section-number">5.0.9</span> Additional Resources</h3>
+<ul>
+<li><a href="http://r4ds.had.co.nz/relational-data.html#introduction-7">Relational Data - Chapter 13</a>, by Hadley Wickham</li>
+<li><a href="https://github.com/gadenbuie/tidyexplain#readme">Tidy Animated Verbs</a>, by <a href="https://www.garrickadenbuie.com/">Garrick Aden-Buie</a> to visualize joins in relational data</li>
+<li><a href="https://datacarpentry.org/R-ecology-lesson/05-r-and-databases.html">SQL databases and R</a>, from Data Carpentry</li>
+</ul>
+</div>
+<div id="slides-and-video-4" class="section level3" number="5.0.10">
+<h3><span class="header-section-number">5.0.10</span> Slides and Video</h3>
+<div class="figure">
+<img src="https://www.youtube.com/watch?v=BjFT_7MT62E" alt="" />
+<p class="caption">Relational Databases</p>
+</div>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/edit?usp=sharing">Slides</a></li>
+</ul>
+
+</div>
+</div>
+<hr>
+<center> 
+  <div class="footer">
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY. </a>
+      <br>
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/"> CC-BY </a> unless noted otherwise.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="getting-data-from-the-internet.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="unconventional-sources-of-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
