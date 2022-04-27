@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Getting Data From the Internet | Getting Data</title>
+  <meta name="description" content="Description about Course/Book." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Getting Data From the Internet | Getting Data" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Description about Course/Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Getting Data From the Internet | Getting Data" />
+  
+  <meta name="twitter:description" content="Description about Course/Book." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/DataTrail_favicon.ico" type="image/x-icon" />
+<link rel="prev" href="importing-data-from-google-sheets.html"/>
+<link rel="next" href="relational-data.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets/style_DataTrail.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style="padding-left: 0px; padding-top: 8px;"</a>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a></li>
+<li class="chapter" data-level="1" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html"><i class="fa fa-check"></i><b>1</b> Where Does Data Come From?</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#basic-data-files"><i class="fa fa-check"></i><b>1.0.1</b> Basic Data files</a></li>
+<li class="chapter" data-level="1.0.2" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#data-from-the-internet"><i class="fa fa-check"></i><b>1.0.2</b> Data from the Internet</a></li>
+<li class="chapter" data-level="1.0.3" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#relational-databases"><i class="fa fa-check"></i><b>1.0.3</b> Relational Databases</a></li>
+<li class="chapter" data-level="1.0.4" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#unconventional-data"><i class="fa fa-check"></i><b>1.0.4</b> Unconventional Data</a></li>
+<li class="chapter" data-level="1.0.5" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#slides-and-video"><i class="fa fa-check"></i><b>1.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html"><i class="fa fa-check"></i><b>2</b> CSV, Excel, and TSV Files</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#csv-files"><i class="fa fa-check"></i><b>2.0.1</b> CSV files</a></li>
+<li class="chapter" data-level="2.0.2" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#downloading-csv-files"><i class="fa fa-check"></i><b>2.0.2</b> Downloading CSV files</a></li>
+<li class="chapter" data-level="2.0.3" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-csv-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.3</b> Reading CSV files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.4" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#excel-files"><i class="fa fa-check"></i><b>2.0.4</b> Excel files</a></li>
+<li class="chapter" data-level="2.0.5" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-excel-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.5</b> Reading Excel files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.6" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#text-files"><i class="fa fa-check"></i><b>2.0.6</b> Text files</a></li>
+<li class="chapter" data-level="2.0.7" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-tsv-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.7</b> Reading TSV files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.8" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-txt-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.8</b> Reading TXT files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.9" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#exporting-data-in-r-to-csv"><i class="fa fa-check"></i><b>2.0.9</b> Exporting Data in R to CSV</a></li>
+<li class="chapter" data-level="2.0.10" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#slides-and-video-1"><i class="fa fa-check"></i><b>2.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html"><i class="fa fa-check"></i><b>3</b> Importing Data from Google Sheets</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#the-googlesheets-package"><i class="fa fa-check"></i><b>3.0.1</b> The <code>googlesheets</code> package</a></li>
+<li class="chapter" data-level="3.0.2" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#importing-csv-files-from-the-web"><i class="fa fa-check"></i><b>3.0.2</b> Importing CSV files from the web</a></li>
+<li class="chapter" data-level="3.0.3" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#summary"><i class="fa fa-check"></i><b>3.0.3</b> Summary</a></li>
+<li class="chapter" data-level="3.0.4" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#additional-resources"><i class="fa fa-check"></i><b>3.0.4</b> Additional Resources</a></li>
+<li class="chapter" data-level="3.0.5" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#slides-and-video-2"><i class="fa fa-check"></i><b>3.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html"><i class="fa fa-check"></i><b>4</b> Getting Data From the Internet</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#api-access"><i class="fa fa-check"></i><b>4.0.1</b> API access</a></li>
+<li class="chapter" data-level="4.0.2" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#getting-data-httr"><i class="fa fa-check"></i><b>4.0.2</b> Getting Data: <code>httr</code></a></li>
+<li class="chapter" data-level="4.0.3" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#example-1-githubs-api"><i class="fa fa-check"></i><b>4.0.3</b> Example 1: GitHub’s API</a></li>
+<li class="chapter" data-level="4.0.4" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#example-2-obtaining-a-csv"><i class="fa fa-check"></i><b>4.0.4</b> Example 2: Obtaining a CSV</a></li>
+<li class="chapter" data-level="4.0.5" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#api-keys"><i class="fa fa-check"></i><b>4.0.5</b> API keys</a></li>
+<li class="chapter" data-level="4.0.6" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#web-scraping-1"><i class="fa fa-check"></i><b>4.0.6</b> Web Scraping</a></li>
+<li class="chapter" data-level="4.0.7" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#json"><i class="fa fa-check"></i><b>4.0.7</b> JSON</a></li>
+<li class="chapter" data-level="4.0.8" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#keeping-track-of-your-data"><i class="fa fa-check"></i><b>4.0.8</b> Keeping Track of your Data</a></li>
+<li class="chapter" data-level="4.0.9" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#summary-1"><i class="fa fa-check"></i><b>4.0.9</b> Summary</a></li>
+<li class="chapter" data-level="4.0.10" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#additional-resources-1"><i class="fa fa-check"></i><b>4.0.10</b> Additional Resources</a></li>
+<li class="chapter" data-level="4.0.11" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#slides-and-video-3"><i class="fa fa-check"></i><b>4.0.11</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="relational-data.html"><a href="relational-data.html"><i class="fa fa-check"></i><b>5</b> Relational Data</a>
+<ul>
+<li class="chapter" data-level="5.0.1" data-path="relational-data.html"><a href="relational-data.html#relational-data-1"><i class="fa fa-check"></i><b>5.0.1</b> Relational Data</a></li>
+<li class="chapter" data-level="5.0.2" data-path="relational-data.html"><a href="relational-data.html#relational-databases-sql"><i class="fa fa-check"></i><b>5.0.2</b> Relational Databases: <code>SQL</code></a></li>
+<li class="chapter" data-level="5.0.3" data-path="relational-data.html"><a href="relational-data.html#connecting-to-databases-rsqlite"><i class="fa fa-check"></i><b>5.0.3</b> Connecting to Databases: <code>RSQLite</code></a></li>
+<li class="chapter" data-level="5.0.4" data-path="relational-data.html"><a href="relational-data.html#working-with-relational-data-dplyr-dbplyr"><i class="fa fa-check"></i><b>5.0.4</b> Working with Relational Data: <code>dplyr</code> &amp; <code>dbplyr</code></a></li>
+<li class="chapter" data-level="5.0.5" data-path="relational-data.html"><a href="relational-data.html#mutating-joins"><i class="fa fa-check"></i><b>5.0.5</b> Mutating Joins</a></li>
+<li class="chapter" data-level="5.0.6" data-path="relational-data.html"><a href="relational-data.html#filtering-joins"><i class="fa fa-check"></i><b>5.0.6</b> Filtering Joins</a></li>
+<li class="chapter" data-level="5.0.7" data-path="relational-data.html"><a href="relational-data.html#how-to-connect-to-a-database-online"><i class="fa fa-check"></i><b>5.0.7</b> How to Connect to a Database Online</a></li>
+<li class="chapter" data-level="5.0.8" data-path="relational-data.html"><a href="relational-data.html#summary-2"><i class="fa fa-check"></i><b>5.0.8</b> Summary</a></li>
+<li class="chapter" data-level="5.0.9" data-path="relational-data.html"><a href="relational-data.html#additional-resources-2"><i class="fa fa-check"></i><b>5.0.9</b> Additional Resources</a></li>
+<li class="chapter" data-level="5.0.10" data-path="relational-data.html"><a href="relational-data.html#slides-and-video-4"><i class="fa fa-check"></i><b>5.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html"><i class="fa fa-check"></i><b>6</b> Unconventional Sources of Data</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#structured-data"><i class="fa fa-check"></i><b>6.0.1</b> Structured Data</a></li>
+<li class="chapter" data-level="6.0.2" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#unstructured-data"><i class="fa fa-check"></i><b>6.0.2</b> Unstructured Data</a></li>
+<li class="chapter" data-level="6.0.3" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#text-data"><i class="fa fa-check"></i><b>6.0.3</b> Text Data</a></li>
+<li class="chapter" data-level="6.0.4" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#json-javascript-object-notation"><i class="fa fa-check"></i><b>6.0.4</b> JSON: JavaScript Object Notation</a></li>
+<li class="chapter" data-level="6.0.5" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#xml-extensible-markup-language"><i class="fa fa-check"></i><b>6.0.5</b> XML: Extensible Markup Language</a></li>
+<li class="chapter" data-level="6.0.6" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#images-1"><i class="fa fa-check"></i><b>6.0.6</b> Images</a></li>
+<li class="chapter" data-level="6.0.7" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#audio-files-1"><i class="fa fa-check"></i><b>6.0.7</b> Audio Files</a></li>
+<li class="chapter" data-level="6.0.8" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#summary-3"><i class="fa fa-check"></i><b>6.0.8</b> Summary</a></li>
+<li class="chapter" data-level="6.0.9" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#additional-resources-3"><i class="fa fa-check"></i><b>6.0.9</b> Additional Resources</a></li>
+<li class="chapter" data-level="6.0.10" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#slides-and-video-5"><i class="fa fa-check"></i><b>6.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="finding-data.html"><a href="finding-data.html"><i class="fa fa-check"></i><b>7</b> Finding Data</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="finding-data.html"><a href="finding-data.html#public-versus-private-data"><i class="fa fa-check"></i><b>7.0.1</b> Public versus Private Data</a></li>
+<li class="chapter" data-level="7.0.2" data-path="finding-data.html"><a href="finding-data.html#publicly-available-data"><i class="fa fa-check"></i><b>7.0.2</b> Publicly-available data</a></li>
+<li class="chapter" data-level="7.0.3" data-path="finding-data.html"><a href="finding-data.html#data-you-already-have"><i class="fa fa-check"></i><b>7.0.3</b> Data You Already Have</a></li>
+<li class="chapter" data-level="7.0.4" data-path="finding-data.html"><a href="finding-data.html#summary-4"><i class="fa fa-check"></i><b>7.0.4</b> Summary</a></li>
+<li class="chapter" data-level="7.0.5" data-path="finding-data.html"><a href="finding-data.html#slides-and-video-6"><i class="fa fa-check"></i><b>7.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="internet-safety.html"><a href="internet-safety.html"><i class="fa fa-check"></i><b>8</b> Internet Safety</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="internet-safety.html"><a href="internet-safety.html#wifi"><i class="fa fa-check"></i><b>8.0.1</b> WiFi</a></li>
+<li class="chapter" data-level="8.0.2" data-path="internet-safety.html"><a href="internet-safety.html#passwords"><i class="fa fa-check"></i><b>8.0.2</b> Passwords</a></li>
+<li class="chapter" data-level="8.0.3" data-path="internet-safety.html"><a href="internet-safety.html#good-internet-behavior"><i class="fa fa-check"></i><b>8.0.3</b> Good Internet behavior</a></li>
+<li class="chapter" data-level="8.0.4" data-path="internet-safety.html"><a href="internet-safety.html#online-scams"><i class="fa fa-check"></i><b>8.0.4</b> Online Scams</a></li>
+<li class="chapter" data-level="8.0.5" data-path="internet-safety.html"><a href="internet-safety.html#malware-spyware"><i class="fa fa-check"></i><b>8.0.5</b> Malware &amp; Spyware</a></li>
+<li class="chapter" data-level="8.0.6" data-path="internet-safety.html"><a href="internet-safety.html#security-on-a-chromebook"><i class="fa fa-check"></i><b>8.0.6</b> Security on a Chromebook</a></li>
+<li class="chapter" data-level="8.0.7" data-path="internet-safety.html"><a href="internet-safety.html#slides-and-video-7"><i class="fa fa-check"></i><b>8.0.7</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="data-privacy.html"><a href="data-privacy.html"><i class="fa fa-check"></i><b>9</b> Data Privacy</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="data-privacy.html"><a href="data-privacy.html#what-is-data-privacy"><i class="fa fa-check"></i><b>9.0.1</b> What is Data Privacy?</a></li>
+<li class="chapter" data-level="9.0.2" data-path="data-privacy.html"><a href="data-privacy.html#personally-identifiable-information"><i class="fa fa-check"></i><b>9.0.2</b> Personally Identifiable Information</a></li>
+<li class="chapter" data-level="9.0.3" data-path="data-privacy.html"><a href="data-privacy.html#what-is-encryption"><i class="fa fa-check"></i><b>9.0.3</b> What is encryption?</a></li>
+<li class="chapter" data-level="9.0.4" data-path="data-privacy.html"><a href="data-privacy.html#human-security"><i class="fa fa-check"></i><b>9.0.4</b> Human Security</a></li>
+<li class="chapter" data-level="9.0.5" data-path="data-privacy.html"><a href="data-privacy.html#computer-security"><i class="fa fa-check"></i><b>9.0.5</b> Computer Security</a></li>
+<li class="chapter" data-level="9.0.6" data-path="data-privacy.html"><a href="data-privacy.html#open-science"><i class="fa fa-check"></i><b>9.0.6</b> Open Science</a></li>
+<li class="chapter" data-level="9.0.7" data-path="data-privacy.html"><a href="data-privacy.html#data-breaches"><i class="fa fa-check"></i><b>9.0.7</b> Data Breaches</a></li>
+<li class="chapter" data-level="9.0.8" data-path="data-privacy.html"><a href="data-privacy.html#conclusions"><i class="fa fa-check"></i><b>9.0.8</b> Conclusions</a></li>
+<li class="chapter" data-level="9.0.9" data-path="data-privacy.html"><a href="data-privacy.html#slides-and-video-8"><i class="fa fa-check"></i><b>9.0.9</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ethical-data-science.html"><a href="ethical-data-science.html"><i class="fa fa-check"></i><b>10</b> Ethical Data Science</a>
+<ul>
+<li class="chapter" data-level="10.0.1" data-path="ethical-data-science.html"><a href="ethical-data-science.html#data-science-team"><i class="fa fa-check"></i><b>10.0.1</b> Data Science Team</a></li>
+<li class="chapter" data-level="10.0.2" data-path="ethical-data-science.html"><a href="ethical-data-science.html#the-data"><i class="fa fa-check"></i><b>10.0.2</b> The Data</a></li>
+<li class="chapter" data-level="10.0.3" data-path="ethical-data-science.html"><a href="ethical-data-science.html#the-analysis"><i class="fa fa-check"></i><b>10.0.3</b> The Analysis</a></li>
+<li class="chapter" data-level="10.0.4" data-path="ethical-data-science.html"><a href="ethical-data-science.html#after-the-algorithm"><i class="fa fa-check"></i><b>10.0.4</b> After the Algorithm</a></li>
+<li class="chapter" data-level="10.0.5" data-path="ethical-data-science.html"><a href="ethical-data-science.html#ethics-in-data-science"><i class="fa fa-check"></i><b>10.0.5</b> Ethics in Data Science</a></li>
+<li class="chapter" data-level="10.0.6" data-path="ethical-data-science.html"><a href="ethical-data-science.html#artificial-intelligence-in-the-military"><i class="fa fa-check"></i><b>10.0.6</b> Artificial Intelligence in the Military</a></li>
+<li class="chapter" data-level="10.0.7" data-path="ethical-data-science.html"><a href="ethical-data-science.html#additional-resources-4"><i class="fa fa-check"></i><b>10.0.7</b> Additional Resources</a></li>
+<li class="chapter" data-level="10.0.8" data-path="ethical-data-science.html"><a href="ethical-data-science.html#slides-and-video-9"><i class="fa fa-check"></i><b>10.0.8</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
+<li class="divider"></li>
+<p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by: </a> </p>
+<p style="text-align:center;"> <a href="https://www.datatrail.org/"> Data Trail </a></p>
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style=" width: 80%; filter: grayscale(100%); padding-left: 40px; padding-top: 8px; vertical-align: top "</a>
+<p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
+<p style="padding-left: 40px;"><div class="trapezoid" style = "padding-left: 40px;"><span>  <a href="https://forms.gle/VWaJYc3zATe3qxYC9"> Click here to provide feedback</a> <img src="assets/itcr_arrow.png" style=" width: 10%" ></span></div></p>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Getting Data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <!--script src="https://kit.fontawesome.com/6a26f47516.js"></script-->
+  <!--<script src="assets/hideOutput.js"></script>-->
+  <link href="assets/style_DataTrail.css" rel="stylesheet">
+</head>
+        
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="assets/DataTrail.jpg">
+</div>
+<div id="getting-data-from-the-internet" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Getting Data From the Internet</h1>
+<p>In the introductory lesson, we mentioned that there is a lot of data on the Internet, which probably comes at no surprise given the vast amount of information on the Internet. Sometimes these data are in a nice CSV format that we can quickly pull from the Internet. Sometimes, the data are spread across a web page, and it’s our job to “scrape” that information from the webpage and get it into a usable format. Knowing first that this is possible within R and second, having some idea of where to start is an important start to beginning to get data from the Internet.</p>
+<p>We’ll walk through three R packages in this lesson to help get you started in getting data from the Internet. So, before we jump in, we’ll have you install these packages:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="getting-data-from-the-internet.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Install packages</span></span>
+<span id="cb11-2"><a href="getting-data-from-the-internet.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;httr&quot;</span>, <span class="st">&quot;rvest&quot;</span>, <span class="st">&quot;jsonlite&quot;</span>))</span></code></pre></div>
+<div id="api-access" class="section level3" number="4.0.1">
+<h3><span class="header-section-number">4.0.1</span> API access</h3>
+<p>In the first lesson we mentioned that <strong>Application Programming Interfaces (APIs)</strong> are, in the most general sense, software that allow to different web-based applications to communicate with one another over the Internet. Modern APIs conform to a number of standards. This means that many different applications are using the same approach, so a single package in R is able to take advantage of this and communicate with many different applications, as long as the application’s API adheres to this generally agreed upon set of “rules”.</p>
+<p>The R package that we’ll be using to acquire data and take advantage of this is called <code>httr</code>. This package name suggests that this is an “R” package for “HTTP”. So, we know what R is, but what about HTTP?</p>
+<p>You’ve probably seeing HTTP before at the start of web addresses, (ie <a href="http://www.gmail.com" class="uri">http://www.gmail.com</a>), so you may have some intuition that HTTP has something to do with the Internet, which is absolutely correct! HTTP stands for Hypertest Transfer Protocol. In the broadest sense, HTTP transactions allow for messages to be sent between two points on the Internet. You, on your computer can request something from a web page, and the protocol (HTTP) allows you to connect with that webpage’s server, do something, and then return you whatever it is you asked for.</p>
+<p>Working with a web API is similar to accessing a website in many ways. When you type a URL (ie www.google.com) into your browser, information is sent from your computer to your browser. Your browser then interprets what you’re asking for and displays the website you’ve requested. Web APIs work similarly. You <strong>request</strong> some information from the API and the API sends back a <strong>response</strong>.</p>
+<p>The <code>httr</code> package will hep you carry out these types of requests within R. Let’s stop talking about it, and see an actual example!</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_69" alt="HTTP access via httr" /></p>
+</div>
+<div id="getting-data-httr" class="section level3" number="4.0.2">
+<h3><span class="header-section-number">4.0.2</span> Getting Data: <code>httr</code></h3>
+<p>HTTP is based on a number of important verbs : <code>GET()</code>, <code>HEAD()</code>, <code>PATCH()</code>, <code>PUT()</code>, <code>DELETE()</code> and <code>POST()</code>. For the purposes of retrieving data from the Internet, you may be able to guess which verb will be the most important for our purposes! <code>GET()</code> will allow us to <em>fetch</em> a resource that already exists. We’ll specify a URL to tell <code>GET()</code> where to go look for what we want. While we’ll only highlight <code>GET()</code> in this lesson, for full understanding of the many other HTTP verbs and capabilities of <code>httr</code>, refer to the additional resources provided at the end of this lesson.</p>
+<p><code>GET()</code> will access the API, provide the API with the necessary information to request the data we want, and retrieve some output.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_90" alt="API requests are made to an API endpoint to get an API response" /></p>
+</div>
+<div id="example-1-githubs-api" class="section level3" number="4.0.3">
+<h3><span class="header-section-number">4.0.3</span> Example 1: GitHub’s API</h3>
+<p>The example is based on a wonderful <a href="https://www.tylerclavelle.com/code/2017/randapis/">blogpost</a> from <a href="https://www.tylerclavelle.com/about/">Tyler Clavelle</a>. In this example, we’ll use will take advantage of GitHub’s API, because it’s accessible to anyone. Other APIs, while often freely-accessible, require credentials, called an <strong>API key</strong>. We’ll talk about those later, but let’s just get started using <a href="https://developer.github.com/v3/">GitHub’s API</a> now!</p>
+<div id="api-endpoint" class="section level4" number="4.0.3.1">
+<h4><span class="header-section-number">4.0.3.1</span> API Endpoint</h4>
+<p>The URL you’re requesting information from is known as the <strong>API endpoint</strong>. The documentation from GitHub’s API explains what information can be obtained from their API endpoint: <a href="https://api.github.com">https://api.github.com</a>. That’s the base endpoint, but if you wanted to access a particular individual’s GitHub repositories, you would want to modify this base endpoint to: <code>https://api.github.com/users/username/repos</code>, where you would replace <code>username</code> with <em>your</em> GitHub username.</p>
+</div>
+<div id="api-request-get" class="section level4" number="4.0.3.2">
+<h4><span class="header-section-number">4.0.3.2</span> API request: <code>GET()</code></h4>
+<p>Now that we know what our API endpoint is, we’re ready to make our <strong>API request</strong> using <code>GET()</code>.</p>
+<p>The goal of this request is to obtain information about what repositories are available in <em>your</em> GitHub account. To use the example below, you’ll want to change the username <code>janeeverydaydoe</code> to your GitHub username.</p>
+<pre><code>## load package
+library(httr)
+library(dplyr)
+
+## Save GitHub username as variable
+username &lt;- &#39;janeeverydaydoe&#39;
+
+## Save base endpoint as variable
+url_git &lt;- &#39;https://api.github.com/&#39;
+
+## Construct API request
+api_response &lt;- GET(url = paste0(url_git, &#39;users/&#39;, username, &#39;/repos&#39;))</code></pre>
+<p>Note: In the code above, you see the function <code>paste0()</code>. This function concatenates (links together) each the pieces within the parentheses, where each piece is separated by a comma. This provides <code>GET()</code> with the URL we want to use as our endpoints!</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_54" alt="httr code to access GitHub" /></p>
+</div>
+<div id="api-response-content" class="section level4" number="4.0.3.3">
+<h4><span class="header-section-number">4.0.3.3</span> API response: <code>content()</code></h4>
+<p>Let’s first take a look at what other variables are available within the <code>api_response</code> object:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="getting-data-from-the-internet.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## See variables in response</span></span>
+<span id="cb13-2"><a href="getting-data-from-the-internet.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(api_response)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_112" alt="httr response" /></p>
+<p>While we see ten different variables within <code>api_response</code>, we should probably first make sure that the request to GitHub’s API was successful. We can do this by checking the status code of the request, where “200” means that everything worked properly:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="getting-data-from-the-internet.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Check Status Code of request</span></span>
+<span id="cb14-2"><a href="getting-data-from-the-internet.html#cb14-2" aria-hidden="true" tabindex="-1"></a>api_response<span class="sc">$</span>status_code</span></code></pre></div>
+<p>But, to be honest, we aren’t really interested in just knowing the request worked. We actually want to see what information is contained on our GitHub account.</p>
+<p>To do so we’ll take advantage of <code>httr</code>’s <code>content()</code> function, which as its name suggests, extracts the contents from an API request.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="getting-data-from-the-internet.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Extract content from API response</span></span>
+<span id="cb15-2"><a href="getting-data-from-the-internet.html#cb15-2" aria-hidden="true" tabindex="-1"></a>repo_content <span class="ot">&lt;-</span> <span class="fu">content</span>(api_response)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_117" alt="httr status code and content()" /></p>
+<p>You can see here that the length of <code>repo_content</code> in our case is 6 by looking at the Environment tab. This is because the GitHub account <code>janeeverydaydoe</code> had six repositories at the time of this API call. We can get some information about each repo by running the function below:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="getting-data-from-the-internet.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">## function to get name and URL for each repo</span></span>
+<span id="cb16-2"><a href="getting-data-from-the-internet.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(repo_content, <span class="cf">function</span>(x) {</span>
+<span id="cb16-3"><a href="getting-data-from-the-internet.html#cb16-3" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">repo =</span> x<span class="sc">$</span>name,</span>
+<span id="cb16-4"><a href="getting-data-from-the-internet.html#cb16-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">address =</span> x<span class="sc">$</span>html_url)}) <span class="sc">%&gt;%</span></span>
+<span id="cb16-5"><a href="getting-data-from-the-internet.html#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_132" alt="output from API request" /></p>
+<p>Here, we’ve pulled out the name and URL of each repository in Jane Doe’s account; however, there is <em>a lot</em> more information in the <code>repo_content</code> object. To see how to extract more information, check out the rest of Tyler’s wonderful post <a href="https://tclavelle.github.io/blog/r_and_apis/">here</a>.</p>
+</div>
+</div>
+<div id="example-2-obtaining-a-csv" class="section level3" number="4.0.4">
+<h3><span class="header-section-number">4.0.4</span> Example 2: Obtaining a CSV</h3>
+<p>In a previous course in this Course Set on Data Visualization, we assigned a project where the data for the project had already been saved on RStudio Cloud for you in CSV format. <em>However</em>, these data are available on the Internet. Now that we know how to use <code>httr</code> and have an understanding about APIs, let’s do that now!</p>
+<p>So, the data are available for download from this link: <a href="https://data.fivethirtyeight.com/">data.fivethirtyeight.com</a>, but are also hosted on GitHub <a href="https://github.com/fivethirtyeight/data">here</a>, and we will want to use the specific URL for this file: <a href="https://raw.githubusercontent.com/fivethirtyeight/data/master/steak-survey/steak-risk-survey.csv">https://raw.githubusercontent.com/fivethirtyeight/data/master/steak-survey/steak-risk-survey.csv</a> in our <code>GET()</code> request.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_148" alt="steak-survey on GitHub" /></p>
+<p>To do so, we would do the following:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="getting-data-from-the-internet.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Make API request</span></span>
+<span id="cb17-2"><a href="getting-data-from-the-internet.html#cb17-2" aria-hidden="true" tabindex="-1"></a>api_response <span class="ot">&lt;-</span> <span class="fu">GET</span>(<span class="at">url =</span> <span class="st">&quot;https://raw.githubusercontent.com/fivethirtyeight/data/master/steak-survey/steak-risk-survey.csv&quot;</span>)</span>
+<span id="cb17-3"><a href="getting-data-from-the-internet.html#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="getting-data-from-the-internet.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Extract content from API response</span></span>
+<span id="cb17-5"><a href="getting-data-from-the-internet.html#cb17-5" aria-hidden="true" tabindex="-1"></a>df_steak <span class="ot">&lt;-</span> <span class="fu">content</span>(api_response, <span class="at">type=</span><span class="st">&quot;text/csv&quot;</span>)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_154" alt="GET() steak-survey CSV" /></p>
+<p>Here, we again specify our url within <code>GET()</code> followed by use of the helpful <code>content()</code> function from <code>httr</code> to obtain the CSV from the <code>api_response</code> object. <code>df_steak</code> includes the data from the CSV directly from the GitHub API, without having to download the data first!</p>
+</div>
+<div id="api-keys" class="section level3" number="4.0.5">
+<h3><span class="header-section-number">4.0.5</span> API keys</h3>
+<p>Not all API’s are as “open” as GitHub’s. For example, if you ran the code for the first example above exactly as it was written (and didn’t change the GitHub username), you would have gotten information about the repos in janeeverydaydoe’s GitHub account. Because it is a fully-open API, you’re able to retrieve information about not only your GitHub account, but also other users’ public GitHub activity. This makes good sense because sharing code among public repositories is an important part of GitHub.</p>
+<p>Alternatively, while Google also has an API (or rather, <em>many</em> API’s), they aren’t quite as open. This makes good sense. There is no reason I should have access to the files on someone else’s Google Drive account. Controlling whose files one can access through Google’s API is an important privacy feature.</p>
+<p>In these cases, what is known as a key is required to gain access to the API. <strong>API keys</strong> are obtained from the website’s API site (ie, for Google’s APIs, you would start <a href="https://developers.google.com/apis-explorer/#p/">here</a>. Once acquired, these keys should <strong>never be shared on the Internet</strong>. There is a reason they’re required, after all. So, be sure to <strong>never push a key to GitHub or share it publicly</strong>. (If you do ever accidentally share a key on the Internet, return to the API and disable the key immediately.)</p>
+<p>For example, to access the Twitter API, you would obtain your key and necessary tokens from <a href="https://developer.twitter.com/en/docs/tweets/search/overview">Twitter’s API</a> and replace the text in the <code>key</code>, <code>secret</code>, <code>token</code> and <code>token_secret</code> arguments below. This would authenticate you to use Twitter’s API to acquire information about your home timeline.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="getting-data-from-the-internet.html#cb18-1" aria-hidden="true" tabindex="-1"></a>myapp <span class="ot">=</span> <span class="fu">oauth_app</span>(<span class="st">&quot;twitter&quot;</span>,</span>
+<span id="cb18-2"><a href="getting-data-from-the-internet.html#cb18-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">key =</span> <span class="st">&quot;yourConsumerKeyHere&quot;</span>,</span>
+<span id="cb18-3"><a href="getting-data-from-the-internet.html#cb18-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">secret =</span> <span class="st">&quot;yourConsumerSecretHere&quot;</span>)</span>
+<span id="cb18-4"><a href="getting-data-from-the-internet.html#cb18-4" aria-hidden="true" tabindex="-1"></a>sig <span class="ot">=</span> <span class="fu">sign_oauth1.0</span>(myapp,</span>
+<span id="cb18-5"><a href="getting-data-from-the-internet.html#cb18-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">token =</span> <span class="st">&quot;yourTokenHere&quot;</span>,</span>
+<span id="cb18-6"><a href="getting-data-from-the-internet.html#cb18-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">token_secret =</span> <span class="st">&quot;yourTokenSecretHere&quot;</span>)</span>
+<span id="cb18-7"><a href="getting-data-from-the-internet.html#cb18-7" aria-hidden="true" tabindex="-1"></a>homeTL <span class="ot">=</span> <span class="fu">GET</span>(<span class="st">&quot;https://api.twitter.com/1.1/statuses/home_timeline.json&quot;</span>, sig)</span></code></pre></div>
+</div>
+<div id="web-scraping-1" class="section level3" number="4.0.6">
+<h3><span class="header-section-number">4.0.6</span> Web Scraping</h3>
+<p>Now that we’ve walked through two cases of obtaining data using an API and discussed API keys, let’s transition a little bit to talking about how to pull pieces of data from a website, when the data aren’t (yet!) in the format that we want them.</p>
+<p>In the first lesson of this course, we talked about the example of wanting to start a company but not knowing exactly what people you’ll need. So, you go to the websites of a bunch of companies similar to the company you start and pull off all the names and titles of the people working there. You then compare the titles across companies and voila, you’ve got a better idea of who you’ll need at your new company.</p>
+<p>You could imagine that while this information may be helpful to have, getting it manually would be a pain. Navigating to each site individually, finding the information, copying and pasting each name. That sounds awful! Thankfully, there’s a way to scrape the web from R directly!</p>
+<p>This uses the helpful package <code>rvest</code>. It gets its name from the word “harvest.” The idea here is you’ll use this package to “harvest” information from websites! However, as you may imagine, this is less straightforward than pulling data that are already formatted the way you want them (as we did above), since we’ll have to do some extra work to get everything in order.</p>
+<div id="rvest-basics" class="section level4" number="4.0.6.1">
+<h4><span class="header-section-number">4.0.6.1</span> <code>rvest</code> basics</h4>
+<p>When <code>rvest</code> is given a webpage (URL) as input, an <code>rvest</code> function reads in the HTML code from the webpage. HTML is the language websites use to display everything you see on the website. You’ve seen HTML documents before, as this is one of the formats that you can Knit to from an R Markdown (.Rmd) document! Generally, all HTML documents require each webpage to have a similar structure. This structure is specified by using different <strong>tags</strong>. For example, a header at the top of your webpage would use a specific tag. Website links would use a different tag. These different tags help to specify how the website should appear. <code>rvest</code> takes advantage of these tags to help you extract the parts of the webpage you’re most interested in. So let’s see exactly how to do that all of this with an example.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_179" alt="Different tags are used to specify different parts of a website" /></p>
+</div>
+<div id="selectorgadget" class="section level4" number="4.0.6.2">
+<h4><span class="header-section-number">4.0.6.2</span> SelectorGadget</h4>
+<p>To use <code>rvest</code>, there is a tool that will make your life <em>a lot</em> easier. It’s called SelectorGadget. It’s a “javascript bookmarklet.” What this means for us is that we’ll be able to go to a webpage, turn on SelectorGadget, and help figure out how to appropriately specify what components from the webpage we want to extract using <code>rvest</code>.</p>
+<p>To get started using SelectorGadget, you’ll have to enable the Chrome Extension.</p>
+<p>To enable SelectorGadget:</p>
+<ol style="list-style-type: decimal">
+<li><p>Click <a href="https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb">here</a> to open up the SelectorGadget Chrome Extension</p></li>
+<li><p>Click “ADD TO CHROME”</p></li>
+</ol>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_9" alt="ADD TO CHROME" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Click “Add extension”</li>
+</ol>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_5" alt="Add extension" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>SelectorGadget’s icon will now be visible to the right of the web address bar within Google Chrome. You will click on this to use SelectorGadget in the example below.</li>
+</ol>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_0" alt="SelectorGadget icon" /></p>
+</div>
+<div id="web-scraping-example" class="section level4" number="4.0.6.3">
+<h4><span class="header-section-number">4.0.6.3</span> Web Scraping Example</h4>
+<p>Similar to the example above, what if you were interested in knowing a few recommended R packages for working with data. Sure, you could go to a whole bunch of websites and Google and copy and paste each one into a Google Sheet and have the information. But, that’s not very fun!</p>
+<p>Alternatively, you could write and run a few lines of code and get all the information that way! We’ll do that in the example below.</p>
+<div id="using-selectorgadget" class="section level5" number="4.0.6.3.1">
+<h5><span class="header-section-number">4.0.6.3.1</span> Using SelectorGadget</h5>
+<p>To use SelectorGadget, navigate to the webpage we’re interested in scraping: <a href="http://jhudatascience.org/stable_website/webscrape.html">http://jhudatascience.org/stable_website/webscrape.html</a> and toggle SelectorGadget by clicking on the SelectorGadget icon. A menu at the bottom-right of your web page should appear.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_22" alt="SelectorGadget icon on webpage of interest" /></p>
+<p>Now that SelectorGadget has been toggled, as you mouse over the page, colored boxes should appear. We’ll click on the the name of the first package to start to tell SelectorGadget which component of the webpage we’re interested in.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_31" alt="SelectorGadget selects strong on webpage of interest" /></p>
+<p>An orange box will appear around the component of the webpage you’ve clicked. Other components of the webpage that SelectorGadget has deemed similar to what you’ve clicked will be highlighted. And, text will show up in the menu at the bottom of the page letting you know what you should use in <code>rvest</code> to specify the part of the webpage you’re most interested in extracting.</p>
+<p>Here, we see with that SelectorGadget has highlighted the package names and nothing else! Perfect. That’s just what we wanted. Now we know how to specify this element in <code>rvest</code>!</p>
+</div>
+<div id="using-rvest" class="section level5" number="4.0.6.3.2">
+<h5><span class="header-section-number">4.0.6.3.2</span> Using <code>rvest</code></h5>
+<p>Now we’re ready to use <code>rvest</code>’s functions. We’ll use <code>read_html()</code> to read in the HTML from our webpage of interest.</p>
+<p>We’ll then use <code>html_nodes()</code> to specify which parts of the webpage we want to extract. Within this function we specify “strong”, as that’s what SelectorGadget told us to specify to “harvest” the information we’re interested in.</p>
+<p>Finally <code>html_text</code> extracts the text from the tag we’ve specified, giving us that list of courses we wanted to see!</p>
+<pre><code>## load package
+library(rvest)
+
+## provide URL
+courses &lt;- read_html(&quot;http://jhudatascience.org/stable_website/webscrape.html&quot;)
+
+## Get Courses
+courses %&gt;%
+  html_nodes(&quot;strong&quot;) %&gt;%
+  html_text()</code></pre>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_188" alt="rvest code" /></p>
+<p>With just a few lines of code we have the information we were looking for!</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_36" alt="List of packages" /></p>
+</div>
+</div>
+<div id="a-final-note-selectorgadget" class="section level4" number="4.0.6.4">
+<h4><span class="header-section-number">4.0.6.4</span> A final note: SelectorGadget</h4>
+<p>SelectorGadget selected what we were interested in on the first click in the example above. However, there will be times when it makes its guess and highlights more than what you want to extract. In those cases, after the initial click, click on any one of the items currently highlighted that you don’t want included in your selection. SelectorGadget will mark that part of the webpage in red and update the menu at the bottom with the appropriate text. To see an example of this, watch this short video <a href="https://vimeo.com/52055686">here</a>.</p>
+</div>
+</div>
+<div id="json" class="section level3" number="4.0.7">
+<h3><span class="header-section-number">4.0.7</span> JSON</h3>
+<p>In talking about APIs and API request calls, we left out a <em>tiny</em> bit of information. API requests generally return data in one of two data formats: JSON or XML. We’ll discuss a bit more about each these data formats in future lessons. However, as this is a lesson about obtaining information from the Internet, we’d be remiss not to mention that there are ways to work with JSON data in R, using the package <code>jsonlite</code>.</p>
+<p><em>Very</em> briefly here (more to come later!), JSON (JavaScript Object Notation) is a text-based way to send information between a browser and a server. JSON is easy for humans to read and to write. Thus, it makes sense that API calls would return information in the JSON format. JSON data adhere to certain rules in how they are structured. For simplicity, JSON format requires objects to be comprised of <strong>key-value pairs</strong>. For example, in the case of: <code>{"Name": "Isabela"}</code>, “Name” would be a key, “Isabela” would be a value, and together they would be a key-value pair. Let’s take a look at how JSON data looks in R.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="getting-data-from-the-internet.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb20-2"><a href="getting-data-from-the-internet.html#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="getting-data-from-the-internet.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="do">## generate a JSON object</span></span>
+<span id="cb20-4"><a href="getting-data-from-the-internet.html#cb20-4" aria-hidden="true" tabindex="-1"></a>json <span class="ot">&lt;-</span></span>
+<span id="cb20-5"><a href="getting-data-from-the-internet.html#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;[</span></span>
+<span id="cb20-6"><a href="getting-data-from-the-internet.html#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="st">  {&quot;Name&quot; : &quot;Woody&quot;, &quot;Age&quot; : 40, &quot;Occupation&quot; : &quot;Sherriff&quot;},</span></span>
+<span id="cb20-7"><a href="getting-data-from-the-internet.html#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="st">  {&quot;Name&quot; : &quot;Buzz Lightyear&quot;, &quot;Age&quot; : 34, &quot;Occupation&quot; : &quot;Space Ranger&quot;},</span></span>
+<span id="cb20-8"><a href="getting-data-from-the-internet.html#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="st">  {&quot;Name&quot; : &quot;Andy&quot;, &quot;Occupation&quot; : &quot;Toy Owner&quot;}</span></span>
+<span id="cb20-9"><a href="getting-data-from-the-internet.html#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="st">]&#39;</span></span>
+<span id="cb20-10"><a href="getting-data-from-the-internet.html#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="getting-data-from-the-internet.html#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="do">## take a look</span></span>
+<span id="cb20-12"><a href="getting-data-from-the-internet.html#cb20-12" aria-hidden="true" tabindex="-1"></a>json</span></code></pre></div>
+<p>This format cannot, as it is, be easily worked with within R; however, there is an R package to take data from JSON format to an object-based format, that <em>can</em> be worked with in R. The R package <code>jsonlite</code> is just what to work with whenever you have data in JSON format. When using the defaults of the function <code>fromJSON()</code>, <code>jsonlite</code> will take the data from JSON array format and helpfully return a data frame.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="getting-data-from-the-internet.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="do">## take JSON object and covert to a data frame</span></span>
+<span id="cb21-2"><a href="getting-data-from-the-internet.html#cb21-2" aria-hidden="true" tabindex="-1"></a>mydf <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(json)</span>
+<span id="cb21-3"><a href="getting-data-from-the-internet.html#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="getting-data-from-the-internet.html#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="do">## take a look</span></span>
+<span id="cb21-5"><a href="getting-data-from-the-internet.html#cb21-5" aria-hidden="true" tabindex="-1"></a>mydf</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_219" alt="fromJSON()" /></p>
+<p>Data frames can also be returned to their original JSON format using the function: <code>toJSON()</code>.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="getting-data-from-the-internet.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="do">## take JSON object and convert to a data frame</span></span>
+<span id="cb22-2"><a href="getting-data-from-the-internet.html#cb22-2" aria-hidden="true" tabindex="-1"></a>json <span class="ot">&lt;-</span> <span class="fu">toJSON</span>(mydf)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_228" alt="toJSON()" /></p>
+<p>Here, we’ve just briefly touched on what JSON format is; however, in a future lesson we’ll discuss this in greater detail. For now, however, it’s important to know that the <code>jsonlite</code> package is there for you whenever you have JSON data. And, it has two very helpful functions (among other functions in the package!): <code>toJSON()</code> and <code>fromJSON()</code> for such situations.</p>
+</div>
+<div id="keeping-track-of-your-data" class="section level3" number="4.0.8">
+<h3><span class="header-section-number">4.0.8</span> Keeping Track of your Data</h3>
+<p>So far, we’ve discussed how to work with data you’ve obtained from the Internet. However, things on the Internet can change. If you’re not downloading the file to your system directly, you won’t have a static copy saved on your system. This means that while you’re saving space on your computer and not creating unnecessary copies of an identical file, the next time you go to access the file, it may not be there <em>or</em> it may have been updated. For these reasons, it’s incredibly important to record the date of when you acquired the data. This can be recorded in your R Markdown file where you’re doing your analysis or your data science lab notebook (to be discussed in a later lesson). Regardless, however, a record of the date you acquired the data is incredibly important.</p>
+</div>
+<div id="summary-1" class="section level3" number="4.0.9">
+<h3><span class="header-section-number">4.0.9</span> Summary</h3>
+<p>In this lesson we’ve covered a lot! We’ve gone through the basics of accessing API’s and scraping data from websites. And, we’ve touched on how to work with data that come to you in JSON format. Knowing what R is capable is a big part of this lesson. And, getting comfortable with the few examples here will be helpful when you branch out and start to use these packages on your own in the future! As we’ve just scraped the surface in this lesson, take a look at the additional resources below to get a better understanding of these topics!</p>
+</div>
+<div id="additional-resources-1" class="section level3" number="4.0.10">
+<h3><span class="header-section-number">4.0.10</span> Additional Resources</h3>
+<div id="httr" class="section level4" number="4.0.10.1">
+<h4><span class="header-section-number">4.0.10.1</span> httr</h4>
+<ul>
+<li><a href="https://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177">HTTP basics</a></li>
+<li><a href="https://cran.r-project.org/web/packages/httr/vignettes/quickstart.html">httr: Quick Start Guide</a></li>
+<li><a href="https://www.tylerclavelle.com/code/2017/randapis/">httr tutorial</a>, by <a href="https://www.tylerclavelle.com/about/">Tyler Clavelle</a></li>
+<li><a href="https://developer.github.com/v3/">GitHub API Documentation</a></li>
+</ul>
+</div>
+<div id="rvest" class="section level4" number="4.0.10.2">
+<h4><span class="header-section-number">4.0.10.2</span> rvest</h4>
+<ul>
+<li><a href="https://blog.rstudio.com/2014/11/24/rvest-easy-web-scraping-with-r/">rvest tutorial</a>, from RStudio</li>
+<li><a href="https://github.com/hadley/rvest">rvest documentation</a></li>
+<li><a href="https://selectorgadget.com/">SelectorGadget documentation + video</a></li>
+</ul>
+</div>
+<div id="jsonlite" class="section level4" number="4.0.10.3">
+<h4><span class="header-section-number">4.0.10.3</span> jsonlite</h4>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/jsonlite/vignettes/json-aaquickstart.html">jsonlite: Getting Started</a></li>
+<li><a href="https://www.opencpu.org/posts/jsonlite-a-smarter-json-encoder/">blogpost on jsonlite</a>, by <a href="https://github.com/jeroen">Jeroen Ooms</a></li>
+<li><a href="https://www.json.org/">JSON information</a></li>
+<li><a href="https://www.copterlabs.com/json-what-it-is-how-it-works-how-to-use-it/">JSON : What It Is, How It Works, &amp; How to Use It</a></li>
+</ul>
+</div>
+</div>
+<div id="slides-and-video-3" class="section level3" number="4.0.11">
+<h3><span class="header-section-number">4.0.11</span> Slides and Video</h3>
+<div class="figure">
+<img src="https://www.youtube.com/watch?v=CEo1eLI2CY4" alt="" />
+<p class="caption">Getting Data From the Internet</p>
+</div>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/edit?usp=sharing">Slides</a></li>
+</ul>
+
+</div>
+</div>
+<hr>
+<center> 
+  <div class="footer">
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY. </a>
+      <br>
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/"> CC-BY </a> unless noted otherwise.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="importing-data-from-google-sheets.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="relational-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

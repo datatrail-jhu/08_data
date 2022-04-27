@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 CSV, Excel, and TSV Files | Getting Data</title>
+  <meta name="description" content="Description about Course/Book." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 CSV, Excel, and TSV Files | Getting Data" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Description about Course/Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 CSV, Excel, and TSV Files | Getting Data" />
+  
+  <meta name="twitter:description" content="Description about Course/Book." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/DataTrail_favicon.ico" type="image/x-icon" />
+<link rel="prev" href="where-does-data-come-from.html"/>
+<link rel="next" href="importing-data-from-google-sheets.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets/style_DataTrail.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style="padding-left: 0px; padding-top: 8px;"</a>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a></li>
+<li class="chapter" data-level="1" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html"><i class="fa fa-check"></i><b>1</b> Where Does Data Come From?</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#basic-data-files"><i class="fa fa-check"></i><b>1.0.1</b> Basic Data files</a></li>
+<li class="chapter" data-level="1.0.2" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#data-from-the-internet"><i class="fa fa-check"></i><b>1.0.2</b> Data from the Internet</a></li>
+<li class="chapter" data-level="1.0.3" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#relational-databases"><i class="fa fa-check"></i><b>1.0.3</b> Relational Databases</a></li>
+<li class="chapter" data-level="1.0.4" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#unconventional-data"><i class="fa fa-check"></i><b>1.0.4</b> Unconventional Data</a></li>
+<li class="chapter" data-level="1.0.5" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#slides-and-video"><i class="fa fa-check"></i><b>1.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html"><i class="fa fa-check"></i><b>2</b> CSV, Excel, and TSV Files</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#csv-files"><i class="fa fa-check"></i><b>2.0.1</b> CSV files</a></li>
+<li class="chapter" data-level="2.0.2" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#downloading-csv-files"><i class="fa fa-check"></i><b>2.0.2</b> Downloading CSV files</a></li>
+<li class="chapter" data-level="2.0.3" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-csv-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.3</b> Reading CSV files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.4" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#excel-files"><i class="fa fa-check"></i><b>2.0.4</b> Excel files</a></li>
+<li class="chapter" data-level="2.0.5" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-excel-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.5</b> Reading Excel files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.6" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#text-files"><i class="fa fa-check"></i><b>2.0.6</b> Text files</a></li>
+<li class="chapter" data-level="2.0.7" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-tsv-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.7</b> Reading TSV files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.8" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-txt-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.8</b> Reading TXT files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.9" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#exporting-data-in-r-to-csv"><i class="fa fa-check"></i><b>2.0.9</b> Exporting Data in R to CSV</a></li>
+<li class="chapter" data-level="2.0.10" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#slides-and-video-1"><i class="fa fa-check"></i><b>2.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html"><i class="fa fa-check"></i><b>3</b> Importing Data from Google Sheets</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#the-googlesheets-package"><i class="fa fa-check"></i><b>3.0.1</b> The <code>googlesheets</code> package</a></li>
+<li class="chapter" data-level="3.0.2" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#importing-csv-files-from-the-web"><i class="fa fa-check"></i><b>3.0.2</b> Importing CSV files from the web</a></li>
+<li class="chapter" data-level="3.0.3" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#summary"><i class="fa fa-check"></i><b>3.0.3</b> Summary</a></li>
+<li class="chapter" data-level="3.0.4" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#additional-resources"><i class="fa fa-check"></i><b>3.0.4</b> Additional Resources</a></li>
+<li class="chapter" data-level="3.0.5" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#slides-and-video-2"><i class="fa fa-check"></i><b>3.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html"><i class="fa fa-check"></i><b>4</b> Getting Data From the Internet</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#api-access"><i class="fa fa-check"></i><b>4.0.1</b> API access</a></li>
+<li class="chapter" data-level="4.0.2" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#getting-data-httr"><i class="fa fa-check"></i><b>4.0.2</b> Getting Data: <code>httr</code></a></li>
+<li class="chapter" data-level="4.0.3" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#example-1-githubs-api"><i class="fa fa-check"></i><b>4.0.3</b> Example 1: GitHub’s API</a></li>
+<li class="chapter" data-level="4.0.4" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#example-2-obtaining-a-csv"><i class="fa fa-check"></i><b>4.0.4</b> Example 2: Obtaining a CSV</a></li>
+<li class="chapter" data-level="4.0.5" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#api-keys"><i class="fa fa-check"></i><b>4.0.5</b> API keys</a></li>
+<li class="chapter" data-level="4.0.6" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#web-scraping-1"><i class="fa fa-check"></i><b>4.0.6</b> Web Scraping</a></li>
+<li class="chapter" data-level="4.0.7" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#json"><i class="fa fa-check"></i><b>4.0.7</b> JSON</a></li>
+<li class="chapter" data-level="4.0.8" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#keeping-track-of-your-data"><i class="fa fa-check"></i><b>4.0.8</b> Keeping Track of your Data</a></li>
+<li class="chapter" data-level="4.0.9" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#summary-1"><i class="fa fa-check"></i><b>4.0.9</b> Summary</a></li>
+<li class="chapter" data-level="4.0.10" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#additional-resources-1"><i class="fa fa-check"></i><b>4.0.10</b> Additional Resources</a></li>
+<li class="chapter" data-level="4.0.11" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#slides-and-video-3"><i class="fa fa-check"></i><b>4.0.11</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="relational-data.html"><a href="relational-data.html"><i class="fa fa-check"></i><b>5</b> Relational Data</a>
+<ul>
+<li class="chapter" data-level="5.0.1" data-path="relational-data.html"><a href="relational-data.html#relational-data-1"><i class="fa fa-check"></i><b>5.0.1</b> Relational Data</a></li>
+<li class="chapter" data-level="5.0.2" data-path="relational-data.html"><a href="relational-data.html#relational-databases-sql"><i class="fa fa-check"></i><b>5.0.2</b> Relational Databases: <code>SQL</code></a></li>
+<li class="chapter" data-level="5.0.3" data-path="relational-data.html"><a href="relational-data.html#connecting-to-databases-rsqlite"><i class="fa fa-check"></i><b>5.0.3</b> Connecting to Databases: <code>RSQLite</code></a></li>
+<li class="chapter" data-level="5.0.4" data-path="relational-data.html"><a href="relational-data.html#working-with-relational-data-dplyr-dbplyr"><i class="fa fa-check"></i><b>5.0.4</b> Working with Relational Data: <code>dplyr</code> &amp; <code>dbplyr</code></a></li>
+<li class="chapter" data-level="5.0.5" data-path="relational-data.html"><a href="relational-data.html#mutating-joins"><i class="fa fa-check"></i><b>5.0.5</b> Mutating Joins</a></li>
+<li class="chapter" data-level="5.0.6" data-path="relational-data.html"><a href="relational-data.html#filtering-joins"><i class="fa fa-check"></i><b>5.0.6</b> Filtering Joins</a></li>
+<li class="chapter" data-level="5.0.7" data-path="relational-data.html"><a href="relational-data.html#how-to-connect-to-a-database-online"><i class="fa fa-check"></i><b>5.0.7</b> How to Connect to a Database Online</a></li>
+<li class="chapter" data-level="5.0.8" data-path="relational-data.html"><a href="relational-data.html#summary-2"><i class="fa fa-check"></i><b>5.0.8</b> Summary</a></li>
+<li class="chapter" data-level="5.0.9" data-path="relational-data.html"><a href="relational-data.html#additional-resources-2"><i class="fa fa-check"></i><b>5.0.9</b> Additional Resources</a></li>
+<li class="chapter" data-level="5.0.10" data-path="relational-data.html"><a href="relational-data.html#slides-and-video-4"><i class="fa fa-check"></i><b>5.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html"><i class="fa fa-check"></i><b>6</b> Unconventional Sources of Data</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#structured-data"><i class="fa fa-check"></i><b>6.0.1</b> Structured Data</a></li>
+<li class="chapter" data-level="6.0.2" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#unstructured-data"><i class="fa fa-check"></i><b>6.0.2</b> Unstructured Data</a></li>
+<li class="chapter" data-level="6.0.3" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#text-data"><i class="fa fa-check"></i><b>6.0.3</b> Text Data</a></li>
+<li class="chapter" data-level="6.0.4" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#json-javascript-object-notation"><i class="fa fa-check"></i><b>6.0.4</b> JSON: JavaScript Object Notation</a></li>
+<li class="chapter" data-level="6.0.5" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#xml-extensible-markup-language"><i class="fa fa-check"></i><b>6.0.5</b> XML: Extensible Markup Language</a></li>
+<li class="chapter" data-level="6.0.6" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#images-1"><i class="fa fa-check"></i><b>6.0.6</b> Images</a></li>
+<li class="chapter" data-level="6.0.7" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#audio-files-1"><i class="fa fa-check"></i><b>6.0.7</b> Audio Files</a></li>
+<li class="chapter" data-level="6.0.8" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#summary-3"><i class="fa fa-check"></i><b>6.0.8</b> Summary</a></li>
+<li class="chapter" data-level="6.0.9" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#additional-resources-3"><i class="fa fa-check"></i><b>6.0.9</b> Additional Resources</a></li>
+<li class="chapter" data-level="6.0.10" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#slides-and-video-5"><i class="fa fa-check"></i><b>6.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="finding-data.html"><a href="finding-data.html"><i class="fa fa-check"></i><b>7</b> Finding Data</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="finding-data.html"><a href="finding-data.html#public-versus-private-data"><i class="fa fa-check"></i><b>7.0.1</b> Public versus Private Data</a></li>
+<li class="chapter" data-level="7.0.2" data-path="finding-data.html"><a href="finding-data.html#publicly-available-data"><i class="fa fa-check"></i><b>7.0.2</b> Publicly-available data</a></li>
+<li class="chapter" data-level="7.0.3" data-path="finding-data.html"><a href="finding-data.html#data-you-already-have"><i class="fa fa-check"></i><b>7.0.3</b> Data You Already Have</a></li>
+<li class="chapter" data-level="7.0.4" data-path="finding-data.html"><a href="finding-data.html#summary-4"><i class="fa fa-check"></i><b>7.0.4</b> Summary</a></li>
+<li class="chapter" data-level="7.0.5" data-path="finding-data.html"><a href="finding-data.html#slides-and-video-6"><i class="fa fa-check"></i><b>7.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="internet-safety.html"><a href="internet-safety.html"><i class="fa fa-check"></i><b>8</b> Internet Safety</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="internet-safety.html"><a href="internet-safety.html#wifi"><i class="fa fa-check"></i><b>8.0.1</b> WiFi</a></li>
+<li class="chapter" data-level="8.0.2" data-path="internet-safety.html"><a href="internet-safety.html#passwords"><i class="fa fa-check"></i><b>8.0.2</b> Passwords</a></li>
+<li class="chapter" data-level="8.0.3" data-path="internet-safety.html"><a href="internet-safety.html#good-internet-behavior"><i class="fa fa-check"></i><b>8.0.3</b> Good Internet behavior</a></li>
+<li class="chapter" data-level="8.0.4" data-path="internet-safety.html"><a href="internet-safety.html#online-scams"><i class="fa fa-check"></i><b>8.0.4</b> Online Scams</a></li>
+<li class="chapter" data-level="8.0.5" data-path="internet-safety.html"><a href="internet-safety.html#malware-spyware"><i class="fa fa-check"></i><b>8.0.5</b> Malware &amp; Spyware</a></li>
+<li class="chapter" data-level="8.0.6" data-path="internet-safety.html"><a href="internet-safety.html#security-on-a-chromebook"><i class="fa fa-check"></i><b>8.0.6</b> Security on a Chromebook</a></li>
+<li class="chapter" data-level="8.0.7" data-path="internet-safety.html"><a href="internet-safety.html#slides-and-video-7"><i class="fa fa-check"></i><b>8.0.7</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="data-privacy.html"><a href="data-privacy.html"><i class="fa fa-check"></i><b>9</b> Data Privacy</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="data-privacy.html"><a href="data-privacy.html#what-is-data-privacy"><i class="fa fa-check"></i><b>9.0.1</b> What is Data Privacy?</a></li>
+<li class="chapter" data-level="9.0.2" data-path="data-privacy.html"><a href="data-privacy.html#personally-identifiable-information"><i class="fa fa-check"></i><b>9.0.2</b> Personally Identifiable Information</a></li>
+<li class="chapter" data-level="9.0.3" data-path="data-privacy.html"><a href="data-privacy.html#what-is-encryption"><i class="fa fa-check"></i><b>9.0.3</b> What is encryption?</a></li>
+<li class="chapter" data-level="9.0.4" data-path="data-privacy.html"><a href="data-privacy.html#human-security"><i class="fa fa-check"></i><b>9.0.4</b> Human Security</a></li>
+<li class="chapter" data-level="9.0.5" data-path="data-privacy.html"><a href="data-privacy.html#computer-security"><i class="fa fa-check"></i><b>9.0.5</b> Computer Security</a></li>
+<li class="chapter" data-level="9.0.6" data-path="data-privacy.html"><a href="data-privacy.html#open-science"><i class="fa fa-check"></i><b>9.0.6</b> Open Science</a></li>
+<li class="chapter" data-level="9.0.7" data-path="data-privacy.html"><a href="data-privacy.html#data-breaches"><i class="fa fa-check"></i><b>9.0.7</b> Data Breaches</a></li>
+<li class="chapter" data-level="9.0.8" data-path="data-privacy.html"><a href="data-privacy.html#conclusions"><i class="fa fa-check"></i><b>9.0.8</b> Conclusions</a></li>
+<li class="chapter" data-level="9.0.9" data-path="data-privacy.html"><a href="data-privacy.html#slides-and-video-8"><i class="fa fa-check"></i><b>9.0.9</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ethical-data-science.html"><a href="ethical-data-science.html"><i class="fa fa-check"></i><b>10</b> Ethical Data Science</a>
+<ul>
+<li class="chapter" data-level="10.0.1" data-path="ethical-data-science.html"><a href="ethical-data-science.html#data-science-team"><i class="fa fa-check"></i><b>10.0.1</b> Data Science Team</a></li>
+<li class="chapter" data-level="10.0.2" data-path="ethical-data-science.html"><a href="ethical-data-science.html#the-data"><i class="fa fa-check"></i><b>10.0.2</b> The Data</a></li>
+<li class="chapter" data-level="10.0.3" data-path="ethical-data-science.html"><a href="ethical-data-science.html#the-analysis"><i class="fa fa-check"></i><b>10.0.3</b> The Analysis</a></li>
+<li class="chapter" data-level="10.0.4" data-path="ethical-data-science.html"><a href="ethical-data-science.html#after-the-algorithm"><i class="fa fa-check"></i><b>10.0.4</b> After the Algorithm</a></li>
+<li class="chapter" data-level="10.0.5" data-path="ethical-data-science.html"><a href="ethical-data-science.html#ethics-in-data-science"><i class="fa fa-check"></i><b>10.0.5</b> Ethics in Data Science</a></li>
+<li class="chapter" data-level="10.0.6" data-path="ethical-data-science.html"><a href="ethical-data-science.html#artificial-intelligence-in-the-military"><i class="fa fa-check"></i><b>10.0.6</b> Artificial Intelligence in the Military</a></li>
+<li class="chapter" data-level="10.0.7" data-path="ethical-data-science.html"><a href="ethical-data-science.html#additional-resources-4"><i class="fa fa-check"></i><b>10.0.7</b> Additional Resources</a></li>
+<li class="chapter" data-level="10.0.8" data-path="ethical-data-science.html"><a href="ethical-data-science.html#slides-and-video-9"><i class="fa fa-check"></i><b>10.0.8</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
+<li class="divider"></li>
+<p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by: </a> </p>
+<p style="text-align:center;"> <a href="https://www.datatrail.org/"> Data Trail </a></p>
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style=" width: 80%; filter: grayscale(100%); padding-left: 40px; padding-top: 8px; vertical-align: top "</a>
+<p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
+<p style="padding-left: 40px;"><div class="trapezoid" style = "padding-left: 40px;"><span>  <a href="https://forms.gle/VWaJYc3zATe3qxYC9"> Click here to provide feedback</a> <img src="assets/itcr_arrow.png" style=" width: 10%" ></span></div></p>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Getting Data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <!--script src="https://kit.fontawesome.com/6a26f47516.js"></script-->
+  <!--<script src="assets/hideOutput.js"></script>-->
+  <link href="assets/style_DataTrail.css" rel="stylesheet">
+</head>
+        
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="assets/DataTrail.jpg">
+</div>
+<div id="csv-excel-and-tsv-files" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> CSV, Excel, and TSV Files</h1>
+<p>In this lesson, we’ll discuss a few of the main file types used to store tabular data. To review briefly, <strong>tabular data</strong> are the type of data stored in spreadsheets. Information from different variables are stored in <strong>columns</strong> and each observation is stored in a different <strong>row</strong>. The values for each observation is stored in its respective <strong>cell</strong>.</p>
+<div id="csv-files" class="section level3" number="2.0.1">
+<h3><span class="header-section-number">2.0.1</span> CSV files</h3>
+<p><strong>Comma-separated values (CSV)</strong> files allow us to store tabular data in a simple format. CSVs are <strong>plain-text</strong> files, which means that all the important information in the file is represented by text (where text is numbers, letters, and symbols you can type on your keyboard).</p>
+<p>For example, consider a dataset that includes information about the heights and blood types of three individuals. You could make a table that has three columns (names, heights, and blood types) and three rows (one for each person) in Google Docs or Microsoft Word. However, there is a better way of storing this data in plain text without needing to put them in table format. CSVs are a perfect way to store these data. In the CSV format, the values of each column for each person in the data are separated by commas and each row (each person in our case) is separated by a new line. This means your data would be stored in the following format:</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g2bfdb07292_0_151" alt="sample CSV" /></p>
+<p>Notice that CSV files have a .csv extension at the end. You can see this above at the top of the file. One of the advantages of CSV files is their <em>simplicity</em>. Because of this, they are one of the most common file formats used to store tabular data. Additionally, because they are plain text, they are compatible with <em>many</em> different types of software. CSVs can be read by most programs. Specifically, for our purposes, these files can be easily read into R (or Google Sheets, or Excel), where they can be better understood by the human eye. Here you see the same CSV opened in Google Slides, where it’s more easily interpretable by the human eye:</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g3a4d18d722_0_92" alt="CSV opened in Google Slides" /></p>
+<p>As with any file type, CSVs do have their limitations. Specifically, CSV files are best used for data that have a consistent number of variables across observations. For example, in our example, there are three variables for each observation: “name”, “height”, and “blood_type”. If, however, you had eye color and weight for the second observation, but not for the other rows, you’d have a different number of variables for the second observation than the other two. This type of data is not best suited for CSVs. However, whenever you have information the same number of variables across all observations, CSVs are a good bet!</p>
+</div>
+<div id="downloading-csv-files" class="section level3" number="2.0.2">
+<h3><span class="header-section-number">2.0.2</span> Downloading CSV files</h3>
+<p>If you entered the same values used above into Google Slides first and wanted to download this file as a CSV to read into R, you would enter the values in Google slides, and then click on “File” and then “Download” as and choose “Comma-separated values (.csv, current sheet)”. The dataset that you created will be downloaded as a CSV file on your computer. Make sure you know the location of your file (if on a Chromebook, this will be in your “Downloads” folder).</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_56" alt="Download as CSV file" /></p>
+</div>
+<div id="reading-csv-files-into-rstudio-cloud" class="section level3" number="2.0.3">
+<h3><span class="header-section-number">2.0.3</span> Reading CSV files into RStudio Cloud</h3>
+<p>Now that you have a CSV file, let’s discuss how to get it into RStudio Cloud! Log in to your RStudio Cloud account. Create a new project. On the RStudio workspace that you see, click on <em>Upload</em> under <em>Files</em> on the bottom right corner of the screen. On the window that pops up click on <em>Choose File</em>.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_10" alt="Upload a file on RStudio Cloud" /></p>
+<p>Now, find where you saved the file (for instance “Downloads”) and click on <em>OPEN</em>. After this, the window closes automatically and you’ll be back in your workspace on RStudio Cloud. You will see that your CSV file now appears among other files. (A reminder: if you were working on a data science project, this would go in your “raw_data” directory. For this example, however, we’ll keep it in “cloud/project”)</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_1" alt="Find local file" /></p>
+<p>Now, while the file has now been uploaded to your RStudio Cloud project, it’s important to recognize the file is not yet imported to your R environment as an object. We’ll do that now!</p>
+<p>The best way to accomplish this is using the function <code>read_csv()</code> from the <code>readr</code> package. (Note, if you haven’t installed the <code>readr</code> package, you’ll have to do that first.) Inside the parenthesis of the function, write the name of the file in quotes, including the file extension (.csv). Make sure you type the exact file name. Save the imported data in a data frame called <code>df_csv</code>. Your data will now be imported into R environment. If you use the command <code>head(df_csv)</code> you will see the first several rows of your imported data frame:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="csv-excel-and-tsv-files.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## install.packages(&quot;readr&quot;)</span></span>
+<span id="cb1-2"><a href="csv-excel-and-tsv-files.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-3"><a href="csv-excel-and-tsv-files.html#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="csv-excel-and-tsv-files.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="do">## read CSV into R</span></span>
+<span id="cb1-5"><a href="csv-excel-and-tsv-files.html#cb1-5" aria-hidden="true" tabindex="-1"></a>df_csv <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;sample_data - Sheet1.csv&quot;</span>)</span>
+<span id="cb1-6"><a href="csv-excel-and-tsv-files.html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="csv-excel-and-tsv-files.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="do">## look at the object</span></span>
+<span id="cb1-8"><a href="csv-excel-and-tsv-files.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_csv)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_16" alt="read_csv()" /></p>
+<p>Above, you see the simplest way to import a CSV file. However, as with many functions, there are other arguments that you can set to specify how to import your specific CSV file, a few of which are listed below. However, as usual, to see all the arguments for this function, use <code>?read_csv</code> within R.</p>
+<ul>
+<li><code>col_names = FALSE</code> to specify that the first row does NOT contain column names.</li>
+<li><code>skip = 2</code> will skip the first 2 rows. You can set the number to any number you want. Helpful if there is additional information in the first few rows of your data frame that are not actually part of the table.</li>
+<li><code>n_max = 100</code> will only read in the first 100 rows. You can set the number to any number you want. Helpful if you’re not sure how big a file is and just want to see part of it</li>
+</ul>
+<p>By default, <code>read_csv()</code> converts blank cells to missing data (NA).</p>
+<p>Finally, we introduce the function <code>read_csv</code> here and recommend that you use it, as it is the simplest and fastest way to read CSV files into R. However, we note that there <em>is</em> a function <code>read.csv</code> which is available by default in R. You will likely see this function in others’ code, so we just want to make sure you’re aware of it.</p>
+</div>
+<div id="excel-files" class="section level3" number="2.0.4">
+<h3><span class="header-section-number">2.0.4</span> Excel files</h3>
+<p>While CSV files hold plain text as a series of values separated by commas, an Excel (or .xls or .xlsx) file holds information in a workbook that comprises both values and formatting (colors, conditional formatting, font size, etc.). You can think of Excel files a fancier CSV file. While this may sound appealing, we’ll remind you that CSV files can be read by many different pieces of software, Excel files can only be viewed in specific pieces of software, and thus are generally less flexible. That said, many people save their data in Excel, so it’s important to know how to work with them in RStudio Cloud.</p>
+<p>Let’s go back to the Google Sheet that we created and instead of downloading the file locally as as CSV, download it as <em>Microsoft Excel (.xlsx)</em> file.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_33" alt="Download as Excel file" /></p>
+<p>Save the file where you can find it. Similar to the CSV file, first, upload the file into your RStudio Cloud workspace.</p>
+</div>
+<div id="reading-excel-files-into-rstudio-cloud" class="section level3" number="2.0.5">
+<h3><span class="header-section-number">2.0.5</span> Reading Excel files into RStudio Cloud</h3>
+<p>To read this file into R, we’ll have to use a different function than above, as this file is not a CSV file. We’ll use the <code>read_excel()</code> function from the <code>readxl</code> package. Install the package first and then use the function <code>read_excel()</code> from the package read the Excel file into your R Environment. As above, by default, <code>read_excel()</code> converts blank cells to missing data (NA).</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="csv-excel-and-tsv-files.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## install and load package</span></span>
+<span id="cb2-2"><a href="csv-excel-and-tsv-files.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;readxl&quot;</span>)</span>
+<span id="cb2-3"><a href="csv-excel-and-tsv-files.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb2-4"><a href="csv-excel-and-tsv-files.html#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="csv-excel-and-tsv-files.html#cb2-5" aria-hidden="true" tabindex="-1"></a>df_excel <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;sample_data.xlsx&quot;</span>)</span>
+<span id="cb2-6"><a href="csv-excel-and-tsv-files.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_excel)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_41" alt="Find local file" /></p>
+</div>
+<div id="text-files" class="section level3" number="2.0.6">
+<h3><span class="header-section-number">2.0.6</span> Text files</h3>
+<p>Another common form of data is text files that usually come in the form of TXT or TSV file formats. Like CSVs, text files are simple, plain-text files; however, rather than columns being separated by commas, they are separated by tabs (represented by “ in plain-text). Like CSVs, they don’t allow text formatting (i.e. text colors in cells) and are able to be opened on many different software platforms. This makes them good candidates for storing data.</p>
+</div>
+<div id="reading-tsv-files-into-rstudio-cloud" class="section level3" number="2.0.7">
+<h3><span class="header-section-number">2.0.7</span> Reading TSV files into RStudio Cloud</h3>
+<p>The process for reading these files into R is similar to what you’ve seen so far. We’ll again use the <code>readr</code> package, but we’ll instead use the <code>read_tsv()</code> function.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="csv-excel-and-tsv-files.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## read TSV into R</span></span>
+<span id="cb3-2"><a href="csv-excel-and-tsv-files.html#cb3-2" aria-hidden="true" tabindex="-1"></a>df_tsv <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">&quot;sample_data - Sheet1.tsv&quot;</span>)</span>
+<span id="cb3-3"><a href="csv-excel-and-tsv-files.html#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="csv-excel-and-tsv-files.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="do">## look at the object</span></span>
+<span id="cb3-5"><a href="csv-excel-and-tsv-files.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_tsv)</span></code></pre></div>
+</div>
+<div id="reading-txt-files-into-rstudio-cloud" class="section level3" number="2.0.8">
+<h3><span class="header-section-number">2.0.8</span> Reading TXT files into RStudio Cloud</h3>
+<p>Sometimes, tab-separated files are saved with the .txt file extension. TXT files can store tabular data, but they can also store simple text. Thus, while TSV is the more appropriate extension for tabular data that are tab-separated, you’ll often run into tabular data that individuals have saved as a TXT file. In these cases, you’ll want to use the more generic <code>read_delim()</code> function from <code>readr</code>.</p>
+<p>Google Sheets does not allow tab-separated files to be downloaded with the .txt file extension (since .tsv is more appropriate); however, if you were to have a file “sample_data.txt” uploaded into your RStudio Cloud project, you could use the following code to read it into your R Environment, where “ specifies that the file is tab-delimited.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="csv-excel-and-tsv-files.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## read TXT into R</span></span>
+<span id="cb4-2"><a href="csv-excel-and-tsv-files.html#cb4-2" aria-hidden="true" tabindex="-1"></a>df_txt <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">&quot;sample_data.txt&quot;</span>, <span class="at">delim =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span>
+<span id="cb4-3"><a href="csv-excel-and-tsv-files.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="csv-excel-and-tsv-files.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="do">## look at the object</span></span>
+<span id="cb4-5"><a href="csv-excel-and-tsv-files.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_txt)</span></code></pre></div>
+<p>This function allows you to specify how the file you’re reading is in delimited. This means, rather than R knowing by default whether or not the data are comma- or tab- separated, you’ll have to specify it within the argument <code>delim</code> in the function.</p>
+<p><code>read_delim()</code> is a more generic version of <code>read_csv()</code>. What this means is that you <em>could</em> use <code>read_delim()</code> to read in a CSV file. You would just need to specify that the file was comma-delimited if you were to use that function.</p>
+</div>
+<div id="exporting-data-in-r-to-csv" class="section level3" number="2.0.9">
+<h3><span class="header-section-number">2.0.9</span> Exporting Data in R to CSV</h3>
+<p>The last topic of this lesson is about how to export data from R. So far we learned about reading data into R. However, sometimes you would like to share <em>your</em> data with others and need to export your data from R to some format that your collaborators can see.</p>
+<p>As discussed above, CSV format is a good candidate because of its simplicity and compatibility. Let’s say you have a data frame in the R environment that you would like to export as a CSV. To do so, you could use <code>write_csv()</code> from the <code>readr</code> package.</p>
+<p>Since both methods are fairly similar, let’s look at the one from <code>readr</code> package. Since we’ve already created a data frame named <code>df_csv</code>, we can export it to a CSV file using the following code. After typing this command, a new CSV file called <code>my_csv_file.csv</code> will appear in the Files section.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="csv-excel-and-tsv-files.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(df_csv, <span class="at">path =</span> <span class="st">&quot;my_csv_file.csv&quot;</span>)</span></code></pre></div>
+<p>You could similar save your data as a TSV file using the function <code>write_tsv()</code> function.</p>
+<p>We’ll finally note that there are default R functions <code>write.csv()</code> and <code>write.table()</code> that accomplish similar goals. You may see these in others’ code; however, we recommend sticking to the intuitive and quick <code>readr</code> functions discussed in this lesson.</p>
+</div>
+<div id="slides-and-video-1" class="section level3" number="2.0.10">
+<h3><span class="header-section-number">2.0.10</span> Slides and Video</h3>
+<div class="figure">
+<img src="https://www.youtube.com/watch?v=qzo8RLJfy_U" alt="" />
+<p class="caption">CSV, Excel, and TSV Files</p>
+</div>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/edit?usp=sharing">Slides</a></li>
+</ul>
+
+</div>
+</div>
+<hr>
+<center> 
+  <div class="footer">
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY. </a>
+      <br>
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/"> CC-BY </a> unless noted otherwise.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="where-does-data-come-from.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="importing-data-from-google-sheets.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
