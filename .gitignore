@@ -5,3 +5,4 @@
 .httr-oauth
 .httr-oauth*
 manuscript/resources/videos/*
+.DS_Store
