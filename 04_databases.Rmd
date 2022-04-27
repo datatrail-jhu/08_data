@@ -4,7 +4,7 @@ In lessons up to the point in the Course Set, the analyses you've done have eith
 
 ### Relational Data
 
-Relational data can be thought of as information being stored across many tables, with each table being related to all the other tables. Each table is linked to every other table by a set of **unique identifiers**. 
+Relational data can be thought of as information being stored across many tables, with each table being related to all the other tables. Each table is linked to every other table by a set of **unique identifiers**.
 
 {format: png}
 ![Relational data are related by unique identifiers](https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&pageid=g392f0f9db9_1_9)
@@ -75,7 +75,7 @@ The output from `dbListTables()` will include 13 tables. Among them will be the 
 {format: png}
 ![output from `dbListTables(db)`](https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&pageid=g3a5854d1ae_0_286)
 
-In this example, we're downloading a database and working with the data locally. However, more often, when working with SQLite databases, you'll be connecting remotely. Using the `RSQLite` package is particularly helpful in this case because it allows you to connect to and query the database from R without reading all the data in. This is helpful in the case of very large databases, where you'll want to avoid copying all the data and will instead want to only work with the parts of the database you need. 
+In this example, we're downloading a database and working with the data locally. However, more often, when working with SQLite databases, you'll be connecting remotely. Using the `RSQLite` package is particularly helpful in this case because it allows you to connect to and query the database from R without reading all the data in. This is helpful in the case of very large databases, where you'll want to avoid copying all the data and will instead want to only work with the parts of the database you need.
 
 ### Working with Relational Data: `dplyr` & `dbplyr`
 
@@ -117,7 +117,7 @@ When talking about inner joins, we are only going to keep an observation if it i
 {format: png}
 ![inner join output will include any observation found in both tables](https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&pageid=g3a5854d1ae_0_97)
 
-In our toy example, when doing an `inner_join()`, data from any observation found in all the tables being joined are included in the output. Here, `ArtistId`s "1" and "2" are in both the `artists` and `albums` tables. Thus, those will be the only `ArtistId`s in the output from the inner join. 
+In our toy example, when doing an `inner_join()`, data from any observation found in all the tables being joined are included in the output. Here, `ArtistId`s "1" and "2" are in both the `artists` and `albums` tables. Thus, those will be the only `ArtistId`s in the output from the inner join.
 
 And, since it's a mutating join, our new table will have information from both tables! We now have `ArtistId`, `Name`, `AlbumId`, *and* `Title` in a single table! We've joined the two tables, based on the column `ArtistId`!
 
@@ -141,7 +141,7 @@ as_tibble(inner)
 
 #### Left Join
 
-For a left join, all rows in the first table specified will be included in the output. Any row in the second table that is *not* in the first table will not be included. 
+For a left join, all rows in the first table specified will be included in the output. Any row in the second table that is *not* in the first table will not be included.
 
 In our toy example this means that `ArtistID`s 1, 2, and 3 will be included in the output; however, `ArtistID` 4 will not.
 
@@ -170,7 +170,7 @@ as_tibble(left)
 
 Right Join is similar to what we just discussed; however, in the output from a right join, all rows in the final table specified are included in the output. NAs will be included for any observations found in the last specified table but not in the other tables.
 
-In our toy example, that means, information about `ArtistID`s 1, 2, and 4 will be included. 
+In our toy example, that means, information about `ArtistID`s 1, 2, and 4 will be included.
 
 {format: png}
 ![right join will include all observations found in the last table specified](https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&pageid=g3a5854d1ae_0_150)
@@ -227,7 +227,7 @@ Now that we've walked through a number of examples of mutating joins, cases wher
 {format: png}
 ![mutating joins summary](https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/export/png?id=18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M&pageid=g3a5854d1ae_0_78)
 
-To see a visual representation of this, there is a great resource on GitHub, where these joins are illustrated, so feel free to check out [this link](https://github.com/gadenbuie/tidyexplain#readme) from [Garrick Aden-Buie](https://www.garrickadenbuie.com/) animating joins within relational data 
+To see a visual representation of this, there is a great resource on GitHub, where these joins are illustrated, so feel free to check out [this link](https://github.com/gadenbuie/tidyexplain#readme) from [Garrick Aden-Buie](https://www.garrickadenbuie.com/) animating joins within relational data
 
 ### Filtering Joins
 
@@ -250,27 +250,27 @@ Alternatively, `anti_join(artists, albums)` would output the rows of `artists` w
 
 Note that in the case of filtering joins, the number of variables in the table *after* the join does not change. While **mutating joins** merged the tables creating a resulting table with more columns, with **filtering joins** we're simply filtering the observations in one table based on the values in a second table.
 
-### How to Connect to a Database Online 
+### How to Connect to a Database Online
 
-As mentioned briefly above, most often when working with databases, you won't be downloading the entire database. Instead, you'll connect to a server somewhere else where the data live and query the data (search for the parts you need) from R. 
+As mentioned briefly above, most often when working with databases, you won't be downloading the entire database. Instead, you'll connect to a server somewhere else where the data live and query the data (search for the parts you need) from R.
 
 For example, in this lesson we downloaded the entire `chinook` database, but only ended up using `artists` and `albums`. In the future, instead of downloading *all* the data, you'll just connect to the database and work with the parts you need.
 
 This will require connecting to the database with `host`, `user`, and `password`. This information will be provided by the database's owners, but the syntax for entering this information into R to connect to the database would look something like what you see here:
 
 ```r
-con <- DBI::dbConnect(RMySQL::MySQL(), 
+con <- DBI::dbConnect(RMySQL::MySQL(),
   host = "database.host.com",
   user = "janeeverydaydoe",
   password = rstudioapi::askForPassword("database_password")
 )
 ```
 
-While not being discussed in detail here, it's important to know that connecting to remote databases from R is possible and that this allows you to query the database without reading *all* the data from the database into R. 
+While not being discussed in detail here, it's important to know that connecting to remote databases from R is possible and that this allows you to query the database without reading *all* the data from the database into R.
 
 ### Summary
 
-In this lesson we discussed what relational data are and how to work with them in R. This led to a discussion about the package `RSQLite`, which allows you to connect to and make queries from databases. With relational data in hand, we discussed both mutating joins and filtering joins. Finally, we touched *very* briefly on how to connect to a remote database from R. 
+In this lesson we discussed what relational data are and how to work with them in R. This led to a discussion about the package `RSQLite`, which allows you to connect to and make queries from databases. With relational data in hand, we discussed both mutating joins and filtering joins. Finally, we touched *very* briefly on how to connect to a remote database from R.
 
 ### Additional Resources
 
@@ -284,64 +284,3 @@ In this lesson we discussed what relational data are and how to work with them i
 ![Relational Databases](https://www.youtube.com/watch?v=BjFT_7MT62E)
 
 * [Slides](https://docs.google.com/presentation/d/18NcOwo7PvEgs71mVbvCxawDFLNftxPqUpuTNnKv-C_M/edit?usp=sharing)
-
-
-{quiz, id: quiz_04_databases}
-
-### Relational Data quiz
-
-{choose-answers:4}
-?1 Which below accurately describes the capabilities and advantages of the `RSQLite` package?
-
-C) allows you to connect to remote databases, giving you access to large databases that you can query without having to read all the data into R.
-o) allows you to download very large databases into R quickly, but requires you to send all queries to the database itself as queries cannot be carried out in R directly.
-o) Allows you to carry out mutating and filtering joins with simple code, thus enabling you to work with relational data in R
-o) allows you to read CSVs into R from Google Sheets, regardless of how many worksheets there are in the Google Sheet.
-o) allows you to download R and RStudio Cloud on a Chromebook directly, removing the need for an Internet browser
-
-{choose-answers:4}
-?2 What would `anti_join(family, school)` accomplish?
-
-C) keep all the observations in the `family` table NOT found in the `school` table
-C) remove all the observations in `family` found in the `school` table
-C) drop all the observations in `family` found in the `school` table
-o) keep any observation in the `family` table or the `school` table
-o) keep all the observations in the `school` table NOT found in the `family` table
-o) keep only observations found in neither the `family` table nor the `school` table
-o) keep half of the observations in the `family` table and half of the observations in the `school` table
-
-{choose-answers:4}
-?3 To join the variables in two different tables, keeping only the observations found in *both* tables, which type of join would you use?
-
-C) Inner Join
-m) Left Join
-o) Right Join
-o) Full Join
-o) Anti Join
-o) Semi Join
-
-{choose-answers:4}
-?3 To join the variables in two different tables, keeping only the observations found in *the* first table specified, which type of join would you use?
-
-C) Left Join
-m) Inner Join
-o) Right Join
-o) Full Join
-o) Anti Join
-o) Semi Join
-
-{choose-answers:4}
-?4 Which of these is NOT an advantage of storing relational data in a database?
-
-C) allows you to store all of your data in a single spreadsheet, making access to all the data at once simple
-C) removes any need for a password, making the data open to anyone on the Internet
-o) increases data storage efficiency
-o) minimizes the need to copy and paste the same information over and over again within a spreadsheet
-o) allows database managers to limit access to only users who should have access
-o) allows database managers to protect the privacy of the data
-
-{/quiz}
-
-
-
-

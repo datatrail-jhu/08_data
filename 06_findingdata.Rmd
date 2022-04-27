@@ -8,7 +8,7 @@ Before discussing where to find data, we need to know the difference between pri
 
 ### Publicly-available data
 
-As a data scientist, there's a good chance you may work with private company data as part of your job. However, before you have that job, it's great practice to work with datasets that are publicly-available and waiting for you to use them! In this section, we'll direct you to sources of different datasets where you can find a dataset of interest to you and get working with it! 
+As a data scientist, there's a good chance you may work with private company data as part of your job. However, before you have that job, it's great practice to work with datasets that are publicly-available and waiting for you to use them! In this section, we'll direct you to sources of different datasets where you can find a dataset of interest to you and get working with it!
 
 #### Open Datasets
 
@@ -23,7 +23,7 @@ Publicly-available datasets are also curated at [Awesome Public Datasets](https:
 
 Government data can provide a wealth of information to a data science. Government data sets cover topics from education and student loan debt to climate and weather. They include business and finance datasets as well as law and agriculture data.
 
-Here we provide lists of governments' open data to just give you and *idea* of how many datasets are out there. This will only include a *tiny* portion of what cities and federal governments' data are available for you to use. So, if there's a place whose data you want to work with, look on Google for "open data" from that place! 
+Here we provide lists of governments' open data to just give you and *idea* of how many datasets are out there. This will only include a *tiny* portion of what cities and federal governments' data are available for you to use. So, if there's a place whose data you want to work with, look on Google for "open data" from that place!
 
 ##### US Data
 
@@ -57,7 +57,7 @@ Additionally, to see a summary of what datasets are available from cities across
 
 ##### Global Data
 
-In addition to the United States, there are many other countries providing access to open data with more and more providing access and updated datasets each year. These include (but are not limited to!) datasets from many countries within [Africa](http://dataportal.opendataforafrica.org/) and [Latin America](https://opendatabarometer.org/latin-american-open-data-initiative/) as well as  [Canada](https://open.canada.ca/en/open-data),  [Ireland](https://data.gov.ie/), [Japan](http://www.data.go.jp/?lang=english), [Taiwan](https://data.cdc.gov.tw/en/), and the [UK](https://data.gov.uk/). 
+In addition to the United States, there are many other countries providing access to open data with more and more providing access and updated datasets each year. These include (but are not limited to!) datasets from many countries within [Africa](http://dataportal.opendataforafrica.org/) and [Latin America](https://opendatabarometer.org/latin-american-open-data-initiative/) as well as  [Canada](https://open.canada.ca/en/open-data),  [Ireland](https://data.gov.ie/), [Japan](http://www.data.go.jp/?lang=english), [Taiwan](https://data.cdc.gov.tw/en/), and the [UK](https://data.gov.uk/).
 
 Additionally, to see what datasets are available globally, the [Global Open Data Index](https://index.okfn.org/dataset/) is a great place to start!
 
@@ -74,13 +74,13 @@ Finally, we mentioned above that companies often keep their data private for a n
 
 ### Data You Already Have
 
-Sometimes, it's not about finding data someone else has already collected on a bunch of individuals in a population. Rather, getting data sometimes just involves taking a look at things you already have but just haven't yet *realized* are data you can analyze. 
+Sometimes, it's not about finding data someone else has already collected on a bunch of individuals in a population. Rather, getting data sometimes just involves taking a look at things you already have but just haven't yet *realized* are data you can analyze.
 
-For example, MP4 files you've bought and have on your computer are data! They can be analyzed using `tuneR` and `seewave`. You could use this type of data to categorize the music in your library or to build a model that takes data on what songs were already big hits to determine what qualities of a song predict that it may be a big hit. 
+For example, MP4 files you've bought and have on your computer are data! They can be analyzed using `tuneR` and `seewave`. You could use this type of data to categorize the music in your library or to build a model that takes data on what songs were already big hits to determine what qualities of a song predict that it may be a big hit.
 
 Alternatively, you could scrape the websites you frequently visit (using `rvest!`) to answer interesting questions. For example, if you were interested in writing a *really* great title for the newest video of your pet doing something super cute, you might scrape the web for titles of pet videos that have recently gone viral. You could then craft the perfect title to use when you upload your pet video. Granted, this may not be an example answering the most *important* type of data science question; however, writing up how you did this would make a really great blog post, which is something we'll discuss in a lesson in a few courses!
 
-Finally, social networking websites like Facebook and Twitter, collect a lot of data about you as an individual. You have access to this information through the websites APIs, but can also download data directly. After news of the [Facebook and Cambridge Analytica data breach](https://www.theguardian.com/news/2018/mar/17/cambridge-analytica-facebook-influence-us-election), many articles were published about [how to download your Facebook data](https://www.wired.com/story/download-facebook-data-how-to-read/). These data can be downloaded and then analyzed to look at trends in your data over time. How many pictures have you uploaded and been tagged in over time - has that changed? What topics do you most frequently discuss in Messenger? Or, maybe you're interested in mapping the places you've been based on where you've checked in. All of these data can be analyzed from data that are already there, just waiting for you to work with them! 
+Finally, social networking websites like Facebook and Twitter, collect a lot of data about you as an individual. You have access to this information through the websites APIs, but can also download data directly. After news of the [Facebook and Cambridge Analytica data breach](https://www.theguardian.com/news/2018/mar/17/cambridge-analytica-facebook-influence-us-election), many articles were published about [how to download your Facebook data](https://www.wired.com/story/download-facebook-data-how-to-read/). These data can be downloaded and then analyzed to look at trends in your data over time. How many pictures have you uploaded and been tagged in over time - has that changed? What topics do you most frequently discuss in Messenger? Or, maybe you're interested in mapping the places you've been based on where you've checked in. All of these data can be analyzed from data that are already there, just waiting for you to work with them!
 
 In all, sometimes getting the data just means realizing the data you already have at your disposal, figuring how to get the data into a format you can use, and then working with the data using the tools you have!
 
@@ -93,29 +93,3 @@ In this lesson, our goal was to give you an idea of where to *find data* so that
 ![Finding Data](https://www.youtube.com/watch?v=-gAROtsR5dY)
 
 * [Slides](https://docs.google.com/presentation/d/1G0lA8z561VirAggV4MxMXu2dwCudolXjeFZWO6P_3F8/edit?usp=sharing)
-
-{quiz, id: quiz_06_fidingdata}
-
-### Finding Data quiz
-
-{choose-answers: 4}
-? Why may a dataset be kept private rather than shared publicly?
-
-C) it contains personal information
-C) it contains information a company does not want to share
-C) it contains sensitive information that should not be be shared
-o) it has been analyzed by too many people already
-o) the company wants it to be freely-available to everyone
-o) it is in an easily-analyzable format
-
-{choose-answers: 4}
-? Where could you look for an open-source dataset that is NOT government data?
-
-C) Kaggle
-C) data.world
-o) data.gov
-o) census.gov/data
-o) open.canada.ca
-o) datasf.org/opendata/
-
-{/quiz}

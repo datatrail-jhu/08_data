@@ -1,14 +1,14 @@
 # Unconventional Sources of Data
 
-Up to this point in the course set, we've primarily worked with data in a tidy spreadsheet format. Whether this was data that we had to wrangle to get into that format or data stored in a database already in a tidy format, it was tidy nonetheless. It's important, however, to know that data do not always come in a spreadsheet-friendly format. While as a data scientist you will often be working with data stored in spreadsheets, you'll also likely work with some *unconventional* types of data. 
+Up to this point in the course set, we've primarily worked with data in a tidy spreadsheet format. Whether this was data that we had to wrangle to get into that format or data stored in a database already in a tidy format, it was tidy nonetheless. It's important, however, to know that data do not always come in a spreadsheet-friendly format. While as a data scientist you will often be working with data stored in spreadsheets, you'll also likely work with some *unconventional* types of data.
 
 ### Structured Data
 
-So far, we have primarily focused on structured data. **Structured Data** are data that have a high degree of organization. Tidy spreadsheets where the data can be easily analyzed using the data wrangling and visualization skills discussed so far in this course set are an example of structured data. 
+So far, we have primarily focused on structured data. **Structured Data** are data that have a high degree of organization. Tidy spreadsheets where the data can be easily analyzed using the data wrangling and visualization skills discussed so far in this course set are an example of structured data.
 
 ### Unstructured Data
 
-Unstructured data, on the other hand, are data that are not organized in a pre-defined manner. These data do not fit into rows and columns in a spreadsheet. Unstructured data may contain text, images, audio files, and even video files. Given the differences in these types of data, traditional methods for cleaning and analyzing these kind of data are not as helpful. Nevertheless, there are ways to work with these data in R. We'll introduce a number of different types of unstructured data and then give you a brief example of where you would start if you wanted to work with each unconventional data type in R. 
+Unstructured data, on the other hand, are data that are not organized in a pre-defined manner. These data do not fit into rows and columns in a spreadsheet. Unstructured data may contain text, images, audio files, and even video files. Given the differences in these types of data, traditional methods for cleaning and analyzing these kind of data are not as helpful. Nevertheless, there are ways to work with these data in R. We'll introduce a number of different types of unstructured data and then give you a brief example of where you would start if you wanted to work with each unconventional data type in R.
 
 {format: png}
 ![Unstructured data types](https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&pageid=g392f0f9db9_1_9)
@@ -17,9 +17,9 @@ Unstructured data, on the other hand, are data that are not organized in a pre-d
 
 While most of the data we've seen so far has been stored in rows and columns within a spreadsheet, text documents or words of any kind can also be data! **Text analytics** or **text mining** is the process of taking large collections of text, generating a dataset from the that can be analyzed, and analyzing the words in that dataset. In other words, text mining is the process of converting textual data from unstructured form to a structured form for analysis or visualization.
 
-An application of text mining is **sentiment analysis**. In sentiment analysis, the goal is to categorize the text and quantify opinions expressed within the text. For instance, in a lot of satisfaction surveys, as you may have taken, the company asks you to express your opinion about your experience or a specific product in a few sentences. Historically, due to the fact that survey respondents could have typed anything they wanted in these boxes, these kind of data were often ignored when analyzing the survey data due to their *unstructured* nature. In other words, free text responses on a survey can be hard to analyze. 
+An application of text mining is **sentiment analysis**. In sentiment analysis, the goal is to categorize the text and quantify opinions expressed within the text. For instance, in a lot of satisfaction surveys, as you may have taken, the company asks you to express your opinion about your experience or a specific product in a few sentences. Historically, due to the fact that survey respondents could have typed anything they wanted in these boxes, these kind of data were often ignored when analyzing the survey data due to their *unstructured* nature. In other words, free text responses on a survey can be hard to analyze.
 
-In cases where these data *were* analyzed, the text from each survey respondent would have been read by a human. That human would asses what the response and assign a score as to how positive or negative the text was. However, using sentiment analysis we are now able to read a vast amount of textual data and use an algorithm to assign that value to respondent's attitude toward the service or the product. 
+In cases where these data *were* analyzed, the text from each survey respondent would have been read by a human. That human would asses what the response and assign a score as to how positive or negative the text was. However, using sentiment analysis we are now able to read a vast amount of textual data and use an algorithm to assign that value to respondent's attitude toward the service or the product.
 
 There are different approaches to sentiment analysis. Sometimes, a paragraph of text will be evaluated to assess how sad or happy the words in the text are. Other times, you'll use sentiment analysis to gauge how positive or negative the words in the text are. Other times still, words will be analyzed using sentiment analysis to determine how scientific or unscientific text is. For more on sentiment analysis read this [this article](https://www.crimsonhexagon.com/blog/what-is-sentiment-analysis/).
 
@@ -33,7 +33,7 @@ While not the most typical type of data analyzed in R, R can be used to analyze 
 * `tm` : a text mining package
 * `tidytext` : a tidy analysis package ; works with tidy data tools (i.e. dplyr)
 * `languageR` : Statistical analysis of linguistic data
-  
+
 
 To see an example of text analysis in R, check out David Robinson's post [Text analysis of Trump's tweets confirms he writes only the (angrier) Android half](http://varianceexplained.org/r/trump-tweets/), where he uses the `tidytext` package, `twitteR` package, and Twitter API to analyze the tweets from Donald Trump during his presidential campaign.
 
@@ -43,7 +43,7 @@ To see an example of text analysis in R, check out David Robinson's post [Text a
 
 ### JSON: JavaScript Object Notation
 
-In an earlier lesson in this course we touched on the fact that JSON is a text-based way to send information between a browser and a server and a frequent format in which you'll retrieve data from an API call. We also mentioned that JSON format requires objects to be comprised of **key-value pairs**. For example, in the case of: `{"Name": "Isabela"}`, "Name" would be a key, "Isabela" would be a value, and together they would be a key-value pair. 
+In an earlier lesson in this course we touched on the fact that JSON is a text-based way to send information between a browser and a server and a frequent format in which you'll retrieve data from an API call. We also mentioned that JSON format requires objects to be comprised of **key-value pairs**. For example, in the case of: `{"Name": "Isabela"}`, "Name" would be a key, "Isabela" would be a value, and together they would be a key-value pair.
 
 {format: png}
 ![JSON data contain key-pairs](https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&pageid=g3d555e2b2e_0_21)
@@ -66,7 +66,7 @@ Above we discussed how to analyze pure text (meaning, text written by humans in 
 
 ### XML: Extensible Markup Language
 
-**Extensible Markup Language (XML)**, is another human- and machine-readable language that is used frequently by web services and APIs. However, instead of being based on key-value pairs, XML relies on **nodes**, **tags**, and **elements**. The author defines these *tags* to specify what information is included in each *element* of the XML document and allows for elements to be nested within one another. The **nodes** define the hierarchical structure of the XML (which means that XML is hierarchical and nested like JSON)! 
+**Extensible Markup Language (XML)**, is another human- and machine-readable language that is used frequently by web services and APIs. However, instead of being based on key-value pairs, XML relies on **nodes**, **tags**, and **elements**. The author defines these *tags* to specify what information is included in each *element* of the XML document and allows for elements to be nested within one another. The **nodes** define the hierarchical structure of the XML (which means that XML is hierarchical and nested like JSON)!
 
 {format: png}
 ![XML format relies on nodes, tags, and elements](https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&pageid=g3d555e2b2e_0_128)
@@ -79,20 +79,20 @@ To see an example of not only using `xml2` to parse XML data, but also another e
 
 {format: png}
 ![`rvest` and `xml2` are helpful for web scraping and working with XML data](https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&pageid=g3d555e2b2e_0_148)
-  
+
 In this lesson, our goal is to make you aware that data from the Internet (and APIs in particular) will often come in either JSON or XML format. Thus, the JSON and XML examples provided here only give you a bit of an idea of what JSON and XML data are and how to work with them. Nevertheless, the more frequently you retrieve data from APIs and the Internet, the more comfortable you'll have to become with both JSON and XML. And, `jsonlite` and `xml2` will help you as you work with these data in R!
 
 ### Images
 
-Only a few decades ago, analyzing a large dataset of images was not feasible for most researchers. Many didn't even think of images as data. But, there is so much we can get from analyzing image data. Although we will not study images processing techniques in this lesson, let's look at one example that give us an idea of how image data can be used. 
+Only a few decades ago, analyzing a large dataset of images was not feasible for most researchers. Many didn't even think of images as data. But, there is so much we can get from analyzing image data. Although we will not study images processing techniques in this lesson, let's look at one example that give us an idea of how image data can be used.
 
-Within Google Maps there is a Street View feature that allows panoramic views from positions along many streets in the world. One of the things you may notice if you're looking around on Google Maps' street view is that for many streets in the world you do not only see houses; you are also able to see cars. 
+Within Google Maps there is a Street View feature that allows panoramic views from positions along many streets in the world. One of the things you may notice if you're looking around on Google Maps' street view is that for many streets in the world you do not only see houses; you are also able to see cars.
 
 {format: png}
 ![Google Maps street view](https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&pageid=g392f0f9db9_0_4)
 
 
-Some 50 million images of cars from over 200 cities were used by researchers to detect the make, model, body type, and age of the cars in each neighborhood. They were able to take unstructured image data and compile a structured data set! These same researchers then pulled together a structured dataset from the Census and the 2008 elections of demographic information (such as race and income), and voting history in these same neighborhoods. 
+Some 50 million images of cars from over 200 cities were used by researchers to detect the make, model, body type, and age of the cars in each neighborhood. They were able to take unstructured image data and compile a structured data set! These same researchers then pulled together a structured dataset from the Census and the 2008 elections of demographic information (such as race and income), and voting history in these same neighborhoods.
 
 {format: png}
 ![Data used from Google Maps street view to predict demographics of a neighborhood](https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&pageid=g2bfdb07292_0_151)
@@ -106,7 +106,7 @@ Using these two datasets (the Google Street view car image data and the demograp
 
 #### Analyzing Images in R
 
-Like with text, there are packages in R that will help you carry out analysis of images. In particular, `magick` is particularly helpful for advanced image processing within R, allowing you to process, edit, and manipulate images within R. Like JSON and XML, where there is more than one file format for a similar task, there are also a number of different image file formats. We touched on the pros and cons of a number of these in the Data Visualization course; however, of importance here is the fact that the `magick` package is capable of working with many different types of images, including PNG, JPEG, and TIFF. The `magick` package has a particularly helpful [vignette](https://cran.r-project.org/web/packages/magick/vignettes/intro.html#drawing_and_graphics) where you can learn the ins and outs of working with images using `magick`'s functionality. Their documentation will discuss how to read image data into R, how to edit images, and even how to add images to your R plots! 
+Like with text, there are packages in R that will help you carry out analysis of images. In particular, `magick` is particularly helpful for advanced image processing within R, allowing you to process, edit, and manipulate images within R. Like JSON and XML, where there is more than one file format for a similar task, there are also a number of different image file formats. We touched on the pros and cons of a number of these in the Data Visualization course; however, of importance here is the fact that the `magick` package is capable of working with many different types of images, including PNG, JPEG, and TIFF. The `magick` package has a particularly helpful [vignette](https://cran.r-project.org/web/packages/magick/vignettes/intro.html#drawing_and_graphics) where you can learn the ins and outs of working with images using `magick`'s functionality. Their documentation will discuss how to read image data into R, how to edit images, and even how to add images to your R plots!
 
 {format: png}
 ![`magick` package's example of adding an image to a plot](![Google Maps street view](https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&pageid=g3d555e2b2e_0_153)
@@ -115,7 +115,7 @@ Like with text, there are packages in R that will help you carry out analysis of
 
 ### Audio Files
 
-So much of the data generated today comes in the form of audio files. This could be all the data contained within the MP3 files of your favorite songs or the audio files saved in the archives from the speeches of politicians. While certainly not tabular data, there is a lot of information stored within all the audio files we've generated! 
+So much of the data generated today comes in the form of audio files. This could be all the data contained within the MP3 files of your favorite songs or the audio files saved in the archives from the speeches of politicians. While certainly not tabular data, there is a lot of information stored within all the audio files we've generated!
 
 It likely isn't surprising that there are [many different file types](https://en.wikipedia.org/wiki/Audio_file_format) to store audio data. MP3s are currently the most common file format, becoming popular as CDs became less popular due to the fact that the same audio file saved as an [MP3](https://en.wikipedia.org/wiki/MP3) would take up *much* less space than the same file stored on a CD. However, if working with audio files, one would want to learn much more about how audio files are stored in different file formats.
 
@@ -138,7 +138,7 @@ In this lesson, we've briefly reviewed a number of different unconventional sour
 
 
 ### Additional Resources
- 
+
 #### Text Mining
 
 * [`tm` vignette](http://varianceexplained.org/r/trump-tweets/)
@@ -169,47 +169,3 @@ In this lesson, we've briefly reviewed a number of different unconventional sour
 ![Unconventional Sources of Data](https://www.youtube.com/watch?v=MTnInCPxUjo)
 
 * [Slides](https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/edit?usp=sharing)
-
-{quiz, id: quiz_05_unconventional}
-
-### Unconventional Sources of Data quiz
-
-{choose-answers: 4}
-? Which one of the following is NOT an example of unstructured data?
-
-C) Names and student grades in an Excel Spreadsheet
-C) A Google Sheet containing data in a tidy format
-o) Lung x-ray images of smokers
-o) Tweets posted by politicians
-o) Traffic videos in Tokyo
-o) Audio files of your favorite songs
-o) A compilation of YouTube cat videos
-
-{choose-answers: 4}
-? Which of the following packages is specifically designed for analysis of unstructured data?
-
-C) `tm`
-C) `tidytext`
-C) `seewave`
-C) `tuneR`
-o) `googlesheets`
-o) `car`
-o) `purrr`
-o) `dplyr`
-
-{choose-answers: 4}
-? If you had data comprised of nodes, tags, and elements, which R package would likely be most helpful to you?
-
-C) `xml2`
-m) `jsonlite`
-o) `tm`
-o) `tidytext`
-o) `seewave`
-o) `tuneR`
-o) `googlesheets`
-o) `magick`
-
-{/quiz}
-
-
-

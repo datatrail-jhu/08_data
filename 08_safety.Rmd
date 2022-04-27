@@ -6,7 +6,7 @@ The goal of [Internet safety](https://en.wikipedia.org/wiki/Internet_safety) is 
 
 ### WiFi
 
-[WiFi](https://en.wikipedia.org/wiki/Wi-Fi) is the technology that enables you to wirelessly connect to the Internet. Computers, smartphones, video-game consoles, and TVs are among the many types of devices that are WiFi-compatible. As is often the case, increased access to the Internet comes with increased risk to network security. 
+[WiFi](https://en.wikipedia.org/wiki/Wi-Fi) is the technology that enables you to wirelessly connect to the Internet. Computers, smartphones, video-game consoles, and TVs are among the many types of devices that are WiFi-compatible. As is often the case, increased access to the Internet comes with increased risk to network security.
 
 #### Public WiFi
 
@@ -15,24 +15,24 @@ Completely-open and free public WiFi, or Internet access that does not require a
 #### Semi-Open WiFi
 
 Semi-open WiFi networks are networks potentially open to everyone, but that may require a password (maybe one that is printed on your receipt at a coffee shop) or may require you to login by providing an e-mail address. When given the choice, opt to connect to these networks rather than completely-open public WiFi networks.
- 
+
 #### Password-protected WiFi
 
-The most secure option, however, is when you connect to a password-protected WiFi network, so use password-protected WiFi whenever you have the option. WiFi at your home should absolutely be password-protected. 
+The most secure option, however, is when you connect to a password-protected WiFi network, so use password-protected WiFi whenever you have the option. WiFi at your home should absolutely be password-protected.
 
 #### Use HTTPS Whenever Possible
 
 The "S" in HTTPS stands for secure. So, what does HTTP stand for? HTTP refers to "Hyper Text Transfer Protocol." You're likely most familiar with these letters as being part of your website. When you type "www.gmail.com" into your Chrome browser, Chrome redirects you to "https://mail.google.com/mail/u/0/#inbox." HTTP refers to how the data are sent from your browser (where you typed "www.gmail.com") and the website to which you're trying to connect (www.gmail.com). When the web address starts with https:// rather than http://, this means that the data sent over your Internet connection are encrypted. Encryption is a process that generates a message that cannot be decoded by anyone without a key. Thus, if someone were to intercept your encrypted data as it were transferred over the Internet, they may be able to intercept your data, but they wouldn't be able to decipher the information, as they wouldn't have access to the key. When a website is using encryption (https://), there will be a padlock to the left of your web address bar to indicate that the HTTPS connection is in effect.  
 
-When sharing sensitive information on the Internet (ie a credit card number or personal health information), it should only ever be done on a secure (encrypted) network. 
+When sharing sensitive information on the Internet (ie a credit card number or personal health information), it should only ever be done on a secure (encrypted) network.
 
 ### Passwords
 
-In the age of apps for everything and technology being everywhere, you likely have a lot of requests daily for passwords. While they may seem like an annoyance, using passwords, and importantly, using *good* passwords is worth the effort. 
+In the age of apps for everything and technology being everywhere, you likely have a lot of requests daily for passwords. While they may seem like an annoyance, using passwords, and importantly, using *good* passwords is worth the effort.
 
 #### Strong Passwords
 
-Strong passwords may be harder to remember, but that's the point. You don't want someone else to be able to easily guess your password. 
+Strong passwords may be harder to remember, but that's the point. You don't want someone else to be able to easily guess your password.
 
 Characteristics of **Strong Passwords**:
 
@@ -58,13 +58,13 @@ In addition to setting passwords, make sure you have multiple different password
 
 #### When to Change Passwords
 
-If your password was set by a third-party company (say your Internet provider), you should *change your password right away*. 
+If your password was set by a third-party company (say your Internet provider), you should *change your password right away*.
 
 Otherwise, it's a good practice to change passwords to your most sensitive information (i.e. WiFi, credit cards/banking, etc.) at least every six months.
 
 #### Never Share Passwords
 
-A final word on passwords: **never share them**. Reputable companies will never ask for them. Your bank will never require you to tell it to them. And, neither will the IRS. If someone is asking for your password, it is *almost certainly a scam*. 
+A final word on passwords: **never share them**. Reputable companies will never ask for them. Your bank will never require you to tell it to them. And, neither will the IRS. If someone is asking for your password, it is *almost certainly a scam*.
 
 ### Good Internet behavior
 
@@ -80,8 +80,8 @@ On the Internet there are few basic guidelines to follow that will help you be a
 While we would love if everyone on the Internet behaved well (and most people do!), there are of course bad actors. To avoid getting caught up in an online scam, beware of:
 
 * people/websites posing as people from a trustworthy company who attempt to obtain your private information - emails asking for credit card numbers or passwords are scams
-* people who call and ask for passwords to accounts and who *seem* to know a lot about your family and claim to be from law enforcement. This is likely a scam. You can always hang up and call your local law enforcement directly to be sure. 
-* people/websites offering prices that are *way* too low for housing or big purchases on the Internet. These are likely a scam. 
+* people who call and ask for passwords to accounts and who *seem* to know a lot about your family and claim to be from law enforcement. This is likely a scam. You can always hang up and call your local law enforcement directly to be sure.
+* people/websites offering prices that are *way* too low for housing or big purchases on the Internet. These are likely a scam.
 
 ### Malware & Spyware
 
@@ -102,49 +102,3 @@ Because Chromebooks do not run a typically operating system, they are much more 
 ![Internet Safety](https://www.youtube.com/watch?v=LdxnYPAbfFE)
 
 * [Slides](https://docs.google.com/presentation/d/15GTb5tE_GQuCBJMtLYRtaEF8t5ms_iBRruNqZO1LbtY/edit?usp=sharing)
-
-{quiz, id: quiz_08_safety}
-
-### Internet Safety quiz
-
-{choose-answers:4}
-? Which of these passwords is BEST?
-
-C) Ujzk7!wkcC!S81?
-C) TjZk7!wadC!S9?
-C) Cjk7!WadP?A5!
-o) Pass123word
-o) Mohamm820!ed
-o) Mo8haM1!meD
-o) Password1234
-o) secret123
-
-{choose-answers:4}
-? To share personal information over the Internet, what should you avoid?
-
-C) HTTP
-o) using encryption
-o) HTTPS
-o) secure networks
-o) secure protocols
-
-{choose-answers:4}
-? If all the following WiFi networks are available, which should you choose?
-
-C) password-protected personal WiFi
-o) Public WiFi
-o) Completely open WiFi
-o) Semi-open WiFi
-o) open WiFi
-
-{choose-answers:4}
-? How often should you change you password to your home WiFi network?
-
-C) At least every six months
-o) Never - it's totally secure
-o) Annually
-o) Every other year
-o) Every hour
-o) Every 5 years
-
-{/quiz}

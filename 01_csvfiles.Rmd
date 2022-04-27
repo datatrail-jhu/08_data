@@ -4,7 +4,7 @@ In this lesson, we'll discuss a few of the main file types used to store tabular
 
 ### CSV files
 
-**Comma-separated values (CSV)** files allow us to store tabular data in a simple format. CSVs are **plain-text** files, which means that all the important information in the file is represented by text (where text is numbers, letters, and symbols you can type on your keyboard). 
+**Comma-separated values (CSV)** files allow us to store tabular data in a simple format. CSVs are **plain-text** files, which means that all the important information in the file is represented by text (where text is numbers, letters, and symbols you can type on your keyboard).
 
 For example, consider a dataset that includes information about the heights and blood types of three individuals. You could make a table that has three columns (names, heights, and blood types) and three rows (one for each person) in Google Docs or Microsoft Word. However, there is a better way of storing this data in plain text without needing to put them in table format. CSVs are a perfect way to store these data. In the CSV format, the values of each column for each person in the data are separated by commas and each row (each person in our case) is separated by a new line. This means your data would be stored in the following format:
 
@@ -40,8 +40,8 @@ Now, find where you saved the file (for instance "Downloads") and click on *OPEN
 
 Now, while the file has now been uploaded to your RStudio Cloud project, it's important to recognize the file is not yet imported to your R environment as an object. We'll do that now!
 
-The best way to accomplish this is using the function `read_csv()` from the `readr` package. (Note, if you haven't installed the `readr` package, you'll have to do that first.) Inside the parenthesis of the function, write the name of the file in quotes, including the file extension (.csv). Make sure you type the exact file name. Save the imported data in a data frame called `df_csv`. Your data will now be imported into R environment. If you use the command `head(df_csv)` you will see the first several rows of your imported data frame: 
- 
+The best way to accomplish this is using the function `read_csv()` from the `readr` package. (Note, if you haven't installed the `readr` package, you'll have to do that first.) Inside the parenthesis of the function, write the name of the file in quotes, including the file extension (.csv). Make sure you type the exact file name. Save the imported data in a data frame called `df_csv`. Your data will now be imported into R environment. If you use the command `head(df_csv)` you will see the first several rows of your imported data frame:
+
 ```r
 ## install.packages("readr")
 library(readr)
@@ -58,7 +58,7 @@ head(df_csv)
 
 Above, you see the simplest way to import a CSV file. However, as with many functions, there are other arguments that you can set to specify how to import your specific CSV file, a few of which are listed below. However, as usual, to see all the arguments for this function, use `?read_csv` within R.
 
-- `col_names = FALSE` to specify that the first row does NOT contain column names. 
+- `col_names = FALSE` to specify that the first row does NOT contain column names.
 - `skip = 2` will skip the first 2 rows. You can set the number to any number you want. Helpful if there is additional information in the first few rows of your data frame that are not actually part of the table.
 - `n_max = 100` will only read in the first 100 rows. You can set the number to any number you want. Helpful if you're not sure how big a file is and just want to see part of it
 
@@ -68,14 +68,14 @@ Finally, we introduce the function `read_csv` here and recommend that you use it
 
 ### Excel files
 
-While CSV files hold plain text as a series of values separated by commas, an Excel (or .xls or .xlsx) file holds information in a workbook that comprises both values and formatting (colors, conditional formatting, font size, etc.). You can think of Excel files a fancier CSV file. While this may sound appealing, we'll remind you that CSV files can be read by many different pieces of software, Excel files can only be viewed in specific pieces of software, and thus are generally less flexible. That said, many people save their data in Excel, so it's important to know how to work with them in RStudio Cloud. 
+While CSV files hold plain text as a series of values separated by commas, an Excel (or .xls or .xlsx) file holds information in a workbook that comprises both values and formatting (colors, conditional formatting, font size, etc.). You can think of Excel files a fancier CSV file. While this may sound appealing, we'll remind you that CSV files can be read by many different pieces of software, Excel files can only be viewed in specific pieces of software, and thus are generally less flexible. That said, many people save their data in Excel, so it's important to know how to work with them in RStudio Cloud.
 
-Let's go back to the Google Sheet that we created and instead of downloading the file locally as as CSV, download it as *Microsoft Excel (.xlsx)* file. 
+Let's go back to the Google Sheet that we created and instead of downloading the file locally as as CSV, download it as *Microsoft Excel (.xlsx)* file.
 
 {format: png}
 ![Download as Excel file](https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&pageid=g399e5a917a_0_33)
 
-Save the file where you can find it. Similar to the CSV file, first, upload the file into your RStudio Cloud workspace. 
+Save the file where you can find it. Similar to the CSV file, first, upload the file into your RStudio Cloud workspace.
 
 ### Reading Excel files into RStudio Cloud
 
@@ -102,7 +102,7 @@ Another common form of data is text files that usually come in the form of TXT o
 
 ### Reading TSV files into RStudio Cloud
 
-The process for reading these files into R is similar to what you've seen so far. We'll again use the `readr` package, but we'll instead use the `read_tsv()` function. 
+The process for reading these files into R is similar to what you've seen so far. We'll again use the `readr` package, but we'll instead use the `read_tsv()` function.
 
 
 ```r
@@ -117,7 +117,7 @@ head(df_tsv)
 
 Sometimes, tab-separated files are saved with the .txt file extension. TXT files can store tabular data, but they can also store simple text. Thus, while TSV is the more appropriate extension for tabular data that are tab-separated, you'll often run into tabular data that individuals have saved as a TXT file. In these cases, you'll want to use the more generic `read_delim()` function from `readr`.
 
-Google Sheets does not allow tab-separated files to be downloaded with the .txt file extension (since .tsv is more appropriate); however, if you were to have a file "sample_data.txt" uploaded into your RStudio Cloud project, you could use the following code to read it into your R Environment, where "\t" specifies that the file is tab-delimited. 
+Google Sheets does not allow tab-separated files to be downloaded with the .txt file extension (since .tsv is more appropriate); however, if you were to have a file "sample_data.txt" uploaded into your RStudio Cloud project, you could use the following code to read it into your R Environment, where "\t" specifies that the file is tab-delimited.
 
 ```r
 ## read TXT into R
@@ -133,9 +133,9 @@ This function allows you to specify how the file you're reading is in delimited.
 
 ### Exporting Data in R to CSV
 
-The last topic of this lesson is about how to export data from R. So far we learned about reading data into R. However, sometimes you would like to share *your* data with others and need to export your data from R to some format that your collaborators can see. 
+The last topic of this lesson is about how to export data from R. So far we learned about reading data into R. However, sometimes you would like to share *your* data with others and need to export your data from R to some format that your collaborators can see.
 
-As discussed above, CSV format is a good candidate because of its simplicity and compatibility. Let's say you have a data frame in the R environment that you would like to export as a CSV. To do so, you could use `write_csv()` from the `readr` package. 
+As discussed above, CSV format is a good candidate because of its simplicity and compatibility. Let's say you have a data frame in the R environment that you would like to export as a CSV. To do so, you could use `write_csv()` from the `readr` package.
 
 Since both methods are fairly similar, let's look at the one from `readr` package. Since we've already created a data frame named `df_csv`, we can export it to a CSV file using the following code. After typing this command, a new CSV file called `my_csv_file.csv` will appear in the Files section.
 
@@ -152,59 +152,3 @@ We'll finally note that there are default R functions `write.csv()` and `write.t
 ![CSV, Excel, and TSV Files](https://www.youtube.com/watch?v=qzo8RLJfy_U)
 
 * [Slides](https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/edit?usp=sharing)
-
-
-{quiz, id: quiz_01_csvfiles}
-
-### CSV, Excel, and TSV Files quiz
-
-{choose-answers: 4}
-? What is a CSV file?
-
-C) A text data file in which values are separated by commas.
-o) A file that can contain various forms of data such as audio and video.
-o) An Excel file first created by Microsoft Corporation.
-o) A text data file in which values are separated by tabs.
-o) A file with multiple spreadsheets within a workbook
-o) A file readable exclusively by R.
-
-{choose-answers:4}
-? Which of the following is NOT true about the `read_csv()` command?
-
-C) It is a default function within R.
-C) It assumes the file it is reading in is tab-separated.
-o) By setting the `col_names` attribute to `TRUE` the first row will be imported as column names.
-o) It assumes the file it is reading in is comma-separated.
-o) By using the `skip` attribute equal to 3 the first three rows will be skipped.
-o) It reads CSVs in more quickly than `read.csv()`.
-
-{choose-answers: 4}
-? Which of the following is TRUE about the difference between CSV and Excel files? 
-
-C) Excel files allows for cell formatting; CSVs do not.
-C) CSVs are plain-text; Excel files are not.
-o) Both can be opened by basic text editors.
-o) CSVs allow for cell formatting; Excel files do not.
-o) CSVs can be read into R; Excel files cannot
-o) Excel files can be read into R; CSVs cannot
-
-{points:3}
-? Go to the [Cloud-based Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/20345/join?access_code=n4b8J1s0XmWctSy83%2BEXbGAwj7rKcuFMI7WJEJFD) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Getting Data`. Type the number that corresponds to the lesson `L02 CSV, Excel, and TSV Files Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
-
-! /.+(cwD5|Rc8l|Xb7f|ZtzZ|RfBM|AnvH|6ILs|kp9Z|YvWb|ynWN).+/i
-
-
-{points:3}
-? Within the same course on swirl: `CBDS Getting Data`, navigate to the lesson `L02 CSV, Excel, and TSV Files Q02 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(B3cQ|Hmrr|O6ZA|4Qeb|yslR|5xHo|DEsX|3WoT|Ifb5|MGO2).+/i
-
-
-{/quiz}
-
-
-
-
-
-
-

@@ -12,7 +12,8 @@ rmd_files: ["index.Rmd",
             "08_safety.Rmd",
             "09_privacy.Rmd",
             "10_ethics.Rmd",
-            "References.Rmd"]
+            "References.Rmd",
+            "About.Rmd"]
 new_session: yes
 bibliography: [book.bib]
 delete_merged_file: true
