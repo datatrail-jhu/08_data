@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Importing Data from Google Sheets | Getting Data</title>
+  <meta name="description" content="Description about Course/Book." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Importing Data from Google Sheets | Getting Data" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Description about Course/Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Importing Data from Google Sheets | Getting Data" />
+  
+  <meta name="twitter:description" content="Description about Course/Book." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/DataTrail_favicon.ico" type="image/x-icon" />
+<link rel="prev" href="csv-excel-and-tsv-files.html"/>
+<link rel="next" href="getting-data-from-the-internet.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets/style_DataTrail.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style="padding-left: 0px; padding-top: 8px;"</a>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a></li>
+<li class="chapter" data-level="1" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html"><i class="fa fa-check"></i><b>1</b> Where Does Data Come From?</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#basic-data-files"><i class="fa fa-check"></i><b>1.0.1</b> Basic Data files</a></li>
+<li class="chapter" data-level="1.0.2" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#data-from-the-internet"><i class="fa fa-check"></i><b>1.0.2</b> Data from the Internet</a></li>
+<li class="chapter" data-level="1.0.3" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#relational-databases"><i class="fa fa-check"></i><b>1.0.3</b> Relational Databases</a></li>
+<li class="chapter" data-level="1.0.4" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#unconventional-data"><i class="fa fa-check"></i><b>1.0.4</b> Unconventional Data</a></li>
+<li class="chapter" data-level="1.0.5" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#slides-and-video"><i class="fa fa-check"></i><b>1.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html"><i class="fa fa-check"></i><b>2</b> CSV, Excel, and TSV Files</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#csv-files"><i class="fa fa-check"></i><b>2.0.1</b> CSV files</a></li>
+<li class="chapter" data-level="2.0.2" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#downloading-csv-files"><i class="fa fa-check"></i><b>2.0.2</b> Downloading CSV files</a></li>
+<li class="chapter" data-level="2.0.3" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-csv-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.3</b> Reading CSV files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.4" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#excel-files"><i class="fa fa-check"></i><b>2.0.4</b> Excel files</a></li>
+<li class="chapter" data-level="2.0.5" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-excel-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.5</b> Reading Excel files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.6" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#text-files"><i class="fa fa-check"></i><b>2.0.6</b> Text files</a></li>
+<li class="chapter" data-level="2.0.7" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-tsv-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.7</b> Reading TSV files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.8" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-txt-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.8</b> Reading TXT files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.9" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#exporting-data-in-r-to-csv"><i class="fa fa-check"></i><b>2.0.9</b> Exporting Data in R to CSV</a></li>
+<li class="chapter" data-level="2.0.10" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#slides-and-video-1"><i class="fa fa-check"></i><b>2.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html"><i class="fa fa-check"></i><b>3</b> Importing Data from Google Sheets</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#the-googlesheets-package"><i class="fa fa-check"></i><b>3.0.1</b> The <code>googlesheets</code> package</a></li>
+<li class="chapter" data-level="3.0.2" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#importing-csv-files-from-the-web"><i class="fa fa-check"></i><b>3.0.2</b> Importing CSV files from the web</a></li>
+<li class="chapter" data-level="3.0.3" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#summary"><i class="fa fa-check"></i><b>3.0.3</b> Summary</a></li>
+<li class="chapter" data-level="3.0.4" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#additional-resources"><i class="fa fa-check"></i><b>3.0.4</b> Additional Resources</a></li>
+<li class="chapter" data-level="3.0.5" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#slides-and-video-2"><i class="fa fa-check"></i><b>3.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html"><i class="fa fa-check"></i><b>4</b> Getting Data From the Internet</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#api-access"><i class="fa fa-check"></i><b>4.0.1</b> API access</a></li>
+<li class="chapter" data-level="4.0.2" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#getting-data-httr"><i class="fa fa-check"></i><b>4.0.2</b> Getting Data: <code>httr</code></a></li>
+<li class="chapter" data-level="4.0.3" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#example-1-githubs-api"><i class="fa fa-check"></i><b>4.0.3</b> Example 1: GitHub’s API</a></li>
+<li class="chapter" data-level="4.0.4" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#example-2-obtaining-a-csv"><i class="fa fa-check"></i><b>4.0.4</b> Example 2: Obtaining a CSV</a></li>
+<li class="chapter" data-level="4.0.5" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#api-keys"><i class="fa fa-check"></i><b>4.0.5</b> API keys</a></li>
+<li class="chapter" data-level="4.0.6" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#web-scraping-1"><i class="fa fa-check"></i><b>4.0.6</b> Web Scraping</a></li>
+<li class="chapter" data-level="4.0.7" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#json"><i class="fa fa-check"></i><b>4.0.7</b> JSON</a></li>
+<li class="chapter" data-level="4.0.8" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#keeping-track-of-your-data"><i class="fa fa-check"></i><b>4.0.8</b> Keeping Track of your Data</a></li>
+<li class="chapter" data-level="4.0.9" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#summary-1"><i class="fa fa-check"></i><b>4.0.9</b> Summary</a></li>
+<li class="chapter" data-level="4.0.10" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#additional-resources-1"><i class="fa fa-check"></i><b>4.0.10</b> Additional Resources</a></li>
+<li class="chapter" data-level="4.0.11" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#slides-and-video-3"><i class="fa fa-check"></i><b>4.0.11</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="relational-data.html"><a href="relational-data.html"><i class="fa fa-check"></i><b>5</b> Relational Data</a>
+<ul>
+<li class="chapter" data-level="5.0.1" data-path="relational-data.html"><a href="relational-data.html#relational-data-1"><i class="fa fa-check"></i><b>5.0.1</b> Relational Data</a></li>
+<li class="chapter" data-level="5.0.2" data-path="relational-data.html"><a href="relational-data.html#relational-databases-sql"><i class="fa fa-check"></i><b>5.0.2</b> Relational Databases: <code>SQL</code></a></li>
+<li class="chapter" data-level="5.0.3" data-path="relational-data.html"><a href="relational-data.html#connecting-to-databases-rsqlite"><i class="fa fa-check"></i><b>5.0.3</b> Connecting to Databases: <code>RSQLite</code></a></li>
+<li class="chapter" data-level="5.0.4" data-path="relational-data.html"><a href="relational-data.html#working-with-relational-data-dplyr-dbplyr"><i class="fa fa-check"></i><b>5.0.4</b> Working with Relational Data: <code>dplyr</code> &amp; <code>dbplyr</code></a></li>
+<li class="chapter" data-level="5.0.5" data-path="relational-data.html"><a href="relational-data.html#mutating-joins"><i class="fa fa-check"></i><b>5.0.5</b> Mutating Joins</a></li>
+<li class="chapter" data-level="5.0.6" data-path="relational-data.html"><a href="relational-data.html#filtering-joins"><i class="fa fa-check"></i><b>5.0.6</b> Filtering Joins</a></li>
+<li class="chapter" data-level="5.0.7" data-path="relational-data.html"><a href="relational-data.html#how-to-connect-to-a-database-online"><i class="fa fa-check"></i><b>5.0.7</b> How to Connect to a Database Online</a></li>
+<li class="chapter" data-level="5.0.8" data-path="relational-data.html"><a href="relational-data.html#summary-2"><i class="fa fa-check"></i><b>5.0.8</b> Summary</a></li>
+<li class="chapter" data-level="5.0.9" data-path="relational-data.html"><a href="relational-data.html#additional-resources-2"><i class="fa fa-check"></i><b>5.0.9</b> Additional Resources</a></li>
+<li class="chapter" data-level="5.0.10" data-path="relational-data.html"><a href="relational-data.html#slides-and-video-4"><i class="fa fa-check"></i><b>5.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html"><i class="fa fa-check"></i><b>6</b> Unconventional Sources of Data</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#structured-data"><i class="fa fa-check"></i><b>6.0.1</b> Structured Data</a></li>
+<li class="chapter" data-level="6.0.2" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#unstructured-data"><i class="fa fa-check"></i><b>6.0.2</b> Unstructured Data</a></li>
+<li class="chapter" data-level="6.0.3" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#text-data"><i class="fa fa-check"></i><b>6.0.3</b> Text Data</a></li>
+<li class="chapter" data-level="6.0.4" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#json-javascript-object-notation"><i class="fa fa-check"></i><b>6.0.4</b> JSON: JavaScript Object Notation</a></li>
+<li class="chapter" data-level="6.0.5" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#xml-extensible-markup-language"><i class="fa fa-check"></i><b>6.0.5</b> XML: Extensible Markup Language</a></li>
+<li class="chapter" data-level="6.0.6" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#images-1"><i class="fa fa-check"></i><b>6.0.6</b> Images</a></li>
+<li class="chapter" data-level="6.0.7" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#audio-files-1"><i class="fa fa-check"></i><b>6.0.7</b> Audio Files</a></li>
+<li class="chapter" data-level="6.0.8" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#summary-3"><i class="fa fa-check"></i><b>6.0.8</b> Summary</a></li>
+<li class="chapter" data-level="6.0.9" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#additional-resources-3"><i class="fa fa-check"></i><b>6.0.9</b> Additional Resources</a></li>
+<li class="chapter" data-level="6.0.10" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#slides-and-video-5"><i class="fa fa-check"></i><b>6.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="finding-data.html"><a href="finding-data.html"><i class="fa fa-check"></i><b>7</b> Finding Data</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="finding-data.html"><a href="finding-data.html#public-versus-private-data"><i class="fa fa-check"></i><b>7.0.1</b> Public versus Private Data</a></li>
+<li class="chapter" data-level="7.0.2" data-path="finding-data.html"><a href="finding-data.html#publicly-available-data"><i class="fa fa-check"></i><b>7.0.2</b> Publicly-available data</a></li>
+<li class="chapter" data-level="7.0.3" data-path="finding-data.html"><a href="finding-data.html#data-you-already-have"><i class="fa fa-check"></i><b>7.0.3</b> Data You Already Have</a></li>
+<li class="chapter" data-level="7.0.4" data-path="finding-data.html"><a href="finding-data.html#summary-4"><i class="fa fa-check"></i><b>7.0.4</b> Summary</a></li>
+<li class="chapter" data-level="7.0.5" data-path="finding-data.html"><a href="finding-data.html#slides-and-video-6"><i class="fa fa-check"></i><b>7.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="internet-safety.html"><a href="internet-safety.html"><i class="fa fa-check"></i><b>8</b> Internet Safety</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="internet-safety.html"><a href="internet-safety.html#wifi"><i class="fa fa-check"></i><b>8.0.1</b> WiFi</a></li>
+<li class="chapter" data-level="8.0.2" data-path="internet-safety.html"><a href="internet-safety.html#passwords"><i class="fa fa-check"></i><b>8.0.2</b> Passwords</a></li>
+<li class="chapter" data-level="8.0.3" data-path="internet-safety.html"><a href="internet-safety.html#good-internet-behavior"><i class="fa fa-check"></i><b>8.0.3</b> Good Internet behavior</a></li>
+<li class="chapter" data-level="8.0.4" data-path="internet-safety.html"><a href="internet-safety.html#online-scams"><i class="fa fa-check"></i><b>8.0.4</b> Online Scams</a></li>
+<li class="chapter" data-level="8.0.5" data-path="internet-safety.html"><a href="internet-safety.html#malware-spyware"><i class="fa fa-check"></i><b>8.0.5</b> Malware &amp; Spyware</a></li>
+<li class="chapter" data-level="8.0.6" data-path="internet-safety.html"><a href="internet-safety.html#security-on-a-chromebook"><i class="fa fa-check"></i><b>8.0.6</b> Security on a Chromebook</a></li>
+<li class="chapter" data-level="8.0.7" data-path="internet-safety.html"><a href="internet-safety.html#slides-and-video-7"><i class="fa fa-check"></i><b>8.0.7</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="data-privacy.html"><a href="data-privacy.html"><i class="fa fa-check"></i><b>9</b> Data Privacy</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="data-privacy.html"><a href="data-privacy.html#what-is-data-privacy"><i class="fa fa-check"></i><b>9.0.1</b> What is Data Privacy?</a></li>
+<li class="chapter" data-level="9.0.2" data-path="data-privacy.html"><a href="data-privacy.html#personally-identifiable-information"><i class="fa fa-check"></i><b>9.0.2</b> Personally Identifiable Information</a></li>
+<li class="chapter" data-level="9.0.3" data-path="data-privacy.html"><a href="data-privacy.html#what-is-encryption"><i class="fa fa-check"></i><b>9.0.3</b> What is encryption?</a></li>
+<li class="chapter" data-level="9.0.4" data-path="data-privacy.html"><a href="data-privacy.html#human-security"><i class="fa fa-check"></i><b>9.0.4</b> Human Security</a></li>
+<li class="chapter" data-level="9.0.5" data-path="data-privacy.html"><a href="data-privacy.html#computer-security"><i class="fa fa-check"></i><b>9.0.5</b> Computer Security</a></li>
+<li class="chapter" data-level="9.0.6" data-path="data-privacy.html"><a href="data-privacy.html#open-science"><i class="fa fa-check"></i><b>9.0.6</b> Open Science</a></li>
+<li class="chapter" data-level="9.0.7" data-path="data-privacy.html"><a href="data-privacy.html#data-breaches"><i class="fa fa-check"></i><b>9.0.7</b> Data Breaches</a></li>
+<li class="chapter" data-level="9.0.8" data-path="data-privacy.html"><a href="data-privacy.html#conclusions"><i class="fa fa-check"></i><b>9.0.8</b> Conclusions</a></li>
+<li class="chapter" data-level="9.0.9" data-path="data-privacy.html"><a href="data-privacy.html#slides-and-video-8"><i class="fa fa-check"></i><b>9.0.9</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ethical-data-science.html"><a href="ethical-data-science.html"><i class="fa fa-check"></i><b>10</b> Ethical Data Science</a>
+<ul>
+<li class="chapter" data-level="10.0.1" data-path="ethical-data-science.html"><a href="ethical-data-science.html#data-science-team"><i class="fa fa-check"></i><b>10.0.1</b> Data Science Team</a></li>
+<li class="chapter" data-level="10.0.2" data-path="ethical-data-science.html"><a href="ethical-data-science.html#the-data"><i class="fa fa-check"></i><b>10.0.2</b> The Data</a></li>
+<li class="chapter" data-level="10.0.3" data-path="ethical-data-science.html"><a href="ethical-data-science.html#the-analysis"><i class="fa fa-check"></i><b>10.0.3</b> The Analysis</a></li>
+<li class="chapter" data-level="10.0.4" data-path="ethical-data-science.html"><a href="ethical-data-science.html#after-the-algorithm"><i class="fa fa-check"></i><b>10.0.4</b> After the Algorithm</a></li>
+<li class="chapter" data-level="10.0.5" data-path="ethical-data-science.html"><a href="ethical-data-science.html#ethics-in-data-science"><i class="fa fa-check"></i><b>10.0.5</b> Ethics in Data Science</a></li>
+<li class="chapter" data-level="10.0.6" data-path="ethical-data-science.html"><a href="ethical-data-science.html#artificial-intelligence-in-the-military"><i class="fa fa-check"></i><b>10.0.6</b> Artificial Intelligence in the Military</a></li>
+<li class="chapter" data-level="10.0.7" data-path="ethical-data-science.html"><a href="ethical-data-science.html#additional-resources-4"><i class="fa fa-check"></i><b>10.0.7</b> Additional Resources</a></li>
+<li class="chapter" data-level="10.0.8" data-path="ethical-data-science.html"><a href="ethical-data-science.html#slides-and-video-9"><i class="fa fa-check"></i><b>10.0.8</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
+<li class="divider"></li>
+<p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by: </a> </p>
+<p style="text-align:center;"> <a href="https://www.datatrail.org/"> Data Trail </a></p>
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style=" width: 80%; filter: grayscale(100%); padding-left: 40px; padding-top: 8px; vertical-align: top "</a>
+<p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
+<p style="padding-left: 40px;"><div class="trapezoid" style = "padding-left: 40px;"><span>  <a href="https://forms.gle/VWaJYc3zATe3qxYC9"> Click here to provide feedback</a> <img src="assets/itcr_arrow.png" style=" width: 10%" ></span></div></p>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Getting Data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <!--script src="https://kit.fontawesome.com/6a26f47516.js"></script-->
+  <!--<script src="assets/hideOutput.js"></script>-->
+  <link href="assets/style_DataTrail.css" rel="stylesheet">
+</head>
+        
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="assets/DataTrail.jpg">
+</div>
+<div id="importing-data-from-google-sheets" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Importing Data from Google Sheets</h1>
+<p>In the last lesson we discussed how to read various file types into R. In each of these examples, we first had to upload the file into our RStudio Cloud project before we could read the file into R using one of the <code>read_*()</code> functions. What if we could cut out that first step, eliminating the need to upload the file into our project? This way, we could just use one function to read data directly into RStudio Cloud. This is capable thanks to data stored Google Sheets and the fantastic R package <code>googlesheets</code>.</p>
+<p>Additionally, using this approach, we can read in and analyze data hosted on Google Sheets in real-time. This means that as the data are updated over time, you can read the data into R and analyze it in its current state. Then, when the data are updated, you just re-run your code, and you’ll get an updated analysis. To see what we mean specifically, let’s take a look at an example.</p>
+<p>Imagine you’ve sent out a survey to your friends asking about how they spend their day. Let’s say you’re mostly interested in knowing the hours spent on work, leisure, sleep, eating, socializing, and other activities. So in your Google Sheet you add these six items as columns and one column asking for your friends names. To collect this data, you then share the link with your friends, giving them the ability to edit the Google Sheet.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g2bfdb07292_0_151" alt="Survey Google Sheets" /></p>
+<p>Your friends will then one-by-one complete the survey. And, because it’s a Google Sheet, everyone will be able to update the Google Sheet, regardless of whether or not someone else is also looking at the Sheet at the same time. As they do, you’ll be able to pull the data and import it to R for analysis at any point. You won’t have to wait for everyone to respond. You’ll be able to analyze the results in real-time by directly reading it into R from Google Sheets, avoiding the need to download it each time you do so.</p>
+<p>In other words, every time you import the data from the Google Sheets link using the <code>googlesheets</code> package, the most updated data will be imported. Let’s say, after waiting for a week, your friends’ data look something like this:</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g398ce98dcf_0_1" alt="Survey Data" /></p>
+<div id="the-googlesheets-package" class="section level3" number="3.0.1">
+<h3><span class="header-section-number">3.0.1</span> The <code>googlesheets</code> package</h3>
+<p>The <code>googlesheets</code> package allows R users to take advantage of the Google Sheets API. In the first lesson in this course we mentioned that an API allows different application to communicate with one another. In this case, Google has released an API that allows other software to communicate with Google Sheets and retrieve data and information directly from Google Sheets. The <code>googlesheets</code> package enables R users (you!) to then easily access that API and retrieve your Google Sheets data.</p>
+<p>Using this package is is the best and easiest way to analyze and edit Google Sheets data in R. In addition to the ability of pulling data, you can also edit a Google Sheet or create new sheets. Like any other package, we first need to install and attach the package.</p>
+<div id="getting-started-with-googlesheets" class="section level4" number="3.0.1.1">
+<h4><span class="header-section-number">3.0.1.1</span> Getting Started with <code>googlesheets</code></h4>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="importing-data-from-google-sheets.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;googlesheets&quot;</span>)</span>
+<span id="cb6-2"><a href="importing-data-from-google-sheets.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(googlesheets)</span></code></pre></div>
+<p>Now, let’s get to importing your survey data into R. Every time you start a new session, you need to authenticate the use of <code>googlesheets</code> package with your Google account. This is a great features as it ensures that you <em>want</em> to allow access to your Google Sheets and allows the Google Sheets API to make sure that you <em>should</em> have access to the files you’re going to try to access.</p>
+<p>The command <code>gs_auth(new_user = TRUE)</code> will open a new page in your browser that asks you which Google account’s Google Sheets you’d like to give access to. Click on the appropriate Google user to provide <code>googlesheets</code> access to the Google Sheets API.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d555bce3d_0_4" alt="Authenticate" /></p>
+<p>After you click “ALLOW”, giving permission for the <code>googlesheets</code> package to connect to your Google account, you will likely be shown a screen where you will be asked to copy an authentication code. Copy this authentication code and paste it in your RStudio Cloud console.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d555bce3d_0_12" alt="Allow" /></p>
+</div>
+<div id="navigating-googlesheets-gs_ls-and-gs_title" class="section level4" number="3.0.1.2">
+<h4><span class="header-section-number">3.0.1.2</span> Navigating <code>googlesheets</code>: <code>gs_ls()</code> and <code>gs_title()</code></h4>
+<p>Once authenticated, you can use the command <code>gs_ls()</code> to list all your worksheets on Google Sheets as a table.</p>
+<p>In order to access a specific sheet, in this case the sheet that you created and named “survey”, you need to use the function <code>gs_title()</code>. We’ll assign this information to the object <code>survey_sheet</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="importing-data-from-google-sheets.html#cb7-1" aria-hidden="true" tabindex="-1"></a>survey_sheet <span class="ot">&lt;-</span> <span class="fu">gs_title</span>(<span class="st">&quot;survey&quot;</span>)</span></code></pre></div>
+<p>If you type the name of the sheet correctly, you will see a message that says <em>Sheet successfully identified: “survey”</em>.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d555bce3d_0_23" alt="Sheet successfully identified" /></p>
+</div>
+<div id="reading-data-in-using-googlesheets-gs_read" class="section level4" number="3.0.1.3">
+<h4><span class="header-section-number">3.0.1.3</span> Reading data in using <code>googlesheets</code>: <code>gs_read()</code></h4>
+<p>At this point, you can read the data into R using the function <code>gs_read()</code> with the <code>survey_sheet</code> object output from <code>gs_title()</code> as your input to <code>gs_read()</code>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="importing-data-from-google-sheets.html#cb8-1" aria-hidden="true" tabindex="-1"></a>survey_data <span class="ot">&lt;-</span> <span class="fu">gs_read</span>(survey_sheet)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d555bce3d_0_28" alt="Sheet successfully read into R" /></p>
+<p>There are additional (optional) arguments to <code>gs_read()</code>, some are similar to those in <code>read_csv()</code> and <code>read_excel(),</code> while others are more specific to reading in Google Sheets:</p>
+<ul>
+<li><code>skip = 1</code> : will skip the first row of the Google Sheet</li>
+<li><code>ws = 1</code> : specifies that you want <code>googlesheets</code> to read in the first worksheet in your Google Sheet</li>
+<li><code>col_names = FALSE</code> : specifies that the first row is not column names</li>
+<li><code>range = "A1:G5"</code> : specifies the range of cells that we like to import is A1 to G5.</li>
+<li><code>n_max = 100</code> : specifies the maximum number of rows that we want to import is 100.</li>
+</ul>
+</div>
+<div id="adding-rows-and-editing-cells" class="section level4" number="3.0.1.4">
+<h4><span class="header-section-number">3.0.1.4</span> Adding rows and editing cells</h4>
+<p>In addition to reading in data from Google Sheets directly using the <code>googlesheets</code> package, you can also modify your Google Sheet directly through R. For example, you can edit a cell or add a row to your sheet.</p>
+<p>Let’s say you’d like to add your own respond to the survey. For this you can use the command <code>gs_add_row()</code>. Note that the <code>input</code> argument specifies what you would like to add in the new row. If everything goes well, you will get a message saying <em>Row successfully appended</em>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="importing-data-from-google-sheets.html#cb9-1" aria-hidden="true" tabindex="-1"></a>my_response <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Me&quot;</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb9-2"><a href="importing-data-from-google-sheets.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gs_add_row</span>(survey_sheet, <span class="at">input =</span> my_response)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g398ce98dcf_0_18" alt="gs_add_row()" /></p>
+<p>If you now check the sheet on Google Sheets, you will see the appended row.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g398ce98dcf_0_23" alt="Survey Data with Added Row" /></p>
+<p>To edit a specific cell you can use the command <code>gs_edit_cell()</code> but you will have to tell <code>googlesheets</code> which specific cell to edit. Let’s say we want to change the value of the cell <em>D4</em> from 0 to 2. For this we will use the <code>gs_edit_cells()</code> function. The <code>anchor</code> argument points to the cell that we want to modify and the <code>input</code> argument contains the new value that we want to assign to the cell.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="importing-data-from-google-sheets.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gs_edit_cells</span>(survey_sheet, <span class="at">anchor =</span> <span class="st">&quot;D4&quot;</span>, <span class="at">input =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g398ce98dcf_0_29" alt="gs_edit_cells()" /></p>
+<p>If you were to return to your Google Sheets, you’d notice that cell D4 now has a 2, rather than a 0 in it!</p>
+</div>
+</div>
+<div id="importing-csv-files-from-the-web" class="section level3" number="3.0.2">
+<h3><span class="header-section-number">3.0.2</span> Importing CSV files from the web</h3>
+<p>This lesson has focused on getting data from Google Sheets into RStudio Cloud; however, sometimes the data you need to work with is elsewhere online but you’d like to store it in a Google Sheet. While we will later learn that you can import them directly into R, it’s good to know that you can also import CSV files hosted on the web directly into Google Sheets. For instance, the dataset <a href="https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv">here</a> is a CSV file containing countries GDPs (national incomes). In order to import the file directly to Google Sheets, open a blank Google Sheets document as we learned before. In the first cell (top left corner) type in <code>=importData("https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv")</code>. Make sure to include the equal sign (=) in the beginning.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d79cb939b_0_4" alt="importing data directly into Google Sheets" /></p>
+<p>This will import all the data to your Google Sheets document. You can then use the steps discussed above any time you want to work with these data in RStudio Cloud.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d79cb939b_0_0" alt="data in Google Sheets" /></p>
+</div>
+<div id="summary" class="section level3" number="3.0.3">
+<h3><span class="header-section-number">3.0.3</span> Summary</h3>
+<p>In this lesson, we’ve introduced the R package <code>googlesheets</code>. We’ve discussed the need for authentication and have demonstrated a number of its basic capabilities. We’ve walked through an example of how to read a Google Sheet into R and how to add and edit content directly to your Google Sheet from R. We also briefly covered how to import CSV data into Google Sheets directly. While we’ve covered the basics, there are certainly a number of additional capabilities of the package, so feel free to explore even more!</p>
+</div>
+<div id="additional-resources" class="section level3" number="3.0.4">
+<h3><span class="header-section-number">3.0.4</span> Additional Resources</h3>
+<ul>
+<li><a href="https://github.com/jennybc/googlesheets"><code>googlesheets</code> on GitHub</a> - includes an incredibly helpful README from Jenny Bryan on the basic functions of the package as well as a table with brief descriptions of all the functions</li>
+<li><a href="https://cran.r-project.org/web/packages/googlesheets/vignettes/basic-usage.html"><code>googlesheets</code> vignette</a> - a more in-depth tutorial at the packages’ functionality from Jenny Bryan and Joanna Zhao</li>
+</ul>
+</div>
+<div id="slides-and-video-2" class="section level3" number="3.0.5">
+<h3><span class="header-section-number">3.0.5</span> Slides and Video</h3>
+<div class="figure">
+<img src="https://www.youtube.com/watch?v=U3MP1QVLL4Q" alt="" />
+<p class="caption">Importing Data from Google Sheets</p>
+</div>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/edit?usp=sharing">Slides</a></li>
+</ul>
+
+</div>
+</div>
+<hr>
+<center> 
+  <div class="footer">
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY. </a>
+      <br>
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/"> CC-BY </a> unless noted otherwise.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="csv-excel-and-tsv-files.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="getting-data-from-the-internet.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

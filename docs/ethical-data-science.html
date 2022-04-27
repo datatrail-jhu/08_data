@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 Ethical Data Science | Getting Data</title>
+  <meta name="description" content="Description about Course/Book." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 Ethical Data Science | Getting Data" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Description about Course/Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 Ethical Data Science | Getting Data" />
+  
+  <meta name="twitter:description" content="Description about Course/Book." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/DataTrail_favicon.ico" type="image/x-icon" />
+<link rel="prev" href="data-privacy.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets/style_DataTrail.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style="padding-left: 0px; padding-top: 8px;"</a>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a></li>
+<li class="chapter" data-level="1" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html"><i class="fa fa-check"></i><b>1</b> Where Does Data Come From?</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#basic-data-files"><i class="fa fa-check"></i><b>1.0.1</b> Basic Data files</a></li>
+<li class="chapter" data-level="1.0.2" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#data-from-the-internet"><i class="fa fa-check"></i><b>1.0.2</b> Data from the Internet</a></li>
+<li class="chapter" data-level="1.0.3" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#relational-databases"><i class="fa fa-check"></i><b>1.0.3</b> Relational Databases</a></li>
+<li class="chapter" data-level="1.0.4" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#unconventional-data"><i class="fa fa-check"></i><b>1.0.4</b> Unconventional Data</a></li>
+<li class="chapter" data-level="1.0.5" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#slides-and-video"><i class="fa fa-check"></i><b>1.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html"><i class="fa fa-check"></i><b>2</b> CSV, Excel, and TSV Files</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#csv-files"><i class="fa fa-check"></i><b>2.0.1</b> CSV files</a></li>
+<li class="chapter" data-level="2.0.2" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#downloading-csv-files"><i class="fa fa-check"></i><b>2.0.2</b> Downloading CSV files</a></li>
+<li class="chapter" data-level="2.0.3" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-csv-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.3</b> Reading CSV files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.4" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#excel-files"><i class="fa fa-check"></i><b>2.0.4</b> Excel files</a></li>
+<li class="chapter" data-level="2.0.5" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-excel-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.5</b> Reading Excel files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.6" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#text-files"><i class="fa fa-check"></i><b>2.0.6</b> Text files</a></li>
+<li class="chapter" data-level="2.0.7" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-tsv-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.7</b> Reading TSV files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.8" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-txt-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.8</b> Reading TXT files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.9" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#exporting-data-in-r-to-csv"><i class="fa fa-check"></i><b>2.0.9</b> Exporting Data in R to CSV</a></li>
+<li class="chapter" data-level="2.0.10" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#slides-and-video-1"><i class="fa fa-check"></i><b>2.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html"><i class="fa fa-check"></i><b>3</b> Importing Data from Google Sheets</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#the-googlesheets-package"><i class="fa fa-check"></i><b>3.0.1</b> The <code>googlesheets</code> package</a></li>
+<li class="chapter" data-level="3.0.2" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#importing-csv-files-from-the-web"><i class="fa fa-check"></i><b>3.0.2</b> Importing CSV files from the web</a></li>
+<li class="chapter" data-level="3.0.3" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#summary"><i class="fa fa-check"></i><b>3.0.3</b> Summary</a></li>
+<li class="chapter" data-level="3.0.4" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#additional-resources"><i class="fa fa-check"></i><b>3.0.4</b> Additional Resources</a></li>
+<li class="chapter" data-level="3.0.5" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#slides-and-video-2"><i class="fa fa-check"></i><b>3.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html"><i class="fa fa-check"></i><b>4</b> Getting Data From the Internet</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#api-access"><i class="fa fa-check"></i><b>4.0.1</b> API access</a></li>
+<li class="chapter" data-level="4.0.2" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#getting-data-httr"><i class="fa fa-check"></i><b>4.0.2</b> Getting Data: <code>httr</code></a></li>
+<li class="chapter" data-level="4.0.3" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#example-1-githubs-api"><i class="fa fa-check"></i><b>4.0.3</b> Example 1: GitHub’s API</a></li>
+<li class="chapter" data-level="4.0.4" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#example-2-obtaining-a-csv"><i class="fa fa-check"></i><b>4.0.4</b> Example 2: Obtaining a CSV</a></li>
+<li class="chapter" data-level="4.0.5" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#api-keys"><i class="fa fa-check"></i><b>4.0.5</b> API keys</a></li>
+<li class="chapter" data-level="4.0.6" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#web-scraping-1"><i class="fa fa-check"></i><b>4.0.6</b> Web Scraping</a></li>
+<li class="chapter" data-level="4.0.7" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#json"><i class="fa fa-check"></i><b>4.0.7</b> JSON</a></li>
+<li class="chapter" data-level="4.0.8" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#keeping-track-of-your-data"><i class="fa fa-check"></i><b>4.0.8</b> Keeping Track of your Data</a></li>
+<li class="chapter" data-level="4.0.9" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#summary-1"><i class="fa fa-check"></i><b>4.0.9</b> Summary</a></li>
+<li class="chapter" data-level="4.0.10" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#additional-resources-1"><i class="fa fa-check"></i><b>4.0.10</b> Additional Resources</a></li>
+<li class="chapter" data-level="4.0.11" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#slides-and-video-3"><i class="fa fa-check"></i><b>4.0.11</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="relational-data.html"><a href="relational-data.html"><i class="fa fa-check"></i><b>5</b> Relational Data</a>
+<ul>
+<li class="chapter" data-level="5.0.1" data-path="relational-data.html"><a href="relational-data.html#relational-data-1"><i class="fa fa-check"></i><b>5.0.1</b> Relational Data</a></li>
+<li class="chapter" data-level="5.0.2" data-path="relational-data.html"><a href="relational-data.html#relational-databases-sql"><i class="fa fa-check"></i><b>5.0.2</b> Relational Databases: <code>SQL</code></a></li>
+<li class="chapter" data-level="5.0.3" data-path="relational-data.html"><a href="relational-data.html#connecting-to-databases-rsqlite"><i class="fa fa-check"></i><b>5.0.3</b> Connecting to Databases: <code>RSQLite</code></a></li>
+<li class="chapter" data-level="5.0.4" data-path="relational-data.html"><a href="relational-data.html#working-with-relational-data-dplyr-dbplyr"><i class="fa fa-check"></i><b>5.0.4</b> Working with Relational Data: <code>dplyr</code> &amp; <code>dbplyr</code></a></li>
+<li class="chapter" data-level="5.0.5" data-path="relational-data.html"><a href="relational-data.html#mutating-joins"><i class="fa fa-check"></i><b>5.0.5</b> Mutating Joins</a></li>
+<li class="chapter" data-level="5.0.6" data-path="relational-data.html"><a href="relational-data.html#filtering-joins"><i class="fa fa-check"></i><b>5.0.6</b> Filtering Joins</a></li>
+<li class="chapter" data-level="5.0.7" data-path="relational-data.html"><a href="relational-data.html#how-to-connect-to-a-database-online"><i class="fa fa-check"></i><b>5.0.7</b> How to Connect to a Database Online</a></li>
+<li class="chapter" data-level="5.0.8" data-path="relational-data.html"><a href="relational-data.html#summary-2"><i class="fa fa-check"></i><b>5.0.8</b> Summary</a></li>
+<li class="chapter" data-level="5.0.9" data-path="relational-data.html"><a href="relational-data.html#additional-resources-2"><i class="fa fa-check"></i><b>5.0.9</b> Additional Resources</a></li>
+<li class="chapter" data-level="5.0.10" data-path="relational-data.html"><a href="relational-data.html#slides-and-video-4"><i class="fa fa-check"></i><b>5.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html"><i class="fa fa-check"></i><b>6</b> Unconventional Sources of Data</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#structured-data"><i class="fa fa-check"></i><b>6.0.1</b> Structured Data</a></li>
+<li class="chapter" data-level="6.0.2" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#unstructured-data"><i class="fa fa-check"></i><b>6.0.2</b> Unstructured Data</a></li>
+<li class="chapter" data-level="6.0.3" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#text-data"><i class="fa fa-check"></i><b>6.0.3</b> Text Data</a></li>
+<li class="chapter" data-level="6.0.4" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#json-javascript-object-notation"><i class="fa fa-check"></i><b>6.0.4</b> JSON: JavaScript Object Notation</a></li>
+<li class="chapter" data-level="6.0.5" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#xml-extensible-markup-language"><i class="fa fa-check"></i><b>6.0.5</b> XML: Extensible Markup Language</a></li>
+<li class="chapter" data-level="6.0.6" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#images-1"><i class="fa fa-check"></i><b>6.0.6</b> Images</a></li>
+<li class="chapter" data-level="6.0.7" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#audio-files-1"><i class="fa fa-check"></i><b>6.0.7</b> Audio Files</a></li>
+<li class="chapter" data-level="6.0.8" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#summary-3"><i class="fa fa-check"></i><b>6.0.8</b> Summary</a></li>
+<li class="chapter" data-level="6.0.9" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#additional-resources-3"><i class="fa fa-check"></i><b>6.0.9</b> Additional Resources</a></li>
+<li class="chapter" data-level="6.0.10" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#slides-and-video-5"><i class="fa fa-check"></i><b>6.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="finding-data.html"><a href="finding-data.html"><i class="fa fa-check"></i><b>7</b> Finding Data</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="finding-data.html"><a href="finding-data.html#public-versus-private-data"><i class="fa fa-check"></i><b>7.0.1</b> Public versus Private Data</a></li>
+<li class="chapter" data-level="7.0.2" data-path="finding-data.html"><a href="finding-data.html#publicly-available-data"><i class="fa fa-check"></i><b>7.0.2</b> Publicly-available data</a></li>
+<li class="chapter" data-level="7.0.3" data-path="finding-data.html"><a href="finding-data.html#data-you-already-have"><i class="fa fa-check"></i><b>7.0.3</b> Data You Already Have</a></li>
+<li class="chapter" data-level="7.0.4" data-path="finding-data.html"><a href="finding-data.html#summary-4"><i class="fa fa-check"></i><b>7.0.4</b> Summary</a></li>
+<li class="chapter" data-level="7.0.5" data-path="finding-data.html"><a href="finding-data.html#slides-and-video-6"><i class="fa fa-check"></i><b>7.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="internet-safety.html"><a href="internet-safety.html"><i class="fa fa-check"></i><b>8</b> Internet Safety</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="internet-safety.html"><a href="internet-safety.html#wifi"><i class="fa fa-check"></i><b>8.0.1</b> WiFi</a></li>
+<li class="chapter" data-level="8.0.2" data-path="internet-safety.html"><a href="internet-safety.html#passwords"><i class="fa fa-check"></i><b>8.0.2</b> Passwords</a></li>
+<li class="chapter" data-level="8.0.3" data-path="internet-safety.html"><a href="internet-safety.html#good-internet-behavior"><i class="fa fa-check"></i><b>8.0.3</b> Good Internet behavior</a></li>
+<li class="chapter" data-level="8.0.4" data-path="internet-safety.html"><a href="internet-safety.html#online-scams"><i class="fa fa-check"></i><b>8.0.4</b> Online Scams</a></li>
+<li class="chapter" data-level="8.0.5" data-path="internet-safety.html"><a href="internet-safety.html#malware-spyware"><i class="fa fa-check"></i><b>8.0.5</b> Malware &amp; Spyware</a></li>
+<li class="chapter" data-level="8.0.6" data-path="internet-safety.html"><a href="internet-safety.html#security-on-a-chromebook"><i class="fa fa-check"></i><b>8.0.6</b> Security on a Chromebook</a></li>
+<li class="chapter" data-level="8.0.7" data-path="internet-safety.html"><a href="internet-safety.html#slides-and-video-7"><i class="fa fa-check"></i><b>8.0.7</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="data-privacy.html"><a href="data-privacy.html"><i class="fa fa-check"></i><b>9</b> Data Privacy</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="data-privacy.html"><a href="data-privacy.html#what-is-data-privacy"><i class="fa fa-check"></i><b>9.0.1</b> What is Data Privacy?</a></li>
+<li class="chapter" data-level="9.0.2" data-path="data-privacy.html"><a href="data-privacy.html#personally-identifiable-information"><i class="fa fa-check"></i><b>9.0.2</b> Personally Identifiable Information</a></li>
+<li class="chapter" data-level="9.0.3" data-path="data-privacy.html"><a href="data-privacy.html#what-is-encryption"><i class="fa fa-check"></i><b>9.0.3</b> What is encryption?</a></li>
+<li class="chapter" data-level="9.0.4" data-path="data-privacy.html"><a href="data-privacy.html#human-security"><i class="fa fa-check"></i><b>9.0.4</b> Human Security</a></li>
+<li class="chapter" data-level="9.0.5" data-path="data-privacy.html"><a href="data-privacy.html#computer-security"><i class="fa fa-check"></i><b>9.0.5</b> Computer Security</a></li>
+<li class="chapter" data-level="9.0.6" data-path="data-privacy.html"><a href="data-privacy.html#open-science"><i class="fa fa-check"></i><b>9.0.6</b> Open Science</a></li>
+<li class="chapter" data-level="9.0.7" data-path="data-privacy.html"><a href="data-privacy.html#data-breaches"><i class="fa fa-check"></i><b>9.0.7</b> Data Breaches</a></li>
+<li class="chapter" data-level="9.0.8" data-path="data-privacy.html"><a href="data-privacy.html#conclusions"><i class="fa fa-check"></i><b>9.0.8</b> Conclusions</a></li>
+<li class="chapter" data-level="9.0.9" data-path="data-privacy.html"><a href="data-privacy.html#slides-and-video-8"><i class="fa fa-check"></i><b>9.0.9</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ethical-data-science.html"><a href="ethical-data-science.html"><i class="fa fa-check"></i><b>10</b> Ethical Data Science</a>
+<ul>
+<li class="chapter" data-level="10.0.1" data-path="ethical-data-science.html"><a href="ethical-data-science.html#data-science-team"><i class="fa fa-check"></i><b>10.0.1</b> Data Science Team</a></li>
+<li class="chapter" data-level="10.0.2" data-path="ethical-data-science.html"><a href="ethical-data-science.html#the-data"><i class="fa fa-check"></i><b>10.0.2</b> The Data</a></li>
+<li class="chapter" data-level="10.0.3" data-path="ethical-data-science.html"><a href="ethical-data-science.html#the-analysis"><i class="fa fa-check"></i><b>10.0.3</b> The Analysis</a></li>
+<li class="chapter" data-level="10.0.4" data-path="ethical-data-science.html"><a href="ethical-data-science.html#after-the-algorithm"><i class="fa fa-check"></i><b>10.0.4</b> After the Algorithm</a></li>
+<li class="chapter" data-level="10.0.5" data-path="ethical-data-science.html"><a href="ethical-data-science.html#ethics-in-data-science"><i class="fa fa-check"></i><b>10.0.5</b> Ethics in Data Science</a></li>
+<li class="chapter" data-level="10.0.6" data-path="ethical-data-science.html"><a href="ethical-data-science.html#artificial-intelligence-in-the-military"><i class="fa fa-check"></i><b>10.0.6</b> Artificial Intelligence in the Military</a></li>
+<li class="chapter" data-level="10.0.7" data-path="ethical-data-science.html"><a href="ethical-data-science.html#additional-resources-4"><i class="fa fa-check"></i><b>10.0.7</b> Additional Resources</a></li>
+<li class="chapter" data-level="10.0.8" data-path="ethical-data-science.html"><a href="ethical-data-science.html#slides-and-video-9"><i class="fa fa-check"></i><b>10.0.8</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
+<li class="divider"></li>
+<p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by: </a> </p>
+<p style="text-align:center;"> <a href="https://www.datatrail.org/"> Data Trail </a></p>
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style=" width: 80%; filter: grayscale(100%); padding-left: 40px; padding-top: 8px; vertical-align: top "</a>
+<p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
+<p style="padding-left: 40px;"><div class="trapezoid" style = "padding-left: 40px;"><span>  <a href="https://forms.gle/VWaJYc3zATe3qxYC9"> Click here to provide feedback</a> <img src="assets/itcr_arrow.png" style=" width: 10%" ></span></div></p>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Getting Data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <!--script src="https://kit.fontawesome.com/6a26f47516.js"></script-->
+  <!--<script src="assets/hideOutput.js"></script>-->
+  <link href="assets/style_DataTrail.css" rel="stylesheet">
+</head>
+        
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="assets/DataTrail.jpg">
+</div>
+<div id="ethical-data-science" class="section level1" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Ethical Data Science</h1>
+<p>From the emails automatically marked as spam in your Inbox and facial recognition on Facebook to the targeted advertisements you see whenever you’re online, data science has made its way into our everyday lives. Often, this is a positive because data scientists generally set out to improve the world (say, by analyzing crime data in hopes of reducing violent crime) or to make our lives easier (by preventing spams in our mailboxes, for example). However, data science projects are certainly not without negative consequences. We discussed some of the companies who have run up against issues properly securing user data in the last lesson; however, protecting the privacy of users’ data is not the only time data scientists should consider the ethics of their work. In fact, <strong>ethical considerations should be made from the start of a project and should never stop being made</strong>. We’ll discuss what we mean by that in this lesson.</p>
+<p>When we talk about the ethics of data science, we’re talking about how to use data to improve the lives of individuals in our society in the world without causing harm to any groups with our work. We’re talking about putting in the work ahead of time to avoid unintended negative consequences of our work. Rather than acting surprised when groups are inadvertently harmed or only dealing with unintended consequences after they occur and harm others, an ethical data scientist will consider whether they are doing any harm at each step along the way.</p>
+<div id="data-science-team" class="section level3" number="10.0.1">
+<h3><span class="header-section-number">10.0.1</span> Data Science Team</h3>
+<p>Data science projects can be done by an individual; however, more often, they are carried out by a team of individuals who are all interested in using data to answer an interesting question. Whether it’s one person setting out to answer the question or a team working to answer this question, it’s important at this outset of a project to really think about whether all the necessary individuals are on the team.</p>
+<p>For example, if a group of data scientists were setting out to reduce crime in a neighborhood, it would be in their best interest to either be very familiar with that neighborhood (say, live there themselves) or to talk to individuals who currently live in that neighborhood to be as informed as possible before they set out to analyze their data. By working with individuals who have more knowledge about the neighborhood than someone who has never been there, the team will be less likely to make incorrect assumptions or leave out critical pieces of information when analyzing the neighborhood’s data.</p>
+</div>
+<div id="the-data" class="section level3" number="10.0.2">
+<h3><span class="header-section-number">10.0.2</span> The Data</h3>
+<p>After ensuring that the team you’ve assembled to answer the question is the right team to do so, there are <em>many</em> considerations to be made when collecting data.</p>
+<div id="sampling-bias" class="section level4" number="10.0.2.1">
+<h4><span class="header-section-number">10.0.2.1</span> Sampling Bias</h4>
+<p>When data are collected, it’s difficult to ever get information about an entire population. Thus, when data are conducted, researchers will typically get data from a subset of individuals within the population (a process called sampling) and then <em>infer</em> something about the entire population using what they learned from the subset of individuals. They will try to ensure that their subset is a random subset of the population. However, whenever sampling of a population is done, there’s a chance for sampling bias.</p>
+<p>Sampling bias occurs whenever the sample of the population collected does not accurately reflect the population as a whole. For example, if the population you’re interested in studying is half female and half male, but the subset of people you’ve sampled is made up of 70% females and 30% males, then your sample is biased. Having a plan to avoid sampling bias is an important first step in the process of data collection.</p>
+<p>Checking the data after the data have been collected to ensure that the sample is not biased is an equally important step. When data are collected by survey for example, they may be sent out to an equal number of males and females; however, maybe more males respond than females. Even though your plan was solid, your responses are biased. This has to be accounted for during the analysis, as your responses do not accurately represent the population as a whole.</p>
+<p>And to be clear, gender is not the only consideration to make when sampling. Samples can be biased by many factors including (but not limited to) race and ethnicity, age, income, and education. Sampling bias should always be avoided both when planning to collect data and after the data are collected.</p>
+</div>
+<div id="informed-consent" class="section level4" number="10.0.2.2">
+<h4><span class="header-section-number">10.0.2.2</span> Informed Consent</h4>
+<p>In addition to collecting data in an unbiased manner, data must be collected ethically. This means that individuals must consent to participating in data collection. <strong>Informed consent</strong> requires that the individual agreeing to share their information knows what data are being collected, has been informed of any possible consequences, and has been provided full knowledge of any risks or benefits of participation.</p>
+<p>If data are collected on individuals and later on a data scientist wants to use those data for a different purpose, they can only do so if the initial consent allowed for the data to be used in this manner. Alternatively, if the data are de-identified, they may be able to be used for future analysis; however, this must be done with care.</p>
+</div>
+<div id="privacy" class="section level4" number="10.0.2.3">
+<h4><span class="header-section-number">10.0.2.3</span> Privacy</h4>
+<p>While discussed in a previous lesson, for completion’s sake, we’ll discuss again here. When collecting personally-identifiable information, these data must be protected. They should not be shared without the participants’ consent and they should be stored in a secure manner.</p>
+</div>
+<div id="withdrawal-of-consent" class="section level4" number="10.0.2.4">
+<h4><span class="header-section-number">10.0.2.4</span> Withdrawal of consent</h4>
+<p>If an individual consents to their data being collected and later changes their mind, they have every right to do so. It is your responsibility as the person collecting the data to have an effective plan for removing any data already collected from that individual.</p>
+</div>
+</div>
+<div id="the-analysis" class="section level3" number="10.0.3">
+<h3><span class="header-section-number">10.0.3</span> The Analysis</h3>
+<p>After avoiding sampling bias, collecting data ethically, avoiding privacy issues in data storage, there are still a number of ethical considerations to take into account during ones analysis. While we don’t discuss the details in these courses, machine learning is currently a popular way to analyze data. In general, it uses existing data to predict how individuals will behave in the future. This means that the any biases in the data used to build the model (the existing data) will likely be perpetuated in the predictions. This means that, for example, in predictive policing, where data scientists are trying to predict where crimes are more likely to happen, if the data used to build the model (often referred to as an <strong>algorithm</strong>) come from crimes that have occurred in primarily black neighborhoods, they are going to predict that crime happens more in primarily black neighborhoods. Then, if police officers are placed in these neighborhoods, they are going to find more crime, <em>not</em> because crime has increased, but just because there are more of them in the neighborhood now. Essentially, any biases in the data used initially are going to be perpetuated in the models they generate. This means that it is <em>critically</em> important that data scientists fully know and understand the data their working with, its biases, and its limitations.</p>
+<p>Further, even <em>when</em> something like race is predictive in the model, it’s important for a data scientist to consider whether or not that variable <em>should</em> be included. Are you <em>absolutely positive</em> that race is the important variable and it’s not just that you have a biased sample? Instead, if you’re trying to predict crimes, it’s likely best to use data about crimes that have occurred and where they have occurred in the model rather than race, since race is not a measure of what you’re interested in modeling. Considering the implications of ones work when carrying out an analysis is incredibly important, and making decisions that do not unnecessarily harm any group of people is critical</p>
+<p>It was previously common for analysts to say that “data do not lie” and “algorithms are impartial,” but recent history has shown that that is simply not the case. Data are collected by humans, and humans are not without their biases. The best way to avoid bias in your data is to be aware of this and constantly check to make sure you’re not disadvantaging groups of people with your analyses.</p>
+<p>Before considering any data analysis and publishing your results, make sure:</p>
+<ol style="list-style-type: decimal">
+<li>You have gone through your data and have made sure there is not any major flaw in your data collection. Data can be biased. You can’t use the result of a study that is mostly based on data from men to say anything about women.</li>
+<li>You have checked for common mistakes in your analysis and know that your methodology is valid and defensible. Messing up the data for a single variable can drastically change the result of your analysis.</li>
+<li>The results of your work can not be used to harass people, especially minorities, in any way.</li>
+<li>Your analysis is independent of your opinion about the specific problem you’re trying to solve using data. When carrying out an analysis, you should be looking for the answer to a question, but be careful not to <em>want</em> a specific answer. By wanting the analysis to go a certain way, you can subconsciously analyze the data to get that answer. It’s best just to collect the data ethically and analyze it carefully. Then, the answer is whatever the answer from the analysis says it is.</li>
+</ol>
+<p>You can do awesome things with your data science skills: cure diseases, analyze health data, prevent climate change, improve your city, or fact check politicians. Don’t let your biases or mistakes get in the way.</p>
+</div>
+<div id="after-the-algorithm" class="section level3" number="10.0.4">
+<h3><span class="header-section-number">10.0.4</span> After the Algorithm</h3>
+<p>Finally, after someone answers an awesome data science question with their really great analysis and tell the world, they often think their job is done. However, if you’ve designed an algorithm that is going to predict something going forward or that is going to continue to be used, it is your job to maintain that algorithm. That means that it’s your job to check for biases after the fact. Is your analysis disadvantaging groups of people? If it is, should it be? Does something need to be changed. There <em>has</em> to be a way for you to update your algorithm going forward. If something is continuing to be used by others, your job isn’t done once you’ve built the algorithm. It’s your job to check for biases after the fact and to update your algorithm should there be a need.</p>
+<div id="ethical-questions-to-answer" class="section level4" number="10.0.4.1">
+<h4><span class="header-section-number">10.0.4.1</span> Ethical Questions to Answer</h4>
+<p>To summarize this lesson up to this point, be sure to answer all of these questions for every data science project you carry out:</p>
+<ol style="list-style-type: decimal">
+<li>Does the <strong>team</strong> on this project include all the necessary individuals to avoid bias in our analysis?</li>
+<li>Does our data collection plan address ways to <strong>avoid sampling bias</strong>?</li>
+<li>Are the data we’ve collected / the data we’re using to answer the question of interest <strong>biased</strong>? In what ways?</li>
+<li>Has <strong>informed consent</strong> been obtained from all participants?</li>
+<li>Do we have a mechanism do <strong>remove an individual’s data</strong> from our dataset if they so choose?</li>
+<li>Are the variables we’ve chosen to use for our analysis appropriate? Do they <strong>discriminate</strong> against anyone?</li>
+<li>Is our analysis <strong>transparent</strong>? Do we understand <em>how</em> and <em>why</em> we’re getting the answer we’re getting?</li>
+<li>Have we considered possible negative or unintended consequences of our analysis and its results?</li>
+<li>Do we have a way to <strong>update</strong> our analysis/algorithm going forward should biases in the results be found?</li>
+</ol>
+</div>
+</div>
+<div id="ethics-in-data-science" class="section level3" number="10.0.5">
+<h3><span class="header-section-number">10.0.5</span> Ethics in Data Science</h3>
+<p>Now that we’ve discussed the ethical considerations to be made before and throughout every data science project, we’ll discuss a few data science projects that were recently covered the popular media due to the questionable ethics of the project.</p>
+<p>We present these examples not only to highlight the ethics of the particular project, but also to state the importance of considering the implications of your work. It is <strong>not</strong> enough to argue that you just “did the analysis” but “didn’t think of the implications” of the work. As a data scientist <strong>it is your responsibility to both do the analysis and consider the implications of your work</strong>.</p>
+<div id="data-science-in-sentencing" class="section level4" number="10.0.5.1">
+<h4><span class="header-section-number">10.0.5.1</span> Data Science in Sentencing</h4>
+<p>In April of 2017, Wired reported in an opinion piece that <a href="https://www.wired.com/2017/04/courts-using-ai-sentence-criminals-must-stop-now/">courts were using artificial intelligence to sentence criminals</a> and made the claim that such practices must be put to an end. The piece explained that courts and corrections departments across the United States collect data on defendants that are then used in an algorithm to determine the “risk” that defendant poses. This aim of this algorithm is to determine how likely it is that the individual will commit another crime.</p>
+<p>These likelihoods of reoffending from the algorithm are then used to make decisions about how to set bail, what the sentence should be, and the details of that individual’s parole. These tools are often built by private companies. This means that exactly <em>how</em> they work and what data are used to assess risk are not disclosed. The article in Wired highlights the use of <a href="http://www.equivant.com/challenges/supervision-and-compliance-monitoring">Compas</a>, one of these risk-assessment tools developed by a private company and used by the Department of Corrections in Wisconsin, in a judge’s decision to give a man a long sentence, in part because of his “high risk” score from the algorithm. In a courtroom, however, because the specifics of how this algorithm works are not disclosed, a judge and jury would <em>not</em> be able to determine whether or not the likelihood of reoffending was calculated accurately by the algorithm.</p>
+<p>Initially, arguments were made that removing human biases and judgment from bail, sentencing, and parole decisions would be for the benefit of society. This initial goal was a noble goal that would improve society. However, over time, biases in the data used to generate these algorithms that perpetuated into <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">biases in the algorithms’ outcomes</a>, the lack of transparency in how they work, and failure to check for inequities and biases in the algorithms after they were put in place have led to unfair decisions being made.</p>
+<p>While individuals <em>may</em> have been looking to improve society with their algorithm at the outset of this project (or at least that argument can be made), lack of considerations of the implications of their work and lack of transparency in the process of generating and using the algorithm have led to questionable ethics in the use of algorithms to make sentencing decisions.</p>
+</div>
+</div>
+<div id="artificial-intelligence-in-the-military" class="section level3" number="10.0.6">
+<h3><span class="header-section-number">10.0.6</span> Artificial Intelligence in the Military</h3>
+<p>In March of 2018, Gizmodo reported that <a href="https://gizmodo.com/google-is-helping-the-pentagon-build-ai-for-drones-1823464533">Google was helping the US Department of Defense use artificial intelligence to analyze drone footage</a>, a project that started in April of 2017. The project between Google and the Defense department is called Project Maven, and the goal of this project was initially to take drone footage and accurately identify objects (such as vehicles) and to track individuals in the footage collected.</p>
+<p>A number of Google employees were upset that Google would provide resources to the military that would be used for surveillance in drone operations. Due to the fact that in other non-military situations <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">the use of machine learning has led to biased outcomes</a>, other employees felt there needed to be further discussion about the ethics in developing and using machine learning technology before it was deployed by the military. In response to these concerns, a Google spokesperson stated that Google is working <a href="https://gizmodo.com/google-is-helping-the-pentagon-build-ai-for-drones-1823464533">“to develop policies and safeguards”</a>, that the technology is being used for “non-offensive uses only.”</p>
+<p>In this and many large data science projects where machine learning and artificial intelligence are being used in situations where lives could be negatively impacted, the project would benefit from taking ethical considerations into account and discussing these in a transparent way <em>before</em> deploying the technology. Developing policies and safeguards after the fact is not enough.</p>
+<div id="facial-recognition-in-law-enforcement" class="section level4" number="10.0.6.1">
+<h4><span class="header-section-number">10.0.6.1</span> Facial Recognition in Law Enforcement</h4>
+<p>In May of 2018, the <a href="https://www.aclunc.org/blog/amazon-teams-law-enforcement-deploy-dangerous-new-face-recognition-technology">ACLU reported</a> that Amazon had teamed up with law enforcement agencies to use Amazon’s face recognition technology, <a href="https://aws.amazon.com/rekognition/">Rekognition</a>. The ACLU called this new technology, which can quickly scan images to “identify, track, and analyze people in real time” both “powerful” and “dangerous.” This story was picked up by many news sources, including <a href="https://www.nytimes.com/2018/05/22/technology/amazon-facial-recognition.html">a piece</a> in the New York Times</p>
+<p>Proponents of using facial recognition technology in law enforcement cite that such technology can help locate and identify criminals more quickly than we would have been able to in the past and that it will help <a href="https://www.nytimes.com/2018/05/22/technology/amazon-facial-recognition.html">“keep residents and visitors…safe”</a>. Proponents also argue that those who use the technology do so within the limits of the law.</p>
+<p>Opponents, like the ACLU, however, cite the civil liberties and civil rights concerns that constant surveillance with using facial recognition technology pose. The ACLU argues that there is substantial “capacity for abuse” and due to this, that citizens should not be watched by the government any time they walk outside, that facial recognition systems threaten freedom, and that the deployment of these technologies post a greater threat to communities that are already unfairly targeted by the political climate.</p>
+<p>Concerns with the technology cite that anyone can be identified, not just criminals, a problem for civil liberties. Opponents further question the accuracy of the technology. Inaccuracies, which would misidentify individuals and suggest they were guilty of a crime when they were in fact not is clearly a problem. Further, there are concerns that accuracy varies based on gender and race, which if true, poses a clear bias in the use of this technology for the identification of criminals as certain groups of individuals would be misidentified more frequently than others.</p>
+</div>
+</div>
+<div id="additional-resources-4" class="section level3" number="10.0.7">
+<h3><span class="header-section-number">10.0.7</span> Additional Resources</h3>
+<ul>
+<li><a href="https://dssg.uchicago.edu/2015/09/18/an-ethical-checklist-for-data-science/">Ethical Checklist for Data Science</a>, by Alan Fritzler</li>
+<li><a href="https://www.amazon.com/Weapons-Math-Destruction-Increases-Inequality/dp/0553418815"><em>Weapons of Math Destruction</em></a>, by Cathy O’Neil</li>
+<li><a href="https://www.amazon.com/Automating-Inequality-High-Tech-Profile-Police/dp/1250074312/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1531417315&amp;sr=1-1&amp;keywords=automating+inequality"><em>Automating Inequality</em></a>, by Virginia Eubanks</li>
+<li><a href="https://www.wired.com/2017/04/courts-using-ai-sentence-criminals-must-stop-now/">Courts are Using AI to Sentence Criminals. That must Stop Now</a>, by Jason Tashea in Wired</li>
+<li><a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine Bias</a>, by Julia Angwin, Jeff Larson, Surya Mattu and Lauren Kirchner at ProPublica</li>
+<li><a href="https://www.aclunc.org/blog/amazon-teams-law-enforcement-deploy-dangerous-new-face-recognition-technology">Amazon Teams Up With Law Enforcement to Deploy Dangerous New Face Recognition Technology</a>, by Matt Cagle and Nicole A. Ozer with the ACLU</li>
+<li><a href="https://www.nytimes.com/2018/05/22/technology/amazon-facial-recognition.html">Amazon Pushes Facial Recognition to Police. Critics See Surveillance Risk.</a>, by Nick Wingfield at the New York Times</li>
+<li><a href="https://gizmodo.com/google-is-helping-the-pentagon-build-ai-for-drones-1823464533">Google Is Helping the Pentagon Build AI for Drones</a>, by Kate Conger and Dell Cameron at Gizmodo</li>
+</ul>
+</div>
+<div id="slides-and-video-9" class="section level3" number="10.0.8">
+<h3><span class="header-section-number">10.0.8</span> Slides and Video</h3>
+<div class="figure">
+<img src="https://www.youtube.com/watch?v=0GAFbE-W2Xs" alt="" />
+<p class="caption">Ethical Data Science</p>
+</div>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/16uo-gTCdjtWjdGOxejVTIz9JdZi-Gu7lgSsNx2SdPhU/edit?usp=sharing">Slides</a></li>
+</ul>
+
+</div>
+</div>
+<hr>
+<center> 
+  <div class="footer">
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY. </a>
+      <br>
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/"> CC-BY </a> unless noted otherwise.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-privacy.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

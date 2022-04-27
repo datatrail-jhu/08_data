@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Internet Safety | Getting Data</title>
+  <meta name="description" content="Description about Course/Book." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Internet Safety | Getting Data" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Description about Course/Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Internet Safety | Getting Data" />
+  
+  <meta name="twitter:description" content="Description about Course/Book." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/DataTrail_favicon.ico" type="image/x-icon" />
+<link rel="prev" href="finding-data.html"/>
+<link rel="next" href="data-privacy.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets/style_DataTrail.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style="padding-left: 0px; padding-top: 8px;"</a>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a></li>
+<li class="chapter" data-level="1" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html"><i class="fa fa-check"></i><b>1</b> Where Does Data Come From?</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#basic-data-files"><i class="fa fa-check"></i><b>1.0.1</b> Basic Data files</a></li>
+<li class="chapter" data-level="1.0.2" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#data-from-the-internet"><i class="fa fa-check"></i><b>1.0.2</b> Data from the Internet</a></li>
+<li class="chapter" data-level="1.0.3" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#relational-databases"><i class="fa fa-check"></i><b>1.0.3</b> Relational Databases</a></li>
+<li class="chapter" data-level="1.0.4" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#unconventional-data"><i class="fa fa-check"></i><b>1.0.4</b> Unconventional Data</a></li>
+<li class="chapter" data-level="1.0.5" data-path="where-does-data-come-from.html"><a href="where-does-data-come-from.html#slides-and-video"><i class="fa fa-check"></i><b>1.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html"><i class="fa fa-check"></i><b>2</b> CSV, Excel, and TSV Files</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#csv-files"><i class="fa fa-check"></i><b>2.0.1</b> CSV files</a></li>
+<li class="chapter" data-level="2.0.2" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#downloading-csv-files"><i class="fa fa-check"></i><b>2.0.2</b> Downloading CSV files</a></li>
+<li class="chapter" data-level="2.0.3" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-csv-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.3</b> Reading CSV files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.4" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#excel-files"><i class="fa fa-check"></i><b>2.0.4</b> Excel files</a></li>
+<li class="chapter" data-level="2.0.5" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-excel-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.5</b> Reading Excel files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.6" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#text-files"><i class="fa fa-check"></i><b>2.0.6</b> Text files</a></li>
+<li class="chapter" data-level="2.0.7" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-tsv-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.7</b> Reading TSV files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.8" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#reading-txt-files-into-rstudio-cloud"><i class="fa fa-check"></i><b>2.0.8</b> Reading TXT files into RStudio Cloud</a></li>
+<li class="chapter" data-level="2.0.9" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#exporting-data-in-r-to-csv"><i class="fa fa-check"></i><b>2.0.9</b> Exporting Data in R to CSV</a></li>
+<li class="chapter" data-level="2.0.10" data-path="csv-excel-and-tsv-files.html"><a href="csv-excel-and-tsv-files.html#slides-and-video-1"><i class="fa fa-check"></i><b>2.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html"><i class="fa fa-check"></i><b>3</b> Importing Data from Google Sheets</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#the-googlesheets-package"><i class="fa fa-check"></i><b>3.0.1</b> The <code>googlesheets</code> package</a></li>
+<li class="chapter" data-level="3.0.2" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#importing-csv-files-from-the-web"><i class="fa fa-check"></i><b>3.0.2</b> Importing CSV files from the web</a></li>
+<li class="chapter" data-level="3.0.3" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#summary"><i class="fa fa-check"></i><b>3.0.3</b> Summary</a></li>
+<li class="chapter" data-level="3.0.4" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#additional-resources"><i class="fa fa-check"></i><b>3.0.4</b> Additional Resources</a></li>
+<li class="chapter" data-level="3.0.5" data-path="importing-data-from-google-sheets.html"><a href="importing-data-from-google-sheets.html#slides-and-video-2"><i class="fa fa-check"></i><b>3.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html"><i class="fa fa-check"></i><b>4</b> Getting Data From the Internet</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#api-access"><i class="fa fa-check"></i><b>4.0.1</b> API access</a></li>
+<li class="chapter" data-level="4.0.2" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#getting-data-httr"><i class="fa fa-check"></i><b>4.0.2</b> Getting Data: <code>httr</code></a></li>
+<li class="chapter" data-level="4.0.3" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#example-1-githubs-api"><i class="fa fa-check"></i><b>4.0.3</b> Example 1: GitHub’s API</a></li>
+<li class="chapter" data-level="4.0.4" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#example-2-obtaining-a-csv"><i class="fa fa-check"></i><b>4.0.4</b> Example 2: Obtaining a CSV</a></li>
+<li class="chapter" data-level="4.0.5" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#api-keys"><i class="fa fa-check"></i><b>4.0.5</b> API keys</a></li>
+<li class="chapter" data-level="4.0.6" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#web-scraping-1"><i class="fa fa-check"></i><b>4.0.6</b> Web Scraping</a></li>
+<li class="chapter" data-level="4.0.7" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#json"><i class="fa fa-check"></i><b>4.0.7</b> JSON</a></li>
+<li class="chapter" data-level="4.0.8" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#keeping-track-of-your-data"><i class="fa fa-check"></i><b>4.0.8</b> Keeping Track of your Data</a></li>
+<li class="chapter" data-level="4.0.9" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#summary-1"><i class="fa fa-check"></i><b>4.0.9</b> Summary</a></li>
+<li class="chapter" data-level="4.0.10" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#additional-resources-1"><i class="fa fa-check"></i><b>4.0.10</b> Additional Resources</a></li>
+<li class="chapter" data-level="4.0.11" data-path="getting-data-from-the-internet.html"><a href="getting-data-from-the-internet.html#slides-and-video-3"><i class="fa fa-check"></i><b>4.0.11</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="relational-data.html"><a href="relational-data.html"><i class="fa fa-check"></i><b>5</b> Relational Data</a>
+<ul>
+<li class="chapter" data-level="5.0.1" data-path="relational-data.html"><a href="relational-data.html#relational-data-1"><i class="fa fa-check"></i><b>5.0.1</b> Relational Data</a></li>
+<li class="chapter" data-level="5.0.2" data-path="relational-data.html"><a href="relational-data.html#relational-databases-sql"><i class="fa fa-check"></i><b>5.0.2</b> Relational Databases: <code>SQL</code></a></li>
+<li class="chapter" data-level="5.0.3" data-path="relational-data.html"><a href="relational-data.html#connecting-to-databases-rsqlite"><i class="fa fa-check"></i><b>5.0.3</b> Connecting to Databases: <code>RSQLite</code></a></li>
+<li class="chapter" data-level="5.0.4" data-path="relational-data.html"><a href="relational-data.html#working-with-relational-data-dplyr-dbplyr"><i class="fa fa-check"></i><b>5.0.4</b> Working with Relational Data: <code>dplyr</code> &amp; <code>dbplyr</code></a></li>
+<li class="chapter" data-level="5.0.5" data-path="relational-data.html"><a href="relational-data.html#mutating-joins"><i class="fa fa-check"></i><b>5.0.5</b> Mutating Joins</a></li>
+<li class="chapter" data-level="5.0.6" data-path="relational-data.html"><a href="relational-data.html#filtering-joins"><i class="fa fa-check"></i><b>5.0.6</b> Filtering Joins</a></li>
+<li class="chapter" data-level="5.0.7" data-path="relational-data.html"><a href="relational-data.html#how-to-connect-to-a-database-online"><i class="fa fa-check"></i><b>5.0.7</b> How to Connect to a Database Online</a></li>
+<li class="chapter" data-level="5.0.8" data-path="relational-data.html"><a href="relational-data.html#summary-2"><i class="fa fa-check"></i><b>5.0.8</b> Summary</a></li>
+<li class="chapter" data-level="5.0.9" data-path="relational-data.html"><a href="relational-data.html#additional-resources-2"><i class="fa fa-check"></i><b>5.0.9</b> Additional Resources</a></li>
+<li class="chapter" data-level="5.0.10" data-path="relational-data.html"><a href="relational-data.html#slides-and-video-4"><i class="fa fa-check"></i><b>5.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html"><i class="fa fa-check"></i><b>6</b> Unconventional Sources of Data</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#structured-data"><i class="fa fa-check"></i><b>6.0.1</b> Structured Data</a></li>
+<li class="chapter" data-level="6.0.2" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#unstructured-data"><i class="fa fa-check"></i><b>6.0.2</b> Unstructured Data</a></li>
+<li class="chapter" data-level="6.0.3" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#text-data"><i class="fa fa-check"></i><b>6.0.3</b> Text Data</a></li>
+<li class="chapter" data-level="6.0.4" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#json-javascript-object-notation"><i class="fa fa-check"></i><b>6.0.4</b> JSON: JavaScript Object Notation</a></li>
+<li class="chapter" data-level="6.0.5" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#xml-extensible-markup-language"><i class="fa fa-check"></i><b>6.0.5</b> XML: Extensible Markup Language</a></li>
+<li class="chapter" data-level="6.0.6" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#images-1"><i class="fa fa-check"></i><b>6.0.6</b> Images</a></li>
+<li class="chapter" data-level="6.0.7" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#audio-files-1"><i class="fa fa-check"></i><b>6.0.7</b> Audio Files</a></li>
+<li class="chapter" data-level="6.0.8" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#summary-3"><i class="fa fa-check"></i><b>6.0.8</b> Summary</a></li>
+<li class="chapter" data-level="6.0.9" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#additional-resources-3"><i class="fa fa-check"></i><b>6.0.9</b> Additional Resources</a></li>
+<li class="chapter" data-level="6.0.10" data-path="unconventional-sources-of-data.html"><a href="unconventional-sources-of-data.html#slides-and-video-5"><i class="fa fa-check"></i><b>6.0.10</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="finding-data.html"><a href="finding-data.html"><i class="fa fa-check"></i><b>7</b> Finding Data</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="finding-data.html"><a href="finding-data.html#public-versus-private-data"><i class="fa fa-check"></i><b>7.0.1</b> Public versus Private Data</a></li>
+<li class="chapter" data-level="7.0.2" data-path="finding-data.html"><a href="finding-data.html#publicly-available-data"><i class="fa fa-check"></i><b>7.0.2</b> Publicly-available data</a></li>
+<li class="chapter" data-level="7.0.3" data-path="finding-data.html"><a href="finding-data.html#data-you-already-have"><i class="fa fa-check"></i><b>7.0.3</b> Data You Already Have</a></li>
+<li class="chapter" data-level="7.0.4" data-path="finding-data.html"><a href="finding-data.html#summary-4"><i class="fa fa-check"></i><b>7.0.4</b> Summary</a></li>
+<li class="chapter" data-level="7.0.5" data-path="finding-data.html"><a href="finding-data.html#slides-and-video-6"><i class="fa fa-check"></i><b>7.0.5</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="internet-safety.html"><a href="internet-safety.html"><i class="fa fa-check"></i><b>8</b> Internet Safety</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="internet-safety.html"><a href="internet-safety.html#wifi"><i class="fa fa-check"></i><b>8.0.1</b> WiFi</a></li>
+<li class="chapter" data-level="8.0.2" data-path="internet-safety.html"><a href="internet-safety.html#passwords"><i class="fa fa-check"></i><b>8.0.2</b> Passwords</a></li>
+<li class="chapter" data-level="8.0.3" data-path="internet-safety.html"><a href="internet-safety.html#good-internet-behavior"><i class="fa fa-check"></i><b>8.0.3</b> Good Internet behavior</a></li>
+<li class="chapter" data-level="8.0.4" data-path="internet-safety.html"><a href="internet-safety.html#online-scams"><i class="fa fa-check"></i><b>8.0.4</b> Online Scams</a></li>
+<li class="chapter" data-level="8.0.5" data-path="internet-safety.html"><a href="internet-safety.html#malware-spyware"><i class="fa fa-check"></i><b>8.0.5</b> Malware &amp; Spyware</a></li>
+<li class="chapter" data-level="8.0.6" data-path="internet-safety.html"><a href="internet-safety.html#security-on-a-chromebook"><i class="fa fa-check"></i><b>8.0.6</b> Security on a Chromebook</a></li>
+<li class="chapter" data-level="8.0.7" data-path="internet-safety.html"><a href="internet-safety.html#slides-and-video-7"><i class="fa fa-check"></i><b>8.0.7</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="data-privacy.html"><a href="data-privacy.html"><i class="fa fa-check"></i><b>9</b> Data Privacy</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="data-privacy.html"><a href="data-privacy.html#what-is-data-privacy"><i class="fa fa-check"></i><b>9.0.1</b> What is Data Privacy?</a></li>
+<li class="chapter" data-level="9.0.2" data-path="data-privacy.html"><a href="data-privacy.html#personally-identifiable-information"><i class="fa fa-check"></i><b>9.0.2</b> Personally Identifiable Information</a></li>
+<li class="chapter" data-level="9.0.3" data-path="data-privacy.html"><a href="data-privacy.html#what-is-encryption"><i class="fa fa-check"></i><b>9.0.3</b> What is encryption?</a></li>
+<li class="chapter" data-level="9.0.4" data-path="data-privacy.html"><a href="data-privacy.html#human-security"><i class="fa fa-check"></i><b>9.0.4</b> Human Security</a></li>
+<li class="chapter" data-level="9.0.5" data-path="data-privacy.html"><a href="data-privacy.html#computer-security"><i class="fa fa-check"></i><b>9.0.5</b> Computer Security</a></li>
+<li class="chapter" data-level="9.0.6" data-path="data-privacy.html"><a href="data-privacy.html#open-science"><i class="fa fa-check"></i><b>9.0.6</b> Open Science</a></li>
+<li class="chapter" data-level="9.0.7" data-path="data-privacy.html"><a href="data-privacy.html#data-breaches"><i class="fa fa-check"></i><b>9.0.7</b> Data Breaches</a></li>
+<li class="chapter" data-level="9.0.8" data-path="data-privacy.html"><a href="data-privacy.html#conclusions"><i class="fa fa-check"></i><b>9.0.8</b> Conclusions</a></li>
+<li class="chapter" data-level="9.0.9" data-path="data-privacy.html"><a href="data-privacy.html#slides-and-video-8"><i class="fa fa-check"></i><b>9.0.9</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ethical-data-science.html"><a href="ethical-data-science.html"><i class="fa fa-check"></i><b>10</b> Ethical Data Science</a>
+<ul>
+<li class="chapter" data-level="10.0.1" data-path="ethical-data-science.html"><a href="ethical-data-science.html#data-science-team"><i class="fa fa-check"></i><b>10.0.1</b> Data Science Team</a></li>
+<li class="chapter" data-level="10.0.2" data-path="ethical-data-science.html"><a href="ethical-data-science.html#the-data"><i class="fa fa-check"></i><b>10.0.2</b> The Data</a></li>
+<li class="chapter" data-level="10.0.3" data-path="ethical-data-science.html"><a href="ethical-data-science.html#the-analysis"><i class="fa fa-check"></i><b>10.0.3</b> The Analysis</a></li>
+<li class="chapter" data-level="10.0.4" data-path="ethical-data-science.html"><a href="ethical-data-science.html#after-the-algorithm"><i class="fa fa-check"></i><b>10.0.4</b> After the Algorithm</a></li>
+<li class="chapter" data-level="10.0.5" data-path="ethical-data-science.html"><a href="ethical-data-science.html#ethics-in-data-science"><i class="fa fa-check"></i><b>10.0.5</b> Ethics in Data Science</a></li>
+<li class="chapter" data-level="10.0.6" data-path="ethical-data-science.html"><a href="ethical-data-science.html#artificial-intelligence-in-the-military"><i class="fa fa-check"></i><b>10.0.6</b> Artificial Intelligence in the Military</a></li>
+<li class="chapter" data-level="10.0.7" data-path="ethical-data-science.html"><a href="ethical-data-science.html#additional-resources-4"><i class="fa fa-check"></i><b>10.0.7</b> Additional Resources</a></li>
+<li class="chapter" data-level="10.0.8" data-path="ethical-data-science.html"><a href="ethical-data-science.html#slides-and-video-9"><i class="fa fa-check"></i><b>10.0.8</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
+<li class="divider"></li>
+<p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by: </a> </p>
+<p style="text-align:center;"> <a href="https://www.datatrail.org/"> Data Trail </a></p>
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style=" width: 80%; filter: grayscale(100%); padding-left: 40px; padding-top: 8px; vertical-align: top "</a>
+<p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
+<p style="padding-left: 40px;"><div class="trapezoid" style = "padding-left: 40px;"><span>  <a href="https://forms.gle/VWaJYc3zATe3qxYC9"> Click here to provide feedback</a> <img src="assets/itcr_arrow.png" style=" width: 10%" ></span></div></p>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Getting Data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <!--script src="https://kit.fontawesome.com/6a26f47516.js"></script-->
+  <!--<script src="assets/hideOutput.js"></script>-->
+  <link href="assets/style_DataTrail.css" rel="stylesheet">
+</head>
+        
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="assets/DataTrail.jpg">
+</div>
+<div id="internet-safety" class="section level1" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Internet Safety</h1>
+<p>Just like driving a car, there are inherent risks to using the Internet and doing data analysis on the cloud. These risks shouldn’t mean that you should always be fearful about your online safety, however, they should make you more aware that there are consequences if you are not cautious. Internet safety (or online safety) revolves around being knowledgeable about what these risks are, knowing how to deal with risks that arise when working online, and working hard to increase personal safety against security risks associated with using the Internet.</p>
+<p>The goal of <a href="https://en.wikipedia.org/wiki/Internet_safety">Internet safety</a> is to maximize personal safety and minimize security risks. We’ll discuss the basics of this below, but know that there are people whose entire careers are dedicated to Internet safety, so this will simply touch on the basics.</p>
+<div id="wifi" class="section level3" number="8.0.1">
+<h3><span class="header-section-number">8.0.1</span> WiFi</h3>
+<p><a href="https://en.wikipedia.org/wiki/Wi-Fi">WiFi</a> is the technology that enables you to wirelessly connect to the Internet. Computers, smartphones, video-game consoles, and TVs are among the many types of devices that are WiFi-compatible. As is often the case, increased access to the Internet comes with increased risk to network security.</p>
+<div id="public-wifi" class="section level4" number="8.0.1.1">
+<h4><span class="header-section-number">8.0.1.1</span> Public WiFi</h4>
+<p>Completely-open and free public WiFi, or Internet access that does not require a password or a screen to login from is the least secure type of network. When connected to public WiFi, be extra vigilant. Avoid working with sensitive data while on a completely open and public network, and do not make online purchases while on this network.</p>
+</div>
+<div id="semi-open-wifi" class="section level4" number="8.0.1.2">
+<h4><span class="header-section-number">8.0.1.2</span> Semi-Open WiFi</h4>
+<p>Semi-open WiFi networks are networks potentially open to everyone, but that may require a password (maybe one that is printed on your receipt at a coffee shop) or may require you to login by providing an e-mail address. When given the choice, opt to connect to these networks rather than completely-open public WiFi networks.</p>
+</div>
+<div id="password-protected-wifi" class="section level4" number="8.0.1.3">
+<h4><span class="header-section-number">8.0.1.3</span> Password-protected WiFi</h4>
+<p>The most secure option, however, is when you connect to a password-protected WiFi network, so use password-protected WiFi whenever you have the option. WiFi at your home should absolutely be password-protected.</p>
+</div>
+<div id="use-https-whenever-possible" class="section level4" number="8.0.1.4">
+<h4><span class="header-section-number">8.0.1.4</span> Use HTTPS Whenever Possible</h4>
+<p>The “S” in HTTPS stands for secure. So, what does HTTP stand for? HTTP refers to “Hyper Text Transfer Protocol.” You’re likely most familiar with these letters as being part of your website. When you type “www.gmail.com” into your Chrome browser, Chrome redirects you to “<a href="https://mail.google.com/mail/u/0/#inbox" class="uri">https://mail.google.com/mail/u/0/#inbox</a>.” HTTP refers to how the data are sent from your browser (where you typed “www.gmail.com”) and the website to which you’re trying to connect (www.gmail.com). When the web address starts with <a href="https://" class="uri">https://</a> rather than <a href="http://" class="uri">http://</a>, this means that the data sent over your Internet connection are encrypted. Encryption is a process that generates a message that cannot be decoded by anyone without a key. Thus, if someone were to intercept your encrypted data as it were transferred over the Internet, they may be able to intercept your data, but they wouldn’t be able to decipher the information, as they wouldn’t have access to the key. When a website is using encryption (<a href="https://" class="uri">https://</a>), there will be a padlock to the left of your web address bar to indicate that the HTTPS connection is in effect.</p>
+<p>When sharing sensitive information on the Internet (ie a credit card number or personal health information), it should only ever be done on a secure (encrypted) network.</p>
+</div>
+</div>
+<div id="passwords" class="section level3" number="8.0.2">
+<h3><span class="header-section-number">8.0.2</span> Passwords</h3>
+<p>In the age of apps for everything and technology being everywhere, you likely have a lot of requests daily for passwords. While they may seem like an annoyance, using passwords, and importantly, using <em>good</em> passwords is worth the effort.</p>
+<div id="strong-passwords" class="section level4" number="8.0.2.1">
+<h4><span class="header-section-number">8.0.2.1</span> Strong Passwords</h4>
+<p>Strong passwords may be harder to remember, but that’s the point. You don’t want someone else to be able to easily guess your password.</p>
+<p>Characteristics of <strong>Strong Passwords</strong>:</p>
+<ul>
+<li>Use a combination of random letters</li>
+<li>Use both capital and lower case letters</li>
+<li>Include numbers, letters, and symbols</li>
+<li>Disperse the letters and symbols throughout the password (not just at the beginning and the end)</li>
+<li>Has at least 12 characters</li>
+</ul>
+<p><strong>What to Avoid</strong> when Creating A Password:</p>
+<ul>
+<li>Avoid using names of you or anyone in your family</li>
+<li>Do not include the words “Passcode” or “Password”</li>
+<li>Avoid using sequential numbers (i.e. 123)</li>
+<li>Avoid using your telephone number</li>
+<li>Don’t make obvious substitutions to words (i.e. avoid simply replacing the letter “o” in a word with the number “0”)</li>
+</ul>
+</div>
+<div id="utilize-passwords" class="section level4" number="8.0.2.2">
+<h4><span class="header-section-number">8.0.2.2</span> Utilize Passwords</h4>
+<p>When given the option, <strong>use a password</strong>. Do not opt out of using a password to log in to your phone or your computer. When asked to set a password, do so, and make it a good one.</p>
+<p>In addition to setting passwords, make sure you have multiple different passwords. Do not use the same password for all your most important accounts. If someone were to log onto your WiFi network, you wouldn’t also want that person to be able to gain access to your credit card, Gmail, bank account, and/or Facebook account. <strong>Use different passwords for different accounts</strong>.</p>
+</div>
+<div id="when-to-change-passwords" class="section level4" number="8.0.2.3">
+<h4><span class="header-section-number">8.0.2.3</span> When to Change Passwords</h4>
+<p>If your password was set by a third-party company (say your Internet provider), you should <em>change your password right away</em>.</p>
+<p>Otherwise, it’s a good practice to change passwords to your most sensitive information (i.e. WiFi, credit cards/banking, etc.) at least every six months.</p>
+</div>
+<div id="never-share-passwords" class="section level4" number="8.0.2.4">
+<h4><span class="header-section-number">8.0.2.4</span> Never Share Passwords</h4>
+<p>A final word on passwords: <strong>never share them</strong>. Reputable companies will never ask for them. Your bank will never require you to tell it to them. And, neither will the IRS. If someone is asking for your password, it is <em>almost certainly a scam</em>.</p>
+</div>
+</div>
+<div id="good-internet-behavior" class="section level3" number="8.0.3">
+<h3><span class="header-section-number">8.0.3</span> Good Internet behavior</h3>
+<p>On the Internet there are few basic guidelines to follow that will help you be a good citizen and help keep you safe. This list is surely not exhaustive, but it’s a good start. When online:
+* Don’t be a jerk
+* Never share your passwords
+* Think before you click
+* Don’t click on links sent to you from people you don’t know
+* Don’t click on links from someone you do know if it doesn’t seem like something they would send (i.e. an email with a weird subject line that doesn’t sound like them or a link in an email that says “Vacation Pix” when they wouldn’t normally send those pictures, wouldn’t use the word “Pix”, or haven’t recently been on a trip)</p>
+</div>
+<div id="online-scams" class="section level3" number="8.0.4">
+<h3><span class="header-section-number">8.0.4</span> Online Scams</h3>
+<p>While we would love if everyone on the Internet behaved well (and most people do!), there are of course bad actors. To avoid getting caught up in an online scam, beware of:</p>
+<ul>
+<li>people/websites posing as people from a trustworthy company who attempt to obtain your private information - emails asking for credit card numbers or passwords are scams</li>
+<li>people who call and ask for passwords to accounts and who <em>seem</em> to know a lot about your family and claim to be from law enforcement. This is likely a scam. You can always hang up and call your local law enforcement directly to be sure.</li>
+<li>people/websites offering prices that are <em>way</em> too low for housing or big purchases on the Internet. These are likely a scam.</li>
+</ul>
+</div>
+<div id="malware-spyware" class="section level3" number="8.0.5">
+<h3><span class="header-section-number">8.0.5</span> Malware &amp; Spyware</h3>
+<p>Finally, malware and spyware are software designed to be malicious. The goal of malware and spyware is to collect your private information (usernames, passwords, credit card numbers) without you ever knowing. This software often acts through e-mail or other software. By avoiding clicking on suspicious links and not downloading software with which you’re not familiar, you can avoid the issues caused by malicious software.</p>
+</div>
+<div id="security-on-a-chromebook" class="section level3" number="8.0.6">
+<h3><span class="header-section-number">8.0.6</span> Security on a Chromebook</h3>
+<p>Because Chromebooks do not run a typically operating system, they are much more secure than other laptops. While explained in greater depth on <a href="https://support.google.com/chromebook/answer/3438631?hl=en">Google’s support documentation</a>, Chromebooks have certain advantages over other laptops when it comes to security:</p>
+<ul>
+<li>Automatic updates - ensure that your Chromebook is never behind on security updates</li>
+<li>Sandboxing - each web page runs in its own environment (sandbox), so if one page is infected, that page won’t affect other tabs or apps running at the time.</li>
+<li>Verified Boot - every time the Chromebook starts up, it does a self-check to detect any issues with security.</li>
+<li>Encryption - web apps on a Chromebook store all data safely in the cloud with encryption, making it resistant to tampering</li>
+</ul>
+</div>
+<div id="slides-and-video-7" class="section level3" number="8.0.7">
+<h3><span class="header-section-number">8.0.7</span> Slides and Video</h3>
+<div class="figure">
+<img src="https://www.youtube.com/watch?v=LdxnYPAbfFE" alt="" />
+<p class="caption">Internet Safety</p>
+</div>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/15GTb5tE_GQuCBJMtLYRtaEF8t5ms_iBRruNqZO1LbtY/edit?usp=sharing">Slides</a></li>
+</ul>
+
+</div>
+</div>
+<hr>
+<center> 
+  <div class="footer">
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY. </a>
+      <br>
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/"> CC-BY </a> unless noted otherwise.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="finding-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-privacy.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
