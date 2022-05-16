@@ -287,12 +287,16 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>In the last lesson we discussed how to read various file types into R. In each of these examples, we first had to upload the file into our RStudio Cloud project before we could read the file into R using one of the <code>read_*()</code> functions. What if we could cut out that first step, eliminating the need to upload the file into our project? This way, we could just use one function to read data directly into RStudio Cloud. This is capable thanks to data stored Google Sheets and the fantastic R package <code>googlesheets</code>.</p>
 <p>Additionally, using this approach, we can read in and analyze data hosted on Google Sheets in real-time. This means that as the data are updated over time, you can read the data into R and analyze it in its current state. Then, when the data are updated, you just re-run your code, and you’ll get an updated analysis. To see what we mean specifically, let’s take a look at an example.</p>
 <p>Imagine you’ve sent out a survey to your friends asking about how they spend their day. Let’s say you’re mostly interested in knowing the hours spent on work, leisure, sleep, eating, socializing, and other activities. So in your Google Sheet you add these six items as columns and one column asking for your friends names. To collect this data, you then share the link with your friends, giving them the ability to edit the Google Sheet.</p>
-<p>
-<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g2bfdb07292_0_151" alt="Survey Google Sheets" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g2bfdb07292_0_151" alt="" />
+<p class="caption">Survey Google Sheets</p>
+</div>
 <p>Your friends will then one-by-one complete the survey. And, because it’s a Google Sheet, everyone will be able to update the Google Sheet, regardless of whether or not someone else is also looking at the Sheet at the same time. As they do, you’ll be able to pull the data and import it to R for analysis at any point. You won’t have to wait for everyone to respond. You’ll be able to analyze the results in real-time by directly reading it into R from Google Sheets, avoiding the need to download it each time you do so.</p>
 <p>In other words, every time you import the data from the Google Sheets link using the <code>googlesheets</code> package, the most updated data will be imported. Let’s say, after waiting for a week, your friends’ data look something like this:</p>
-<p>
-<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g398ce98dcf_0_1" alt="Survey Data" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g398ce98dcf_0_1" alt="" />
+<p class="caption">Survey Data</p>
+</div>
 <div id="the-googlesheets-package" class="section level3" number="3.0.1">
 <h3><span class="header-section-number">3.0.1</span> The <code>googlesheets</code> package</h3>
 <p>The <code>googlesheets</code> package allows R users to take advantage of the Google Sheets API. In the first lesson in this course we mentioned that an API allows different application to communicate with one another. In this case, Google has released an API that allows other software to communicate with Google Sheets and retrieve data and information directly from Google Sheets. The <code>googlesheets</code> package enables R users (you!) to then easily access that API and retrieve your Google Sheets data.</p>
@@ -303,11 +307,15 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-2"><a href="importing-data-from-google-sheets.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(googlesheets)</span></code></pre></div>
 <p>Now, let’s get to importing your survey data into R. Every time you start a new session, you need to authenticate the use of <code>googlesheets</code> package with your Google account. This is a great features as it ensures that you <em>want</em> to allow access to your Google Sheets and allows the Google Sheets API to make sure that you <em>should</em> have access to the files you’re going to try to access.</p>
 <p>The command <code>gs_auth(new_user = TRUE)</code> will open a new page in your browser that asks you which Google account’s Google Sheets you’d like to give access to. Click on the appropriate Google user to provide <code>googlesheets</code> access to the Google Sheets API.</p>
-<p>
-<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d555bce3d_0_4" alt="Authenticate" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d555bce3d_0_4" alt="" />
+<p class="caption">Authenticate</p>
+</div>
 <p>After you click “ALLOW”, giving permission for the <code>googlesheets</code> package to connect to your Google account, you will likely be shown a screen where you will be asked to copy an authentication code. Copy this authentication code and paste it in your RStudio Cloud console.</p>
-<p>
-<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d555bce3d_0_12" alt="Allow" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d555bce3d_0_12" alt="" />
+<p class="caption">Allow</p>
+</div>
 </div>
 <div id="navigating-googlesheets-gs_ls-and-gs_title" class="section level4" number="3.0.1.2">
 <h4><span class="header-section-number">3.0.1.2</span> Navigating <code>googlesheets</code>: <code>gs_ls()</code> and <code>gs_title()</code></h4>
@@ -315,15 +323,19 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>In order to access a specific sheet, in this case the sheet that you created and named “survey”, you need to use the function <code>gs_title()</code>. We’ll assign this information to the object <code>survey_sheet</code>.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="importing-data-from-google-sheets.html#cb7-1" aria-hidden="true" tabindex="-1"></a>survey_sheet <span class="ot">&lt;-</span> <span class="fu">gs_title</span>(<span class="st">&quot;survey&quot;</span>)</span></code></pre></div>
 <p>If you type the name of the sheet correctly, you will see a message that says <em>Sheet successfully identified: “survey”</em>.</p>
-<p>
-<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d555bce3d_0_23" alt="Sheet successfully identified" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d555bce3d_0_23" alt="" />
+<p class="caption">Sheet successfully identified</p>
+</div>
 </div>
 <div id="reading-data-in-using-googlesheets-gs_read" class="section level4" number="3.0.1.3">
 <h4><span class="header-section-number">3.0.1.3</span> Reading data in using <code>googlesheets</code>: <code>gs_read()</code></h4>
 <p>At this point, you can read the data into R using the function <code>gs_read()</code> with the <code>survey_sheet</code> object output from <code>gs_title()</code> as your input to <code>gs_read()</code>:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="importing-data-from-google-sheets.html#cb8-1" aria-hidden="true" tabindex="-1"></a>survey_data <span class="ot">&lt;-</span> <span class="fu">gs_read</span>(survey_sheet)</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d555bce3d_0_28" alt="Sheet successfully read into R" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d555bce3d_0_28" alt="" />
+<p class="caption">Sheet successfully read into R</p>
+</div>
 <p>There are additional (optional) arguments to <code>gs_read()</code>, some are similar to those in <code>read_csv()</code> and <code>read_excel(),</code> while others are more specific to reading in Google Sheets:</p>
 <ul>
 <li><code>skip = 1</code> : will skip the first row of the Google Sheet</li>
@@ -339,26 +351,36 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>Let’s say you’d like to add your own respond to the survey. For this you can use the command <code>gs_add_row()</code>. Note that the <code>input</code> argument specifies what you would like to add in the new row. If everything goes well, you will get a message saying <em>Row successfully appended</em>.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="importing-data-from-google-sheets.html#cb9-1" aria-hidden="true" tabindex="-1"></a>my_response <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Me&quot;</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
 <span id="cb9-2"><a href="importing-data-from-google-sheets.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gs_add_row</span>(survey_sheet, <span class="at">input =</span> my_response)</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g398ce98dcf_0_18" alt="gs_add_row()" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g398ce98dcf_0_18" alt="" />
+<p class="caption"><code>gs_add_row()</code></p>
+</div>
 <p>If you now check the sheet on Google Sheets, you will see the appended row.</p>
-<p>
-<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g398ce98dcf_0_23" alt="Survey Data with Added Row" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g398ce98dcf_0_23" alt="" />
+<p class="caption">Survey Data with Added Row</p>
+</div>
 <p>To edit a specific cell you can use the command <code>gs_edit_cell()</code> but you will have to tell <code>googlesheets</code> which specific cell to edit. Let’s say we want to change the value of the cell <em>D4</em> from 0 to 2. For this we will use the <code>gs_edit_cells()</code> function. The <code>anchor</code> argument points to the cell that we want to modify and the <code>input</code> argument contains the new value that we want to assign to the cell.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="importing-data-from-google-sheets.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gs_edit_cells</span>(survey_sheet, <span class="at">anchor =</span> <span class="st">&quot;D4&quot;</span>, <span class="at">input =</span> <span class="dv">2</span>)</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g398ce98dcf_0_29" alt="gs_edit_cells()" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g398ce98dcf_0_29" alt="" />
+<p class="caption"><code>gs_edit_cells()</code></p>
+</div>
 <p>If you were to return to your Google Sheets, you’d notice that cell D4 now has a 2, rather than a 0 in it!</p>
 </div>
 </div>
 <div id="importing-csv-files-from-the-web" class="section level3" number="3.0.2">
 <h3><span class="header-section-number">3.0.2</span> Importing CSV files from the web</h3>
 <p>This lesson has focused on getting data from Google Sheets into RStudio Cloud; however, sometimes the data you need to work with is elsewhere online but you’d like to store it in a Google Sheet. While we will later learn that you can import them directly into R, it’s good to know that you can also import CSV files hosted on the web directly into Google Sheets. For instance, the dataset <a href="https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv">here</a> is a CSV file containing countries GDPs (national incomes). In order to import the file directly to Google Sheets, open a blank Google Sheets document as we learned before. In the first cell (top left corner) type in <code>=importData("https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv")</code>. Make sure to include the equal sign (=) in the beginning.</p>
-<p>
-<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d79cb939b_0_4" alt="importing data directly into Google Sheets" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d79cb939b_0_4" alt="" />
+<p class="caption">importing data directly into Google Sheets</p>
+</div>
 <p>This will import all the data to your Google Sheets document. You can then use the steps discussed above any time you want to work with these data in RStudio Cloud.</p>
-<p>
-<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d79cb939b_0_0" alt="data in Google Sheets" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&amp;pageid=g3d79cb939b_0_0" alt="" />
+<p class="caption">data in Google Sheets</p>
+</div>
 </div>
 <div id="summary" class="section level3" number="3.0.3">
 <h3><span class="header-section-number">3.0.3</span> Summary</h3>
