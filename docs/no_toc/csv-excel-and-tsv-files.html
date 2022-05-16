@@ -289,27 +289,37 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">2.0.1</span> CSV files</h3>
 <p><strong>Comma-separated values (CSV)</strong> files allow us to store tabular data in a simple format. CSVs are <strong>plain-text</strong> files, which means that all the important information in the file is represented by text (where text is numbers, letters, and symbols you can type on your keyboard).</p>
 <p>For example, consider a dataset that includes information about the heights and blood types of three individuals. You could make a table that has three columns (names, heights, and blood types) and three rows (one for each person) in Google Docs or Microsoft Word. However, there is a better way of storing this data in plain text without needing to put them in table format. CSVs are a perfect way to store these data. In the CSV format, the values of each column for each person in the data are separated by commas and each row (each person in our case) is separated by a new line. This means your data would be stored in the following format:</p>
-<p>
-<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g2bfdb07292_0_151" alt="sample CSV" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g2bfdb07292_0_151" alt="" />
+<p class="caption">sample CSV</p>
+</div>
 <p>Notice that CSV files have a .csv extension at the end. You can see this above at the top of the file. One of the advantages of CSV files is their <em>simplicity</em>. Because of this, they are one of the most common file formats used to store tabular data. Additionally, because they are plain text, they are compatible with <em>many</em> different types of software. CSVs can be read by most programs. Specifically, for our purposes, these files can be easily read into R (or Google Sheets, or Excel), where they can be better understood by the human eye. Here you see the same CSV opened in Google Slides, where it’s more easily interpretable by the human eye:</p>
-<p>
-<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g3a4d18d722_0_92" alt="CSV opened in Google Slides" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g3a4d18d722_0_92" alt="" />
+<p class="caption">CSV opened in Google Slides</p>
+</div>
 <p>As with any file type, CSVs do have their limitations. Specifically, CSV files are best used for data that have a consistent number of variables across observations. For example, in our example, there are three variables for each observation: “name”, “height”, and “blood_type”. If, however, you had eye color and weight for the second observation, but not for the other rows, you’d have a different number of variables for the second observation than the other two. This type of data is not best suited for CSVs. However, whenever you have information the same number of variables across all observations, CSVs are a good bet!</p>
 </div>
 <div id="downloading-csv-files" class="section level3" number="2.0.2">
 <h3><span class="header-section-number">2.0.2</span> Downloading CSV files</h3>
 <p>If you entered the same values used above into Google Slides first and wanted to download this file as a CSV to read into R, you would enter the values in Google slides, and then click on “File” and then “Download” as and choose “Comma-separated values (.csv, current sheet)”. The dataset that you created will be downloaded as a CSV file on your computer. Make sure you know the location of your file (if on a Chromebook, this will be in your “Downloads” folder).</p>
-<p>
-<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_56" alt="Download as CSV file" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_56" alt="" />
+<p class="caption">Download as CSV file</p>
+</div>
 </div>
 <div id="reading-csv-files-into-rstudio-cloud" class="section level3" number="2.0.3">
 <h3><span class="header-section-number">2.0.3</span> Reading CSV files into RStudio Cloud</h3>
 <p>Now that you have a CSV file, let’s discuss how to get it into RStudio Cloud! Log in to your RStudio Cloud account. Create a new project. On the RStudio workspace that you see, click on <em>Upload</em> under <em>Files</em> on the bottom right corner of the screen. On the window that pops up click on <em>Choose File</em>.</p>
-<p>
-<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_10" alt="Upload a file on RStudio Cloud" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_10" alt="" />
+<p class="caption">Upload a file on RStudio Cloud</p>
+</div>
 <p>Now, find where you saved the file (for instance “Downloads”) and click on <em>OPEN</em>. After this, the window closes automatically and you’ll be back in your workspace on RStudio Cloud. You will see that your CSV file now appears among other files. (A reminder: if you were working on a data science project, this would go in your “raw_data” directory. For this example, however, we’ll keep it in “cloud/project”)</p>
-<p>
-<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_1" alt="Find local file" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_1" alt="" />
+<p class="caption">Find local file</p>
+</div>
 <p>Now, while the file has now been uploaded to your RStudio Cloud project, it’s important to recognize the file is not yet imported to your R environment as an object. We’ll do that now!</p>
 <p>The best way to accomplish this is using the function <code>read_csv()</code> from the <code>readr</code> package. (Note, if you haven’t installed the <code>readr</code> package, you’ll have to do that first.) Inside the parenthesis of the function, write the name of the file in quotes, including the file extension (.csv). Make sure you type the exact file name. Save the imported data in a data frame called <code>df_csv</code>. Your data will now be imported into R environment. If you use the command <code>head(df_csv)</code> you will see the first several rows of your imported data frame:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="csv-excel-and-tsv-files.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## install.packages(&quot;readr&quot;)</span></span>
@@ -320,8 +330,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-6"><a href="csv-excel-and-tsv-files.html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="csv-excel-and-tsv-files.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="do">## look at the object</span></span>
 <span id="cb1-8"><a href="csv-excel-and-tsv-files.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_csv)</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_16" alt="read_csv()" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_16" alt="" />
+<p class="caption"><code>read_csv()</code></p>
+</div>
 <p>Above, you see the simplest way to import a CSV file. However, as with many functions, there are other arguments that you can set to specify how to import your specific CSV file, a few of which are listed below. However, as usual, to see all the arguments for this function, use <code>?read_csv</code> within R.</p>
 <ul>
 <li><code>col_names = FALSE</code> to specify that the first row does NOT contain column names.</li>
@@ -335,8 +347,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">2.0.4</span> Excel files</h3>
 <p>While CSV files hold plain text as a series of values separated by commas, an Excel (or .xls or .xlsx) file holds information in a workbook that comprises both values and formatting (colors, conditional formatting, font size, etc.). You can think of Excel files a fancier CSV file. While this may sound appealing, we’ll remind you that CSV files can be read by many different pieces of software, Excel files can only be viewed in specific pieces of software, and thus are generally less flexible. That said, many people save their data in Excel, so it’s important to know how to work with them in RStudio Cloud.</p>
 <p>Let’s go back to the Google Sheet that we created and instead of downloading the file locally as as CSV, download it as <em>Microsoft Excel (.xlsx)</em> file.</p>
-<p>
-<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_33" alt="Download as Excel file" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_33" alt="" />
+<p class="caption">Download as Excel file</p>
+</div>
 <p>Save the file where you can find it. Similar to the CSV file, first, upload the file into your RStudio Cloud workspace.</p>
 </div>
 <div id="reading-excel-files-into-rstudio-cloud" class="section level3" number="2.0.5">
@@ -348,8 +362,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-4"><a href="csv-excel-and-tsv-files.html#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="csv-excel-and-tsv-files.html#cb2-5" aria-hidden="true" tabindex="-1"></a>df_excel <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;sample_data.xlsx&quot;</span>)</span>
 <span id="cb2-6"><a href="csv-excel-and-tsv-files.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_excel)</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_41" alt="Find local file" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&amp;pageid=g399e5a917a_0_41" alt="" />
+<p class="caption">Find local file</p>
+</div>
 </div>
 <div id="text-files" class="section level3" number="2.0.6">
 <h3><span class="header-section-number">2.0.6</span> Text files</h3>
