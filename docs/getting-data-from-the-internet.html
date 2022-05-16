@@ -295,14 +295,14 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>You’ve probably seeing HTTP before at the start of web addresses, (ie <a href="http://www.gmail.com" class="uri">http://www.gmail.com</a>), so you may have some intuition that HTTP has something to do with the Internet, which is absolutely correct! HTTP stands for Hypertest Transfer Protocol. In the broadest sense, HTTP transactions allow for messages to be sent between two points on the Internet. You, on your computer can request something from a web page, and the protocol (HTTP) allows you to connect with that webpage’s server, do something, and then return you whatever it is you asked for.</p>
 <p>Working with a web API is similar to accessing a website in many ways. When you type a URL (ie www.google.com) into your browser, information is sent from your computer to your browser. Your browser then interprets what you’re asking for and displays the website you’ve requested. Web APIs work similarly. You <strong>request</strong> some information from the API and the API sends back a <strong>response</strong>.</p>
 <p>The <code>httr</code> package will hep you carry out these types of requests within R. Let’s stop talking about it, and see an actual example!</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_69" alt="HTTP access via httr" /></p>
 </div>
 <div id="getting-data-httr" class="section level3" number="4.0.2">
 <h3><span class="header-section-number">4.0.2</span> Getting Data: <code>httr</code></h3>
 <p>HTTP is based on a number of important verbs : <code>GET()</code>, <code>HEAD()</code>, <code>PATCH()</code>, <code>PUT()</code>, <code>DELETE()</code> and <code>POST()</code>. For the purposes of retrieving data from the Internet, you may be able to guess which verb will be the most important for our purposes! <code>GET()</code> will allow us to <em>fetch</em> a resource that already exists. We’ll specify a URL to tell <code>GET()</code> where to go look for what we want. While we’ll only highlight <code>GET()</code> in this lesson, for full understanding of the many other HTTP verbs and capabilities of <code>httr</code>, refer to the additional resources provided at the end of this lesson.</p>
 <p><code>GET()</code> will access the API, provide the API with the necessary information to request the data we want, and retrieve some output.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_90" alt="API requests are made to an API endpoint to get an API response" /></p>
 </div>
 <div id="example-1-githubs-api" class="section level3" number="4.0.3">
@@ -329,7 +329,7 @@ url_git &lt;- &#39;https://api.github.com/&#39;
 ## Construct API request
 api_response &lt;- GET(url = paste0(url_git, &#39;users/&#39;, username, &#39;/repos&#39;))</code></pre>
 <p>Note: In the code above, you see the function <code>paste0()</code>. This function concatenates (links together) each the pieces within the parentheses, where each piece is separated by a comma. This provides <code>GET()</code> with the URL we want to use as our endpoints!</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_54" alt="httr code to access GitHub" /></p>
 </div>
 <div id="api-response-content" class="section level4" number="4.0.3.3">
@@ -337,7 +337,7 @@ api_response &lt;- GET(url = paste0(url_git, &#39;users/&#39;, username, &#39;/r
 <p>Let’s first take a look at what other variables are available within the <code>api_response</code> object:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="getting-data-from-the-internet.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## See variables in response</span></span>
 <span id="cb13-2"><a href="getting-data-from-the-internet.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(api_response)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_112" alt="httr response" /></p>
 <p>While we see ten different variables within <code>api_response</code>, we should probably first make sure that the request to GitHub’s API was successful. We can do this by checking the status code of the request, where “200” means that everything worked properly:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="getting-data-from-the-internet.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Check Status Code of request</span></span>
@@ -346,7 +346,7 @@ api_response &lt;- GET(url = paste0(url_git, &#39;users/&#39;, username, &#39;/r
 <p>To do so we’ll take advantage of <code>httr</code>’s <code>content()</code> function, which as its name suggests, extracts the contents from an API request.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="getting-data-from-the-internet.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Extract content from API response</span></span>
 <span id="cb15-2"><a href="getting-data-from-the-internet.html#cb15-2" aria-hidden="true" tabindex="-1"></a>repo_content <span class="ot">&lt;-</span> <span class="fu">content</span>(api_response)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_117" alt="httr status code and content()" /></p>
 <p>You can see here that the length of <code>repo_content</code> in our case is 6 by looking at the Environment tab. This is because the GitHub account <code>janeeverydaydoe</code> had six repositories at the time of this API call. We can get some information about each repo by running the function below:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="getting-data-from-the-internet.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">## function to get name and URL for each repo</span></span>
@@ -354,7 +354,7 @@ api_response &lt;- GET(url = paste0(url_git, &#39;users/&#39;, username, &#39;/r
 <span id="cb16-3"><a href="getting-data-from-the-internet.html#cb16-3" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">repo =</span> x<span class="sc">$</span>name,</span>
 <span id="cb16-4"><a href="getting-data-from-the-internet.html#cb16-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">address =</span> x<span class="sc">$</span>html_url)}) <span class="sc">%&gt;%</span></span>
 <span id="cb16-5"><a href="getting-data-from-the-internet.html#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_132" alt="output from API request" /></p>
 <p>Here, we’ve pulled out the name and URL of each repository in Jane Doe’s account; however, there is <em>a lot</em> more information in the <code>repo_content</code> object. To see how to extract more information, check out the rest of Tyler’s wonderful post <a href="https://tclavelle.github.io/blog/r_and_apis/">here</a>.</p>
 </div>
@@ -363,7 +363,7 @@ api_response &lt;- GET(url = paste0(url_git, &#39;users/&#39;, username, &#39;/r
 <h3><span class="header-section-number">4.0.4</span> Example 2: Obtaining a CSV</h3>
 <p>In a previous course in this Course Set on Data Visualization, we assigned a project where the data for the project had already been saved on RStudio Cloud for you in CSV format. <em>However</em>, these data are available on the Internet. Now that we know how to use <code>httr</code> and have an understanding about APIs, let’s do that now!</p>
 <p>So, the data are available for download from this link: <a href="https://data.fivethirtyeight.com/">data.fivethirtyeight.com</a>, but are also hosted on GitHub <a href="https://github.com/fivethirtyeight/data">here</a>, and we will want to use the specific URL for this file: <a href="https://raw.githubusercontent.com/fivethirtyeight/data/master/steak-survey/steak-risk-survey.csv">https://raw.githubusercontent.com/fivethirtyeight/data/master/steak-survey/steak-risk-survey.csv</a> in our <code>GET()</code> request.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_148" alt="steak-survey on GitHub" /></p>
 <p>To do so, we would do the following:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="getting-data-from-the-internet.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Make API request</span></span>
@@ -371,7 +371,7 @@ api_response &lt;- GET(url = paste0(url_git, &#39;users/&#39;, username, &#39;/r
 <span id="cb17-3"><a href="getting-data-from-the-internet.html#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-4"><a href="getting-data-from-the-internet.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Extract content from API response</span></span>
 <span id="cb17-5"><a href="getting-data-from-the-internet.html#cb17-5" aria-hidden="true" tabindex="-1"></a>df_steak <span class="ot">&lt;-</span> <span class="fu">content</span>(api_response, <span class="at">type=</span><span class="st">&quot;text/csv&quot;</span>)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_154" alt="GET() steak-survey CSV" /></p>
 <p>Here, we again specify our url within <code>GET()</code> followed by use of the helpful <code>content()</code> function from <code>httr</code> to obtain the CSV from the <code>api_response</code> object. <code>df_steak</code> includes the data from the CSV directly from the GitHub API, without having to download the data first!</p>
 </div>
@@ -398,7 +398,7 @@ api_response &lt;- GET(url = paste0(url_git, &#39;users/&#39;, username, &#39;/r
 <div id="rvest-basics" class="section level4" number="4.0.6.1">
 <h4><span class="header-section-number">4.0.6.1</span> <code>rvest</code> basics</h4>
 <p>When <code>rvest</code> is given a webpage (URL) as input, an <code>rvest</code> function reads in the HTML code from the webpage. HTML is the language websites use to display everything you see on the website. You’ve seen HTML documents before, as this is one of the formats that you can Knit to from an R Markdown (.Rmd) document! Generally, all HTML documents require each webpage to have a similar structure. This structure is specified by using different <strong>tags</strong>. For example, a header at the top of your webpage would use a specific tag. Website links would use a different tag. These different tags help to specify how the website should appear. <code>rvest</code> takes advantage of these tags to help you extract the parts of the webpage you’re most interested in. So let’s see exactly how to do that all of this with an example.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_179" alt="Different tags are used to specify different parts of a website" /></p>
 </div>
 <div id="selectorgadget" class="section level4" number="4.0.6.2">
@@ -410,17 +410,17 @@ api_response &lt;- GET(url = paste0(url_git, &#39;users/&#39;, username, &#39;/r
 <li><p>Click <a href="https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb">here</a> to open up the SelectorGadget Chrome Extension</p></li>
 <li><p>Click “ADD TO CHROME”</p></li>
 </ol>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_9" alt="ADD TO CHROME" /></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Click “Add extension”</li>
 </ol>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_5" alt="Add extension" /></p>
 <ol start="4" style="list-style-type: decimal">
 <li>SelectorGadget’s icon will now be visible to the right of the web address bar within Google Chrome. You will click on this to use SelectorGadget in the example below.</li>
 </ol>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_0" alt="SelectorGadget icon" /></p>
 </div>
 <div id="web-scraping-example" class="section level4" number="4.0.6.3">
@@ -430,10 +430,10 @@ api_response &lt;- GET(url = paste0(url_git, &#39;users/&#39;, username, &#39;/r
 <div id="using-selectorgadget" class="section level5" number="4.0.6.3.1">
 <h5><span class="header-section-number">4.0.6.3.1</span> Using SelectorGadget</h5>
 <p>To use SelectorGadget, navigate to the webpage we’re interested in scraping: <a href="http://jhudatascience.org/stable_website/webscrape.html">http://jhudatascience.org/stable_website/webscrape.html</a> and toggle SelectorGadget by clicking on the SelectorGadget icon. A menu at the bottom-right of your web page should appear.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_22" alt="SelectorGadget icon on webpage of interest" /></p>
 <p>Now that SelectorGadget has been toggled, as you mouse over the page, colored boxes should appear. We’ll click on the the name of the first package to start to tell SelectorGadget which component of the webpage we’re interested in.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_31" alt="SelectorGadget selects strong on webpage of interest" /></p>
 <p>An orange box will appear around the component of the webpage you’ve clicked. Other components of the webpage that SelectorGadget has deemed similar to what you’ve clicked will be highlighted. And, text will show up in the menu at the bottom of the page letting you know what you should use in <code>rvest</code> to specify the part of the webpage you’re most interested in extracting.</p>
 <p>Here, we see with that SelectorGadget has highlighted the package names and nothing else! Perfect. That’s just what we wanted. Now we know how to specify this element in <code>rvest</code>!</p>
@@ -453,10 +453,10 @@ courses &lt;- read_html(&quot;http://jhudatascience.org/stable_website/webscrape
 courses %&gt;%
   html_nodes(&quot;strong&quot;) %&gt;%
   html_text()</code></pre>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_188" alt="rvest code" /></p>
 <p>With just a few lines of code we have the information we were looking for!</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_36" alt="List of packages" /></p>
 </div>
 </div>
@@ -487,12 +487,12 @@ courses %&gt;%
 <span id="cb21-3"><a href="getting-data-from-the-internet.html#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-4"><a href="getting-data-from-the-internet.html#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="do">## take a look</span></span>
 <span id="cb21-5"><a href="getting-data-from-the-internet.html#cb21-5" aria-hidden="true" tabindex="-1"></a>mydf</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_219" alt="fromJSON()" /></p>
 <p>Data frames can also be returned to their original JSON format using the function: <code>toJSON()</code>.</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="getting-data-from-the-internet.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="do">## take JSON object and convert to a data frame</span></span>
 <span id="cb22-2"><a href="getting-data-from-the-internet.html#cb22-2" aria-hidden="true" tabindex="-1"></a>json <span class="ot">&lt;-</span> <span class="fu">toJSON</span>(mydf)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&amp;pageid=g3d5b27bb5d_0_228" alt="toJSON()" /></p>
 <p>Here, we’ve just briefly touched on what JSON format is; however, in a future lesson we’ll discuss this in greater detail. For now, however, it’s important to know that the <code>jsonlite</code> package is there for you whenever you have JSON data. And, it has two very helpful functions (among other functions in the package!): <code>toJSON()</code> and <code>fromJSON()</code> for such situations.</p>
 </div>

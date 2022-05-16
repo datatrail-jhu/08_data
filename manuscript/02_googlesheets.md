@@ -6,14 +6,14 @@ Additionally, using this approach, we can read in and analyze data hosted on Goo
 
 Imagine you've sent out a survey to your friends asking about how they spend their day. Let's say you're mostly interested in knowing the hours spent on work, leisure, sleep, eating, socializing, and other activities. So in your Google Sheet you add these six items as columns and one column asking for your friends names. To collect this data, you then share the link with your friends, giving them the ability to edit the Google Sheet. 
 
-{format: png}
+
 ![Survey Google Sheets](https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&pageid=g2bfdb07292_0_151)
 
 Your friends will then one-by-one complete the survey. And, because it's a Google Sheet, everyone will be able to update the Google Sheet, regardless of whether or not someone else is also looking at the Sheet at the same time. As they do, you'll be able to pull the data and import it to R for analysis at any point. You won't have to wait for everyone to respond. You'll be able to analyze the results in real-time by directly reading it into R from Google Sheets, avoiding  the need to download it each time you do so. 
 
 In other words, every time you import the data from the Google Sheets link using the `googlesheets` package, the most updated data will be imported. Let's say, after waiting for a week, your friends' data look something like this:
 
-{format: png}
+
 ![Survey Data](https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&pageid=g398ce98dcf_0_1)
 
 ### The `googlesheets` package
@@ -33,12 +33,12 @@ Now, let's get to importing your survey data into R. Every time you start a new 
 
 The command `gs_auth(new_user = TRUE)` will open a new page in your browser that asks you which Google account's Google Sheets you'd like to give access to. Click on the appropriate Google user to provide `googlesheets` access to the Google Sheets API.
 
-{format: png}
+
 ![Authenticate](https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&pageid=g3d555bce3d_0_4)
 
 After you click "ALLOW", giving permission for the `googlesheets` package to connect to your Google account, you will likely be shown a screen where you will be asked to copy an authentication code. Copy this authentication code and paste it in your RStudio Cloud console.
 
-{format: png}
+
 ![Allow](https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&pageid=g3d555bce3d_0_12)
 
 #### Navigating `googlesheets`: `gs_ls()` and `gs_title()`
@@ -53,7 +53,7 @@ survey_sheet <- gs_title("survey")
 
 If you type the name of the sheet correctly, you will see a message that says *Sheet successfully identified: "survey"*. 
 
-{format: png}
+
 ![Sheet successfully identified](https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&pageid=g3d555bce3d_0_23)
 
 
@@ -65,7 +65,7 @@ At this point, you can read the data into R using the function `gs_read()` with 
 survey_data <- gs_read(survey_sheet)
 ```
 
-{format: png}
+
 ![Sheet successfully read into R](https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&pageid=g3d555bce3d_0_28)
 
 There are additional (optional) arguments to `gs_read()`, some are similar to those in `read_csv()` and `read_excel(),` while others are more specific to reading in Google Sheets:
@@ -87,13 +87,13 @@ my_response <- c("Me", 10, 8, 2, 2, 1, 1)
 gs_add_row(survey_sheet, input = my_response)
 ```
 
-{format: png}
+
 ![`gs_add_row()`](https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&pageid=g398ce98dcf_0_18)
 
 
 If you now check the sheet on Google Sheets, you will see the appended row.
 
-{format: png}
+
 ![Survey Data with Added Row](https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&pageid=g398ce98dcf_0_23)
 
 
@@ -103,7 +103,7 @@ To edit a specific cell you can use the command `gs_edit_cell()` but you will ha
 gs_edit_cells(survey_sheet, anchor = "D4", input = 2)
 ```
 
-{format: png}
+
 ![`gs_edit_cells()`](https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&pageid=g398ce98dcf_0_29)
 
 If you were to return to your Google Sheets, you'd notice that cell D4 now has a 2, rather than a 0 in it!
@@ -112,12 +112,12 @@ If you were to return to your Google Sheets, you'd notice that cell D4 now has a
 
 This lesson has focused on getting data from Google Sheets into RStudio Cloud; however, sometimes the data you need to work with is elsewhere online but you'd like to store it in a Google Sheet. While we will later learn that you can import them directly into R, it's good to know that you can also import CSV files hosted on the web directly into Google Sheets. For instance, the dataset [here](https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv) is a CSV file containing countries GDPs (national incomes). In order to import the file directly to Google Sheets, open a blank Google Sheets document as we learned before. In the first cell (top left corner) type in `=importData("https://raw.githubusercontent.com/datasets/gdp/master/data/gdp.csv")`. Make sure to include the equal sign (=) in the beginning. 
 
-{format: png}
+
 ![importing data directly into Google Sheets](https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&pageid=g3d79cb939b_0_4)
 
 This will import all the data to your Google Sheets document. You can then use the steps discussed above any time you want to work with these data in RStudio Cloud.
 
-{format: png}
+
 ![data in Google Sheets](https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/export/png?id=1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA&pageid=g3d79cb939b_0_0)
 
 ### Summary

@@ -292,7 +292,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="unstructured-data" class="section level3" number="6.0.2">
 <h3><span class="header-section-number">6.0.2</span> Unstructured Data</h3>
 <p>Unstructured data, on the other hand, are data that are not organized in a pre-defined manner. These data do not fit into rows and columns in a spreadsheet. Unstructured data may contain text, images, audio files, and even video files. Given the differences in these types of data, traditional methods for cleaning and analyzing these kind of data are not as helpful. Nevertheless, there are ways to work with these data in R. We’ll introduce a number of different types of unstructured data and then give you a brief example of where you would start if you wanted to work with each unconventional data type in R.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&amp;pageid=g392f0f9db9_1_9" alt="Unstructured data types" /></p>
 </div>
 <div id="text-data" class="section level3" number="6.0.3">
@@ -301,7 +301,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>An application of text mining is <strong>sentiment analysis</strong>. In sentiment analysis, the goal is to categorize the text and quantify opinions expressed within the text. For instance, in a lot of satisfaction surveys, as you may have taken, the company asks you to express your opinion about your experience or a specific product in a few sentences. Historically, due to the fact that survey respondents could have typed anything they wanted in these boxes, these kind of data were often ignored when analyzing the survey data due to their <em>unstructured</em> nature. In other words, free text responses on a survey can be hard to analyze.</p>
 <p>In cases where these data <em>were</em> analyzed, the text from each survey respondent would have been read by a human. That human would asses what the response and assign a score as to how positive or negative the text was. However, using sentiment analysis we are now able to read a vast amount of textual data and use an algorithm to assign that value to respondent’s attitude toward the service or the product.</p>
 <p>There are different approaches to sentiment analysis. Sometimes, a paragraph of text will be evaluated to assess how sad or happy the words in the text are. Other times, you’ll use sentiment analysis to gauge how positive or negative the words in the text are. Other times still, words will be analyzed using sentiment analysis to determine how scientific or unscientific text is. For more on sentiment analysis read this <a href="https://www.crimsonhexagon.com/blog/what-is-sentiment-analysis/">this article</a>.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&amp;pageid=g392f0f9db9_1_15" alt="Sentiment analysis" /></p>
 <div id="analyzing-text-in-r" class="section level4" number="6.0.3.1">
 <h4><span class="header-section-number">6.0.3.1</span> Analyzing Text in R</h4>
@@ -312,37 +312,37 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><code>languageR</code> : Statistical analysis of linguistic data</li>
 </ul>
 <p>To see an example of text analysis in R, check out David Robinson’s post <a href="http://varianceexplained.org/r/trump-tweets/">Text analysis of Trump’s tweets confirms he writes only the (angrier) Android half</a>, where he uses the <code>tidytext</code> package, <code>twitteR</code> package, and Twitter API to analyze the tweets from Donald Trump during his presidential campaign.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&amp;pageid=g3d555e2b2e_0_7" alt="Analysis of tweets in R" /></p>
 </div>
 </div>
 <div id="json-javascript-object-notation" class="section level3" number="6.0.4">
 <h3><span class="header-section-number">6.0.4</span> JSON: JavaScript Object Notation</h3>
 <p>In an earlier lesson in this course we touched on the fact that JSON is a text-based way to send information between a browser and a server and a frequent format in which you’ll retrieve data from an API call. We also mentioned that JSON format requires objects to be comprised of <strong>key-value pairs</strong>. For example, in the case of: <code>{"Name": "Isabela"}</code>, “Name” would be a key, “Isabela” would be a value, and together they would be a key-value pair.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&amp;pageid=g3d555e2b2e_0_21" alt="JSON data contain key-pairs" /></p>
 <p>That’s where we left our explanation of JSON data in the earlier lesson. Here we’ll use a snippet of JSON data to explain that in addition to using key-pairs JSON data are <em>nested</em> and <em>hierarchical</em>. This means that key-pairs can be organized into different levels (hierarchical) with some levels of information being stored <em>within</em> other levels (nested).</p>
 <p>Using a snippet of JSON data here, we see a portion of JSON data from Yelp explaining a restaurant. We’re looking at the <code>attributes</code> of this restaurant. Within <code>attributes</code>, there are four nested categories: <code>Take-out</code>, <code>Wi-Fi</code>, <code>Drive-Thru</code>, and <code>Good For</code>. In the hierarchy, attributes is at the top, while these four categories are within attributes. Within one of these attributes <code>Good For</code>, we see another level within the hierarchy. In this third level we see a number of other categories nested within <code>Good For</code>. This should give you a slightly better idea of how JSON data are structured.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&amp;pageid=g3d555e2b2e_0_13" alt="JSON data are hierarchical and nested" /></p>
 <div id="analyzing-json-in-r" class="section level4" number="6.0.4.1">
 <h4><span class="header-section-number">6.0.4.1</span> Analyzing JSON in R</h4>
 <p>Above we discussed how to analyze pure text (meaning, text written by humans in their native written and spoken language). Here, we’ll discuss how to briefly how others have wrangled text-based data from the Internet in the JSON format within R. This is possible because of the R package <code>jsonlite</code>, which was used in the following example:</p>
 <p><a href="https://blog.exploratory.io/@kanaugust">Kan Nishida</a>, a data scientist, was interested in <a href="https://blog.exploratory.io/working-with-json-data-in-very-simple-way-ad7ebcc0bb89">understanding what restaurant types found most frequently in each state or province</a>. To do this, he used JSON data originally released from Yelp. He wrangled the data from JSON format into a tabular format using <code>jsonlite</code> and other data wrangling packages, such as <code>dplyr</code>, to ultimately determine the types of restaurants found most frequently in a number of different states and provinces.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&amp;pageid=g3d555e2b2e_0_17" alt="Wrangling Yelp data from JSON into tidy tabular data" /></p>
 </div>
 </div>
 <div id="xml-extensible-markup-language" class="section level3" number="6.0.5">
 <h3><span class="header-section-number">6.0.5</span> XML: Extensible Markup Language</h3>
 <p><strong>Extensible Markup Language (XML)</strong>, is another human- and machine-readable language that is used frequently by web services and APIs. However, instead of being based on key-value pairs, XML relies on <strong>nodes</strong>, <strong>tags</strong>, and <strong>elements</strong>. The author defines these <em>tags</em> to specify what information is included in each <em>element</em> of the XML document and allows for elements to be nested within one another. The <strong>nodes</strong> define the hierarchical structure of the XML (which means that XML is hierarchical and nested like JSON)!</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&amp;pageid=g3d555e2b2e_0_128" alt="XML format relies on nodes, tags, and elements" /></p>
 <p>XML accomplishes the same goal as JSON, but it just does it in a different format. Thus, the two formats are used for similar purposes – sharing information on the web; however, because the format in which they do this is different, a different R package is needed to process XML data. This packages is called <code>xml2</code>.</p>
 <div id="analyzing-xml-in-r" class="section level4" number="6.0.5.1">
 <h4><span class="header-section-number">6.0.5.1</span> Analyzing XML in R</h4>
 <p>To see an example of not only using <code>xml2</code> to parse XML data, but also another example of using <code>rvest</code> to obtain the XML data, check out this post from <a href="https://towardsdatascience.com/@jroberayalas">José Roberto Ayala Solares</a> where he took the text from a New York Times article called <a href="https://www.nytimes.com/interactive/2017/06/23/opinion/trumps-lies.html">“Trump’s Lies”</a>, scraped the data from the web (obtaining it in XML), and then <a href="https://towardsdatascience.com/web-scraping-tutorial-in-r-5e71fd107f32">wrangled it into a tidy format</a> using <code>xml2</code>.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&amp;pageid=g3d555e2b2e_0_148" alt="rvest and xml2 are helpful for web scraping and working with XML data" /></p>
 <p>In this lesson, our goal is to make you aware that data from the Internet (and APIs in particular) will often come in either JSON or XML format. Thus, the JSON and XML examples provided here only give you a bit of an idea of what JSON and XML data are and how to work with them. Nevertheless, the more frequently you retrieve data from APIs and the Internet, the more comfortable you’ll have to become with both JSON and XML. And, <code>jsonlite</code> and <code>xml2</code> will help you as you work with these data in R!</p>
 </div>
@@ -351,18 +351,18 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">6.0.6</span> Images</h3>
 <p>Only a few decades ago, analyzing a large dataset of images was not feasible for most researchers. Many didn’t even think of images as data. But, there is so much we can get from analyzing image data. Although we will not study images processing techniques in this lesson, let’s look at one example that give us an idea of how image data can be used.</p>
 <p>Within Google Maps there is a Street View feature that allows panoramic views from positions along many streets in the world. One of the things you may notice if you’re looking around on Google Maps’ street view is that for many streets in the world you do not only see houses; you are also able to see cars.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&amp;pageid=g392f0f9db9_0_4" alt="Google Maps street view" /></p>
 <p>Some 50 million images of cars from over 200 cities were used by researchers to detect the make, model, body type, and age of the cars in each neighborhood. They were able to take unstructured image data and compile a structured data set! These same researchers then pulled together a structured dataset from the Census and the 2008 elections of demographic information (such as race and income), and voting history in these same neighborhoods.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&amp;pageid=g2bfdb07292_0_151" alt="Data used from Google Maps street view to predict demographics of a neighborhood" /></p>
 <p>Using these two datasets (the Google Street view car image data and the demographic data), researchers used a technique known as <strong>machine learning</strong> to build an algorithm that could, from the images of cars in a neighborhood, predict the demographics (race, income, etc) and how that area is likely to vote. Comparing these two sets of data, they were able to accurately estimate income, race, education, and voting patterns at the zip code level from the Google Street view images.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&amp;pageid=g3d555e2b2e_0_0" alt="Cars in a neighborhood can predict how the area votes" /></p>
 <div id="analyzing-images-in-r" class="section level4" number="6.0.6.1">
 <h4><span class="header-section-number">6.0.6.1</span> Analyzing Images in R</h4>
 <p>Like with text, there are packages in R that will help you carry out analysis of images. In particular, <code>magick</code> is particularly helpful for advanced image processing within R, allowing you to process, edit, and manipulate images within R. Like JSON and XML, where there is more than one file format for a similar task, there are also a number of different image file formats. We touched on the pros and cons of a number of these in the Data Visualization course; however, of importance here is the fact that the <code>magick</code> package is capable of working with many different types of images, including PNG, JPEG, and TIFF. The <code>magick</code> package has a particularly helpful <a href="https://cran.r-project.org/web/packages/magick/vignettes/intro.html#drawing_and_graphics">vignette</a> where you can learn the ins and outs of working with images using <code>magick</code>’s functionality. Their documentation will discuss how to read image data into R, how to edit images, and even how to add images to your R plots!</p>
-<p>{format: png}
+<p>
 [<code>magick</code> package’s example of adding an image to a plot](<img src="https://docs.google.com/presentation/d/1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU/export/png?id=1r5T8BgmyVkHQMxXuZ8o575D1515v3RSCeciG8uyBghU&amp;pageid=g3d555e2b2e_0_153" alt="Google Maps street view" /></p>
 </div>
 </div>

@@ -8,12 +8,12 @@ In this lesson, we'll discuss a few of the main file types used to store tabular
 
 For example, consider a dataset that includes information about the heights and blood types of three individuals. You could make a table that has three columns (names, heights, and blood types) and three rows (one for each person) in Google Docs or Microsoft Word. However, there is a better way of storing this data in plain text without needing to put them in table format. CSVs are a perfect way to store these data. In the CSV format, the values of each column for each person in the data are separated by commas and each row (each person in our case) is separated by a new line. This means your data would be stored in the following format:
 
-{format: png}
+
 ![sample CSV](https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&pageid=g2bfdb07292_0_151)
 
 Notice that CSV files have a .csv extension at the end. You can see this above at the top of the file. One of the advantages of CSV files is their *simplicity*. Because of this, they are one of the most common file formats used to store tabular data. Additionally, because they are plain text, they are compatible with *many* different types of software.  CSVs can be read by most programs. Specifically, for our purposes, these files can be easily read into R (or Google Sheets, or Excel), where they can be better understood by the human eye. Here you see the same CSV opened in Google Slides, where it's more easily interpretable by the human eye:
 
-{format: png}
+
 ![CSV opened in Google Slides](https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&pageid=g3a4d18d722_0_92)
 
 As with any file type, CSVs do have their limitations. Specifically, CSV files are best used for data that have a consistent number of variables across observations. For example, in our example, there are three variables for each observation: "name", "height", and "blood_type". If, however, you had eye color and weight for the second observation, but not for the other rows, you'd have a different number of variables for the second observation than the other two. This type of data is not best suited for CSVs. However, whenever you have information the same number of variables across all observations, CSVs are a good bet!
@@ -22,7 +22,7 @@ As with any file type, CSVs do have their limitations. Specifically, CSV files a
 
 If you entered the same values used above into Google Slides first and wanted to download this file as a CSV to read into R, you would enter the values in Google slides, and then click on "File" and then "Download" as and choose "Comma-separated values (.csv, current sheet)". The dataset that you created will be downloaded as a CSV file on your computer. Make sure you know the location of your file (if on a Chromebook, this will be in your "Downloads" folder).
 
-{format: png}
+
 ![Download as CSV file](https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&pageid=g399e5a917a_0_56)
 
 
@@ -30,12 +30,12 @@ If you entered the same values used above into Google Slides first and wanted to
 
 Now that you have a CSV file, let's discuss how to get it into RStudio Cloud! Log in to your RStudio Cloud account. Create a new project. On the RStudio workspace that you see, click on *Upload* under *Files* on the bottom right corner of the screen. On the window that pops up click on *Choose File*.
 
-{format: png}
+
 ![Upload a file on RStudio Cloud](https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&pageid=g399e5a917a_0_10)
 
 Now, find where you saved the file (for instance "Downloads") and click on *OPEN*. After this, the window closes automatically and you'll be back in your workspace on RStudio Cloud. You will see that your CSV file now appears among other files. (A reminder: if you were working on a data science project, this would go in your "raw_data" directory. For this example, however, we'll keep it in "cloud/project")
 
-{format: png}
+
 ![Find local file](https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&pageid=g399e5a917a_0_1)
 
 Now, while the file has now been uploaded to your RStudio Cloud project, it's important to recognize the file is not yet imported to your R environment as an object. We'll do that now!
@@ -53,7 +53,7 @@ df_csv <- read_csv("sample_data - Sheet1.csv")
 head(df_csv)
 ```
 
-{format: png}
+
 ![`read_csv()`](https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&pageid=g399e5a917a_0_16)
 
 Above, you see the simplest way to import a CSV file. However, as with many functions, there are other arguments that you can set to specify how to import your specific CSV file, a few of which are listed below. However, as usual, to see all the arguments for this function, use `?read_csv` within R.
@@ -72,7 +72,7 @@ While CSV files hold plain text as a series of values separated by commas, an Ex
 
 Let's go back to the Google Sheet that we created and instead of downloading the file locally as as CSV, download it as *Microsoft Excel (.xlsx)* file.
 
-{format: png}
+
 ![Download as Excel file](https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&pageid=g399e5a917a_0_33)
 
 Save the file where you can find it. Similar to the CSV file, first, upload the file into your RStudio Cloud workspace.
@@ -91,7 +91,7 @@ df_excel <- read_excel("sample_data.xlsx")
 head(df_excel)
 ```
 
-{format: png}
+
 ![Find local file](https://docs.google.com/presentation/d/199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM/export/png?id=199w7E8ggb0nrf40A7WvVIYmNKJdVbUkcWpgnLBysZzM&pageid=g399e5a917a_0_41)
 
 

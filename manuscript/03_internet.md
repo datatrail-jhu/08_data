@@ -21,7 +21,7 @@ Working with a web API is similar to accessing a website in many ways. When you 
 
 The `httr` package will hep you carry out these types of requests within R. Let's stop talking about it, and see an actual example!
 
-{format: png}
+
 ![HTTP access via `httr`](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_69)
 
 ### Getting Data: `httr`
@@ -30,7 +30,7 @@ HTTP is based on a number of important verbs : `GET()`, `HEAD()`, `PATCH()`, `PU
 
 `GET()` will access the API, provide the API with the necessary information to request the data we want, and retrieve some output. 
 
-{format: png}
+
 ![API requests are made to an API endpoint to get an API response](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_90)
 
 ### Example 1: GitHub's API
@@ -64,7 +64,7 @@ api_response <- GET(url = paste0(url_git, 'users/', username, '/repos'))
 
 Note: In the code above, you see the function `paste0()`. This function concatenates (links together) each the pieces within the parentheses, where each piece is separated by a comma. This provides `GET()` with the URL we want to use as our endpoints! 
 
-{format: png}
+
 ![`httr` code to access GitHub](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_54)
 
 
@@ -77,7 +77,7 @@ Let's first take a look at what other variables are available within the `api_re
 names(api_response)
 ```
 
-{format: png}
+
 ![`httr` response](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_112)
 
 
@@ -97,7 +97,7 @@ To do so we'll take advantage of `httr`'s `content()` function, which as its nam
 repo_content <- content(api_response)
 ```
 
-{format: png}
+
 ![`httr` status code and `content()`](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_117)
 
 You can see here that the length of `repo_content` in our case is 6 by looking at the Environment tab. This is because the GitHub account `janeeverydaydoe` had six repositories at the time of this API call. We can get some information about each repo by running the function below:
@@ -110,7 +110,7 @@ lapply(repo_content, function(x) {
   bind_rows()
 ```
 
-{format: png}
+
 ![output from API request](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_132)
 
 Here, we've pulled out the name and URL of each repository in Jane Doe's account; however, there is *a lot* more information in the `repo_content` object. To see how to extract more information, check out the rest of Tyler's wonderful post [here](https://tclavelle.github.io/blog/r_and_apis/).
@@ -122,7 +122,7 @@ In a previous course in this Course Set on Data Visualization, we assigned a pro
 
 So, the data are available for download from this link: [data.fivethirtyeight.com](https://data.fivethirtyeight.com/), but are also hosted on GitHub [here](https://github.com/fivethirtyeight/data), and we will want to use the specific URL for this file: [https://raw.githubusercontent.com/fivethirtyeight/data/master/steak-survey/steak-risk-survey.csv](https://raw.githubusercontent.com/fivethirtyeight/data/master/steak-survey/steak-risk-survey.csv) in our `GET()` request.
 
-{format: png}
+
 ![steak-survey on GitHub](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_148)
 
 To do so, we would do the following:
@@ -135,7 +135,7 @@ api_response <- GET(url = "https://raw.githubusercontent.com/fivethirtyeight/dat
 df_steak <- content(api_response, type="text/csv")
 ```
 
-{format: png}
+
 ![`GET()` steak-survey CSV](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_154)
 
 Here, we again specify our url within `GET()` followed by use of the helpful `content()` function from `httr` to obtain the CSV from the `api_response` object. `df_steak` includes the data from the CSV directly from the GitHub API, without having to download the data first!
@@ -175,7 +175,7 @@ This uses the helpful package `rvest`. It gets its name from the word "harvest."
 
 When `rvest` is given a webpage (URL) as input, an `rvest` function reads in the HTML code from the webpage. HTML is the language websites use to display everything you see on the website. You've seen HTML documents before, as this is one of the formats that you can Knit to from an R Markdown (.Rmd) document! Generally, all HTML documents require each webpage to have a similar structure. This structure is specified by using different **tags**. For example, a header at the top of your webpage would use a specific tag. Website links would use a different tag. These different tags help to specify how the website should appear. `rvest` takes advantage of these tags to help you extract the parts of the webpage you're most interested in. So let's see exactly how to do that all of this with an example.
 
-{format: png}
+
 ![Different tags are used to specify different parts of a website](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_179)
 
 
@@ -191,18 +191,18 @@ To enable SelectorGadget:
 
 2. Click "ADD TO CHROME"
 
-{format: png}
+
 ![ADD TO CHROME](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_9)
 
 
 3. Click "Add extension" 
 
-{format: png}
+
 ![Add extension](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_5)
 
 4. SelectorGadget's icon will now be visible to the right of the web address bar within Google Chrome. You will click on this to use SelectorGadget in the example below.
 
-{format: png}
+
 ![SelectorGadget icon](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_0)
 
 #### Web Scraping Example
@@ -215,12 +215,12 @@ Alternatively, you could write and run a few lines of code and get all the infor
 
 To use SelectorGadget, navigate to the webpage we're interested in scraping: [http://jhudatascience.org/stable_website/webscrape.html](http://jhudatascience.org/stable_website/webscrape.html) and toggle SelectorGadget by clicking on the SelectorGadget icon. A menu at the bottom-right of your web page should appear.
 
-{format: png}
+
 ![SelectorGadget icon on webpage of interest](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_22)
 
 Now that SelectorGadget has been toggled, as you mouse over the page, colored boxes should appear. We'll click on the the name of the first package to start to tell SelectorGadget which component of the webpage we're interested in.
 
-{format: png}
+
 ![SelectorGadget selects `strong` on webpage of interest](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_31)
 
 An orange box will appear around the component of the webpage you've clicked. Other components of the webpage that SelectorGadget has deemed similar to what you've clicked will be highlighted. And, text will show up in the menu at the bottom of the page letting you know what you should use in `rvest` to specify the part of the webpage you're most interested in extracting. 
@@ -247,12 +247,12 @@ courses %>%
   html_nodes("strong") %>%
   html_text() 
 ```
-{format: png}
+
 ![`rvest` code](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_188)
 
 With just a few lines of code we have the information we were looking for!
 
-{format: png}
+
 ![List of packages](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_36)
 
 #### A final note: SelectorGadget
@@ -290,7 +290,7 @@ mydf <- fromJSON(json)
 mydf
 ```
 
-{format: png}
+
 ![`fromJSON()`](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_219)
 
 
@@ -301,7 +301,7 @@ Data frames can also be returned to their original JSON format using the functio
 json <- toJSON(mydf)
 ```
 
-{format: png}
+
 ![`toJSON()`](https://docs.google.com/presentation/d/1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg/export/png?id=1oK-vBO2kVl9VlzsZTwd61pqURcdKfRulmrOoxYkjlLg&pageid=g3d5b27bb5d_0_228)
 
 
