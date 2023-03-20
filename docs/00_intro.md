@@ -61,6 +61,6 @@ We are constantly barraged with sound. We listen to music and podcasts through o
 
 ### Slides and Video
 
-![Where Does Data Come From](https://www.youtube.com/watch?v=yuA6k-xidsY)
+[Automated Videos](https://www.youtube.com/watch?v=yuA6k-xidsY)
 
 * [Slides](https://docs.google.com/presentation/d/1GYO96TWYSP-fgO_w3CpT8UxSxzALn2yu19TTXYF8x4U/edit?usp=sharing)
