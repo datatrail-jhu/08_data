@@ -132,6 +132,6 @@ In this lesson, we've introduced the R package `googlesheets`. We've discussed t
 
 ### Slides and Video
 
-![Importing Data from Google Sheets](https://www.youtube.com/watch?v=U3MP1QVLL4Q)
+[Automated Videos](https://www.youtube.com/watch?v=U3MP1QVLL4Q)
 
 * [Slides](https://docs.google.com/presentation/d/1BtZv6mbC0ufQASlkWjdnXY1MQKVsC3Mo0rGmzfMadyA/edit?usp=sharing)

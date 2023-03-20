@@ -121,6 +121,6 @@ Concerns with the technology cite that anyone can be identified, not just crimin
 
 ### Slides and Video
 
-![Ethical Data Science](https://www.youtube.com/watch?v=0GAFbE-W2Xs)
+[Automated Videos](https://www.youtube.com/watch?v=0GAFbE-W2Xs)
 
 * [Slides](https://docs.google.com/presentation/d/16uo-gTCdjtWjdGOxejVTIz9JdZi-Gu7lgSsNx2SdPhU/edit?usp=sharing)
